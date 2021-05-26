@@ -2,7 +2,6 @@
  # Grupo 4 : Four Game
 ----
  ## Descripcion de la pagina 
-
 **Four Game** es una empresa que fue fundada en Enero del 2021. Somos un grupo de
 amigos aficionados a la tecnología y a los videojuegos, que un día decidieron emprender
 juntos.
@@ -20,18 +19,18 @@ del mercado.
  ## Integrantes 
 -----
 
- ### Juan De giorgi 
-
+ ### Juan De giorgi   
+ 
   Esta es mi descripcion
  
 
- ### Ezequiel Rango
-
+ ### Ezequiel Rango  
+ 
   Esta es la Eze
 
 
- ### Gonzalo Zorzal
-
+ ### Gonzalo Zorzal  
+ 
   y esta la de gonza
 
 ----

@@ -23,7 +23,7 @@ acompañado de las últimas novedades tecnológicas y los mejores precios del me
 
  ### Juan De giorgi   
 
-Me llamo Juan De Giorgi, tengo 22 años y vivo en La Plata, Buenos Aires. Actualmente realizo el curso de Programación Web Full Stack  dictado por FORMAR y Digital House. Soy un estudiante autodidacta, he completado varios cursos y adquirido información de diversas tecnologías.  Actualmente me dedico a la reparación, montaje, comercialización y distribución de computadoras. Me gusta andar en bicicleta, el ciclismo es uno de mis deportes favoritos.
+Me llamo Juan De Giorgi, tengo 21 años y vivo en La Plata, Buenos Aires. Actualmente realizo el curso de Programación Web Full Stack  dictado por FORMAR y Digital House. Soy un estudiante autodidacta, he completado varios cursos y adquirido información de diversas tecnologías.  Actualmente me dedico a la reparación, montaje, comercialización y distribución de computadoras. Me gusta andar en bicicleta, el ciclismo es uno de mis deportes favoritos.
 
 
  ### Ezequiel Rango  

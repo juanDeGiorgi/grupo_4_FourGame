@@ -36,6 +36,7 @@ Me llamo Gonzalo Zorzal, tengo 20 a√±os y vivo en San Miguel, Buenos Aires. En √
 
   ## Referentes usados 
 
-[**Libre Opcion**](https://www.libreopcion.com)
-[**Mercado Libre**](https://www.mercadolibre.com.ar/#from=homecom)
+[**Libre Opcion**](https://www.libreopcion.com)  
+[**Mercado Libre**](https://www.mercadolibre.com.ar/#from=homecom)  
 [**Compra Gamer**](https://www.compragamer.com/)
+

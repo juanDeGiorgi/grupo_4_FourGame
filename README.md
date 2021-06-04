@@ -39,7 +39,9 @@ Me llamo Gonzalo Horacio Emanuel Gonzalez, tengo 20 años y vivo en San Miguel, 
 [**Libre Opcion**](https://www.libreopcion.com)  
 [**Mercado Libre**](https://www.mercadolibre.com.ar/#from=homecom)  
 [**Compra Gamer**](https://www.compragamer.com/)
+<br>
 [**Amazon**](https://www.amazon.com/)
+<br>
 [**AXA**](https://axa.com.ar/webaxa/)
 
 

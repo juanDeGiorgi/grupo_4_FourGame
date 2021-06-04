@@ -28,7 +28,7 @@ Me llamo Juan De Giorgi,vivo en La Plata, Buenos Aires. Actualmente realizo el c
 
  ### Ezequiel Rango  
 
-Me llamo Ezequiel Rango, tengo 21 años y vivo en Rosario. Actualmente curso una Tecnicatura en Desarrollo de Software, Programación web fullstack con FORMAR y Digital House, Inglés para desarrollo de software de Polotic Misiones y realizo un curso de electricidad en mi ciudad. En mis tiempos libres me gusta reunirme con amigos, familiares, jugar videojuegos, leer y pasear en moto o bicicleta. Me dedico a la comercialización de juegos para PS3, PS4 y PS5.
+Me llamo Ezequiel Rango, tengo 21 años y vivo en Rosario. Actualmente curso una Tecnicatura en Desarrollo de Software, Programación web fullstack con FORMAR y Digital House, Inglés para desarrollo de software de Polotic Misiones y realizo un curso de electricidad en mi ciudad.En mis tiempos libres me gusta reunirme con amigos, familiares, jugar videojuegos, leer y pasear en moto o bicicleta. Me dedico a la comercialización de juegos para PS3, PS4 y PS5.
 
  ### Gonzalo Horacio Emanuel Gonzalez  
 

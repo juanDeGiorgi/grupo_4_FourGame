@@ -32,7 +32,7 @@ Me llamo Ezequiel Rango, tengo 21 años y vivo en Rosario. Actualmente curso una
 
  ### Gonzalo Horacio Emanuel Gonzalez  
 
-Me llamo Gonzalo Zorzal, tengo 20 años y vivo en San Miguel, Buenos Aires. En éstos momentos estoy participando de la capacitacón "programación web full stack" llevada a cabo por parte de Digital House y FORMAR. Actualmente estudio Licenciatura en Sistemas y realizo el curso de Inglés para desarrollo de software de Polotic Misiones. Me encanta tocar la guitarra, escuchar música, cantar y la tecnología. Me dedico a la reparación y comercialización de celulares.
+Me llamo Gonzalo Horacio Emanuel Gonzalez, tengo 20 años y vivo en San Miguel, Buenos Aires. En éstos momentos estoy participando de la capacitacón "programación web full stack" llevada a cabo por parte de Digital House y FORMAR. Actualmente estudio Licenciatura en Sistemas y realizo el curso de Inglés para desarrollo de software de Polotic Misiones. Me encanta tocar la guitarra, escuchar música, cantar y la tecnología. Me dedico a la reparación y comercialización de celulares.
 
   ## Referentes usados 
 

@@ -1,0 +1,176 @@
+
+
+               /*                          MOBILE                            */
+
+    /* SECTION REDES*/
+
+        .home main .banner{
+            display: none;
+        }
+
+        .home main {
+            width: 90%;
+            margin: auto;
+        }
+
+        .home main section .redes{
+            background-color: #F2204D;
+            border-radius: 40px;
+            color: #ffffff;
+            padding: 5%;
+            margin: 10% 0% 5% 0%;
+            text-align: center;
+        }
+
+        .home main section .redes h3{
+            font-size: 160%;
+        }
+
+        .home main section div a img{
+            width: 20%;
+            margin: 5% 5% 0% 5%;
+        }
+
+        .home main section div a .twitter{
+            margin: 4% 4% 0% 4%;
+            width: 22.3%;
+        }
+
+
+    /* SECTION ARTICLES */
+
+        .home main h2{
+            color: #848484;
+            text-align: center;
+            margin: 10% 0% 5% 0%;
+        }
+
+        .home main .decoracion{
+            background-color: #F77490;
+            color: #F77490;
+            width: 100%;
+            height: 10px;
+            border-radius: 20px;
+            margin: 0% 0% 15% 0%;
+        }
+
+        .home main section article{
+            background-color: #ffffff;
+            width: 85%;
+            height: 100%;
+            padding: 15px;
+            margin: auto;
+            box-shadow: 0px 0px 10px rgb(100,100,100);
+            position: relative;
+        }
+
+        .home main section article img{
+            width: 100%;
+            height: 100%;
+        }
+
+        .home main section article div{
+            width: 100%;
+            height: 100%;
+            border-top: 1px solid #B2B2B2;
+        }
+
+        .home main section article div a{
+            position: absolute;
+            font-size: 180%;
+            top: 5%;
+            right: 5%;
+            color: black;
+        }
+
+        .home main section article div h3{
+            font-size: 120%;
+            font-weight: 500;
+            text-align: center;
+            color: #3E3E3E;
+            margin: 10% 0% 10% 0%;
+        }
+
+        .home main section article div .price{
+            font-size: 210%;
+            margin-bottom: 9%;
+        }
+
+        .home main section article div .discount{
+            font-size: 100%;
+            color: #33CC33;
+        }
+
+        .home main .producto-tablet,.producto-desktop{
+            display: none;
+        }
+
+               /*                          TABLET                            */
+
+@media (min-width:768px){
+
+    .home {
+        overflow-x: hidden;
+    }
+
+    .home main .banner {
+        display: initial;
+        width: 170%;
+        position: relative;
+        right: 30%;
+    }
+
+    .home main h2{
+        font-size: 300%;
+        margin: 5% 0% 2% 0%;
+    }
+
+    .home main section div a img {
+        width: 10%;
+    }
+
+    .home main section div a .twitter {
+        width: 11%;
+    }
+
+    .home main section .redes {
+        padding: 1%;
+        margin: 5% auto 0% auto;
+        width: 560px;
+    }
+
+    .home main .decoracion {
+        margin-bottom:50px;
+    }
+
+    .home main section article {
+        width: 40%;
+    }
+
+    .home main .productos {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .home main .producto-tablet{
+        display: initial;
+    }
+
+}
+
+               /*                          DESKTOP                            */
+
+@media (min-width:1024px){
+
+    .home main .producto-desktop{
+        display: initial;
+    }
+
+    .home main section article {
+        width: 20%;
+    }
+
+
+}
+
+

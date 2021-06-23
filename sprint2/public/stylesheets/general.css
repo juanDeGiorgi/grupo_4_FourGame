@@ -3,3 +3,13 @@
     margin: 0%;
     box-sizing: border-box;
 }
+body{
+    background-color: #E7E6E6;
+}
+button{
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+}
+a{
+    text-decoration: none;
+}

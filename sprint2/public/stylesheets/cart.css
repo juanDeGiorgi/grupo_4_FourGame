@@ -1,0 +1,139 @@
+/*                  header               */
+.cart header{
+    background-color: #FF7F00;
+    position: relative;
+}
+
+.cart header .logo{
+    width: 50%;
+    margin: 0% 25%;
+}
+
+.cart header .b-menu{
+    display: inline-block;
+    position: relative;
+    top: 7px;
+    left: 10px;
+    margin: 0% 6% 0% 5%;
+    color: white;
+    font-size: 250%;
+
+}
+
+.cart header form{
+    display: inline-block;
+    margin: 0% 0% 5% 4%;
+    width: 70%;
+    height: 40px;
+    position: relative;
+}
+.cart header form input:focus{
+    border-radius: 30px;
+    outline: none;
+}
+
+.cart header form input{
+    border: none;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    border-radius: 30px;
+    text-indent: 4%;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+
+.cart header form button{
+    position: absolute;
+    top: 19%;
+    right: 6%;
+    font-size: 20px;
+}
+
+
+/*                              main                          */
+.cart main article{
+    background-color: white;
+    border-radius: 20px;
+    padding: 10%;
+    margin: 10%;
+}
+.cart main article .tarjetas{
+    width: 100% ;
+}
+.cart main article .ahora12{
+    width: 25%;
+}
+
+
+/*                              footer                          */
+
+.cart footer{
+    background-color: #FF7F00;
+    margin-top: 50%;
+    color: #ffffff;
+    text-align: center;
+    padding: 30px 10px 30px 10px;
+}
+
+.cart footer h2{
+    font-size: 150%;
+    margin-bottom: 10%;
+}
+
+.cart footer form{
+    width: 90%;
+    margin: auto;
+    border-bottom: 1px solid black;
+    position: relative;
+}
+
+.cart footer form i{
+    position: absolute;
+    top: 5%;
+    left: 4%;
+}
+
+.cart footer form input{
+    display: inline-block;
+    border: none;
+    width: 100%;
+    height: 40px;
+    border-radius: 30px;
+    text-indent: 15%;
+    font-weight: 400;
+    font-size: 120%;
+}
+
+.cart footer form input:focus{
+    border-radius: 30px;
+    outline: none;
+}
+
+.cart footer form button{
+    background-color: #F2204D;
+    color: #ffffff;
+    display: block;
+    border-radius: 30px;
+    margin: 13% auto 15% auto;
+    width: 80%;
+    height: 50px;
+    font-size: 150%;
+    font-weight: 700;
+    box-shadow: 0px 5px 4px rgba(100, 100, 100, 0.568);
+}
+
+.cart footer nav h3{
+    margin: 10% 0% 10% 0%;
+    font-size: 200%;
+}
+
+.cart footer nav ul li{
+    margin: 10% 0% 10% 0%;
+}
+
+.cart footer nav ul li a{
+    color: #ffffff;
+    text-shadow: 0px 5px 4px rgba(100, 100, 100, 0.568);
+}

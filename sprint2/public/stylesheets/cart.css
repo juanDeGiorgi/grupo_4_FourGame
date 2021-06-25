@@ -1,139 +1,123 @@
-/*                  header               */
-.cart header{
-    background-color: #FF7F00;
-    position: relative;
-}
-
-.cart header .logo{
-    width: 50%;
-    margin: 0% 25%;
-}
-
-.cart header .b-menu{
-    display: inline-block;
-    position: relative;
-    top: 7px;
-    left: 10px;
-    margin: 0% 6% 0% 5%;
-    color: white;
-    font-size: 250%;
-
-}
-
-.cart header form{
-    display: inline-block;
-    margin: 0% 0% 5% 4%;
-    width: 70%;
-    height: 40px;
-    position: relative;
-}
-.cart header form input:focus{
-    border-radius: 30px;
-    outline: none;
-}
-
-.cart header form input{
-    border: none;
-    width: 100%;
-    height: 100%;
-    display: inline-block;
-    border-radius: 30px;
-    text-indent: 4%;
-    font-weight: 500;
-    font-size: 20px;
-}
-
-
-.cart header form button{
-    position: absolute;
-    top: 19%;
-    right: 6%;
-    font-size: 20px;
-}
-
-
 /*                              main                          */
 .cart main article{
     background-color: white;
     border-radius: 20px;
-    padding: 10%;
+    padding: 7%;
     margin: 10%;
+    position: relative;
+    text-align: center;
+}
+.cart main section .carrito{
+    font-size: 97%;
+    margin: 20% 21% 0% 14%;
+    display: inline-block;
+}
+.cart main .back{
+    font-size: 200%;
+}
+.cart main .contenedor-c{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 90%;
+}
+/* producto */
+.cart main .eliminar{
+    top: 3%;
+    left: 87%;
+    font-size: 140%;
+    position: absolute;
+}
+.cart main .descripcion{
+    margin: 10% 0% 10% 0%;
+}
+.cart main .cantidad{
+    margin: 10% 15% 10% 0%;
+    font-weight: 700;
+    font-size: 120%;
+    display: inline-block;
+}
+.cart main .b-suma{
+    color: #F2204D;
+    background-color: white;
+    font-size: 170%;
+    
+
+}
+.cart main .n-cantidad{
+    font-weight: 700;
+    font-size: 140%;
+    display: inline-block;
+}
+.cart main .precio{
+    margin: 10% 9% 10% 0%;
+    font-weight: 700;
+    display: inline-block;
+    font-size: 155%;
+}
+.cart main .p-cantidad{
+    font-weight: 700;
+    display: inline-block;
+    font-size: 131%;
+}
+/* envios */
+.cart main .fa-truck{
+    font-size: 240%;
+    margin: 10% 9% 10% 0%;
+}
+.cart main .envio{
+    display: inline-block;
+    font-weight: 700;
+}
+.cart main .direccion{
+    color: #B2A7A7;
+    margin: 0% 0% 0% 0%;
+
+}
+.cart main .cambiar{
+    color: #3D2ED0;
+    margin: 15% 0% 0% 0%;
+    font-size: 120%;
+    font-weight: 600;
+    text-shadow: 0px 5px 4px rgb(100 100 100 / 57%);
+}
+
+/* tarjetas */
+.cart main article .contenedor-t{
+    position: relative;
 }
 .cart main article .tarjetas{
     width: 100% ;
 }
 .cart main article .ahora12{
     width: 25%;
-}
-
-
-/*                              footer                          */
-
-.cart footer{
-    background-color: #FF7F00;
-    margin-top: 50%;
-    color: #ffffff;
-    text-align: center;
-    padding: 30px 10px 30px 10px;
-}
-
-.cart footer h2{
-    font-size: 150%;
-    margin-bottom: 10%;
-}
-
-.cart footer form{
-    width: 90%;
-    margin: auto;
-    border-bottom: 1px solid black;
-    position: relative;
-}
-
-.cart footer form i{
     position: absolute;
-    top: 5%;
-    left: 4%;
+    top: 67%;
+    left: 35%;
 }
-
-.cart footer form input{
-    display: inline-block;
-    border: none;
-    width: 100%;
-    height: 40px;
-    border-radius: 30px;
-    text-indent: 15%;
-    font-weight: 400;
-    font-size: 120%;
-}
-
-.cart footer form input:focus{
-    border-radius: 30px;
-    outline: none;
-}
-
-.cart footer form button{
-    background-color: #F2204D;
-    color: #ffffff;
-    display: block;
-    border-radius: 30px;
-    margin: 13% auto 15% auto;
-    width: 80%;
-    height: 50px;
-    font-size: 150%;
+.cart main article .p-total{
     font-weight: 700;
-    box-shadow: 0px 5px 4px rgba(100, 100, 100, 0.568);
+    font-size: 162%;
+    margin: 33% 0% 30% 0%;
+}
+.cart main article .finalizar{
+    color: white;
+    background-color: #3D2ED0;
+    border-radius: 42px;
+    font-size: 98%;
+    padding: 8% 20% 8% 20%;
+    font-weight: 600;
 }
 
-.cart footer nav h3{
-    margin: 10% 0% 10% 0%;
-    font-size: 200%;
+/* tablet */
+@media (min-width:768){
+
 }
 
-.cart footer nav ul li{
-    margin: 10% 0% 10% 0%;
-}
 
-.cart footer nav ul li a{
-    color: #ffffff;
-    text-shadow: 0px 5px 4px rgba(100, 100, 100, 0.568);
+/* escritorio */
+@media (min-width:1024){
+    
 }

@@ -24,7 +24,7 @@
         </form>
 
         <button class="user"><i class="fas fa-user-circle"></i></button>
-        <button class="cart"><i class="fas fa-shopping-cart"></i></button>
+        <button class="i-cart"><i class="fas fa-shopping-cart"></i></button>
 
 
         <nav>
@@ -38,21 +38,28 @@
     <main>
         <section>
             <!-- subtitulo de ofertas -->
-            <h2 class=carrito">carrito de compras</h2>
+            <div class="contenedor-c">
+                <h2 class="carrito">Carrito de compras</h2>
+                <button class="back"><i class="fas fa-arrow-circle-left"></i></button>
+            </div>
 
             <article>
                 <!-- imagen del producto -->
                 <img src="/images/Pc/PC-Armada-Media-0026_600.jpg" alt="Pc Gamer amd Ryzen 3 3100" width="100%">
                 <!-- descripcion del producto -->
                 <div class="infoProducto">
-                    <i class="fas fa-trash-alt"></i>
+                    <button class="eliminar"><i class="fas fa-trash-alt"></i></button>
                     <h3 class="descripcion">
                         Pc Gamer amd Ryzen 3 3100
                     </h3>
-                    <p>cantidad: <i class="fas fa-minus-circle"></i> 4 <i class="fas fa-plus-circle"></i></p>
+                    <p class="cantidad">Cantidad:</p> 
+                    <button class="b-suma"><i class="fas fa-minus-circle"></i></button> 
+                    <p class="n-cantidad">4</p> 
+                    <button class="b-suma"><i class="fas fa-plus-circle"></i></button> 
                     <p class="precio">
-                        $480.521
+                        Precio: 
                     </p>
+                    <p class="p-cantidad">$480.521</p>
 
 
                 </div>
@@ -62,16 +69,20 @@
                 <img src="/images/Pc/PC-Armada-Alta-008_600.jpg" alt="Pc Gamer amd Ryzen 3 3100" width="100%">
                 <!-- descripcion del producto -->
                 <div class="infoProducto">
-                    <i class="fas fa-trash-alt"></i>
+                    <button class="eliminar"><i class="fas fa-trash-alt"></i></button>
                     <h3 class="descripcion">
                         Pc Gamer amd Ryzen 3 3100
                     </h3>
-                    <p>cantidad: <i class="fas fa-minus-circle"></i> 4 <i class="fas fa-plus-circle"></i></p>
+                    <p class="cantidad">Cantidad:</p> 
+                    <button class="b-suma"><i class="fas fa-minus-circle"></i></button> 
+                    <p class="n-cantidad">4</p> 
+                    <button class="b-suma"><i class="fas fa-plus-circle"></i></button> 
                     <p class="precio">
-                        $480.521
+                        Precio: 
                     </p>
+                    <p class="p-cantidad">$480.521</p>
 
-
+                    
                 </div>
             </article>
             <article>
@@ -79,33 +90,40 @@
                 <img src="/images/Pc/PC-Armada-Media-0025_600.jpg" alt="Pc Gamer amd Ryzen 3 3100" width="100%">
                 <!-- descripcion del producto -->
                 <div class="infoProducto">
-                    <i class="fas fa-trash-alt"></i>
+                    <button class="eliminar"><i class="fas fa-trash-alt"></i></button>
                     <h3 class="descripcion">
                         Pc Gamer amd Ryzen 3 3100
                     </h3>
-                    <p>cantidad: <i class="fas fa-minus-circle"></i> 4 <i class="fas fa-plus-circle"></i></p>
+                    <p class="cantidad">Cantidad:</p> 
+                    <button class="b-suma"><i class="fas fa-minus-circle"></i></button> 
+                    <p class="n-cantidad">4</p> 
+                    <button class="b-suma"><i class="fas fa-plus-circle"></i></button> 
                     <p class="precio">
-                        $480.521
+                        Precio: 
                     </p>
-
+                    <p class="p-cantidad">$480.521</p>
 
                 </div>
             </article>
             <article>
                <div>
                 <i class="fas fa-truck"></i>
-                <p>Envio a:</p>
-                <p>Calle falsa, N°123,Buenos aires</p>  
+                <p class="envio">Envio a:</p>
+                <p class="direccion">Calle falsa, N°123,Buenos aires</p>  
+                <button class="cambiar">Cambiar</button>
                </div> 
             </article>
             <article>
                 <img class="tarjetas" src="/images/icon/logo2.png" 
                 alt="logo">
-                <img class="tarjetas" src="/images/icon/tarjetas.jpg" alt="tarjetas">
-                <img  class= "ahora12" src="/images/icon/ahora12.svg" alt="ahora12">
-                <h3>
+                <div class="contenedor-t">
+                    <img class="tarjetas" src="/images/icon/tarjetas.jpg" alt="tarjetas">
+                    <img  class= "ahora12" src="/images/icon/ahora12.svg" alt="ahora12">
+                </div>
+                <h3 class="p-total">
                     Total: $26.364
                 </h3>
+                <button class="finalizar">Finalizar compra</button>
             </article>
         </section>
 

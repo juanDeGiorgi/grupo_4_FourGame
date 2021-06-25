@@ -15,4 +15,4 @@ app.get('/product-loading', (req,res) => res.sendFile(path.join(__dirname, '/vie
 
 
 
-app.listen(port, () => console.log('Server running on the port' + port));
+app.listen(port, () => console.log(`Server running on the port : ${port}`));

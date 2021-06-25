@@ -3,10 +3,16 @@
 
 footer{
     background-color: #FF7F00;
-    margin-top: 50%;
+    margin-top: 150px;
     color: #ffffff;
     text-align: center;
     padding: 30px 10px 30px 10px;
+}
+
+footer .contain-footer{
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
 }
 
 footer h2{
@@ -37,7 +43,7 @@ footer form input{
     width: 100%;
     height: 40px;
     border-radius: 30px;
-    text-indent: 15%;
+    text-indent: 12.6%;
     font-weight: 400;
     font-size: 120%;
 }
@@ -54,6 +60,7 @@ footer form button{
     border-radius: 30px;
     margin: 13% auto 15% auto;
     width: 80%;
+    max-width: 230px;
     height: 50px;
     font-size: 150%;
     font-weight: 700;
@@ -77,10 +84,14 @@ footer nav ul li a{
 
                /*                          TABLET                            */
 
-@media (min-width:768px){
+@media (min-width:600px){
 
     footer {
         margin-top: 12%;
+    }
+
+    footer .contain-footer{
+        max-width: none;
     }
    
     footer h2 {
@@ -144,6 +155,7 @@ footer nav ul li a{
 
     footer form i{
         left: 6%;
+        top: -19%;
     } 
 
     footer form input{

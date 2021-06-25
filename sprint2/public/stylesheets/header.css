@@ -6,16 +6,23 @@ header{
     position: relative;
 }
 
+header .contain-header{
+    width: 90%;
+    margin: auto;
+}
+
 header .logo{
     width: 50%;
-    margin: 0% 25%;
+    margin: auto;
+    display: block;
+    max-width: 190px;
 }
 
 header .b-menu{
     display: inline-block;
     position: relative;
     top: 7px;
-    left: 10px;
+    /* left: 10px; */
     margin: 0% 6% 0% 5%;
     color: white;
     font-size: 250%;
@@ -51,17 +58,21 @@ header form input:focus{
 header form button{
     position: absolute;
     top: 19%;
-    right: 6%;
+    right: 3.5%;
     font-size: 20px;
     text-shadow: 0px 5px 4px rgba(100, 100, 100, 0.568);
 }
 
-header .user,.cart{
+header .user,.i-cart{
     display: none;
 }
 
 header nav ul{
     display: none;
+}
+
+header .nav-1{
+    text-align: center;
 }
 
 
@@ -73,7 +84,6 @@ header nav ul{
     .home header .logo{
         display: inline-block;
         width: 180px;
-        margin: 0% 1%;
     }
     
     .home header .b-menu{
@@ -82,23 +92,23 @@ header nav ul{
     
     .home header form{
         margin: 0% 3% 5% 4%;
-        width: 48%;
+        width: 50%;
         position: relative;
         bottom: 80px;
         right: 20px;
     }
     
-    .home header .user,.cart{
+    .home header .user,.i-cart{
         display: initial;
         color: #ffffff;
-        margin-left: 3%;
+        margin-left: 2.7%;
         text-shadow: 0px 5px 4px rgba(100, 100, 100, 0.568);
         font-size: 200%;
         position: relative;
         bottom: 77px;
     }
     
-    .home header nav{
+    .home header .nav-2{
         width: 100%;
         margin-top: -40px;
     }
@@ -116,8 +126,8 @@ header nav ul{
     
     .home header nav ul li a{
         color: #ffffff;
-        font-size: 170%;
-        font-weight: 500;
+        font-size: 200%;
+        font-weight: 700;
         text-shadow: 0px 5px 4px rgba(100, 100, 100, 0.568);
     }
 
@@ -125,17 +135,3 @@ header nav ul{
 
                /*                          DESKTOP                            */
 
-@media (min-width:1024px){
-    
-    header{
-        padding: 0% 5% 0% 8%;
-    }
-
-    .home header form{
-        width: 55%;
-    }
-
-    header form button{
-        right: 3%;
-    }
-}

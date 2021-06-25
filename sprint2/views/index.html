@@ -10,31 +10,34 @@
 </head>
 <body class="home">
     <header>
-        <img src="/images/icon/Logo.png" alt="logo" class="logo">
+        <div class="contain-header">
+            <nav class="nav-1">
+                <img src="/images/icon/Logo.png" alt="logo" class="logo">
 
-        <button href="#" class="b-menu"><i class="fas fa-bars menu"></i></button>
-        
-        <form>
-            
-            <input type="text" placeholder="Buscar">
-            <button><i class="fas fa-search"></i></button>
-        </form>
-
-        <button class="user"><i class="fas fa-user-circle"></i></button>
-        <button class="cart"><i class="fas fa-shopping-cart"></i></button>
-
-
-        <nav>
-            <ul>
-                <li><a href="#">Productos</a></li>
-                <li><a href="#">Nosotros</a></li>
-                <li><a href="#">Contacto</a></li>
-            </ul>
-        </nav>
+                <button href="#" class="b-menu"><i class="fas fa-bars menu"></i></button>
+                
+                <form>
+                    
+                    <input type="text" placeholder="Buscar">
+                    <button><i class="fas fa-search"></i></button>
+                </form>
+                <button class="user"><i class="fas fa-user-circle"></i></button>
+                <button class="i-cart"><i class="fas fa-shopping-cart"></i></button>
+            </nav>
+            <nav class="nav-2">
+                <ul>
+                    <li><a href="#">Productos</a></li>
+                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     <main>
-        <img src="/images/banners/banner.jpg" alt="banner" class="banner">
 
+        <div class="div-banner"> </div>
+
+        <div class="main">
         <section >
             <div class="redes">
             <h3>Seguinos en nuestras Redes</h3>
@@ -54,48 +57,80 @@
         <section class="productos">
 
             <article>
-                <img src="/images/juegos/resident-evil-village.jpg" alt="Resident evil Village">
+                <a href="#" class="a-article">
+                    <div class="contenedor-img">
+                        <img src="/images/juegos/resident-evil-village.jpg" alt="Resident evil Village">
+                    </div>
 
-                <div>
-                    <a href="#"><i class="far fa-heart"></i></a>
+                    <div class="product-info">
+                        <button><i class="far fa-heart"></i></button>
 
-                    <h3>RESIDENT EVIL VILLAGE</h3>
-                    <p class="price">$ 3.560</p>
-                    <p class="discount">12x $ 1.012,39 sin interés</p>
-                </div>
+                        <div class="title">
+                            <h3>RESIDENT EVIL VILLAGE</h3>
+                        </div>
+                        <div class="info">
+                            <p class="price">$ 3.560</p>
+                            <p class="discount">12x $ 1.012,39 sin interés</p>
+                        </div>
+                    </div>
+                </a>
             </article>
             <article class="producto-tablet">
-                <img src="/images/Pc/pc-photoshop/pc.jpg" alt="COMPUTADORA PHOTOSHOP">
+                <a href="#" class="a-article">
+                    <div class="contenedor-img">
+                        <img src="/images/Pc/pc-photoshop/pc.jpg" alt="COMPUTADORA PHOTOSHOP">
+                    </div>
 
-                <div>
-                    <a href="#"><i class="far fa-heart"></i></a>
+                    <div class="product-info">
+                        <button><i class="far fa-heart"></i></button>
 
-                    <h3>COMPUTADORA ARMADA PARA PHOTOSHOP</h3>
-                    <p class="price">$ 560.000</p>
-                    <!-- <p class="discount">12x $ 1.012,39 sin interés</p> -->
-                </div>
+                        <div class="title">
+                            <h3>COMPUTADORA ARMADA PARA PHOTOSHOP</h3>
+                        </div>
+                        <div class="info">
+                            <p class="price">$ 560.000</p>
+                            <!-- <p class="discount">12x $ 1.012,39 sin interés</p> -->
+                        </div>
+                    </div>
+                </a>
             </article>
             <article class="producto-desktop">
-                <img src="/images/juegos/resident-evil-village.jpg" alt="Resident evil Village">
+                <a href="#" class="a-article">
+                    <div class="contenedor-img">
+                        <img src="/images/consolas/ps4_slim/ps4.jpg" alt="PS4 SLIM">
+                    </div>
 
-                <div>
-                    <a href="#"><i class="far fa-heart"></i></a>
+                    <div class="product-info">
+                        <button><i class="far fa-heart"></i></button>
 
-                    <h3>RESIDENT EVIL  VILLAGE</h3>
-                    <p class="price">$ 3.560</p>
-                    <p class="discount">12x $ 1.012,39 sin interés</p>
-                </div>
+                        <div class="title">
+                            <h3>PLAYSTATION 4 SLIM</h3>
+                        </div>
+                        <div class="info">
+                            <p class="price">$ 59.000</p>
+                            <p class="discount">12x $ 1.012,39 sin interés</p>
+                        </div>
+                    </div>
+                </a>
             </article>
             <article class="producto-desktop">
-                <img src="/images/juegos/resident-evil-village.jpg" alt="Resident evil Village">
+                <a href="#" class="a-article">
+                    <div class="contenedor-img">
+                        <img src="/images/consolas/ps5/ps5.jpg" alt="PS5">
+                    </div>
 
-                <div>
-                    <a href="#"><i class="far fa-heart"></i></a>
+                    <div class="product-info">
+                        <button><i class="far fa-heart"></i></button>
 
-                    <h3>RESIDENT EVIL  VILLAGE</h3>
-                    <p class="price">$ 3.560</p>
-                    <p class="discount">12x $ 1.012,39 sin interés</p>
-                </div>
+                        <div class="title">
+                            <h3>PLAYSTATION 5</h3>
+                        </div>
+                        <div class="info">
+                            <p class="price">$ 159.000</p>
+                            <p class="discount">12x $ 1.012,39 sin interés</p>
+                        </div>
+                    </div>
+                </a>
             </article>
         </section>
 
@@ -108,48 +143,80 @@
         <section class="productos">
             
             <article>
-                <img src="/images/consolas/ps4.jpg" alt="PS4">
-    
-                <div>
-                    <a href="#"><i class="far fa-heart"></i></a>
-    
-                    <h3>PLAYSTATION 4</h3>
-                    <p class="price">$ 59.000</p>
-                    <p class="discount">12x $ 1.012,39 sin interés</p>
-                </div>
+                <a href="#" class="a-article">
+                    <div class="contenedor-img">
+                        <img src="/images/consolas/ps4.jpg" alt="PS4">
+                    </div>  
+
+                    <div class="product-info">
+                        <button><i class="far fa-heart"></i></button>
+        
+                        <div class="title">
+                            <h3>PLAYSTATION 4</h3>
+                        </div>
+                        <div class="info">
+                            <p class="price">$ 59.000</p>
+                            <!-- <p class="discount">12x $ 1.012,39 sin interés</p> -->
+                        </div>
+                    </div>
+                </a>
             </article>
             <article class="producto-tablet">
-                <img src="/images/Pc/PC-Armada-Media-0026_600.jpg" alt="COMPUTADORA GAMA MEDIA">
-    
-                <div>
-                    <a href="#"><i class="far fa-heart"></i></a>
-    
-                    <h3>COMPUTADORA INTEL GAMA MEDIA</h3>
-                    <p class="price">$ 460.417</p>
-                    <p class="discount">24x $ 1.012,39 sin interés</p>
-                </div>
+                <a href="#" class="a-article">
+                    <div class="contenedor-img">
+                        <img src="/images/Pc/PC-Armada-Media-0026_600.jpg" alt="COMPUTADORA GAMA MEDIA">
+                    </div>
+
+                    <div class="product-info">
+                        <button><i class="far fa-heart"></i></button>
+        
+                        <div class="title">
+                            <h3>COMPUTADORA AMD GAMA MEDIA</h3>
+                        </div>
+                        <div class="info">
+                            <p class="price">$ 460.417</p>
+                            <p class="discount">24x $ 1.012,39 sin interés</p>
+                        </div>
+                    </div>
+                </a>
             </article>
             <article class="producto-desktop">
-                <img src="/images/consolas/ps4.jpg" alt="PS4">
-    
-                <div>
-                    <a href="#"><i class="far fa-heart"></i></a>
-    
-                    <h3>PLAYSTATION 4</h3>
-                    <p class="price">$ 59.000</p>
-                    <p class="discount">12x $ 1.012,39 sin interés</p>
-                </div>
+                <a href="#" class="a-article">
+                    <div class="contenedor-img">
+                        <img src="/images/juegos/juego-nintendo-switch--super-smash.jpg" alt="SMAHS BROSS">
+                    </div>
+
+                    <div class="product-info">
+                        <button><i class="far fa-heart"></i></button>
+        
+                        <div class="title">
+                            <h3>SMASH BROSS NINTENDO SWITCH</h3>
+                        </div>
+                        <div class="info">
+                            <p class="price">$ 3.560</p>
+                            <p class="discount">12x $ 1.012,39 sin interés</p>
+                        </div>
+                    </div>
+                </a>
             </article>
             <article class="producto-desktop">
-                <img src="/images/consolas/ps4.jpg" alt="PS4">
-    
-                <div>
-                    <a href="#"><i class="far fa-heart"></i></a>
-    
-                    <h3>PLAYSTATION 4</h3>
-                    <p class="price">$ 59.000</p>
-                    <p class="discount">12x $ 1.012,39 sin interés</p>
-                </div>
+                <a href="#" class="a-article">
+                    <div class="contenedor-img">
+                        <img src="/images/consolas/switch/nintendo.jpg" alt="SWITCH">
+                    </div>
+
+                    <div class="product-info">
+                        <button><i class="far fa-heart"></i></button>
+        
+                        <div class="title">
+                            <h3>NINTENDO SWITCH</h3>
+                        </div>
+                        <div class="info"> 
+                            <p class="price">$ 159.000</p>
+                            <p class="discount">12x $ 1.012,39 sin interés</p>
+                        </div>
+                    </div>
+                </a>
             </article>
         </section>
 
@@ -162,52 +229,86 @@
         <section class="productos">
 
             <article>
-                <img src="/images/Pc/pc-premire/pc-premire.jpg" alt="Pc de Edicion">
+                <a href="#" class="a-article">
+                    <div class="contenedor-img">
+                        <img src="/images/Pc/pc-premire/pc-premire.jpg" alt="Pc de Edicion">
+                    </div>
 
-                <div>
-                    <a href="#"><i class="far fa-heart"></i></a>
+                    <div class="product-info">
+                        <button><i class="far fa-heart"></i></button>
 
-                    <h3>COMPUTADORA PARA EDICION</h3>
-                    <p class="price">$ 560.000</p>
-                    <p class="discount">12x $ 1.012,39 sin interés</p>
-                </div>
+                        <div class="title">
+                            <h3>COMPUTADORA PARA EDICION</h3>
+                        </div>
+                        <div class="info">
+                            <p class="price">$ 560.000</p>
+                            <p class="discount">12x $ 1.012,39 sin interés</p>
+                        </div>
+                    </div>
+                </a>
             </article>
             <article class="producto-tablet">
-                <img src="/images/consolas/xbox-s.jpg" alt="XBOX ONE S">
+                <a href="#" class="a-article">
+                    <div class="contenedor-img">
+                        <img src="/images/consolas/xbox-s.jpg" alt="XBOX ONE S">
+                    </div>
 
-                <div>
-                    <a href="#"><i class="far fa-heart"></i></a>
+                    <div class="product-info">
+                        <button><i class="far fa-heart"></i></button>
 
-                    <h3>XBOX ONE S</h3>
-                    <p class="price">$ 59.000</p>
-                    <p class="discount">12x $ 1.012,39 sin interés</p>
-                </div>
+                        <div class="title">
+                            <h3>XBOX ONE S</h3>
+                        </div>
+                        <div class="info">
+                            <p class="price">$ 59.000</p>
+                            <p class="discount">12x $ 1.012,39 sin interés</p>
+                        </div>
+                    </div>
+                </a>
             </article>
             <article class="producto-desktop">
-                <img src="/images/Pc/pc-premire/pc-premire.jpg" alt="Pc de Edicion">
+                <a href="#" class="a-article">
+                    <div class="contenedor-img">
+                        <img src="/images/juegos/spiderman.jpg" alt="SPIDERMAN PS4">
+                    </div>
 
-                <div>
-                    <a href="#"><i class="far fa-heart"></i></a>
+                    <div class="product-info">
+                        <button><i class="far fa-heart"></i></button>
 
-                    <h3>COMPUTADORA PARA EDICION</h3>
-                    <p class="price">$ 560.000</p>
-                    <p class="discount">12x $ 1.012,39 sin interés</p>
-                </div>
+                        <div class="title">
+                            <h3>SPIDERMAN PS4</h3>
+                        </div>
+                        <div class="info">
+                            <p class="price">$ 3.560</p>
+                            <!-- <p class="discount">12x $ 1.012,39 sin interés</p> -->
+                        </div>
+                    </div>
+                </a>
             </article>
             <article class="producto-desktop">
-                <img src="/images/Pc/pc-premire/pc-premire.jpg" alt="Pc de Edicion">
+                <a href="#" class="a-article">
+                    <div class="contenedor-img">
+                        <img src="/images/juegos/callOfDuty-ps5.png" alt="COD PS5">
+                    </div>
 
-                <div>
-                    <a href="#"><i class="far fa-heart"></i></a>
+                    <div class="product-info">
+                        <button><i class="far fa-heart"></i></button>
 
-                    <h3>COMPUTADORA PARA EDICION</h3>
-                    <p class="price">$ 560.000</p>
-                    <p class="discount">12x $ 1.012,39 sin interés</p>
-                </div>
+                        <div class="title">
+                            <h3>COD COLD WAR PS5</h3>
+                        </div>
+                        <div class="info">
+                            <p class="price">$ 3.560</p>
+                            <p class="discount">12x $ 1.012,39 sin interés</p>
+                        </div>
+                    </div>
+                </a>
             </article>
         </section>
+    </div>
     </main>
     <footer>
+        <div class="contain-footer">
         <form>
             <h2>Recibe las mejores ofertas</h2>
 
@@ -253,6 +354,7 @@
             </ul>
             </div>
         </nav>
+        </div>
     </footer>
 </body>
 </html>

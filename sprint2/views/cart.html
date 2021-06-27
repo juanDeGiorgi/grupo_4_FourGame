@@ -13,27 +13,28 @@
 <body class="cart">
 
     <header>
-        <img src="/images/icon/Logo.png" alt="logo" class="logo">
+        <div class="contain-header">
+            <nav class="nav-1">
+                <img src="/images/icon/Logo.png" alt="logo" class="logo">
 
-        <button href="#" class="b-menu"><i class="fas fa-bars menu"></i></button>
-        
-        <form>
-            
-            <input type="text" placeholder="Buscar">
-            <button><i class="fas fa-search"></i></button>
-        </form>
-
-        <button class="user"><i class="fas fa-user-circle"></i></button>
-        <button class="i-cart"><i class="fas fa-shopping-cart"></i></button>
-
-
-        <nav>
-            <ul>
-                <li><a href="#">Productos</a></li>
-                <li><a href="#">Nosotros</a></li>
-                <li><a href="#">Contacto</a></li>
-            </ul>
-        </nav>
+                <button href="#" class="b-menu"><i class="fas fa-bars menu"></i></button>
+                
+                <form>
+                    
+                    <input type="text" placeholder="Buscar">
+                    <button><i class="fas fa-search"></i></button>
+                </form>
+                <button class="user"><i class="fas fa-user-circle"></i></button>
+                <button class="i-cart"><i class="fas fa-shopping-cart"></i></button>
+            </nav>
+            <nav class="nav-2">
+                <ul>
+                    <li><a href="#">Productos</a></li>
+                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     <main>
         <section>
@@ -52,6 +53,10 @@
                     <h3 class="descripcion">
                         Pc Gamer amd Ryzen 3 3100
                     </h3>
+                    <p class="cuotas">12x $ 1.012,39 sin interés</p>
+                    <button class="b-cuotas">
+                        Ver cuotas
+                    </button>
                     <p class="cantidad">Cantidad:</p> 
                     <button class="b-suma"><i class="fas fa-minus-circle"></i></button> 
                     <p class="n-cantidad">4</p> 
@@ -73,6 +78,11 @@
                     <h3 class="descripcion">
                         Pc Gamer amd Ryzen 3 3100
                     </h3>
+                    <p class="cuotas">12x $ 1.012,39 sin interés</p>
+                    <button 
+                    class="b-cuotas">
+                    <p>Ver cuotas</p>
+                    </button>
                     <p class="cantidad">Cantidad:</p> 
                     <button class="b-suma"><i class="fas fa-minus-circle"></i></button> 
                     <p class="n-cantidad">4</p> 
@@ -94,6 +104,11 @@
                     <h3 class="descripcion">
                         Pc Gamer amd Ryzen 3 3100
                     </h3>
+                    <p class="cuotas">12x $ 1.012,39 sin interés</p>
+                    <button 
+                    class="b-cuotas">
+                    <p>Ver cuotas</p>
+                    </button>
                     <p class="cantidad">Cantidad:</p> 
                     <button class="b-suma"><i class="fas fa-minus-circle"></i></button> 
                     <p class="n-cantidad">4</p> 
@@ -108,7 +123,7 @@
             <article>
                <div>
                 <i class="fas fa-truck"></i>
-                <p class="envio">Envio a:</p>
+                <p class="envio">Envio a :</p>
                 <p class="direccion">Calle falsa, N°123,Buenos aires</p>  
                 <button class="cambiar">Cambiar</button>
                </div> 
@@ -130,6 +145,7 @@
     </main>
 
     <footer>
+        <div class="contain-footer">
         <form>
             <h2>Recibe las mejores ofertas</h2>
 
@@ -175,7 +191,9 @@
             </ul>
             </div>
         </nav>
+        </div>
     </footer>
+
 </body>
 
 </html>

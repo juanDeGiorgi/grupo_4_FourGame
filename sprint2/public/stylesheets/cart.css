@@ -30,8 +30,15 @@
     font-size: 140%;
     position: absolute;
 }
-.cart main .descripcion{
+.cart main .descripcion {
     margin: 10% 0% 10% 0%;
+    font-size: 6vw;
+}
+.cart main .cuotas{
+    display: none;
+}
+.cart main .b-cuotas{
+    display: none;
 }
 .cart main .cantidad{
     margin: 10% 15% 10% 0%;
@@ -82,6 +89,7 @@
     font-size: 120%;
     font-weight: 600;
     text-shadow: 0px 5px 4px rgb(100 100 100 / 57%);
+    text-align: center;
 }
 
 /* tarjetas */
@@ -109,15 +117,149 @@
     font-size: 98%;
     padding: 8% 20% 8% 20%;
     font-weight: 600;
+    text-align:center
 }
 
 /* tablet */
-@media (min-width:768){
-
+@media (min-width:768px){
+    .cart main section .carrito{
+        font-size: 240%;
+    }
+    .cart main section .back{
+        font-size: 270%;
+    }
+    .cart main .eliminar{
+        font-size: 240%;
+    }
+    .cart main .descripcion{
+        font-size: 240%;
+    }
+    .cart main .cantidad {
+        margin: 0% 43% 10% 0%;
+        font-size: 240%;
+    }
+    .cart main .b-suma{
+        font-size: 240%;
+    }
+    .cart main .n-cantidad{
+        font-size: 240%;
+    }
+    .cart main .precio {
+        margin: 10% 39% 10% 0%;
+        font-size: 255%;
+    }
+    .cart main .p-cantidad {
+        font-size: 231%;
+    }
+    /* direccion tablet */
+    .cart main .fa-truck {
+        font-size: 640%;
+        display: flex;
+    }
+    .cart main .envio {
+        font-size: 165%;
+        position: absolute;
+        top: 25%;
+        left: 39%;
+    }
+    .cart main .direccion {
+        font-size: 165%;
+        position: absolute;
+        top: 37%;
+        left: 39%;
+    }
+    .cart main .cambiar {
+        font-size: 165%;
+        position: absolute;
+        top: 20%;
+        left: 40%;
+    }
+    /* finalizar compra */
+    .cart main article .tarjetas {
+        width: 50%;
+    }
+    .cart main article .contenedor-t {
+        width: 238%;
+        top: 11%;
+        left: -68%;
+    }
+    .cart main article .ahora12 {
+        width: 15%;
+        top: 68%;
+        left: 42%;
+    }
+    .cart main article .p-total{
+        font-size: 262%;
+    }
+    .cart main article .finalizar{
+        font-size: 198%;
+    }
 }
 
 
 /* escritorio */
-@media (min-width:1024){
-    
+@media (min-width:1024px){
+    .cart main section .carrito {
+        font-size: 360%;
+    }
+    .cart main section .back {
+        font-size: 570%;
+    }
+    .cart main img {
+        width: 20%;
+        position: absolute;
+        top: 35%;
+        left: 6%;
+    }
+    .cart main .eliminar {
+        font-size: 310%;
+        position: absolute;
+        top: 17%;
+        left: 92%;
+       }
+       .cart main .descripcion {
+        font-size: 240%;
+        margin: 12% -23% 15% 0%;
+    }
+    .cart main .cantidad {
+        margin: 0% 22% 11% 19%;
+        font-size: 240%;
+    }
+    .cart main .precio {
+        margin: 10% 12% 10% 12%;
+        font-size: 255%;
+    }
+    .cart main .cuotas {
+        color: #33CC33;
+        display: flex;
+        margin: -10% -1% 0% 30%;
+        font-size: 150%;
+    }
+    .cart main .b-cuotas {
+        color: #3D2ED0;
+        display: flex;
+        margin: 2% 0% 2% 30%;
+        font-size: 140%;
+    }
+    .cart main article .tarjetas {
+        width: 19%;
+    }
+    .cart main article .contenedor-t {
+        width: 438%;
+        display: inline-block;
+        margin: 0% 0% -17% 65%;
+    }
+    .cart main article .ahora12 {
+        width: 6%;
+        margin: 5% 0% 0% -29%;
+    }
+    .cart main article .p-total {
+        font-size: 262%;
+        margin: 69% 59% -27% 0%;
+    }
+    .cart main article .finalizar {
+        font-size: 123%;
+        margin: 12% -38% 0% 13%;
+    }
+   
 }

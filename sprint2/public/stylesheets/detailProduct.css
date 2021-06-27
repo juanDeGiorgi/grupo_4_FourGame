@@ -1,0 +1,568 @@
+
+.detail main{
+    width: 90%;
+    margin: auto;
+}
+
+
+/*  MAPA DEL SITIO  */
+
+.detail main .map{
+    color: #3D2ED0;
+    text-align: center;
+    margin: 33% 0% 0% 0%;
+    font-size: 4.8vw;
+}
+
+.detail main .map a{
+    color: #3D2ED0;
+
+}
+
+.detail main .map a:last-child{
+    font-weight: 700;
+}
+
+/*                   */
+
+.detail main .vista{
+    background-color: #ffffff;
+    margin: 3% 0% 0% 0%;
+    height: 235vw;
+    padding: 0px 20px 0px 20px;
+    border-radius: 20px;
+    position: relative;
+}
+
+.detail main .vista .vista-miniaturas{
+    display: none;
+}
+
+.detail main .vista .vista-img{
+    height: 40%;
+    width: 100%;
+    position: relative;
+}
+
+.detail main .vista .vista-img .fav {
+    position: absolute;
+    font-size: 10.8vw;
+    top: 5.3%;
+    right: -0.1%;
+}
+
+.detail main .vista .vista-img .fav:active{
+    color: red;
+
+}
+
+.detail main .vista .vista-img img{
+    /* width: 87%; */
+    width: 82.3%;
+    margin-top: 10vw;
+}
+
+.detail main .vista .vista-info{
+    height: 60%;
+    
+}
+
+.detail main .vista .vista-info h3{
+    font-size: 7vw;
+    margin:10px 0px;
+}
+
+.detail main .vista .vista-info .vendido{
+    color: #ffffff;
+    background-color: #3D2ED0;
+    border: 2px solid black;
+    width: 35vw;
+    font-size: 5vw;
+    text-align: center;
+}
+
+/*        PRECIO      */
+
+.detail main .vista .vista-info .price{
+    font-size: 10vw;
+    font-weight: 500;
+    display: inline-block;
+    margin: 10vw 0px 5vw;
+}
+
+.detail main .vista .vista-info .cart-add{
+    font-size: 10vw;
+    margin-left: 16vw;
+}
+
+/*                   */
+
+/*      CUOUTAS      */
+
+.detail main .vista .vista-info .t-cuotas{
+    color: #33CC33;
+    font-size: 5.4vw;
+    margin-bottom: 1vw;
+}   
+
+.detail main .vista .vista-info .b-cuotas{
+    display: block;
+    font-size: 6vw;
+    color: #3D2ED0;
+    font-weight: 500;
+    /* text-shadow: 0px 3px 3px #3e3e3eb9; */
+}
+
+/*                   */
+
+
+/*      ENVIOS       */
+
+.detail main .vista .vista-info .envios{
+    position: relative;
+    margin: 10vw 0;
+}
+
+.detail main .vista .vista-info .envios .fa-truck{
+    font-size: 12vw;
+    margin: 5vw 4.5vw 4vw 0;
+}
+
+.detail main .vista .vista-info .envios .t-envios{
+    display: inline-block;
+    font-weight: 700;
+    font-size: 6vw;
+    position: absolute;
+    top: 4vw;
+}
+
+.detail main .vista .vista-info .envios .b-envios{
+    font-size: 4.3vw;
+    color: #3D2ED0;
+    font-weight: 500;
+    position: absolute;
+    bottom: 4vw;
+}
+
+/*                   */
+
+/*     CANTIDAD      */
+
+.detail main .vista .vista-info .cantidad{
+    margin-bottom: 10vw;
+}
+
+.detail main .vista .vista-info .cantidad .t-cantidad{
+    display: inline-block;
+    font-weight: 700;
+    font-size: 5.4vw;
+}
+
+.detail main .vista .vista-info .cantidad button{
+    color: #F2204D;
+    font-size: 9vw;
+    margin: 0 3.6vw;
+}
+
+.detail main .vista .vista-info .cantidad .n-cantidad{
+    font-weight: 700;
+    font-size: 10vw;
+    display: inline-block;
+}
+
+/*                   */
+
+/*      COMPRAR      */
+
+.detail main .vista .vista-info .div-comprar{
+    text-align: center;
+}
+
+.detail main .vista .vista-info .b-comprar{
+    background-color: #F2204D;
+    color: #ffffff;
+    padding: 6px 0px;
+    font-size: 10vw;
+    border-radius: 25px;
+    width: 65vw;
+    margin: 5vw;
+}
+
+/*                   */
+
+/* SECTION COMENTARIOS */
+
+.detail main .comentarios{
+    background-color: #ffffff;
+    height: 40vw;
+    border-radius: 25px;
+    text-align: center;
+    margin: 7.2vw 0
+}
+
+.detail main .comentarios .div-stars .star{
+    font-size: 13vw;
+    padding: 5vw 0;
+}
+
+.detail main .comentarios .b-comentarios{
+    font-size: 7vw;
+    font-weight: 500;
+    color: #3D2ED0;
+}
+
+/*                      */
+
+/* SECTION DESCRIPCION Y ESPECIFICACIONES   */
+
+.detail main .info-detail{
+    background-color: #ffffff;
+    border-radius: 25px;
+    padding: 10px;
+}
+
+.detail main .info-detail .descripcion{
+    text-align: center;
+}
+
+.detail main .info-detail .descripcion p{
+    font-size: 7vw;
+}
+
+.detail main .info-detail .especificaciones .espec img{
+    width: 25%;
+    width: 25%;
+    margin-bottom: 5vw;
+}
+
+.detail main .info-detail .especificaciones .espec{
+    text-align: center;
+    margin: 10vw 0;
+}
+
+.detail main .info-detail .especificaciones .espec p{
+    font-size: 7vw;
+}
+
+    /*                          TABLET                            */
+
+@media (min-width:768px){
+
+    .detail main .map {
+        text-align: left;
+        font-size: 3vw;
+    }
+
+    .detail main .vista {
+        height: 179.2vw;
+    }
+
+    .detail main .vista .div-img-miniaturas{
+        display: flex;
+        padding: 4vw 1vw;
+    }
+
+    .detail main .vista .div-img-miniaturas .vista-miniaturas {
+        display: initial;
+        width: 12.3%;
+    }
+
+    .detail main .vista .div-img-miniaturas .vista-miniaturas img{
+        width: 100%;
+    }
+
+    .detail main .vista .vista-img {
+        height: 40%;
+        width: 76.8%;
+    }
+
+    .detail main .vista .vista-img img {
+        width: 69%;
+        margin-top: 0;
+    }
+
+    .detail main .vista .vista-img .fav {
+        top: -2%;
+        right: -0.1%;
+        font-size: 6.6vw;
+    }
+
+    .detail main .vista .vista-info {
+        width: 86.6%;
+        margin: auto;
+    }
+
+    .detail main .vista .vista-info h3 {
+        font-size: 5.7vw;
+    }
+
+    .detail main .vista .vista-info .vendido {
+        width: 22.7vw;
+        font-size: 3.4vw;
+    }
+
+    .detail main .vista .vista-info .price {
+        font-size: 7.6vw;
+        margin: 7.8vw 0px 5vw;
+    }
+
+    .detail main .vista .vista-info .cart-add {
+        font-size: 7.6vw;
+    }
+
+    .detail main .vista .vista-info .t-cuotas {
+        font-size: 4.1vw;
+    }
+
+    .detail main .vista .vista-info .b-cuotas {
+        font-size: 4.5vw;
+    }
+
+    .detail main .vista .vista-info .envios {
+        margin: 0vw 0;
+    }
+
+    .detail main .vista .vista-info .envios .fa-truck {
+        font-size: 8.8vw;
+    }
+
+    .detail main .vista .vista-info .envios .t-envios {
+        font-size: 4vw;
+    }
+
+    .detail main .vista .vista-info .envios .b-envios {
+        font-size: 3.4vw;
+    }
+
+    .detail main .vista .vista-info .cantidad .t-cantidad {
+        font-size: 4.6vw;
+    }
+
+    .detail main .vista .vista-info .cantidad button {
+        font-size: 7.6vw;
+        margin: 0 6vw;
+    }
+
+    .detail main .vista .vista-info .cantidad .n-cantidad {
+        font-size: 8.4vw;
+    }
+
+
+    /* SECTION COMENTARIOS */
+
+    .detail main .comentarios{
+        height: 27.5vw;
+    }
+
+    .detail main .comentarios .div-stars .star{
+        font-size: 13vw;
+        padding: 5vw 0;
+    }
+
+    .detail main .comentarios .b-comentarios{
+        font-size: 7vw;
+        font-weight: 500;
+        color: #3D2ED0;
+    }
+
+    /*                      */
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+   /* SECTION PRODUCTOS RELACIONADOS */
+
+.detail main h2{
+    color: #848484;
+    text-align: center;
+    margin: 10% 0% 5% 0%;
+    font-size: 8vw;
+}
+
+.detail main .decoracion{
+    background-color: #F77490;
+    color: #F77490;
+    width: 100%;
+    height: 10px;
+    border-radius: 20px;
+    margin: 0% 0% 7.8vw 0%;
+}
+
+.detail main section article a{
+    color: black;
+}
+
+.detail main section article{
+    background-color: #ffffff;
+    width: 80vw;
+    height: 131.3vw;
+    padding: 15px;
+    margin: auto;
+    box-shadow: 0px 0px 10px rgb(100,100,100);
+    position: relative;
+}
+
+.detail main section article i:active{
+    color: red;
+
+}
+
+.detail main section .contenedor-img {
+    height: 65.65vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.detail main section article .contenedor-img img{
+    width: 87%;
+}
+
+.detail main section article .product-info{
+    height: 65.65vw;
+    border-top: 1px solid #B2B2B2;
+}
+
+.detail main section article .title{
+    height: 26vw;
+}
+
+.detail main section article .info{
+    height: 26vw;
+}
+
+.detail main section article div button{
+    position: absolute;
+    font-size: 180%;
+    top: 5%;
+    right: 5%;
+    color: black;
+}
+
+.detail main section article div h3{
+    font-size: 6vw;
+    font-weight: 500;
+    text-align: center;
+    color: #3E3E3E;
+    color: #3E3E3E;
+    margin: 9vw 0% 10vw 0%;
+}
+
+.detail main section article div .price{
+    font-size: 10vw;
+    margin-bottom: 3%;
+}
+
+.detail main section article div .discount{
+    color: #33CC33;
+    font-size: 5vw;
+}
+
+.detail main .producto-tablet,.producto-desktop{
+    display: none;
+}
+
+
+
+
+               /*                          TABLET                            */
+
+@media (min-width:500px){
+    
+    .detail main h2 {
+        font-size: 5.2vw;
+        margin: 10% 0% 1vw 0%;
+    }
+
+    .detail main .productos {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .detail main .producto-tablet{
+        display: initial;
+    }
+
+    .detail main section article {
+        width: 40vw;
+        height: 70vw;
+    }
+
+    .detail main section .contenedor-img {
+        /* height: 32.65vw; */
+        height: 50%;
+    }
+
+    .detail main section article .product-info {
+        /* height: 32.65vw; */
+        height: 50%;
+    }
+
+    .detail main section article .title {
+        /* height: 16.3vw; */
+        height: 50%;
+    }
+
+    .detail main section article div h3 {
+        font-size: 2.8vw;
+        margin: 3vw 0% 8vw 0%;
+    }
+
+    .detail main section article .info {
+        /* height: 16.3vw; */
+        height: 50%;
+    }
+
+    .detail main section article div .price {
+        font-size: 5.7vw;
+    }
+
+    .detail main section article div .discount {
+        font-size: 2.7vw;
+    }
+
+}
+
+           /*                          DESKTOP                            */
+
+@media (min-width:960px){
+
+
+    .detail main .decoracion {
+        margin: 0% 0% 4vw 0%;
+    }
+
+    .detail main .producto-desktop{
+        display: initial;
+    }
+
+    .detail main section article {
+        width: 18vw;
+        height: 32.5vw;
+    }
+
+    .detail main section article div h3 {
+        font-size: 1.2vw;
+        margin: 1.4vw 0% 8vw 0%;
+    }
+
+    .detail main section article div .price {
+        font-size: 2.8vw;
+    }
+
+    .detail main section article div .discount {
+        font-size: 1.3vw;
+    }
+
+}

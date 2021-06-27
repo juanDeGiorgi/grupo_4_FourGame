@@ -98,7 +98,7 @@ header .nav-1{
         right: 20px;
     }
     
-    .home header .user,.i-cart{
+     header .user,.i-cart{
         display: initial;
         color: #ffffff;
         margin-left: 2.7%;
@@ -108,7 +108,7 @@ header .nav-1{
         bottom: 77px;
     }
     
-    .home header .nav-2{
+     header .nav-2{
         width: 100%;
         margin-top: -40px;
     }

@@ -104,6 +104,8 @@ header .nav-1{
         display: initial;
         color: #ffffff;
         margin-left: 2.7%;
+        position: relative;
+        bottom: 77px;
         font-size: 200%;
     }
     header .nav-2{

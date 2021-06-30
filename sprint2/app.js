@@ -11,7 +11,7 @@ app.get('/register', (req,res) => res.sendFile(path.join(__dirname, '/views','re
 app.get('/login', (req,res) => res.sendFile(path.join(__dirname, '/views','login.html')));
 app.get('/cart', (req,res) => res.sendFile(path.join(__dirname, '/views','cart.html')));
 app.get('/detail-product', (req,res) => res.sendFile(path.join(__dirname, '/views','detailProduct.html')));
-app.get('/product-loading', (req,res) => res.sendFile(path.join(__dirname, '/views','productLoding.html')));
+app.get('/product-loading', (req,res) => res.sendFile(path.join(__dirname, '/views','productLoading.html')));
 
 
 

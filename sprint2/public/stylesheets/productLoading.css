@@ -109,6 +109,7 @@
     text-align: left;
     background-color: #F2204D;
     color: white;
+    font-size: 5vw;
     border-radius: 40px;
     text-indent: 4%;
     font-weight: 500;
@@ -387,6 +388,7 @@ padding-left: 4%;
 .loading .segundo .div-form input{
     width: 20.9vw;
     height: 4vw;
+    font-size: 3vw;
 }
 .loading .segundo form {
     padding-top: 34%;

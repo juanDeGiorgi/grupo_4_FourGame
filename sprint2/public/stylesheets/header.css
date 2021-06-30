@@ -81,16 +81,16 @@ header .nav-1{
 
 @media (min-width:768px){
 
-    .home header .logo{
+    .loading header .logo{
         display: inline-block;
         width: 180px;
     }
     
-    .home header .b-menu{
+    .loading header .b-menu{
         display: none;
     }
     
-    .home header form{
+    .loading header form{
         margin: 0% 3% 5% 4%;
         width: 50%;
         position: relative;
@@ -98,7 +98,7 @@ header .nav-1{
         right: 20px;
     }
     
-    .home header .user,.i-cart{
+    .loading header .user,.cart{
         display: initial;
         color: #ffffff;
         margin-left: 2.7%;
@@ -108,23 +108,23 @@ header .nav-1{
         bottom: 77px;
     }
     
-    .home header .nav-2{
+    .loading header .nav-2{
         width: 100%;
         margin-top: -40px;
     }
     
-    .home header nav ul{
+    .loading header nav ul{
         display: inline-block;
         width: 100%;
         text-align: center;
     }
     
-    .home header nav ul li{
+    .loading header nav ul li{
         display: inline-block;
         margin: 0% 4% 3% 4%;
     }
     
-    .home header nav ul li a{
+    .loading header nav ul li a{
         color: #ffffff;
         font-size: 200%;
         font-weight: 700;

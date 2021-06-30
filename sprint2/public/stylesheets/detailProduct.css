@@ -460,6 +460,7 @@
 
     .detail main .vista .div-img-miniaturas .vista-miniaturas .b-miniatura{
         margin-bottom: 18.7px;
+        cursor: pointer;
     }
 
     .detail main .vista .div-img-miniaturas .vista-miniaturas .b-miniatura:hover{
@@ -484,6 +485,7 @@
         top: 3.7%;
         right: -4.9%;
         font-size: 3.8vw;
+        cursor: pointer;
     }
 
     /*     INFO DETALLADA DEL ART */
@@ -515,6 +517,7 @@
     .detail main .vista .vista-info .cart-add {
         font-size: 3.7vw;
         margin-left: 7.3vw;
+        cursor: pointer;
     }
 
     /*      CUOTAS           */
@@ -526,6 +529,7 @@
 
     .detail main .vista .vista-info .b-cuotas {
         font-size: 1.6vw;
+        cursor: pointer;
     }
 
     /*      ENVIOS          */
@@ -543,6 +547,7 @@
     .detail main .vista .vista-info .envios .b-envios {
         font-size: 1.5vw;
         bottom: 1vw;
+        cursor: pointer;
     }
 
     /*      CANTIDAD     */
@@ -559,6 +564,7 @@
     .detail main .vista .vista-info .cantidad button {
         font-size: 3.1vw;
         margin: 0 1.4vw;
+        cursor: pointer;
     }
 
     .detail main .vista .vista-info .cantidad .n-cantidad {
@@ -571,6 +577,7 @@
         font-size: 2.7vw;
         width: 18.9vw;
         margin: 3vw 0vw 0vw 0vw;
+        cursor: pointer;
     }
 
     /* SECTION COMENTARIOS */
@@ -591,10 +598,12 @@
     .detail main .comentarios .div-stars .star {
         font-size: 3.9vw;
         padding: 2.1vw 0.7vw;
+        cursor: pointer;
     }
 
     .detail main .comentarios .b-comentarios {
         font-size: 2.5vw;
+        cursor: pointer;
     }
 
     /* SECTION DESCRIPCION Y ESPECIFICACIONES   */

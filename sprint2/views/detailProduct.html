@@ -12,21 +12,23 @@
     <header>
         <div class="contain-header">
             <nav class="nav-1">
-                <img src="/images/icon/Logo.png" alt="logo" class="logo">
+                <a href="/" class="logo">
+                    <img src="/images/icon/Logo.png" alt="logo" >
+                </a>
 
-                <button href="#" class="b-menu"><i class="fas fa-bars menu"></i></button>
+                <button class="b-menu"><i class="fas fa-bars menu"></i></button>
                 
                 <form>
                     
-                    <input type="text" placeholder="Buscar">
-                    <button><i class="fas fa-search"></i></button>
+                    <input type="text" name="search" placeholder="Buscar">
+                    <button type="submit"><i class="fas fa-search"></i></button>
                 </form>
-                <button class="user"><i class="fas fa-user-circle"></i></button>
-                <button class="i-cart"><i class="fas fa-shopping-cart"></i></button>
+                <a href="/login" class="user"><i class="fas fa-user-circle"></i></a>
+                <a href="/cart" class="i-cart"><i class="fas fa-shopping-cart"></i></a>
             </nav>
             <nav class="nav-2">
                 <ul>
-                    <li><a href="#">Productos</a></li>
+                    <li><a href="/">Productos</a></li>
                     <li><a href="#">Nosotros</a></li>
                     <li><a href="#">Contacto</a></li>
                 </ul>
@@ -35,11 +37,11 @@
     </header>
     <main>
         <div class="map">
-            <a href="#">Inicio</a>
+            <a href="/">Inicio</a>
             <span> > </span>
-            <a href="#">Productos</a>
+            <a href="/">Productos</a>
             <span> > </span>
-            <a href="#">PC gama media AMD</a>
+            <a href="/detail-Product">PC gama media AMD</a>
         </div>
 
         <section class="vista">
@@ -146,7 +148,7 @@
 
         <section class="productos">
             <article>
-                <a href="#" class="a-article">
+                <a href="/detail-Product" class="a-article">
                     <div class="contenedor-img">
                         <img src="/images/juegos/resident-evil-village.jpg" alt="Resident evil Village">
                     </div>
@@ -165,7 +167,7 @@
                 </a>
             </article>
             <article class="producto-tablet">
-                <a href="#" class="a-article">
+                <a href="/detail-Product" class="a-article">
                     <div class="contenedor-img">
                         <img src="/images/Pc/pc photoshop/pc.jpg" alt="COMPUTADORA PHOTOSHOP">
                     </div>
@@ -184,7 +186,7 @@
                 </a>
             </article>
             <article class="producto-desktop">
-                <a href="#" class="a-article">
+                <a href="/detail-Product" class="a-article">
                     <div class="contenedor-img">
                         <img src="/images/consolas/ps4_slim/ps4.jpg" alt="PS4 SLIM">
                     </div>
@@ -203,7 +205,7 @@
                 </a>
             </article>
             <article class="producto-desktop">
-                <a href="#" class="a-article">
+                <a href="/detail-Product" class="a-article">
                     <div class="contenedor-img">
                         <img src="/images/consolas/ps5/ps5.jpg" alt="PS5">
                     </div>
@@ -226,7 +228,7 @@
     <footer>
         <div class="contain-footer">
         <form>
-            <h2>Recibe las mejores ofertas</h2>
+            <label>Recibe las mejores ofertas</label>
 
             <div class="email">
 

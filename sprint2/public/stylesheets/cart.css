@@ -14,6 +14,11 @@
 }
 .cart main section  .back{
     font-size: 200%;
+    text-shadow: 0px 5px 4px rgb(100 100 100 / 57%);
+}
+
+.cart main section  .back:active{
+    text-shadow: none;
 }
 /* producto */
 .cart main section article{
@@ -29,6 +34,10 @@
     left: 87%;
     font-size: 8vw;
     position: absolute;
+    text-shadow: 0px 5px 4px rgb(100 100 100 / 57%);
+}
+.cart main section .eliminar:active{
+    text-shadow: none;
 }
 .cart main section .descripcion {
     margin: 10% 1% 10% 0%;
@@ -39,6 +48,12 @@
 }
 .cart main section  .b-cuotas{
     display: none;
+}
+.cart main section  .b-cuotas:hover{
+    color: #6152e2;
+}
+.cart main section  .b-cuotas:active{
+    color: #897fe4;
 }
 .cart main section .d-cantidad{
     text-align: left;
@@ -53,6 +68,12 @@
     color: #F2204D;
     background-color: white;
     font-size: 8vw;
+}
+.cart main section .b-suma:hover{
+    color: #cc1a40;
+}
+.cart main section .b-suma:active{
+    color: #a81535;
 }
 .cart main section .n-cantidad {
     font-weight: 700;
@@ -95,8 +116,14 @@
     margin: 15% 0% 0% 0%;
     font-size: 5vw;
     font-weight: 600;
-    text-shadow: 0px 5px 4px rgb(100 100 100 / 57%);
+    /* text-shadow: 0px 5px 4px rgb(100 100 100 / 57%); */
     text-align: center;
+}
+.cart main section .cambiar:hover{
+    color: #6152e2;
+}
+.cart main section .cambiar:active{
+    color: #897fe4;
 }
 
 /* tarjetas */
@@ -128,6 +155,12 @@
     padding: 9% 22% 9% 22%;
     font-weight: 600;
     text-align: center;
+}
+.cart main section article .finalizar:hover{
+    background-color: #3021b9;
+}
+.cart main section article .finalizar:active{
+    background-color: #241a81;
 }
 
 /* tablet */
@@ -191,7 +224,7 @@
         left: 39%;
     }
     .cart main section .direccion {
-        font-size: 5vw;
+        font-size: 4.4vw;
         position: absolute;
         top: 37%;
         left: 39%;
@@ -331,8 +364,8 @@
         left: 48%;
     }
     .cart main section .cambiar {
-        font-size: 3vw;
-        margin: 6% -2% 0% -9%;
+        font-size: 2.7vw;
+        margin: 4.4% -2% 0% -9%;
         cursor: pointer;
     }
     .cart main section article .tarjetas-logo {

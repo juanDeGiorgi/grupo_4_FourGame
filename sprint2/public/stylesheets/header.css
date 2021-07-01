@@ -6,7 +6,7 @@ header{
     position: relative;
 }
 
-header .contain-header{
+header .c-header{
     width: 90%;
     margin: auto;
 }
@@ -16,6 +16,11 @@ header .logo{
     margin: auto;
     display: block;
     max-width: 190px;
+}
+
+header .logo img{
+    vertical-align: initial;
+    
 }
 
 header .b-menu{
@@ -30,7 +35,7 @@ header .b-menu{
 
 }
 
-header form{
+header .search{
     display: inline-block;
     margin: 0% 0% 5% 4%;
     width: 70%;
@@ -39,7 +44,7 @@ header form{
     border-radius: 30px;
 }
 
-header form input{
+header .search .search-bar{
     border: none;
     width: 100%;
     height: 100%;
@@ -50,15 +55,15 @@ header form input{
     font-size: 20px;
 }
 
-header form input:focus{
+header .search :focus{
     border-radius: 30px;
     outline: none;
 }
 
-header form button{
+header .search .search-icon,.b-menu{
     position: absolute;
-    top: 19%;
-    right: 3.5%;
+    top: 11.1%;
+    right: 3.8%;
     font-size: 20px;
     text-shadow: 0px 5px 4px rgba(100, 100, 100, 0.568);
     cursor: pointer;
@@ -68,7 +73,11 @@ header .user,.i-cart{
     display: none;
 }
 
-header nav ul{
+header .user,.i-cart:hover{
+    color: #ffffff;
+}
+
+header .nav-2 .ul-nav-2{
     display: none;
 }
 
@@ -84,53 +93,93 @@ header .nav-1{
 
     header .logo{
         display: inline-block;
-        width: 180px;
+        width: 111.61px;
+        margin-right: 5.4vw;
+    }
+
+    header .logo img {
+        width: 15vw;
     }
     
     header .b-menu{
         display: none;
     }
-    
-    header form{
-        margin: 0% 3% 5% 4%;
+
+    header .search {
+        margin: 0% 3% 6.8% 0%;
         width: 50%;
+        height: 5vw;
         position: relative;
-        bottom: 80px;
-        right: 20px;
+        bottom: 4.2vw;
+        right: 1.5vw;
     }
     
     header .user,.i-cart{
         display: initial;
         color: #ffffff;
-        margin-left: 2.7%;
+        margin-left: 2.1%;
+        margin-right: 0vw;
         position: relative;
-        bottom: 77px;
+        bottom: 3.9vw;
         font-size: 200%;
+        text-shadow: 0px 5px 4px rgb(100 100 100 / 57%);
     }
+
+    header .user:active,.i-cart:active{
+        text-shadow: none;
+    }
+
     header .nav-2{
         width: 100%;
         margin-top: -40px;
     }
     
-    header nav ul{
+    header .nav-2 .ul-nav-2{
         display: inline-block;
         width: 100%;
         text-align: center;
+        margin: 0%;
+        padding: 0%;
     }
     
-    header nav ul li{
+    header .nav-2 .ul-nav-2 li{
         display: inline-block;
-        margin: 0% 4% 3% 4%;
+        margin: 0% 2% 0.4vw 2%;
     }
-    
-    header nav ul li a{
+
+    header .nav-2 .ul-nav-2 li .item {
         color: #ffffff;
-        font-size: 200%;
+        font-size: 157.2%;
         font-weight: 700;
-        text-shadow: 0px 5px 4px rgba(100, 100, 100, 0.568);
+        text-shadow: 0px 5px 4px rgb(100 100 100 / 57%);
+        padding: 0.5vw 1vw 0 1vw;
+    }
+
+    header .nav-2 .ul-nav-2 li .item:hover{
+        background-color: #ff972f;
+        border-bottom: 5px solid white;
+        transition: all 50ms ease;
     }
 
 }
 
                /*                          DESKTOP                            */
 
+
+@media (min-width:1024px){
+
+    header .logo img{
+        width: 10.9vw;
+    }
+
+    header .search{
+        margin: 0% 3% 3.2% 0%;
+        height: 40px;
+    }
+
+    header .nav-2 .ul-nav-2 li .item{
+        font-size: 170%;
+    }
+
+}
+             

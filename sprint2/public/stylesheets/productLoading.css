@@ -33,30 +33,46 @@
     padding-bottom: 7%;
 }
 .loading h2{
-    padding: 20px 13px;
+    padding: 20px 19.6px;
     margin-bottom:  15px;
     font-size: 1em;
     text-align: center;
     font-weight: 700;
 }
 .loading .boton1, .boton2{   
-    width:50%;
+    width:100%;
     display: block; 
     color: rgb(255, 255, 255);
     background-color: #F2204D;
     border-radius: 40px;
     padding: 8px 18px;
     margin-bottom: 9%;
-    margin-left: 26%;
+    /* margin-left: 26%; */
     border: none;
     font-size: 1em;
     box-shadow: 0px 5px 12px -4px black;
-    text-shadow: 0px 5px 4px rgb(100 100 100 / 57%);
-   font-weight: bold;
+    font-weight: bold;
+    appearance: none;
+    outline: none;
 }
+
 .loading .botones{
     padding-bottom: 8%;
 }
+
+.loading .c-select{
+    width: 48vw;
+    margin: auto;
+    position: relative;
+}
+
+.loading .c-select i{
+    position: absolute;
+    color: white;
+    right: 3.7vw;
+    top: 9.9px;
+}
+
 .loading h3{
     color: #666;
     font-weight: 800;
@@ -94,6 +110,18 @@
     width: 14%;
 }
 
+.loading .c-img{
+    width: 14%;
+    color: #F2204D;
+}
+
+.loading .c-img:hover{
+    color: #9c1f38;
+}
+
+.loading .c-img  i{
+    font-size: 12.6vw;
+}
 
 .loading .segundo .div-form{
     text-align: center;
@@ -109,6 +137,7 @@
     text-align: left;
     background-color: #F2204D;
     color: white;
+    font-size: 5vw;
     border-radius: 40px;
     text-indent: 4%;
     font-weight: 500;
@@ -157,14 +186,13 @@ color: white }
     padding: 1px 1px;
 }
 .loading .description{
-    margin: 15% auto;
+    margin: 9% auto;
     width: 89%;
     height: 100%;
     display: block;
     background-color:#FEEFEF;
     border-radius: 10px;
-    text-indent: 5.4px;
-    padding-top: 10px;
+    padding: 10px;
     resize: none;
 }
 .loading .description .SiEncontrasteEsteEasterEgg{
@@ -184,7 +212,7 @@ color: white }
 
 .loading .SiEncontrasteEsteEasterEgg{
     /* Es porque estás corrigiendo bien el código XD */
-    margin: 20% 0%;
+    margin: 12.8% 0%;
 }
 .loading .contenedor-descripcion{
     height: 26vw;
@@ -203,13 +231,12 @@ color: white }
     left: 20%;
     width: 56.3%;
     background-color:#FEEFEF;
-    border-radius: 10px;
+    border-radius: 5.5px;
     border-color: rgba(47, 79, 79, 0.377);
     text-align: left;
     resize: none;
-    height: 13.2vw;
-    text-indent: 15px;
-    padding-top: 10px;
+    height: 17vw;
+    padding: 2px;
 }
 .loading textarea:focus {
     outline: none;
@@ -235,6 +262,15 @@ color: white }
     text-shadow: 2px 2px 7px rgba(0, 0, 0, 0.64);
     border: none;
     height: 14vw;
+    cursor: pointer;
+}
+
+.loading .finalizar:hover{
+    background-color: #3021b9;
+}
+
+.loading .finalizar:active{
+    background-color: #241a81;
 }
 
 .loading footer {
@@ -269,14 +305,21 @@ color: white }
 
 }
 
+.loading .c-select {
+    width: 45.5vw;
+}
+
 .loading .boton1, .boton2{   
-    width:40%;
     display: inline-block; 
     border-radius: 40px;
     padding: 8px 18px;
-    margin-bottom: -1%;
-    margin-left: 6%;
+    margin: 6.5% 0 5% 0;
     font-size: 2em;
+}
+
+.loading .c-select i {
+    top: 37.3px;
+    font-size: 3.9vw;
 }
 
 
@@ -295,6 +338,7 @@ color: white }
     display: inline-block;
     width: 80%;
 }
+
 .loading .cont-mini-pctablet{
 flex-direction: column;
 justify-content: space-between;
@@ -302,9 +346,18 @@ width: 19%;
 height: 400px;
 padding-left: 4%;
 }
+
 .loading .img-mini-tablet-pc{
     width: 60%;
     margin-top: 4%;
+}
+
+.loading .c-img {
+    width: 60%;
+}
+
+.loading .c-img i{
+    font-size: 7.8vw;
 }
 
 .loading .tercero h3{
@@ -326,14 +379,13 @@ padding-left: 4%;
 }
 .loading .titulocomponente {
     margin: -21.1% 9%;
+    padding: 7px;
 }
 
 .loading .description {
     margin: 5.1% auto;
     width: 89%;
     height: 100%;
-    text-indent: 15px;
-    padding-top: 10px;
     font-size: 2vw;
 }
 
@@ -357,10 +409,10 @@ padding-left: 4%;
     padding: 1% 0%;
     text-align: center;
 }
-    .loading h2 {
-        display: inline-block;
-        font-size: 1.44em;
-    }
+
+.loading h2 {
+    display: inline-block;
+}
 
 .loading .segundo{
     display: flex;
@@ -387,23 +439,25 @@ padding-left: 4%;
 .loading .segundo .div-form input{
     width: 20.9vw;
     height: 4vw;
+    font-size: 2vw;
 }
 .loading .segundo form {
     padding-top: 34%;
     margin-top: 0%;
 }
 
-
-.loading .boton1, .boton2 {
-    margin-bottom: -1%;
-    width: 19%;
-    margin-left: 2.6%;
-    font-size: 1.2em;
-
-
+.loading .c-select {
+    width: 36.5vw;
 }
 
+.loading .boton1, .boton2 {
+    width: 100%;
+    margin: 6.5% 0 7.2% 0;
+}
 
+.loading .c-img i{
+    font-size: 4.3vw;
+}
 
 .loading .tercero h3{
     padding: 5% 0% 1% 0;
@@ -412,9 +466,14 @@ padding-left: 4%;
 }
 
 .loading .description input {
-    
-height: 40vh;
+    height: 40vh;
 }
+
+.loading .titulocomponente {
+    padding: 10px;
+    font-size: 2vw;
+}
+
 .loading .finalizar {
     width: 32.7vw;
     height: 7.5vw;

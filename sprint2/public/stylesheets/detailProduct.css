@@ -19,6 +19,14 @@
 
 }
 
+.detail main .map a:hover{
+    color: #6152e2;
+}
+
+.detail main .map a:active{
+    color: #897fe4;
+}
+
 .detail main .map a:last-child{
     font-weight: 700;
 }
@@ -95,6 +103,14 @@
     margin-left: 16vw;
 }
 
+.detail main .vista .vista-info .cart-add:hover{
+    color: rgb(43, 42, 42);
+}
+
+.detail main .vista .vista-info .cart-add:active{
+    color: rgb(61, 60, 60);
+}
+
 /*                   */
 
 /*      CUOUTAS      */
@@ -110,7 +126,14 @@
     font-size: 6vw;
     color: #3D2ED0;
     font-weight: 500;
-    /* text-shadow: 0px 3px 3px #3e3e3eb9; */
+}
+
+.detail main .vista .vista-info .b-cuotas:hover{
+    color: #6152e2;
+}
+
+.detail main .vista .vista-info .b-cuotas:active{
+    color: #897fe4;
 }
 
 /*                   */
@@ -144,6 +167,14 @@
     bottom: 4vw;
 }
 
+.detail main .vista .vista-info .envios .b-envios:hover{
+    color: #6152e2;
+}
+
+.detail main .vista .vista-info .envios .b-envios:active{
+    color: #897fe4;
+}
+
 /*                   */
 
 /*     CANTIDAD      */
@@ -162,6 +193,15 @@
     color: #F2204D;
     font-size: 9vw;
     margin: 0 3.6vw;
+}
+
+
+.detail main .vista .vista-info .cantidad button:hover{
+    color: #cc1a40;
+}
+
+.detail main .vista .vista-info .cantidad button:active{
+    color: #a81535;
 }
 
 .detail main .vista .vista-info .cantidad .n-cantidad{
@@ -185,7 +225,15 @@
     font-size: 10vw;
     border-radius: 25px;
     width: 65vw;
-    margin: 5vw;
+    margin: -4.2vw;
+}
+
+.detail main .vista .vista-info .b-comprar:hover{
+    background-color: #cc1a40;
+}
+
+.detail main .vista .vista-info .b-comprar:active{
+    background-color: #a81535;
 }
 
 /*                   */
@@ -209,6 +257,14 @@
     font-size: 7vw;
     font-weight: 500;
     color: #3D2ED0;
+}
+
+.detail main .comentarios .b-comentarios:hover{
+    color: #6152e2;
+}
+
+.detail main .comentarios .b-comentarios:active{
+    color: #897fe4;
 }
 
 /*                      */
@@ -383,7 +439,7 @@
     .detail main .vista .vista-info .b-comprar {
         font-size: 7.3vw;
         width: 44.1vw;
-        margin: 0%;
+        margin: -8.8%;
     }
 
 
@@ -576,7 +632,7 @@
     .detail main .vista .vista-info .b-comprar {
         font-size: 2.7vw;
         width: 18.9vw;
-        margin: 3vw 0vw 0vw 0vw;
+        margin: 0.8vw 0vw 0vw 0vw;
         cursor: pointer;
     }
 

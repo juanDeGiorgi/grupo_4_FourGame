@@ -6,7 +6,7 @@ header{
     position: relative;
 }
 
-header .contain-header{
+header .c-header{
     width: 90%;
     margin: auto;
 }
@@ -18,28 +18,33 @@ header .logo{
     max-width: 190px;
 }
 
+header .logo img{
+    vertical-align: initial;
+    
+}
+
 header .b-menu{
     display: inline-block;
     position: relative;
     top: 7px;
     /* left: 10px; */
-    margin: 0% 6% 0% 5%;
+    margin: 0% 0% 0% 5%;
     color: white;
     font-size: 250%;
     text-shadow: 0px 5px 4px rgba(100, 100, 100, 0.568);
 
 }
 
-header form{
+header .search{
     display: inline-block;
-    margin: 0% 0% 5% 4%;
+    margin: 0% 0% 5.9% 4%;
     width: 70%;
     height: 40px;
     position: relative;
     border-radius: 30px;
 }
 
-header form input{
+header .search .search-bar{
     border: none;
     width: 100%;
     height: 100%;
@@ -50,15 +55,15 @@ header form input{
     font-size: 20px;
 }
 
-header form input:focus{
+header .search :focus{
     border-radius: 30px;
     outline: none;
 }
 
-header form button{
+header .search .search-icon,.b-menu{
     position: absolute;
-    top: 19%;
-    right: 3.5%;
+    top: 17%;
+    right: 3.8%;
     font-size: 20px;
     text-shadow: 0px 5px 4px rgba(100, 100, 100, 0.568);
     cursor: pointer;
@@ -68,13 +73,125 @@ header .user,.i-cart{
     display: none;
 }
 
-header nav ul{
+header .user,.i-cart:hover{
+    color: #ffffff;
+}
+
+header .nav-2 .ul-nav-2{
     display: none;
 }
 
 header .nav-1{
     text-align: center;
     position: relative;
+}
+
+ /*----------------------------------    BOOSTRAP    ------------------------------------------*/
+
+    header .btn-productos{
+        background: none;
+        line-height: initial;
+        border: none;
+        vertical-align: initial;
+        border-radius: initial;
+        display: initial;
+    }
+
+    header .btn-productos::after{
+        content: none;
+    }
+
+    header .btn-productos:hover + .dropdown-menu.show:hover{
+        border: none;
+        display: block;
+    }
+
+    header .btn-productos:active{
+        border: none;
+        background: none;
+        box-shadow: none;
+    }
+
+    .btn-check:active+.btn-secondary:focus, .btn-check:checked+.btn-secondary:focus, .btn-secondary.active:focus, .btn-secondary:active:focus, .show>.btn-secondary.dropdown-toggle:focus {
+        box-shadow: none;
+    }
+
+    header .btn-productos:focus{
+        border: none;
+        background: none;
+        box-shadow: none;
+    }
+
+    header .nav-2 .ul-nav-2 .dropdown .item-productos{
+        width: 100%;
+        margin: 0;
+    }
+
+    .btn-secondary:hover {
+        color: #fff;
+        background: none;
+        border: none;
+    }
+
+    .dropdown-item:focus, .dropdown-item:hover {
+        color: #1e2125;
+        background-color: #e9ecef;
+        color: rgb(61, 46, 208);
+        font-weight: 700;
+    }
+
+    /*----------------------------------    MENU TELEFONO    ------------------------------------------*/
+
+    .btn-close{
+        font-size: 10vw;
+    }
+
+    .btn-close:focus {
+        outline: 0;
+        box-shadow: 0 0 0 0.25rem #3e2ed08a;
+        opacity: 1;
+    }
+
+    .btn-primary{
+        padding: 0;
+        font-size: 12.4vw;
+        text-shadow: 0px 5px 4px rgb(100 100 100 / 57%);
+        margin-bottom: 4.2px;
+        background:none;
+        border: none;
+    }
+
+    .btn-primary:hover{
+        box-shadow: none;
+        background:none;
+        border: none;
+    }
+
+    .btn-primary:active{
+        box-shadow: none;
+        background:none;
+        border: none;
+    }
+
+    .btn-primary:focus,.dropdown-toggle:focus{
+        box-shadow: none;
+        background:none;
+        border: none;
+    }
+
+    .btn-check:active+.btn-primary:focus, .btn-check:checked+.btn-primary:focus, .btn-primary.active:focus, .btn-primary:active:focus, .show>.btn-primary.dropdown-toggle:focus {
+        box-shadow: none;
+        background:none;
+        border: none;
+    }
+
+    /*----------------------------------    MENU TELEFONO    ------------------------------------------*/
+
+
+/*----------------------------------    BOOSTRAP    ------------------------------------------*/
+
+header .c-header .nav-1 .c-user-cart{
+    display: none;
 }
 
 
@@ -85,53 +202,96 @@ header .nav-1{
 
     header .logo{
         display: inline-block;
-        width: 180px;
+        width: 111.61px;
+        margin-right: 5.4vw;
+    }
+
+    header .logo img {
+        width: 15vw;
     }
     
-    header .b-menu{
+    header .c-header .nav-1 .btn-primary{
         display: none;
     }
-    
-    header form{
-        margin: 0% 3% 5% 4%;
+
+    header .search {
+        margin: 0% 3% 6.8% 0%;
         width: 50%;
+        height: 5vw;
         position: relative;
-        bottom: 80px;
-        right: 20px;
+        bottom: 4.2vw;
+        right: 1.5vw;
     }
 
     header .user,.i-cart{
         display: initial;
         color: #ffffff;
-        margin-left: 2.7%;
-        position: relative;
-        bottom: 77px;
+        margin-left: 2.1%;
+        margin-right: 0vw;
+        /* position: relative; */
+        bottom: 3.9vw;
         font-size: 200%;
+        text-shadow: 0px 5px 4px rgb(100 100 100 / 57%);
     }
+
     header .nav-2{
         width: 100%;
         margin-top: -40px;
     }
     
-    header nav ul{
+    header .nav-2 .ul-nav-2{
         display: inline-block;
         width: 100%;
         text-align: center;
+        margin: 0%;
+        padding: 0%;
     }
     
-    header nav ul li{
+    header .nav-2 .ul-nav-2 li{
         display: inline-block;
-        margin: 0% 4% 3% 4%;
+        margin: 0% 2% 0.4vw 2%;
     }
-    
-    header nav ul li a{
+
+    header .nav-2 .ul-nav-2 li .item {
         color: #ffffff;
-        font-size: 200%;
+        font-size: 157.2%;
         font-weight: 700;
-        text-shadow: 0px 5px 4px rgba(100, 100, 100, 0.568);
+        text-shadow: 0px 5px 4px rgb(100 100 100 / 57%);
+        padding: 0.5vw 1vw 0 1vw;
+    }
+
+    header .nav-2 .ul-nav-2 li .item:hover{
+        background-color: #ff972f;
+        border-bottom: 5px solid white;
+        transition: all 60ms ease;
+    }
+
+    header .c-header .nav-1 .c-user-cart{
+        display: inline;
+        position: relative;
+        bottom: 3.8vw;
     }
 
 }
 
                /*                          DESKTOP                            */
 
+
+@media (min-width:1024px){
+
+    header .logo img{
+        width: 10.9vw;
+    }
+
+    header .search{
+        margin: 0% 3% 3.2% 0%;
+        height: 40px;
+    }
+
+    header .nav-2 .ul-nav-2 li .item{
+        font-size: 170%;
+    }
+
+
+}
+             

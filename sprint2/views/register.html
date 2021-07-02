@@ -5,33 +5,67 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- JQUERY Y BOOSTRAP -->
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- JQUERY Y BOOSTRAP -->
+
     <link rel="stylesheet" href="/stylesheets/styles.css">
     <script src="https://kit.fontawesome.com/b29d4baab6.js" crossorigin="anonymous"></script>
-    <title>carrito</title>
+    <title>registro</title>
 </head>
 
 <body class="register">
-
     <header>
-        <div class="contain-header">
+        <div class="c-header">
             <nav class="nav-1">
-                <img src="/images/icon/Logo.png" alt="logo" class="logo">
+                <a href="/" class="logo">
+                    <img src="/images/icon/Logo.png" alt="logo" >
+                </a>
 
-                <button href="#" class="b-menu"><i class="fas fa-bars menu"></i></button>
-
-                <form>
-
-                    <input type="text" placeholder="Buscar">
-                    <button><i class="fas fa-search"></i></button>
+                <button class="b-menu"><i class="fas fa-bars menu"></i></button>
+                <form class="search">
+                    
+                    <input class="search-bar" type="text" name="search" placeholder="Buscar">
+                    <button class="search-icon" type="submit"><i class="fas fa-search"></i></button>
                 </form>
-                <button class="user"><i class="fas fa-user-circle"></i></button>
-                <button class="i-cart"><i class="fas fa-shopping-cart"></i></button>
+                    <div class="c-user-cart">
+                        <div class="dropdown" style="display: inline-block;">
+                            <a class="btn btn-secondary dropdown-toggle item btn-productos user" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-user-circle"></i>
+                            </a>
+                        
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">iniciar sesion</a></li>
+                            <li><a class="dropdown-item" href="/register">registrarse</a></li>
+                            <li><a class="dropdown-item" href="/product-loading">cargar producto</a></li>
+                            </ul>
+                        </div>
+                        <a href="/cart" class="i-cart"><i class="fas fa-shopping-cart"></i></a>
+                    </div>
             </nav>
             <nav class="nav-2">
-                <ul>
-                    <li><a href="#">Productos</a></li>
-                    <li><a href="#">Nosotros</a></li>
-                    <li><a href="#">Contacto</a></li>
+                <ul class="ul-nav-2">
+                    <li>
+                    <!----------------------------------    BOOSTRAP    ------------------------------------------>
+
+                        <div class="dropdown">
+                            <a class="btn btn-secondary dropdown-toggle item btn-productos" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                              Productos
+                            </a>
+                          
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                              <li class="item-productos"><a class="dropdown-item" href="#">Consolas</a></li>
+                              <li class="item-productos"><a class="dropdown-item" href="#">Pc armadas</a></li>
+                              <li class="item-productos"><a class="dropdown-item" href="#">Juegos</a></li>
+                            </ul>
+                        </div>
+
+                     <!----------------------------------    BOOSTRAP    ------------------------------------------>    
+                    </li>
+                    <li><a href="#" class="item">Nosotros</a></li>
+                    <li><a href="#" class="item">Contacto</a></li>
                 </ul>
             </nav>
         </div>
@@ -48,19 +82,19 @@
             <i class="fas fa-user-circle"></i>
             <h2>Crear cuenta</h2>   
             
-                <input class="campos" type="text" name="Nombre" placeholder="Nombre">
-                <input class="campos"type="email" name="Email" placeholder="E-mail">
-                <input class="campos"type="password" name="Contraseña" placeholder="Contraseña">
-                <input class="campos"type="password" name="Confirmar" placeholder="Confirmar contraseña">
+                <input class="campos" type="text" name="Nombre" placeholder="Nombre" required>
+                <input class="campos" type="email" name="Email" placeholder="E-mail" required>
+                <input class="campos" type="password" name="Contraseña" placeholder="Contraseña" required>
+                <input class="campos" type="password" name="Confirmar" placeholder="Confirmar contraseña" required>
                 <div class="c-captcha">
-                    <input class="check" type="checkbox" name="captcha" id="captcha">
+                    <input class="check" type="checkbox" name="captcha" id="captcha" required>
                     <label for="captcha">No soy un robot</label>
                 </div>
                 <button type="submit">Crear cuenta</button>
                 <span>  ¿ya tenes cuenta? </span>
                 <a class="login" href="/login">Iniciar sesión</a>
-                <p class="condiciones">Al crear una cuenta, acepta los <a class="terminos" href="">términos y condiciones</a> 
-                    de uso de FourGame</p>
+                <p class="condiciones">Al crear una cuenta, acepta los <span class="terminos" href="">términos y condiciones</span> 
+                de uso de FourGame</p>
         </form>
     </main>
     <footer>
@@ -120,5 +154,22 @@
             </nav>
         </div>
     </footer>
+     <!-------------------  JQUERY BOTON DESPLEGABLE   --------------------->
+    <script>
+        $(document).ready(function(){
+        $(".dropdown").hover(            
+        function() {
+            $('.dropdown-menu', this).not('.in .dropdown-menu').stop( true, true ).slideDown("fast");
+            $(this).toggleClass('open');        
+        },
+        function() {
+            $('.dropdown-menu', this).not('.in .dropdown-menu').stop( true, true ).slideUp("fast");
+            $(this).toggleClass('open');       
+            }
+           );
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -37,7 +37,7 @@ header .b-menu{
 
 header .search{
     display: inline-block;
-    margin: 0% 0% 5% 4%;
+    margin: 0% 0% 5.9% 4%;
     width: 70%;
     height: 40px;
     position: relative;
@@ -85,7 +85,113 @@ header .nav-1{
     text-align: center;
 }
 
+ /*----------------------------------    BOOSTRAP    ------------------------------------------*/
 
+    header .btn-productos{
+        background: none;
+        line-height: initial;
+        border: none;
+        vertical-align: initial;
+        border-radius: initial;
+        display: initial;
+    }
+
+    header .btn-productos::after{
+        content: none;
+    }
+
+    header .btn-productos:hover + .dropdown-menu.show:hover{
+        border: none;
+        display: block;
+    }
+
+    header .btn-productos:active{
+        border: none;
+        background: none;
+        box-shadow: none;
+    }
+
+    .btn-check:active+.btn-secondary:focus, .btn-check:checked+.btn-secondary:focus, .btn-secondary.active:focus, .btn-secondary:active:focus, .show>.btn-secondary.dropdown-toggle:focus {
+        box-shadow: none;
+    }
+
+    header .btn-productos:focus{
+        border: none;
+        background: none;
+        box-shadow: none;
+    }
+
+    header .nav-2 .ul-nav-2 .dropdown .item-productos{
+        width: 100%;
+        margin: 0;
+    }
+
+    .btn-secondary:hover {
+        color: #fff;
+        background: none;
+        border: none;
+    }
+
+    .dropdown-item:focus, .dropdown-item:hover {
+        color: #1e2125;
+        background-color: #e9ecef;
+        color: rgb(61, 46, 208);
+        font-weight: 700;
+    }
+
+    /*----------------------------------    MENU TELEFONO    ------------------------------------------*/
+
+    .btn-close{
+        font-size: 10vw;
+    }
+
+    .btn-close:focus {
+        outline: 0;
+        box-shadow: 0 0 0 0.25rem #3e2ed08a;
+        opacity: 1;
+    }
+
+    .btn-primary{
+        padding: 0;
+        font-size: 12.4vw;
+        text-shadow: 0px 5px 4px rgb(100 100 100 / 57%);
+        margin-bottom: 4.2px;
+        background:none;
+        border: none;
+    }
+
+    .btn-primary:hover{
+        box-shadow: none;
+        background:none;
+        border: none;
+    }
+
+    .btn-primary:active{
+        box-shadow: none;
+        background:none;
+        border: none;
+    }
+
+    .btn-primary:focus,.dropdown-toggle:focus{
+        box-shadow: none;
+        background:none;
+        border: none;
+    }
+
+    .btn-check:active+.btn-primary:focus, .btn-check:checked+.btn-primary:focus, .btn-primary.active:focus, .btn-primary:active:focus, .show>.btn-primary.dropdown-toggle:focus {
+        box-shadow: none;
+        background:none;
+        border: none;
+    }
+
+    /*----------------------------------    MENU TELEFONO    ------------------------------------------*/
+
+
+/*----------------------------------    BOOSTRAP    ------------------------------------------*/
+
+header .c-header .nav-1 .c-user-cart{
+    display: none;
+}
 
 
                /*                          TABLET                            */
@@ -103,7 +209,7 @@ header .nav-1{
         width: 15vw;
     }
     
-    header .b-menu{
+    header .c-header .nav-1 .btn-primary{
         display: none;
     }
 
@@ -121,14 +227,10 @@ header .nav-1{
         color: #ffffff;
         margin-left: 2.1%;
         margin-right: 0vw;
-        position: relative;
+        /* position: relative; */
         bottom: 3.9vw;
         font-size: 200%;
         text-shadow: 0px 5px 4px rgb(100 100 100 / 57%);
-    }
-
-    header .user:active,.i-cart:active{
-        text-shadow: none;
     }
 
     header .nav-2{
@@ -163,53 +265,11 @@ header .nav-1{
         transition: all 60ms ease;
     }
 
-     /*----------------------------------    BOOSTRAP    ------------------------------------------*/
-
-     header .btn-productos{
-        background: none;
-        line-height: initial;
-        border: none;
-        vertical-align: initial;
-        border-radius: initial;
-        display: initial;
+    header .c-header .nav-1 .c-user-cart{
+        display: inline;
+        position: relative;
+        bottom: 3.8vw;
     }
-
-    header .btn-productos::after{
-        content: none;
-    }
-
-    header .btn-productos:hover + .dropdown-menu.show:hover{
-        border: none;
-        display: block;
-    }
-
-    header .btn-productos:active{
-        border: none;
-        background: none;
-        box-shadow: none;
-    }
-
-    .btn-check:active+.btn-secondary:focus, .btn-check:checked+.btn-secondary:focus, .btn-secondary.active:focus, .btn-secondary:active:focus, .show>.btn-secondary.dropdown-toggle:focus {
-        box-shadow: none;
-    }
-
-    header .btn-productos:focus{
-        border: none;
-        background: none;
-        box-shadow: none;
-        background-color: #ff972f;
-        border-bottom: 5px solid white;
-        transition: all 60ms ease;
-    }
-
-    header .nav-2 .ul-nav-2 .dropdown .item-productos{
-        width: 100%;
-        margin: 0;
-    }
-
-
-    /*----------------------------------    BOOSTRAP    ------------------------------------------*/
-
 
 }
 
@@ -231,26 +291,6 @@ header .nav-1{
         font-size: 170%;
     }
 
-    /* header .nav-2 .ul-nav-2 li .submenu{
-        display: none;
-        position: absolute;
-        z-index: 1;
-        padding: 0;
-        background-color: white;
-        box-shadow: 3px 10px 10px rgba(0,0,0,0.2);
-    } */
-
-    /* header .nav-2 .ul-nav-2 li a:hover + .submenu:hover{
-        display: block;
-    } */
-    
-    /* header .nav-2 .ul-nav-2 li .submenu li{
-        display: block;
-    } */
-
-    /* header ul li a:hover + ul, header .nav-2 .ul-nav-2 li  .submenu:hover{
-        display: block;
-    }  */
 
 }
              

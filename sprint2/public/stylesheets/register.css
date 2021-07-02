@@ -5,11 +5,11 @@
     .register main .ruta{
     font-weight: 700;
     }
-.register main a, span, p {
+    .register main .c-ruta a,.register main .c-ruta span,.register main p {
     color: #3D2ED0;
     margin-top: 10vw;
     }
-.register main .terminos, .login{
+    .register main .terminos, .login{
     text-shadow: 0px 5px 4px rgb(100 100 100 / 57%);
     font-weight: 700;
     }
@@ -42,9 +42,15 @@
     border: none;
     box-shadow: 0px 5px 12px -4px black;
     height: 12vw;
+    color: #ffffff;
     }
 .register main form input::placeholder{
     color: #D1BABA;
+    }
+
+    .register main form input:focus {
+        outline: none;
+        border: 2px solid #3D2ED0;
     }
 .register main form .c-captcha{
     margin: 15% auto;
@@ -70,17 +76,18 @@
     color: white;
     height: 16vw;
     padding: 2vw 9vw 5vw 5vw;
-    margin: 0vw 0vw 6vw 4vw;
+    margin: 0vw 0vw 6vw 0.7vw;
     }
 .register main form span {
     font-size: 5vw;
-    margin: 0vw 2vw 0vw 0vw;
     }
 .register main form .login{
     font-size: 5vw;
+    color: #3D2ED0;
     }
 .register main form .terminos{
     font-weight: 700;
+    color: #3D2ED0;
     }
 
 .register main form .condiciones{
@@ -136,39 +143,44 @@
     }  
     @media (min-width:1024px){
     .register main .c-ruta {
-        margin: 4vw 0vw 18vw 6vw;
+        margin: 8.9vw 0vw 9.8vw 6vw;
         font-size: 1.8vw;
     }
     .register main form {
-       width: 50%;
+        width: 39.8%;
+        padding: 0vw 4vw 2.8vw 4vw;
     }
     .register main form i {
-        margin: -9vw 0vw 0vw 0vw;
-        font-size: 16vw;
+        margin: -8.2vw 0vw 0vw 0vw;
+        font-size: 13.7vw;
     }    
     .register main form h2 {
-        font-size: 5vw;
+        font-size: 4.5vw;
+        margin: 0vw 0vw 6.6vw 0vw;
     }
     .register main form .campos {
         font-size: 2.5vw;
         height: 4vw;
+        margin: 0vw 0vw 4.1vw 0vw;
     }
     .register main form .c-captcha {
-        margin: 0% 0% 20% 25%;
-        width: 51%;
-        height: 6vw;
+        margin: 0% auto 20% auto;
+        width: 23vw;
+        height: 7.3vw;
     }
     .register main form .c-captcha label {
         margin: 9% -2% 0% 8%;
         font-size: 2vw;
     }
     .register main form .c-captcha .check {
-        height: 6vw;
+        height: 6.9vw;
     }
     .register main form button {
         font-size: 3vw;
         width: 25vw;
-        margin: 0vw 10vw 5vw 8.5vw;
+        padding: 0;
+        height: 6.9vw;
+        margin: 0vw 8vw 5vw 3.5vw;
     }
     .register main form span{
         font-size: 2vw;

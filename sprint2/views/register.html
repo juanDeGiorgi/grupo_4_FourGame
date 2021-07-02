@@ -24,31 +24,105 @@
                     <img src="/images/icon/Logo.png" alt="logo" >
                 </a>
 
-                <button class="b-menu"><i class="fas fa-bars menu"></i></button>
+                <!----------------------------------    BOOSTRAP MENU TELEFONO  ------------------------------------------>
+
+                <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample"><i class="fas fa-bars menu"></i></a>
+                  
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasExampleLabel"></h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body" style="text-align: left;">
+                    <div>
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    Mi cuenta
+                                    <i class="fas fa-user-circle icon-b-acordion"></i>  
+                                </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <a class="dropdown-item" href="/login">Iniciar sesión</a>
+                                    <a class="dropdown-item" href="/register">Registrarse</a>
+                                    <a class="dropdown-item" href="/product-loading">Cargar producto</a>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <a href="/cart" class="accordion-button collapsed no-acordion" type="button">
+                                        Carrito<i class="fas fa-shopping-cart icon-b-acordion"></i>
+                                    </a>
+                                </h2>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Productos
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <a class="dropdown-item" href="#">Consolas</a>
+                                        <a class="dropdown-item" href="#">Pc armadas</a>
+                                        <a class="dropdown-item" href="#">Juegos</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingFour">
+                                    <a href="#" class="accordion-button collapsed no-acordion" type="button">
+                                        Nosotros
+                                    </a>
+                                </h2>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingFive">
+                                    <a href="#" class="accordion-button collapsed no-acordion" type="button">
+                                        Contacto
+                                    </a>
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+                <!----------------------------------    BOOSTRAP   MENU TELEFONO ------------------------------------------>
+
                 <form class="search">
                     
                     <input class="search-bar" type="text" name="search" placeholder="Buscar">
                     <button class="search-icon" type="submit"><i class="fas fa-search"></i></button>
                 </form>
-                    <div class="c-user-cart">
-                        <div class="dropdown" style="display: inline-block;">
-                            <a class="btn btn-secondary dropdown-toggle item btn-productos user" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fas fa-user-circle"></i>
-                            </a>
-                        
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">iniciar sesion</a></li>
-                            <li><a class="dropdown-item" href="/register">registrarse</a></li>
-                            <li><a class="dropdown-item" href="/product-loading">cargar producto</a></li>
-                            </ul>
-                        </div>
-                        <a href="/cart" class="i-cart"><i class="fas fa-shopping-cart"></i></a>
+                <div class="c-user-cart">
+
+                <!----------------------------------    BOOSTRAP DESPLEGABLE USER Y CART   ------------------------------------------>
+
+                    <div class="dropdown" style="display: inline-block;">
+                        <a class="btn btn-secondary dropdown-toggle item btn-productos user" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user-circle"></i>
+                        </a>
+                    
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li><a class="dropdown-item" href="/login">Iniciar sesion</a></li>
+                        <li><a class="dropdown-item" href="/register">Registrarse</a></li>
+                        <li><a class="dropdown-item" href="/product-loading">Cargar producto</a></li>
+                        </ul>
                     </div>
+                    <a href="/cart" class="i-cart"><i class="fas fa-shopping-cart"></i></a>
+
+                <!----------------------------------    BOOSTRAP  DESPLEGABLE USER Y CART  ------------------------------------------>
+
+                </div>
             </nav>
             <nav class="nav-2">
                 <ul class="ul-nav-2">
                     <li>
-                    <!----------------------------------    BOOSTRAP    ------------------------------------------>
+                    <!----------------------------------    BOOSTRAP DESPLEGABLE PRODUCTOS   ------------------------------------------>
 
                         <div class="dropdown">
                             <a class="btn btn-secondary dropdown-toggle item btn-productos" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
@@ -62,7 +136,7 @@
                             </ul>
                         </div>
 
-                     <!----------------------------------    BOOSTRAP    ------------------------------------------>    
+                     <!----------------------------------    BOOSTRAP DESPLEGABLE PRODUCTOS   ------------------------------------------>    
                     </li>
                     <li><a href="#" class="item">Nosotros</a></li>
                     <li><a href="#" class="item">Contacto</a></li>
@@ -92,60 +166,47 @@
                 </div>
                 <button type="submit">Crear cuenta</button>
                 <span>  ¿ya tenes cuenta? </span>
-                <a class="login" href="/login">Iniciar sesión</a>
+                <a class="b-login" href="/login">Iniciar sesión</a>
                 <p class="condiciones">Al crear una cuenta, acepta los <span class="terminos" href="">términos y condiciones</span> 
                 de uso de FourGame</p>
         </form>
     </main>
     <footer>
         <div class="contain-footer">
-            <form>
-                <h2>Recibe las mejores ofertas</h2>
+            <form action="" method="">
+                <h2 class="t-ofertas">Recibe las mejores ofertas</h2>
 
                 <div class="email">
-
                     <i><img src="/images/icon/mail.svg" alt="Email"></i>
-
-                    <input type="email" placeholder="Email">
-
+                    <input type="email" name="email" placeholder="Email" required>
                 </div>
 
-                <button>Suscribirse</button>
+                <button type="submit">Suscribirse</button>
             </form>
-
-            <nav>
+            <nav> 
                 <div>
                     <ul>
-                        <li>
-                            <h3>Navegacion</h3>
-                        </li>
+                        <li><h3 class="t-ul">Navegacion</h3></li>
                         <li><a href="">Inicio</a></li>
                         <li><a href="">Productos</a></li>
                         <li><a href="">Nosotros</a></li>
                     </ul>
-
                     <ul class="ul-medios">
-                        <li>
-                            <h3>Medios de Pago</h3>
-                        </li>
+                        <li><h3 class="t-ul">Medios de Pago</h3></li>
                         <li><a href="">Transferencia</a></li>
                         <li><a href="">Credito y Debito</a></li>
                         <li><a href="">Efectivo</a></li>
                     </ul>
                 </div>
                 <div class="div-redes">
-                    <ul>
-                        <li>
-                            <h3>Contacto</h3>
-                        </li>
+                    <ul >
+                        <li><h3 class="t-ul">Contacto</h3></li>
                         <li><a href="">persona@gmail.com</a></li>
                         <li><a href="">administrador@gmail.com</a></li>
                     </ul>
 
                     <ul class="ul-redes">
-                        <li>
-                            <h3>Redes</h3>
-                        </li>
+                        <li><h3 class="t-ul">Redes</h3></li>
                         <li><a href="">Facebook</a></li>
                         <li><a href="">Instagram</a></li>
                         <li><a href="">Twitter</a></li>

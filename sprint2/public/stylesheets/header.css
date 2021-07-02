@@ -83,62 +83,11 @@ header .nav-2 .ul-nav-2{
 
 header .nav-1{
     text-align: center;
-    position: relative;
 }
 
  /*----------------------------------    BOOSTRAP    ------------------------------------------*/
 
-    header .btn-productos{
-        background: none;
-        line-height: initial;
-        border: none;
-        vertical-align: initial;
-        border-radius: initial;
-        display: initial;
-    }
-
-    header .btn-productos::after{
-        content: none;
-    }
-
-    header .btn-productos:hover + .dropdown-menu.show:hover{
-        border: none;
-        display: block;
-    }
-
-    header .btn-productos:active{
-        border: none;
-        background: none;
-        box-shadow: none;
-    }
-
-    .btn-check:active+.btn-secondary:focus, .btn-check:checked+.btn-secondary:focus, .btn-secondary.active:focus, .btn-secondary:active:focus, .show>.btn-secondary.dropdown-toggle:focus {
-        box-shadow: none;
-    }
-
-    header .btn-productos:focus{
-        border: none;
-        background: none;
-        box-shadow: none;
-    }
-
-    header .nav-2 .ul-nav-2 .dropdown .item-productos{
-        width: 100%;
-        margin: 0;
-    }
-
-    .btn-secondary:hover {
-        color: #fff;
-        background: none;
-        border: none;
-    }
-
-    .dropdown-item:focus, .dropdown-item:hover {
-        color: #1e2125;
-        background-color: #e9ecef;
-        color: rgb(61, 46, 208);
-        font-weight: 700;
-    }
+    
 
     /*----------------------------------    MENU TELEFONO    ------------------------------------------*/
 
@@ -148,15 +97,17 @@ header .nav-1{
 
     .btn-close:focus {
         outline: 0;
-        box-shadow: 0 0 0 0.25rem #3e2ed08a;
+        box-shadow: 0 0 0 0.25rem rgb(61, 46,208,25%);
         opacity: 1;
     }
 
     .btn-primary{
         padding: 0;
-        font-size: 12.4vw;
+        font-size: 40px;
+        width: 40px;
+        height: 40px;
         text-shadow: 0px 5px 4px rgb(100 100 100 / 57%);
-        margin-bottom: 4.2px;
+        margin-bottom: 24px;
         background:none;
         border: none;
     }
@@ -183,6 +134,53 @@ header .nav-1{
         box-shadow: none;
         background:none;
         border: none;
+    }
+
+    .no-acordion::after{
+        background-image: none;
+    }
+
+    .accordion-button{
+        font-size: 7vw;
+        font-weight: 500;
+        background-image: none;
+
+    }
+
+    .accordion-button:focus {
+        border-color: #3D2ED0;
+    }
+
+    .accordion-button:hover{
+        border-color: none;
+        box-shadow: inset 0 -1px 0 rgb(0 0 0 / 13%);
+        background-color: #3D2ED0;
+        color: white;
+    }
+
+    .accordion-button:not(.collapsed)::after {
+        background-image: none;
+        
+    }
+
+    .accordion-button:not(.collapsed) {
+        color: white;
+        background-color: #3D2ED0;
+        box-shadow: inset 0 -1px 0 rgb(0 0 0 / 13%);
+    }
+
+    header .accordion-body{
+        background-color: gainsboro;
+        padding: 1rem 0rem;
+    }
+
+    header .nav-1 .offcanvas-body .accordion .accordion-item .accordion-header .icon-b-acordion{
+        margin-left: 8vw;
+    }
+
+     header .nav-1 offcanvas-body .dropdown-item{
+        font-size: 6vw;
+        padding: 2vw 3vw;
     }
 
     /*----------------------------------    MENU TELEFONO    ------------------------------------------*/
@@ -271,6 +269,64 @@ header .c-header .nav-1 .c-user-cart{
         position: relative;
         bottom: 3.8vw;
     }
+
+    /*----------------------------------    BOOSTRAP    ------------------------------------------*/
+
+        header .btn-productos{
+            background: none;
+            line-height: initial;
+            border: none;
+            vertical-align: initial;
+            border-radius: initial;
+            display: initial;
+        }
+
+        header .btn-productos::after{
+            content: none;
+        }
+
+        header .btn-productos:hover + .dropdown-menu.show:hover{
+            border: none;
+            display: block;
+        }
+
+        header .btn-productos:active{
+            border: none;
+            background: none;
+            box-shadow: none;
+        }
+
+        .btn-check:active+.btn-secondary:focus, .btn-check:checked+.btn-secondary:focus, .btn-secondary.active:focus, .btn-secondary:active:focus, .show>.btn-secondary.dropdown-toggle:focus {
+            box-shadow: none;
+        }
+
+        header .btn-productos:focus{
+            border: none;
+            background: none;
+            box-shadow: none;
+        }
+
+        header .nav-2 .ul-nav-2 .dropdown .item-productos{
+            width: 100%;
+            margin: 0;
+        }
+
+        .btn-secondary:hover {
+            color: #fff;
+            background: none;
+            border: none;
+        }
+
+        .dropdown-item:focus, .dropdown-item:hover {
+            color: #1e2125;
+            background-color: #e9ecef;
+            color: rgb(61, 46, 208);
+            font-weight: 700;
+        }
+
+
+    /*----------------------------------    BOOSTRAP    ------------------------------------------*/
+
 
 }
 

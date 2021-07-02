@@ -21,28 +21,32 @@
 
 
 
-.login .ruta{
+.login main .ruta{
     width: 100%;
     height: 16vw;
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
-    font-size: 3.4vw;
+    font-size: 4.8vw;
     font-weight: 500;
     padding-left: 5%;
     color: #3D2ED0;
 
 }
 
+.login main .ruta a{
+    color: #3D2ED0;
+}
+
 .login .ruta .a-posicion{
     font-weight: 700;
-    font-size: 2.8vw;
+    font-size: 4.9vw;
 }
 .login .ruta span{
     margin: 0% 0.5%;
 }
 
-.login .fa-user-circle{
+.login .item-user{
     position: absolute;
     top: -7.32%;
     display: flex;
@@ -73,6 +77,15 @@
 
 }
 
+.login .sesioninit::placeholder{
+    color: gainsboro;
+}
+
+.login .sesioninit:focus{
+    outline: none;
+    border: 2px solid #3D2ED0;
+}
+
 .login .captcha{
     margin: 10% auto;
     display: flex;
@@ -80,14 +93,16 @@
     width: 80%;
     height: 19vw;
     justify-content: center;
+    align-items: center;
 }
-.login .captcha span {
+.login .captcha label {
     margin: 8% 5%;
     font-size: 6vw;
     font-weight: 600;
 }
 .login .captcha input{
     width: 9%;
+    height: 100%;
 }
 .login .enter{
     color: white;
@@ -98,7 +113,6 @@
     text-align: center;
     font-weight: bold;
     box-shadow: 0px 5px 12px -4px black;
-    text-shadow: 2px 2px 7px rgba(0, 0, 0, 0.64);
     border: none;
     height: 14vw;
     border-radius: 40px;
@@ -109,13 +123,14 @@
     text-align: center;
 }
 .login .notenescuenta h4{
-    font-size: 3.5vw;
+    font-size: 4.5vw;
     display: inline-block;
     color: #3D2ED0;
 }
 .login .notenescuenta a{
-    font-size: 4vw;
+    font-size: 5vw;
     font-weight: 700;
+    color: #3D2ED0;
 }
 
 
@@ -136,7 +151,7 @@
 .login .ruta{
     font-size: 2.4vw;
 }
-.login .fa-user-circle{
+.login .item-user{
     top: -11.32%;
 }
 .login h1{
@@ -154,8 +169,8 @@
     height: 13vw;
 }
 
-.login .captcha span{
-    font-size: 2.6vw;
+.login .captcha label{
+    font-size: 3.2vw;
     margin: 10.95% 5%;
 }
 .login .enter {
@@ -164,7 +179,9 @@
     font-size: 2em;
 }
 .login .captcha input{
-    margin: 6% 1% 10% 3%;
+    margin: 10.6% 1% 10% 3%;
+    width: 12.5%;
+    height: 100%;
 }
 .login .notenescuenta h4{
     font-size: 2.5vw;
@@ -182,6 +199,11 @@
 
 @media (min-width:1024px){
     
+.login main .ruta{
+    height: 10vw;
+    font-size: 1.8vw;    
+}
+
 .login main .contenedorlogin {
         width: 40vw;
         margin: 7% auto;
@@ -189,7 +211,7 @@
 .login main .contenedorlogin {
     height: 63vw;
 }
-.login .fa-user-circle{
+.login .item-user{
     font-size: 10vw;
     top: -10%;
 }
@@ -200,7 +222,7 @@
 .login .sesioninit {
     height: 4vw;
     font-size: 3vw;
-    width: 60%;
+    width: 30vw;
     margin: 6% auto;
 }
 .login .captcha {
@@ -209,7 +231,7 @@
     margin: 7% auto;
 }
 
-.login .captcha span {
+.login .captcha label {
     font-size: 1.6vw;
 }
 
@@ -217,20 +239,20 @@
     width: 50%;
     height: 5vw;
     font-size: 1.4em;
-    margin: 4% auto;
+    margin: 4% auto 10% auto;
 }
 .login .notenescuenta h4 {
-    font-size: 1.5vw;
+    font-size: 2vw;
 }
 
 .login .notenescuenta a {
-    font-size: 1.6vw;
+    font-size: 2.3vw;
 }
 .login .ruta {
     font-size: 1.4vw;
     height: 7vw;
 }
 .login .ruta .a-posicion {
-    font-size: 1.8vw;
+    font-size: 2vw;
 }
 }

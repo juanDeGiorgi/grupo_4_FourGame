@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+    <script src="https://kit.fontawesome.com/b29d4baab6.js" crossorigin="anonymous"></script>
+    <title>carrito</title>
+</head>
+
+<body class="register">
+
+    <header>
+        <div class="contain-header">
+            <nav class="nav-1">
+                <img src="/images/icon/Logo.png" alt="logo" class="logo">
+
+                <button href="#" class="b-menu"><i class="fas fa-bars menu"></i></button>
+
+                <form>
+
+                    <input type="text" placeholder="Buscar">
+                    <button><i class="fas fa-search"></i></button>
+                </form>
+                <button class="user"><i class="fas fa-user-circle"></i></button>
+                <button class="i-cart"><i class="fas fa-shopping-cart"></i></button>
+            </nav>
+            <nav class="nav-2">
+                <ul>
+                    <li><a href="#">Productos</a></li>
+                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="c-ruta">
+            <a href="/">Inicio</a>
+            <span>></span>
+            <a href="/login">Iniciar Sesión</a>
+            <span>></span>
+            <a class="ruta" href="/register">Crear cuenta</a>
+        </div>
+        <form>
+            <i class="fas fa-user-circle"></i>
+            <h2>Crear cuenta</h2>   
+            
+                <input class="campos" type="text" name="Nombre" placeholder="Nombre">
+                <input class="campos"type="email" name="Email" placeholder="E-mail">
+                <input class="campos"type="password" name="Contraseña" placeholder="Contraseña">
+                <input class="campos"type="password" name="Confirmar" placeholder="Confirmar contraseña">
+                <div class="c-captcha">
+                    <input class="check" type="checkbox" name="captcha" id="captcha">
+                    <label for="captcha">No soy un robot</label>
+                </div>
+                <button type="submit">Crear cuenta</button>
+                <span>  ¿ya tenes cuenta? </span>
+                <a class="login" href="/login">Iniciar sesión</a>
+                <p class="condiciones">Al crear una cuenta, acepta los <a class="terminos" href="">términos y condiciones</a> 
+                    de uso de FourGame</p>
+        </form>
+    </main>
+    <footer>
+        <div class="contain-footer">
+            <form>
+                <h2>Recibe las mejores ofertas</h2>
+
+                <div class="email">
+
+                    <i><img src="/images/icon/mail.svg" alt="Email"></i>
+
+                    <input type="email" placeholder="Email">
+
+                </div>
+
+                <button>Suscribirse</button>
+            </form>
+
+            <nav>
+                <div>
+                    <ul>
+                        <li>
+                            <h3>Navegacion</h3>
+                        </li>
+                        <li><a href="">Inicio</a></li>
+                        <li><a href="">Productos</a></li>
+                        <li><a href="">Nosotros</a></li>
+                    </ul>
+
+                    <ul class="ul-medios">
+                        <li>
+                            <h3>Medios de Pago</h3>
+                        </li>
+                        <li><a href="">Transferencia</a></li>
+                        <li><a href="">Credito y Debito</a></li>
+                        <li><a href="">Efectivo</a></li>
+                    </ul>
+                </div>
+                <div class="div-redes">
+                    <ul>
+                        <li>
+                            <h3>Contacto</h3>
+                        </li>
+                        <li><a href="">persona@gmail.com</a></li>
+                        <li><a href="">administrador@gmail.com</a></li>
+                    </ul>
+
+                    <ul class="ul-redes">
+                        <li>
+                            <h3>Redes</h3>
+                        </li>
+                        <li><a href="">Facebook</a></li>
+                        <li><a href="">Instagram</a></li>
+                        <li><a href="">Twitter</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>

@@ -28,7 +28,7 @@ header .b-menu{
     position: relative;
     top: 7px;
     /* left: 10px; */
-    margin: 0% 6% 0% 5%;
+    margin: 0% 0% 0% 5%;
     color: white;
     font-size: 250%;
     text-shadow: 0px 5px 4px rgba(100, 100, 100, 0.568);
@@ -62,7 +62,7 @@ header .search :focus{
 
 header .search .search-icon,.b-menu{
     position: absolute;
-    top: 11.1%;
+    top: 17%;
     right: 3.8%;
     font-size: 20px;
     text-shadow: 0px 5px 4px rgba(100, 100, 100, 0.568);
@@ -84,6 +84,8 @@ header .nav-2 .ul-nav-2{
 header .nav-1{
     text-align: center;
 }
+
+
 
 
                /*                          TABLET                            */
@@ -158,8 +160,56 @@ header .nav-1{
     header .nav-2 .ul-nav-2 li .item:hover{
         background-color: #ff972f;
         border-bottom: 5px solid white;
-        transition: all 50ms ease;
+        transition: all 60ms ease;
     }
+
+     /*----------------------------------    BOOSTRAP    ------------------------------------------*/
+
+     header .btn-productos{
+        background: none;
+        line-height: initial;
+        border: none;
+        vertical-align: initial;
+        border-radius: initial;
+        display: initial;
+    }
+
+    header .btn-productos::after{
+        content: none;
+    }
+
+    header .btn-productos:hover + .dropdown-menu.show:hover{
+        border: none;
+        display: block;
+    }
+
+    header .btn-productos:active{
+        border: none;
+        background: none;
+        box-shadow: none;
+    }
+
+    .btn-check:active+.btn-secondary:focus, .btn-check:checked+.btn-secondary:focus, .btn-secondary.active:focus, .btn-secondary:active:focus, .show>.btn-secondary.dropdown-toggle:focus {
+        box-shadow: none;
+    }
+
+    header .btn-productos:focus{
+        border: none;
+        background: none;
+        box-shadow: none;
+        background-color: #ff972f;
+        border-bottom: 5px solid white;
+        transition: all 60ms ease;
+    }
+
+    header .nav-2 .ul-nav-2 .dropdown .item-productos{
+        width: 100%;
+        margin: 0;
+    }
+
+
+    /*----------------------------------    BOOSTRAP    ------------------------------------------*/
+
 
 }
 
@@ -180,6 +230,27 @@ header .nav-1{
     header .nav-2 .ul-nav-2 li .item{
         font-size: 170%;
     }
+
+    /* header .nav-2 .ul-nav-2 li .submenu{
+        display: none;
+        position: absolute;
+        z-index: 1;
+        padding: 0;
+        background-color: white;
+        box-shadow: 3px 10px 10px rgba(0,0,0,0.2);
+    } */
+
+    /* header .nav-2 .ul-nav-2 li a:hover + .submenu:hover{
+        display: block;
+    } */
+    
+    /* header .nav-2 .ul-nav-2 li .submenu li{
+        display: block;
+    } */
+
+    /* header ul li a:hover + ul, header .nav-2 .ul-nav-2 li  .submenu:hover{
+        display: block;
+    }  */
 
 }
              

@@ -98,10 +98,10 @@
                     <input class="search-bar" type="text" name="search" placeholder="Buscar">
                     <button class="search-icon" type="submit"><i class="fas fa-search"></i></button>
                 </form>
-                <div class="c-user-cart">
-
+                
                 <!----------------------------------    BOOSTRAP DESPLEGABLE USER Y CART   ------------------------------------------>
-
+                
+                <div class="c-user-cart">
                     <div class="dropdown" style="display: inline-block;">
                         <a class="btn btn-secondary dropdown-toggle item btn-productos user" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fas fa-user-circle"></i>
@@ -110,14 +110,15 @@
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         <li><a class="dropdown-item" href="/login">Iniciar sesion</a></li>
                         <li><a class="dropdown-item" href="/register">Registrarse</a></li>
+                        <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="/product-loading">Cargar producto</a></li>
                         </ul>
                     </div>
                     <a href="/cart" class="i-cart"><i class="fas fa-shopping-cart"></i></a>
+                </div>
 
                 <!----------------------------------    BOOSTRAP  DESPLEGABLE USER Y CART  ------------------------------------------>
 
-                </div>
             </nav>
             <nav class="nav-2">
                 <ul class="ul-nav-2">
@@ -303,22 +304,6 @@
             </nav>
         </div>
     </footer>
-    <!-------------------  JQUERY BOTON DESPLEGABLE   --------------------->
-    <script>
-        $(document).ready(function(){
-        $(".dropdown").hover(            
-        function() {
-            $('.dropdown-menu', this).not('.in .dropdown-menu').stop( true, true ).slideDown("fast");
-            $(this).toggleClass('open');        
-        },
-        function() {
-            $('.dropdown-menu', this).not('.in .dropdown-menu').stop( true, true ).slideUp("fast");
-            $(this).toggleClass('open');       
-            }
-           );
-        });
-    </script>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -74,7 +74,13 @@
         margin: auto;
         box-shadow: 0px 0px 10px rgb(100,100,100);
         position: relative;
+        cursor: pointer;
     }
+
+    .home main article:hover{
+        box-shadow: 0px 0px 20px #3D2ED0;
+    }
+
     
     .home main section article i:active{
         color: red;

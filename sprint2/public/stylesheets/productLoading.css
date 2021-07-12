@@ -32,7 +32,7 @@
     margin: 15% 5% 10% 5%;
     padding-bottom: 7%;
 }
-.loading h2{
+.loading main .contenedor .primero .elige{
     padding: 20px 19.6px;
     margin-bottom:  15px;
     font-size: 1em;
@@ -286,6 +286,11 @@ color: white }
  @media (min-width:768px){
 
 
+    .loading main .contenedor .primero .elige {
+        font-size: 4vw;
+    }
+
+
     .loading header .cart{
         display: initial;
     }   
@@ -378,7 +383,7 @@ padding-left: 4%;
 
 }
 .loading .titulocomponente {
-    margin: -21.1% 9%;
+    margin: -23% 9%;
     padding: 7px;
 }
 
@@ -410,7 +415,7 @@ padding-left: 4%;
     text-align: center;
 }
 
-.loading h2 {
+.loading main .contenedor .primero .elige {
     display: inline-block;
 }
 

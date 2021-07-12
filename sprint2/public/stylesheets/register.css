@@ -1,6 +1,7 @@
     .register main .c-ruta {
     margin: 11vw 0vw 20vw 3vw;
-    font-size: 3.5vw;
+    font-size: 4.8vw;
+    font-weight: 500;
     }
     .register main .ruta{
     font-weight: 700;
@@ -9,10 +10,12 @@
     color: #3D2ED0;
     margin-top: 10vw;
     }
-    .register main .terminos, .login{
-    text-shadow: 0px 5px 4px rgb(100 100 100 / 57%);
+    .register main .terminos,.register .b-login{
     font-weight: 700;
+    color: #3D2ED0;
+
     }
+    
 .register main form{
     background-color: white;
     text-align: center;
@@ -43,9 +46,10 @@
     box-shadow: 0px 5px 12px -4px black;
     height: 12vw;
     color: #ffffff;
+    width: 80vw;
     }
 .register main form input::placeholder{
-    color: #D1BABA;
+    color: gainsboro;
     }
 
     .register main form input:focus {
@@ -77,9 +81,12 @@
     height: 16vw;
     padding: 2vw 9vw 5vw 5vw;
     margin: 0vw 0vw 6vw 0.7vw;
+    width: 71vw;
     }
 .register main form span {
     font-size: 5vw;
+    color: #3D2ED0;
+
     }
 .register main form .login{
     font-size: 5vw;
@@ -96,9 +103,12 @@
     text-shadow: none;
     }       
 
+
+
+
 @media (min-width:768px){
     .register main .c-ruta {
-        font-size: 4w;
+        font-size: 3.1vw;
     }
     .register main form {
         width: 65%;  
@@ -113,9 +123,10 @@
     .register main form .campos {
         font-size: 4vw;
         height: 6vw;
+        width: 50vw;
     }
     .register main form .c-captcha {
-        margin: 0% 0% 20% 23%;
+        margin: 0% 0% 20% 19.6%;
         width: 60%;
         height: 10vw;
     }
@@ -129,8 +140,9 @@
     .register main form button {
         font-size: 4vw;
         height: 10vw;
+        width: 40vw;
         padding: 0vw 4vw 0vw 4vw;
-        margin: 0vw 10vw 4vw 13vw;
+        margin: 0vw 10vw 4vw 7vw;
     }
      .register main form span {
     font-size: 3vw;
@@ -141,6 +153,9 @@
     .register main form .condiciones{
     font-size: 3vw;
     }  
+
+
+
     @media (min-width:1024px){
     .register main .c-ruta {
         margin: 8.9vw 0vw 9.8vw 6vw;
@@ -162,6 +177,7 @@
         font-size: 2.5vw;
         height: 4vw;
         margin: 0vw 0vw 4.1vw 0vw;
+        width: 30vw;
     }
     .register main form .c-captcha {
         margin: 0% auto 20% auto;
@@ -186,6 +202,11 @@
         font-size: 2vw;
         margin: 0vw 1vw 0vw 0vw;
     }
+
+    .register main .terminos, .register .b-login {
+        font-size: 2.3vw;
+    }
+
     .register main form .login {
         font-size: 2vw;
     }

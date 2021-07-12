@@ -90,14 +90,14 @@
     width: 9%;
 }
 .login .enter{
-    color: white;
+    color: rgb(255, 255, 255);
     width: 63vw;
     font-size: 1.4em;
     background-color: #3D2ED0;
     margin: 7% auto;
     text-align: center;
     font-weight: bold;
-    box-shadow: 0px 5px 12px -4px black;
+    box-shadow: 0px 5px 12px -4px rgb(0, 0, 0);
     text-shadow: 2px 2px 7px rgba(0, 0, 0, 0.64);
     border: none;
     height: 14vw;

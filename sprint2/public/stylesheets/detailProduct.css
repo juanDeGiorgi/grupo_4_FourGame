@@ -277,12 +277,9 @@
     padding: 16px;
 }
 
-.detail main .info-detail .descripcion{
-    text-align: center;
-}
-
 .detail main .info-detail .descripcion p{
-    font-size: 7vw;
+    font-size: 5.9vw;
+    margin: 5vw 5vw;
 }
 
 .detail main .info-detail .especificaciones .espec img{
@@ -293,11 +290,12 @@
 
 .detail main .info-detail .especificaciones .espec{
     text-align: center;
-    margin: 10vw 0;
+    margin: 11.5vw 0;
 }
 
 .detail main .info-detail .especificaciones .espec p{
     font-size: 7vw;
+    margin-bottom: 0;
 }
 
 /* SECTION PRODUCTOS RELACIONADOS */
@@ -315,7 +313,7 @@
     width: 100%;
     height: 10px;
     border-radius: 20px;
-    margin: 0% 0% 7.8vw 0%;
+    margin: 0% 0% 2.5vw 0%;
 }
 
 .detail main section article a{
@@ -564,23 +562,34 @@
     }
 
     .detail main .info-detail .descripcion p {
-        font-size: 4vw;
+        font-size: 2.7vw;
+        margin: 0 50px 0 50px;
+
+    }
+
+    .detail main .info-detail .especificaciones .espec {
+        text-align: initial;
+        margin: 3.9vw 0 0 6.3vw;
+        display: flex;
+        align-content: center;
+        align-items: center;
     }
 
     .detail main .info-detail .especificaciones .espec img {
-        width: 22%;
-        margin-bottom: 2vw;
+        width: 9.8%;
+        margin: 0vw 5.4vw 0vw 0.4vw;
     }
 
     .detail main .info-detail .especificaciones .espec p {
-        font-size: 4vw;
+        font-size: 2.1vw;
+        display: inline-block;
     }
 
     /* SECTION PRODUCTOS RELACIONADOS */
 
     .detail main h2 {
-        font-size: 8vw;
-        margin: 10% 0% 1vw 0%;
+        font-size: 4vw;
+        margin: 2% 0% 1vw 0%;
     }
 
     .detail main .productos {
@@ -822,35 +831,35 @@
 
     .detail main .info-detail h2 {
         text-align: left;
-        font-size: 3.5vw;
-        margin-top: 1.2vw;
+        font-size: 2.5vw;
+        margin: 1.2vw 0 1vw 2vw;
     }
 
     .detail main .info-detail .descripcion {
         text-align: initial;
-        height: 27.1vw;
+        height: 18.6vw;
     }
 
     .detail main .info-detail .descripcion p {        
-        font-size: 2.7vw;
+        font-size: 2vw;
 
     }
 
     .detail main .info-detail .especificaciones .espec {
         text-align: initial;
-        margin: 4.5vw 0;
+        margin: 2.2vw 0 0 4vw;
         display: flex;
         align-content: center;
         align-items: center;
     }
 
     .detail main .info-detail .especificaciones .espec img {
-        width: 9.8%;
+        width: 7.2%;
         margin: 0vw 5.4vw 0vw 0.4vw;
     }
 
     .detail main .info-detail .especificaciones .espec p {
-        font-size: 2.1vw;
+        font-size: 1.7vw;
         display: inline-block;
     }
 
@@ -861,7 +870,7 @@
     }
 
     .detail main .decoracion {
-        margin: 0% 0% 4vw 0%;
+        margin: 0% 0% 2,.5vw 0%;
     }
 
     .detail main .producto-desktop{

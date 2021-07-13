@@ -1,3 +1,10 @@
+.login header{
+    display:none;
+}
+.login footer{
+    display: none;
+}
+
 
 .login main{
     background-color: #E7E6E6;
@@ -87,7 +94,7 @@
 }
 
 .login .captcha{
-    margin: 10% auto;
+    margin: 8% auto;
     display: flex;
     border: 1px solid black;
     width: 80%;
@@ -109,7 +116,7 @@
     width: 63vw;
     font-size: 1.4em;
     background-color: #3D2ED0;
-    margin: 7% auto;
+    margin: 4% auto;
     text-align: center;
     font-weight: bold;
     box-shadow: 0px 5px 12px -4px black;
@@ -142,54 +149,65 @@
 
 
 @media (min-width:768px){
+    
+.login main .ruta{
+    font-size: 1.8vw;
+    align-items: center;
+}
+.login .ruta .a-posicion {
+    font-weight: 700;
+    font-size: 2.5vw;
+}
 
 .login main .contenedorlogin{
-    width: 65vw;
-    height: 140vw;
+    width: 55vw;
+    height: 79vw;
+    margin: 7% auto;
 }
 
 .login .ruta{
     font-size: 2.4vw;
 }
 .login .item-user{
-    top: -11.32%;
+    top: -9.32%;
+    font-size: 12vw;
 }
 .login h1{
-    font-size: 7vw;
+    font-size: 5vw;
     font-weight: 500;
-    margin: 20% 0% 16% 0%;
+    margin: 20% 0% 5% 0%;
 }
 .login .sesioninit{
-    height: 8vw;
-    font-size: 4vw;
+    height: 6vw;
+    font-size: 3vw;
     width: 73%;
 }
-.login .captcha{
-    width: 55%;
-    height: 13vw;
+.login .captcha {
+    width: 40%;
+    height: 7vw;
 }
 
 .login .captcha label{
-    font-size: 3.2vw;
+    font-size: 2.2vw;
     margin: 10.95% 5%;
 }
 .login .enter {
-    width: 61%;
-    height: 9vw;
-    font-size: 2em;
+    border-radius: 50px;
+    height: 7vw;
+    width: 47%;
+    font-size: 1.5em;
 }
 .login .captcha input{
     margin: 10.6% 1% 10% 3%;
     width: 12.5%;
     height: 100%;
 }
-.login .notenescuenta h4{
-    font-size: 2.5vw;
+.login .notenescuenta h4 {
+    font-size: 1.5vw;
 }
-.login .notenescuenta a{
-    font-size: 3vw;
+.login .notenescuenta a {
+    font-size: 1.8vw;
 }
-
 .login .enter{
     border-radius: 50px;
 }
@@ -200,59 +218,58 @@
 @media (min-width:1024px){
     
 .login main .ruta{
-    height: 10vw;
-    font-size: 1.8vw;    
+    height: 4vw;
+    font-size: 1.5vw;    
 }
 
 .login main .contenedorlogin {
-        width: 40vw;
-        margin: 7% auto;
+        width: 30vw;
+        margin: 3% auto;
+        height: 36vw;
 }
-.login main .contenedorlogin {
-    height: 63vw;
-}
+
 .login .item-user{
-    font-size: 10vw;
+    font-size: 6vw;
     top: -10%;
 }
 .login h1 {
-    font-size: 4vw;
-    margin: 20% 0% 4% 0%;
+    font-size: 2em;
+    margin: 20% 0% 5% 0%;
 }
 .login .sesioninit {
-    height: 4vw;
-    font-size: 3vw;
-    width: 30vw;
-    margin: 6% auto;
+    height: 2.5vw;
+    font-size: 1em;
+    width: 22vw;
+    margin: 3% auto;
 }
 .login .captcha {
-    width: 50%;
-    height: 7vw;
-    margin: 7% auto;
+    width: 43%;
+    height: 4vw;
+    margin: 5% auto;
 }
 
 .login .captcha label {
-    font-size: 1.6vw;
+    font-size: 0.75em;
 }
 
 .login .enter {
-    width: 50%;
-    height: 5vw;
-    font-size: 1.4em;
-    margin: 4% auto 10% auto;
+    width: 40%;
+    height: 3vw;
+    font-size: 1em;
+    margin: 4% auto 4% auto;
 }
 .login .notenescuenta h4 {
-    font-size: 2vw;
+    font-size: 0.8em;
 }
 
 .login .notenescuenta a {
-    font-size: 2.3vw;
+    font-size: 1em;
 }
 .login .ruta {
     font-size: 1.4vw;
     height: 7vw;
 }
 .login .ruta .a-posicion {
-    font-size: 2vw;
+    font-size: 1.2em;
 }
 }

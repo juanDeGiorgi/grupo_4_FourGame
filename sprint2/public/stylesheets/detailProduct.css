@@ -573,6 +573,8 @@
         display: flex;
         align-content: center;
         align-items: center;
+        border-bottom: 1px solid;
+        padding-bottom: 2.2vw;
     }
 
     .detail main .info-detail .especificaciones .espec img {

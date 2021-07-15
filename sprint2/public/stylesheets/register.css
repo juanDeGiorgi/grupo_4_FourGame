@@ -158,7 +158,8 @@
     
 .register main .ruta{
     height: 4vw;
-    font-size: 1.5vw;    
+    font-size: 1.5vw;
+    margin-bottom: 2.5vw;    
 }
 
 .register main .contenedorlogin {

@@ -2,10 +2,10 @@
 .cart main section .contenedor-c{
     display: flex;
     align-items: baseline;
-    justify-content: space-between;
     flex-direction: row;
     flex-wrap: nowrap;
     width: 90%;
+    justify-content: space-between;
 }
 
 .cart main section .carrito{
@@ -206,13 +206,22 @@
 
 @media (min-width:768px){
 
+    .cart main section .contenedor-c {
+        margin-bottom: 4vw;
+    }
+
+    .cart main section .div-productos{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
 
     .cart main section article{
         text-align: left;
     }
 
     .cart main section .carrito{
-        font-size: 4vw;
+        font-size: 3.3vw;
         margin: 10% 0% 0% 12%;
     }
 
@@ -221,15 +230,22 @@
     }
 
     .cart main section .eliminar{
-        font-size: 5vw;
+        font-size: 3.4vw;
+        top: 5%;
+        left: 83.6%;
     }
 
     .cart main section .c-producto{
         position: relative;
+        margin: 0 0 3.1vw 0;
+        width: 40%;
+        height: 61.4vw;
+        padding: 44.5px;
+        display: inline-block;
     }
 
     .cart main section .descripcion{
-        font-size: 5vw;
+        font-size: 2.4vw;
     }
 
     .cart main section  .d-cantidad{
@@ -237,98 +253,97 @@
     }
 
     .cart main section .cantidad {
-        margin: 0% 28.3vw 0% 0%;
-        font-size: 5vw;
+        margin: 0% 8.2vw 0% 0%;
+        font-size: 2.3vw;
     }
 
     .cart main section .b-suma {
-        font-size: 5vw;
+        font-size: 2.9vw;
     }
 
     .cart main section .n-cantidad {
-        font-size: 5vw;
+        font-size: 3.5vw;
         position: relative;
     }
 
     .cart main section .precio {
-        margin: 10% 39% 0% 0%;
-        font-size: 5vw;
+        margin: 10% 0% 0% 0%;
+        font-size: 2.3vw;
     }
 
     .cart main section .p-cantidad {
-        font-size: 4vw;
+        font-size: 2.7vw;
+        margin: 0;
     }
 
     /* direccion tablet */
 
-    .cart main section .c-envios {
-        height: 31vw;
-        position: relative;
-        border-radius: 40px;
+    .cart main section .div-envios-trajetas{
+        display: flex;
+        justify-content: space-evenly;
     }
 
-    .cart main section .fa-truck {
-        font-size: 16vw;
+    .cart main section .c-envios{
+        height: 14.7vw;
+        width: 40%;
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+    }
+
+    .cart main section .fa-truck{
         position: absolute;
         left: 6vw;
         top: -2vw;
+        font-size: 5.3vw;
+        margin: 15.3% 0% 0% -6.3%;
     }
 
-    .cart main section .envio {
-        font-size: 5vw;
+    .cart main section .envio{
+        font-size: 2.2vw;
+        display: inline-block;
+        margin: 0% 0% 0% -4.1%;
         position: absolute;
         top: 15%;
-        left: 39%;
+        left: 37.1%;
     }
-
-    .cart main section .direccion {
-        font-size: 4.4vw;
+    
+    .cart main section .direccion{
+        font-size: 2.2vw;
         position: absolute;
-        top: 37%;
-        left: 39%;
+        top: 35.1%;
+        left: 33.2%;
     }
 
-    .cart main section .cambiar {
-        font-size: 5vw;
+    .cart main section .cambiar{
+        font-size: 1.9vw;
+        margin: 15.1% 0% 0% -6.8%;
         position: absolute;
         top: 38%;
-        left: 40%;
+        left: 39.8%;
+        cursor: pointer;
     }
 
     /* finalizar compra */
 
-    .cart main section  .c-tarjetas{
+    .cart main section .c-tarjetas {
+        width: 40%;
+        padding: 28px;
+        display: inline-block;
+        margin: 0;
         text-align: center;
     }
 
-    .cart main section article .tarjetas-logo {
-        width: 50%;
-    }
-
-    .cart main section article .contenedor-t {
-        width: 100%;
-    }
-
-    .cart main section article .contenedor-t .tarjetas {
-        width: 100%;
-    }
-
-    .cart main section article .ahora12 {
-        width: 23%;
-        top: 68%;
-        left: 35%;
-    }
-
     .cart main section article .p-total{
-        font-size: 5vw;
-        margin: 14% 0% 14% 0%;
+        font-size: 3vw;
+        margin: 3vw 0 3vw 0;
     }
 
     .cart main section article .finalizar {
-        border-radius: 22px;
-        font-size: 178%;
-        padding: 5% 9% 5% 9%;
-    }
+        border-radius: 15.5px;
+        font-size: 130.6%;
+        padding: 4% 9% 5% 9%;
+    } 
 
 }
 
@@ -337,24 +352,39 @@
 
 @media (min-width:1024px){
 
+    .cart main section .div-productos{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        width: 80%;
+        margin: 0 auto 4.5vw auto;
+    }
+
+    .cart main section .contenedor-c {
+        margin-bottom: 0.7vw;
+    }
+
     .cart main section .carrito{
-        font-size: 5vw;
+        font-size: 2.8vw;
+        margin: 10% 0% 0% 15.7%;
     } 
 
     .cart main section .back{
-        font-size: 6vw;
+        font-size: 3.3vw;
         cursor: pointer;
+        margin-right: 5.2vw;
     }
 
     .cart main section .c-producto{
-        height: 30vw;
+        height: 15.3vw;
         text-align: initial;
         padding: 10px;
-        margin-top: 2%;
+        width: 46.1%;
+        margin: 2% 0 0 0;
     }
    
     .cart main section article .c-img{
-        width: 29%;
+        width: 28.9%;
         display: inline-block;
         height: 100%;
     }
@@ -370,15 +400,14 @@
     }
 
     .cart main section .eliminar{
-        font-size: 3.5vw;
-        margin: 3% 0% 0% 3%;
+        font-size: 1.9vw;
+        margin: 1.6% 0% 0% 1%;
         cursor: pointer;
     }
 
     .cart main section .descripcion{
-        font-size: 3vw;
-        margin: 5% 0% 2% 0%;
-        
+        font-size: 1.4vw;
+        margin: 1.5% 0% 2% 0%;
     }
 
     .cart main section .cantidad{
@@ -386,12 +415,12 @@
     }
 
     .cart main section .b-suma{
-        font-size: 4vw;
+        font-size: 2.3vw;
         cursor: pointer;
     }
 
     .cart main section .n-cantidad{
-        font-size: 4vw;
+        font-size: 2.8vw;
         margin: 0% 3%;
     }
 
@@ -400,83 +429,49 @@
     }
 
     .cart main section .precio{
-        font-size: 3vw;
-        margin: 3% 39% 0% 0%;
+        font-size: 1.9vw;
+        margin: 3% 27.9% 0% 0%;
     }
 
     .cart main section .cantidad{
-        font-size: 3vw;
-        margin: 0% 32% 0% 0%;
+        font-size: 1.8vw;
+        margin: 0% 19.5% 0% 0%;
     }
 
     .cart main section .p-cantidad{
-        font-size: 3vw;
+        font-size: 2vw;
         margin-bottom: 0;
     }
 
     .cart main section .cuotas{
         color: #33CC33;
-        font-size: 2vw;
-        margin: 3% 0% 1% 0%;
+        font-size: 1.4vw;
+        margin: 0% 0% 1% 0%;
         display: inline-block;
     }
     
     .cart main section .b-cuotas{
         color: #3D2ED0;
         margin: 0% 0% 1% 0%;
-        font-size: 2vw;
+        font-size: 1.5vw;
         display: block;
         cursor: pointer;
     }
 
-    .cart main section .c-envios{
-        height: 15vw;
-    }
-
-    .cart main section .fa-truck{
-        font-size: 10vw;
-        margin: 6% 0% 0% 0%;
-    }
-
-    .cart main section .envio{
-        font-size: 3vw;
-        display: inline-block;
-        margin: 2% 0% 0% -8%;
-    }
-    
-    .cart main section .direccion{
-        font-size: 2.5vw;
-        position: absolute;
-        top: 30%;
-        left: 48%;
-    }
-
-    .cart main section .cambiar{
-        font-size: 2.7vw;
-        margin: 4.4% -2% 0% -9%;
-        cursor: pointer;
-    }
-
-    .cart main section article .tarjetas-logo{
-        width: 20%;
-        margin: 0% 0px 0% -88%;
-    }
-
-    .cart main section article .contenedor-t{
+    .cart main section .div-envios-trajetas{
+        display: flex;
+        flex-direction: row;    
+        justify-content: space-evenly;
         width: 80%;
-        margin: -25% 0% 0% 24%;
+        margin: auto;
     }
 
-    .cart main section article .p-total{
-        font-size: 262%;
-        margin: 12% 59% -25% 0%;
+    .cart main section .c-envios{
+        width: 46.1%;
     }
 
-    .cart main section article .finalizar{
-        font-size: 3vw;
-        margin: 15% -38% 0% 13%;
-        padding: 3% 7%;
-        cursor: pointer;
+    .cart main section .c-tarjetas {
+        width: 46.1%;
     }
 
 } 

@@ -27,9 +27,9 @@
 
 .loading .primero{
     background-color: white;
-    width:90% ;
+    width:80% ;
     border-radius:35px;
-    margin: 15% 5% 10% 5%;
+    margin: 15% auto 10% auto;
     padding-bottom: 7%;
 }
 .loading main .contenedor .primero .elige{
@@ -83,11 +83,10 @@
 /*Segunda sección*/
 
 .loading .segundo{
-    padding-top: 10%;
     background-color: white;
-    width:90% ;
+    width:80% ;
     border-radius:35px;
-    margin: 10% 5% 10% 5%
+    margin: 10% auto 10% auto;
 }
 
 
@@ -129,10 +128,10 @@
     background-color: white;
     border-radius: 40px;
     padding-bottom: 22%;
-    margin-top: 15%;
+    margin-top: 8%;
 }
 .loading .segundo .div-form input{
-    width: 60vw;
+    width: 50vw;
     display: inline-block;  
     text-align: left;
     background-color: #F2204D;
@@ -144,7 +143,7 @@
     border: none;
     padding: 8px 5px;
     box-shadow: 0px 5px 12px -4px black;
-    margin: 8% 0%;
+    margin: 6% 0%;
     height: 8vw;
 
 }
@@ -287,7 +286,7 @@ color: white }
 
 
     .loading main .contenedor .primero .elige {
-        font-size: 4vw;
+        font-size: 1.3em;
     }
 
 
@@ -319,11 +318,12 @@ color: white }
     border-radius: 40px;
     padding: 8px 18px;
     margin: 6.5% 0 5% 0;
-    font-size: 2em;
+    font-size: 1em;
+    height: 6vw;
 }
 
 .loading .c-select i {
-    top: 37.3px;
+    top: 30.3px;
     font-size: 3.9vw;
 }
 
@@ -335,7 +335,11 @@ color: white }
 
 
 /*Segunda sección*/
-
+.loading .segundo .div-form input {
+    height: 6vw;
+    font-size: 1.4em;
+}
+    
 .loading .caja-grande{
     display: flex;
 }
@@ -366,25 +370,34 @@ padding-left: 4%;
 }
 
 .loading .tercero h3{
-    font-size: 2.5em;
+    font-size: 1.7em;
 }
 
 .loading .lineaRosa{
-    height: 7px;
+    height: 6px;
 }
 
 
 
 
 /*TERCER SECCIÓN*/
-
+.loading .tercero{
+    width: 80%;
+    margin: 0% auto;
+}
 .loading .contenedor-descripcion{
     height: 17.3vw;
 
 }
+
 .loading .titulocomponente {
+
     margin: -23% 9%;
     padding: 7px;
+    width: 53.3%;
+    height: 10vw;
+    top: 160%;
+
 }
 
 .loading .description {
@@ -393,16 +406,16 @@ padding-left: 4%;
     height: 100%;
     font-size: 2vw;
 }
-
 .loading .finalizar {
-    height: 8vw;
-    width: 40vw;
-    margin: 0% 30%;
-    font-size: 4vw;
+    height: 7vw;
+    width: 35vw;
+    margin: 6% 30%;
+    font-size: 1.5em;
 }
 
 .loading .SiEncontrasteEsteEasterEgg {
     margin: 0%;
+    position: relative;
 }
 
 /*DESKTOP */ 
@@ -413,15 +426,24 @@ padding-left: 4%;
 .loading .primero{
     padding: 1% 0%;
     text-align: center;
+    width: 55%;
+    margin: 5% auto -6% auto;
 }
 
 .loading main .contenedor .primero .elige {
     display: inline-block;
 }
+.loading .c-select i{
+    top: 7%;
+left: 59%;
+font-size: 2em;
+}
 
 .loading .segundo{
     display: flex;
-    padding-top: 0%;
+   margin-bottom: 5%;
+    width: 55%;
+    padding-right: 3%;
 }
 .loading .contenedor-form{
     width: 120%;
@@ -442,9 +464,9 @@ padding-left: 4%;
     margin: 0%;
 }
 .loading .segundo .div-form input{
-    width: 20.9vw;
-    height: 4vw;
-    font-size: 2vw;
+    width: 12.9vw;
+    height: 2vw;
+    font-size: 1em;
 }
 .loading .segundo form {
     padding-top: 34%;
@@ -456,37 +478,47 @@ padding-left: 4%;
 }
 
 .loading .boton1, .boton2 {
-    width: 100%;
-    margin: 6.5% 0 7.2% 0;
+    width: 65%;
+    margin: 0.5% 0 5.2% 0;
+    height: 2.5vw;
 }
 
 .loading .c-img i{
-    font-size: 4.3vw;
+    font-size: 2.3vw;
+}
+
+.loading .tercero{
+    width: 55%;
 }
 
 .loading .tercero h3{
     padding: 5% 0% 1% 0;
-    font-size: 3.5em;
+    font-size: 2em;
     text-align: left;
 }
-
-.loading .description input {
-    height: 40vh;
+.loading .contenedor-descripcion {
+    height: 10.3vw;
 }
-
+.loading .description {
+    margin: 5.1% auto;
+    width: 65%;
+    height: 10vw;
+    font-size: 1em;
+}
 .loading .titulocomponente {
     padding: 10px;
     font-size: 2vw;
+    height: 7vw;
 }
 
 .loading .finalizar {
-    width: 32.7vw;
-    height: 7.5vw;
+    width: 20.7vw;
+    height: 4.5vw;
     margin-left: 26%;
-    font-size: 3vw;
+    font-size: 2em;
     text-align: center;
     padding: 0%;
-    margin: 0 30.6vw;
+    margin: 5% 39%;
 }
 
 }

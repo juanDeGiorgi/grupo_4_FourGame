@@ -1,0 +1,9 @@
+titulo : Konami PES 2020
+
+descripcion : 
+
+El Pro Evolution Soccer PES 2020 cuenta con varias mejoras respecto de la edición anterior.
+Ahora vas a poder aprovechar los descuidos y equivocaciones de tus oponentes y adaptar cada 
+partido a tu estilo de juego personal.
+
+precio : $ 1.999

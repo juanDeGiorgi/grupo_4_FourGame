@@ -1,0 +1,260 @@
+.register header{
+    display:none;
+}
+.register footer{
+    display: none;
+}
+
+
+.register main{
+    background-color: #E7E6E6;
+
+}
+.register main .contenedorlogin {
+    background-color: rgb(255, 255, 255);
+    width: 90vw;
+    height: 194.5vw;
+    margin: 19% auto;
+    display:flex;
+    flex-direction: column;
+    border-radius: 45px;
+    position: relative;
+}
+
+
+
+                           /*   MOBILE   */
+
+
+
+
+.register main .ruta{
+    width: 100%;
+    height: 16vw;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    font-size: 4.8vw;
+    font-weight: 500;
+    padding-left: 5%;
+    color: #3D2ED0;
+
+}
+
+.register main .ruta a{
+    color: #3D2ED0;
+}
+
+.register .ruta .a-posicion{
+    font-weight: 700;
+    font-size: 4.9vw;
+}
+.register .ruta span{
+    margin: 0% 0.5%;
+}
+
+.register .item-user{
+    position: absolute;
+    top: -7.32%;
+    display: flex;
+    width: 30%;
+    align-self: center;
+    color: #3D2ED0;
+   justify-content: center;
+   font-size: 25vw;
+}
+.register h1{
+    text-align: center;
+    margin: 15% 0% 16% 0%;
+    font-size: 11vw;
+    font-weight: 700;
+}
+.register .sesioninit{
+    background-color: #F2204D;
+    color: white;
+    width: 90%;
+    margin: 4% auto;
+    height: 11vw;
+    font-size: 6vw;
+    border-radius: 40px;
+    text-indent: 4%;
+    font-weight: 500;
+    border: none;
+    box-shadow: 0px 5px 12px -4px black;
+
+}
+
+.register .sesioninit::placeholder{
+    color: gainsboro;
+}
+
+.register .sesioninit:focus{
+    outline: none;
+    border: 2px solid #3D2ED0;
+}
+
+.register .captcha{
+    margin: 8% auto;
+    display: flex;
+    border: 1px solid black;
+    width: 80%;
+    height: 19vw;
+    justify-content: center;
+    align-items: center;
+}
+.register .captcha label {
+    margin: 8% 5%;
+    font-size: 6vw;
+    font-weight: 600;
+}
+.register .captcha input{
+    width: 9%;
+    height: 100%;
+}
+.register .enter{
+    color: rgb(255, 255, 255);
+    width: 63vw;
+    font-size: 1.4em;
+    background-color: #3D2ED0;
+    margin: 4% auto;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0px 5px 12px -4px black;
+    border: none;
+    height: 14vw;
+    border-radius: 40px;
+
+}
+.register .notenescuenta{
+    width: 100%;
+    text-align: center;
+}
+.register .notenescuenta h4{
+    font-size: 4.5vw;
+    display: inline-block;
+    color: #3D2ED0;
+}
+.register .notenescuenta a{
+    font-size: 5vw;
+    font-weight: 700;
+    color: #3D2ED0;
+}
+
+.register .condiciones{
+    color: #3D2ED0;
+    text-align: center;
+    font-size: 4.7vw;
+    margin-bottom: 0%;
+}
+
+.register .condiciones .terminos{
+    font-weight: 700;
+}
+
+
+                           /*  TABLET  */
+
+@media (min-width:768px){
+    
+.register main .ruta{
+    height: 4vw;
+    font-size: 1.5vw;
+    margin-bottom: 2.5vw;    
+}
+
+.register main .contenedorlogin {
+    width: 30vw;
+    margin: -0.8% auto;
+    height: 43.1vw;
+    flex-wrap: wrap;
+}
+
+.register .item-user{
+    font-size: 5.5vw;
+    top: -7.6%;
+}
+
+.register h1 {
+    font-size: 1.2em;
+    margin: 7.9% 0% 3.1% 0%;
+}
+
+.register .sesioninit {
+    height: 2.5vw;
+    font-size: 0.7em;
+    width: 22vw;
+    margin: 3% auto;
+}
+
+.register .captcha {
+    width: 43%;
+    height: 4vw;
+    margin: 2% auto;
+}
+
+.register .captcha label {
+    font-size: 0.55em;
+}
+
+.register .enter {
+    width: 40%;
+    height: 3vw;
+    font-size: 0.7em;
+    margin: 4% auto 1.8% auto;
+}
+
+.register .notenescuenta h4 {
+    font-size: 0.6em;
+}
+
+.register .notenescuenta a {
+    font-size: 0.8em;
+}
+
+.register .ruta {
+    font-size: 1.4vw;
+    height: 7vw;
+}
+.register .ruta .a-posicion {
+    font-size: 1.2em;
+}
+
+.register .condiciones {
+    font-size: 1.4vw;
+}
+}
+
+@media (min-width:1024px){
+    
+    .register main .contenedorlogin {
+        height: 40vw;
+    }
+
+    .register h1 {
+        font-size: 1.5em;
+    }    
+
+    .register .sesioninit {
+        font-size: 1em;
+    }
+
+    
+    .register .captcha label {
+        font-size: 0.75em;
+    }
+
+    
+    .register .enter {
+        font-size: 1em;
+    }
+
+    .register .notenescuenta h4 {
+        font-size: 0.8em;
+    }
+        
+    .register .notenescuenta a {
+        font-size: 1em;
+    }
+
+
+}

@@ -23,19 +23,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/products', productsRouter);
+app.use('/products', pRouter);
 app.use('/cart', cartRouter);
 
-/*Pendiente de RUTEO*/
-
-
-
-app.get('/', (req,res) => res.sendFile(path.join(__dirname, '/views','index.html')));
-app.get('/register', (req,res) => res.sendFile(path.join(__dirname, '/views','register.html')));
-app.get('/login', (req,res) => res.sendFile(path.join(__dirname, '/views','login.html')));
-app.get('/cart', (req,res) => res.sendFile(path.join(__dirname, '/views','cart.html')));
-app.get('/detail-product', (req,res) => res.sendFile(path.join(__dirname, '/views','detailProduct.html')));
-app.get('/product-loading', (req,res) => res.sendFile(path.join(__dirname, '/views','productLoading.html')));
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

@@ -19,4 +19,25 @@
 
 ## Dejar de hacer : 
 
-    --------------------
+    ---------------------------------------------------------------------------
+
+# Retrospectiva sprint 3 y 4
+
+## Seguir haciendo :
+
+    Reuniones cortas
+
+## Hacer más:
+
+    mas compromiso
+
+## Empezar a hacer: 
+
+    practicar por fuera del proyecto
+
+## Hacer menos:
+
+    desviarse del tema principal de la reunion
+
+## Dejar de hacer : 
+

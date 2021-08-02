@@ -134,14 +134,34 @@ header .nav-1{
                 border: none;
             }
 
+            .dropdown-header{
+                font-weight: 600;
+                font-size: 20px;
+            }
+
             .dropdown-item:focus, .dropdown-item:hover {
                 background-color: #e9ecef;
                 color: rgb(61, 46, 208);
-                font-weight: 700;
+                /* font-weight: 700; */
+            }
+
+            .dropdown-menu{
+                border: none;
+            }
+
+            .dropdown-menu.show {
+                display: initial;
             }
 
             .dropdown:hover > .dropdown-menu{
                 display: block;
+                transform: translate3d(0px, 5px, 0px);
+
+            }
+
+            .dropdown2:hover > .dropdown-menu2{
+                display: flex;
+                transform: translate3d(0px, 8px, 0px);
             }
 
 

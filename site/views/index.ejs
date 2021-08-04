@@ -57,7 +57,7 @@
                     <article>
                         <a href="/products/detail-Product" class="a-article">
                             <div class="contenedor-img">
-                                <img src="/images/juegos/<%=product.image%> " alt="image">
+                                <img src="/images/<%=product.type%>/<%=product.name%>/<%=product.image%>" alt="image">
                             </div>
 
                             <div class="product-info">
@@ -67,8 +67,10 @@
                                     <h3><%=product.name %> </h3>
                                 </div>
                                 <div class="info">
-                                    <p class="price">$<%=product.price%> </p>
-                                    <p class="discount">12x $ 1.012,39 sin interés</p>
+                                    <p class="price">$<%=toThousand(product.price)%> </p>
+                                    <%if(product.payMethod > 0){%>
+                                        <p class="discount"><%=product.payMethod%>x $ <%=toThousand((product.price / product.payMethod).toFixed(0))%> sin interés</p>
+                                    <%}%>
                                 </div>
                             </div>
                         </a>
@@ -90,7 +92,7 @@
                     <article>
                         <a href="/products/detail-Product" class="a-article">
                             <div class="contenedor-img">
-                                <img src="/images/juegos/<%=product.image%> " alt="image">
+                                <img src="/images/<%=product.type%>/<%=product.name%>/<%=product.image%>" alt="image">
                             </div>
 
                             <div class="product-info">
@@ -100,8 +102,10 @@
                                     <h3><%=product.name %> </h3>
                                 </div>
                                 <div class="info">
-                                    <p class="price">$<%=product.price%> </p>
-                                    <p class="discount">12x $ 1.012,39 sin interés</p>
+                                    <p class="price">$<%=toThousand(product.price)%> </p>
+                                    <%if(product.payMethod > 0){%>
+                                        <p class="discount"><%=product.payMethod%>x $ <%=toThousand((product.price / product.payMethod).toFixed(0))%> sin interés</p>
+                                    <%}%>
                                 </div>
                             </div>
                         </a>
@@ -122,7 +126,7 @@
                     <article>
                         <a href="/products/detail-Product" class="a-article">
                             <div class="contenedor-img">
-                                <img src="/images/juegos/<%=product.image%> " alt="image">
+                                <img src="/images/<%=product.type%>/<%=product.name%>/<%=product.image%>" alt="image">
                             </div>
 
                             <div class="product-info">
@@ -132,8 +136,10 @@
                                     <h3><%=product.name %> </h3>
                                 </div>
                                 <div class="info">
-                                    <p class="price">$<%=product.price%> </p>
-                                    <p class="discount">12x $ 1.012,39 sin interés</p>
+                                    <p class="price">$<%=toThousand(product.price)%> </p>
+                                    <%if(product.payMethod > 0){%>
+                                        <p class="discount"><%=product.payMethod%>x $ <%=toThousand((product.price / product.payMethod).toFixed(0))%> sin interés</p>
+                                    <%}%>
                                 </div>
                             </div>
                         </a>

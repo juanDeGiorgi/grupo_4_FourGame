@@ -30,8 +30,14 @@
             <div class="vista-info">
 
                 <h3> <%= product.name %>  </h3>
-                <p class="vendido"> <%= product.category %>  </p>
-                <p class="price">$ <%= product.price %> </p>
+                <%if(product.category == "in-sale"){%>
+                    <p class="vendido">Oferta</p>
+                <%}else if(product.category == "new-release"){%>
+                    <p class="vendido">Lanzamiento</p>
+                <%}else{%>
+                    <p class="vendido">Mas vendido</p>
+                <%}%>
+                <p class="price">$ <%= toThousand(product.price) %> </p>
                 <button class="cart-add"><i class="fas fa-cart-plus"></i></button>
                 <%if(product.payMethod > 0){%>
                     <p class="t-cuotas"><%=product.payMethod%>x $ <%=toThousand((product.price / product.payMethod).toFixed(0))%> sin interés</p>
@@ -119,82 +125,31 @@
         </div>
 
         <section class="productos">
-            <article>
-                <a href="/detail-Product" class="a-article">
-                    <div class="contenedor-img">
-                        <img src="/images/juegos/resident-evil-village.<%=productRelated.name  %> " alt="<%=product.name%> ">
-                    </div>
+            <%relatedProducts.forEach(relatedProduct => {%>
+                <%if(relatedProduct.type == product.type){%>
+                    <article>
+                        <a href="/products/detail/<%=relatedProduct.id%>" class="a-article">
+                            <div class="contenedor-img">
+                                <img src="/images/<%=relatedProduct.type%>/<%=relatedProduct.name%>/<%=relatedProduct.image%>" alt="<%=relatedProduct.name%>">
+                            </div>
 
-                    <div class="product-info">
-                        <button><i class="far fa-heart"></i></button>
+                            <div class="product-info">
+                                <button><i class="far fa-heart"></i></button>
 
-                        <div class="title">
-                            <h3> <%= product.name %>  </h3>
-                        </div>
-                        <div class="info">
-                            <p class="price">$ <%=product.price  %>  </p>
-                            <p class="discount"> <%= product.payMethod  %> </p>
-                        </div>
-                    </div>
-                </a>
-            </article>
-            <article class="producto-tablet">
-                <a href="/products/detail-Product" class="a-article">
-                    <div class="contenedor-img">
-                        <img src="/images/Pc/<%=product.image  %> " alt="<%=product.name%> ">
-                    </div>
-
-                    <div class="product-info">
-                        <button><i class="far fa-heart"></i></button>
-
-                        <div class="title">
-                            <h3> <%= product.name  %> </h3>
-                        </div>
-                        <div class="info">
-                            <p class="price">$ <%=product.price  %>  </p>
-                            <!-- <p class="discount">12x $ 1.012,39 sin interés</p> -->
-                        </div>
-                    </div>
-                </a>
-            </article>
-            <article class="producto-desktop">
-                <a href="/products/detail-Product" class="a-article">
-                    <div class="contenedor-img">
-                        <img src="/images/Pc/<%=product.image  %> " alt="<%=product.name%> ">
-                    </div>
-
-                    <div class="product-info">
-                        <button><i class="far fa-heart"></i></button>
-
-                        <div class="title">
-                            <h3> <%= product.name  %> </h3>
-                        </div>
-                        <div class="info">
-                            <p class="price">$ <%=product.price  %>  </p>
-                            <!-- <p class="discount">12x $ 1.012,39 sin interés</p> -->
-                        </div>
-                    </div>
-                </a>
-            </article>
-            <article class="producto-desktop">
-                <a href="/products/detail-Product" class="a-article">
-                    <div class="contenedor-img">
-                        <img src="/images/Pc/<%=product.image  %> " alt="<%=product.name%> ">
-                    </div>
-
-                    <div class="product-info">
-                        <button><i class="far fa-heart"></i></button>
-
-                        <div class="title">
-                            <h3> <%= product.name  %> </h3>
-                        </div>
-                        <div class="info">
-                            <p class="price">$ <%=product.price  %>  </p>
-                            <!-- <p class="discount">12x $ 1.012,39 sin interés</p> -->
-                        </div>
-                    </div>
-                </a>
-            </article>
+                                <div class="title">
+                                    <h3> <%=relatedProduct.name%>  </h3>
+                                </div>
+                                <div class="info">
+                                    <p class="price">$ <%=toThousand(relatedProduct.price)  %>  </p>
+                                    <%if(relatedProduct.payMethod > 0){%>
+                                        <p class="t-cuotas"><%=relatedProduct.payMethod%>x $ <%=toThousand((relatedProduct.price / relatedProduct.payMethod).toFixed(0))%> sin interés</p>
+                                    <%}%>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                <%}%>
+            <%})%>
         </section>
     </main>
     <%- include("./partials/footer") %> 

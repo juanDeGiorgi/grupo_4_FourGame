@@ -9,7 +9,7 @@ module.exports={
     detail : (req,res)=> res.render('detailProduct',{
         product : products.find(product=>product.id== +req.params.id),
         toThousand,
-        relatedProducts : products.filter(productRelated=>productRelated.type == product.type)
+        relatedProducts : products
     }),
 
     loading : (req,res)=> res.render('productLoading'),

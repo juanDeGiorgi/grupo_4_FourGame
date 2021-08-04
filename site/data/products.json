@@ -1,134 +1,134 @@
 [
     {
         "id" : 1,
-        "name" : "",
-        "description" : "",
-        "image" : "",
-        "price" : 62.980,
-        "discount" : "",
-        "category" : "",
-        "type" : "",
-        "pay method" : ""
-    },
+        "name" : "Playstation 4 slim",
+        "description" : "Con tu consola PlayStation 4",
+        "image" : "ps4.jpg",
+        "price" : 62980,
+        "discount" : 10,
+        "category" : "in-sale",
+        "type" : "consola",
+        "pay method" : 6
+    }, 
     {
-        "id" : 2,
-        "name" : "",
-        "description" : "",
-        "image" : "",
-        "price" : "",
-        "discount" : "",
-        "category" : "",
-        "type" : "",
-        "pay method" : ""
-    },{
-        "id" : 3,
-        "name" : "",
-        "description" : "",
-        "image" : "",
-        "price" : "",
-        "discount" : "",
-        "category" : "",
-        "type" : "",
-        "pay method" : ""
-    },{
-        "id" : 4,
-        "name" : "",
-        "description" : "",
-        "image" : "",
-        "price" : "",
-        "discount" : "",
-        "category" : "",
-        "type" : "",
-        "pay method" : ""
-    },{
-        "id" : 5,
-        "name" : "",
-        "description" : "",
-        "image" : "",
-        "price" : "",
-        "discount" : "",
-        "category" : "",
-        "type" : "",
-        "pay method" : ""
-    },{
-        "id" : 6,
-        "name" : "",
-        "description" : "",
-        "image" : "",
-        "price" : "",
-        "discount" : "",
-        "category" : "",
-        "type" : "",
-        "pay method" : ""
-    },{
-        "id" : 7,
-        "name" : "",
-        "description" : "",
-        "image" : "",
-        "price" : "",
-        "discount" : "",
-        "category" : "",
-        "type" : "",
-        "pay method" : ""
-    },{
-        "id" : 8,
-        "name" : "",
-        "description" : "",
-        "image" : "",
-        "price" : "",
-        "discount" : "",
-        "category" : "",
-        "type" : "",
-        "pay method" : ""
-    },{
-        "id" : 9,
-        "name" : "",
-        "description" : "",
-        "image" : "",
-        "price" : "",
-        "discount" : "",
-        "category" : "",
-        "type" : "",
-        "pay method" : ""
-    },{
-        "id" : 10,
-        "name" : "",
-        "description" : "",
-        "image" : "",
-        "price" : "",
-        "discount" : "",
-        "category" : "",
-        "type" : "",
-        "pay method" : ""
-    },{
-        "id" : 11,
-        "name" : "",
-        "description" : "",
-        "image" : "",
-        "price" : "",
-        "discount" : "",
-        "category" : "",
-        "type" : "",
-        "pay method" : ""
-    },{
-        "id" : 12,
-        "name" : "",
-        "description" : "",
-        "image" : "",
-        "price" : "",
-        "discount" : "",
-        "category" : "",
-        "type" : "",
-        "pay method" : ""
-    },{
-        "id" : 13,
-        "name" : "",
-        "description" : "",
-        "image" : "",
-        "price" : "",
-        "discount" : "",
-        "category" : "",
-        "type" : "",
-        "pay method" : ""
+        "id" : 1,
+        "name" : "Pc Gamer amd Ryzen 3 3100",
+        "description" : "PC Gamer gama media de Amd. Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, assumenda. Nesciunt quos, at animi quasi nam, tempore ullam fuga placeat atque nihil vero ea sapiente itaque illo ipsa doloribus maiores!",
+        "image" : "PC-Armada-Media-0026_600.jpg",
+        "price" : 93000,
+        "discount" : 0,
+        "category" : "best-seller",
+        "type" : "Pc armada",
+        "pay method" : 0
+    }, 
+    {
+        "id" : 1,
+        "name" : "RESIDENT EVIL VILLAGE",
+        "description" : "Con tu consola PlayStation 4",
+        "image" : "resident-evil-village.jpg",
+        "price" : 3560,
+        "discount" : 0,
+        "category" : "new-release",
+        "type" : "game",
+        "pay method" : 12
+    }, 
+    {
+        "id" : 1,
+        "name" : "COMPUTADORA ARMADA PARA PHOTOSHOP",
+        "description" : "Con tu consola PlayStation 4",
+        "image" : "pc-photoshop/pc.jpg",
+        "price" : 120080,
+        "discount" : 5,
+        "category" : "new-release",
+        "type" : "console",
+        "pay method" : 12
+    }, 
+    {
+        "id" : 1,
+        "name" : "Playstation 4 slim",
+        "description" : "Con tu consola PlayStation 4",
+        "image" : "ps4.jpg",
+        "price" : 62.980,
+        "discount" : 10,
+        "category" : "in-sale",
+        "type" : "console",
+        "pay method" : 6
+    }, 
+    {
+        "id" : 1,
+        "name" : "Playstation 4 slim",
+        "description" : "Con tu consola PlayStation 4",
+        "image" : "ps4.jpg",
+        "price" : 62.980,
+        "discount" : 10,
+        "category" : "new-release",
+        "type" : "console",
+        "pay method" : 0
+    }, 
+    {
+        "id" : 1,
+        "name" : "Playstation 4 slim",
+        "description" : "Con tu consola PlayStation 4",
+        "image" : "ps4.jpg",
+        "price" : 62.980,
+        "discount" : 10,
+        "category" : "new-release",
+        "type" : "console",
+        "pay method" : 0
+    }, 
+    {
+        "id" : 1,
+        "name" : "Playstation 4 slim",
+        "description" : "Con tu consola PlayStation 4",
+        "image" : "ps4.jpg",
+        "price" : 62.980,
+        "discount" : 10,
+        "category" : "in-sale",
+        "type" : "console",
+        "pay method" : 0
+    }, 
+    {
+        "id" : 1,
+        "name" : "Playstation 4 slim",
+        "description" : "Con tu consola PlayStation 4",
+        "image" : "ps4.jpg",
+        "price" : 62.980,
+        "discount" : 10,
+        "category" : "best-seller",
+        "type" : "console",
+        "pay method" : 0
+    }, 
+    {
+        "id" : 1,
+        "name" : "Playstation 4 slim",
+        "description" : "Con tu consola PlayStation 4",
+        "image" : "ps4.jpg",
+        "price" : 62.980,
+        "discount" : 70,
+        "category" : "best-seller",
+        "type" : "console",
+        "pay method" : 6
+    }, 
+    {
+        "id" : 1,
+        "name" : "Playstation 4 slim",
+        "description" : "Con tu consola PlayStation 4",
+        "image" : "ps4.jpg",
+        "price" : 62.980,
+        "discount" : 40,
+        "category" : "new-release",
+        "type" : "console",
+        "pay method" : 6
+    }, 
+    {
+        "id" : 1,
+        "name" : "Playstation 4 slim",
+        "description" : "Con tu consola PlayStation 4",
+        "image" : "ps4.jpg",
+        "price" : 62.980,
+        "discount" : 0,
+        "category" : "best-seller",
+        "type" : "console",
+        "pay method" : 0
     }
 ]

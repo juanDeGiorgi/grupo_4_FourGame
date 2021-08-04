@@ -55,7 +55,7 @@
             <% products.forEach(product => { %> 
                 <% if (product.category == "new-release"){ %> 
                     <article>
-                        <a href="/products/detail-Product" class="a-article">
+                        <a href="/products/detail/<%=product.id%> " class="a-article">
                             <div class="contenedor-img">
                                 <img src="/images/<%=product.type%>/<%=product.name%>/<%=product.image%>" alt="image">
                             </div>
@@ -90,7 +90,7 @@
             <% products.forEach(product => { %> 
                 <% if (product.category == "best-seller"){ %> 
                     <article>
-                        <a href="/products/detail-Product" class="a-article">
+                        <a href="/products/detail/<%=product.id%> " class="a-article">
                             <div class="contenedor-img">
                                 <img src="/images/<%=product.type%>/<%=product.name%>/<%=product.image%>" alt="image">
                             </div>
@@ -124,7 +124,7 @@
             <% products.forEach(product => { %> 
                 <% if (product.category == "in-sale"){ %> 
                     <article>
-                        <a href="/products/detail-Product" class="a-article">
+                        <a href="/products/detail/<%=product.id%> " class="a-article">
                             <div class="contenedor-img">
                                 <img src="/images/<%=product.type%>/<%=product.name%>/<%=product.image%>" alt="image">
                             </div>

@@ -52,83 +52,31 @@
         </div>
 
         <section class="productos">
-            <article>
-                <a href="/products/detail-Product" class="a-article">
-                    <div class="contenedor-img">
-                        <img src="/images/juegos/resident-evil-village.jpg" alt="Resident evil Village">
-                    </div>
+            <% products.forEach(product => { %> 
+                <% if (product.category == "new-release"){ %> 
+                    <article>
+                        <a href="/products/detail-Product" class="a-article">
+                            <div class="contenedor-img">
+                                <img src="/images/<%=product.type%>/<%=product.name%>/<%=product.image%>" alt="image">
+                            </div>
 
-                    <div class="product-info">
-                        <button><i class="far fa-heart"></i></button>
+                            <div class="product-info">
+                                <button><i class="far fa-heart"></i></button>
 
-                        <div class="title">
-                            <h3>RESIDENT EVIL VILLAGE</h3>
-                        </div>
-                        <div class="info">
-                            <p class="price">$ 3.560</p>
-                            <p class="discount">12x $ 1.012,39 sin interés</p>
-                        </div>
-                    </div>
-                </a>
-            </article>
-            <article>
-                <a href="/products/detail-Product" class="a-article">
-                    <div class="contenedor-img">
-                        <img src="/images/Pc/pc-photoshop/pc.jpg" alt="COMPUTADORA PHOTOSHOP">
-                    </div>
-
-                    <div class="product-info">
-                        <button><i class="far fa-heart"></i></button>
-
-                        <div class="title">
-                            <h3>COMPUTADORA ARMADA PARA PHOTOSHOP</h3>
-                        </div>
-                        <div class="info">
-                            <p class="price">$ 560.000</p>
-                            <p class="discount">12x $ 1.012,39 sin interés</p>
-                        </div>
-                    </div>
-                </a>
-            </article>
-            <article>
-                <a href="/products/detail-Product" class="a-article">
-                    <div class="contenedor-img">
-                        <img src="/images/consolas/ps4_slim/ps4.jpg" alt="PS4 SLIM">
-                    </div>
-
-                    <div class="product-info">
-                        <button><i class="far fa-heart"></i></button>
-
-                        <div class="title">
-                            <h3>PLAYSTATION 4 SLIM</h3>
-                        </div>
-                        <div class="info">
-                            <p class="price">$ 59.000</p>
-                            <p class="discount">12x $ 1.012,39 sin interés</p>
-                        </div>
-                    </div>
-                </a>
-            </article>
-            <article>
-                <a href="/products/detail-Product" class="a-article">
-                    <div class="contenedor-img">
-                        <img src="/images/consolas/ps5/ps5.jpg" alt="PS5">
-                    </div>
-
-                    <div class="product-info">
-                        <button><i class="far fa-heart"></i></button>
-
-                        <div class="title">
-                            <h3>PLAYSTATION 5</h3>
-                        </div>
-                        <div class="info">
-                            <p class="price">$ 159.000</p>
-                            <p class="discount">12x $ 1.012,39 sin interés</p>
-                        </div>
-                    </div>
-                </a>
-            </article>
-            
+                                <div class="title">
+                                    <h3><%=product.name %> </h3>
+                                </div>
+                                <div class="info">
+                                    <p class="price">$<%=toThousand(product.price)%> </p>
+                                    <%if(product.payMethod > 0){%>
+                                        <p class="discount"><%=product.payMethod%>x $ <%=toThousand((product.price / product.payMethod).toFixed(0))%> sin interés</p>
+                                    <%}%>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                 <% } %> 
+            <% }) %> 
         </section>
 
         <h2>Mas Vendidos</h2>
@@ -139,82 +87,31 @@
 
         <section class="productos">
             
-            <article>
-                <a href="/products/detail-Product" class="a-article">
-                    <div class="contenedor-img">
-                        <img src="/images/consolas/ps4.jpg" alt="PS4">
-                    </div>  
+            <% products.forEach(product => { %> 
+                <% if (product.category == "best-seller"){ %> 
+                    <article>
+                        <a href="/products/detail-Product" class="a-article">
+                            <div class="contenedor-img">
+                                <img src="/images/<%=product.type%>/<%=product.name%>/<%=product.image%>" alt="image">
+                            </div>
 
-                    <div class="product-info">
-                        <button><i class="far fa-heart"></i></button>
-        
-                        <div class="title">
-                            <h3>PLAYSTATION 4</h3>
-                        </div>
-                        <div class="info">
-                            <p class="price">$ 59.000</p>
-                            <!-- <p class="discount">12x $ 1.012,39 sin interés</p> -->
-                        </div>
-                    </div>
-                </a>
-            </article>
-            <article>
-                <a href="/products/detail-Product" class="a-article">
-                    <div class="contenedor-img">
-                        <img src="/images/Pc/PC-Armada-Media-0026_600.jpg" alt="COMPUTADORA GAMA MEDIA">
-                    </div>
+                            <div class="product-info">
+                                <button><i class="far fa-heart"></i></button>
 
-                    <div class="product-info">
-                        <button><i class="far fa-heart"></i></button>
-        
-                        <div class="title">
-                            <h3>COMPUTADORA AMD GAMA MEDIA</h3>
-                        </div>
-                        <div class="info">
-                            <p class="price">$ 460.417</p>
-                            <p class="discount">24x $ 1.012,39 sin interés</p>
-                        </div>
-                    </div>
-                </a>
-            </article>
-            <article>
-                <a href="/products/detail-Product" class="a-article">
-                    <div class="contenedor-img">
-                        <img src="/images/juegos/juego-nintendo-switch--super-smash.jpg" alt="SMAHS BROSS">
-                    </div>
-
-                    <div class="product-info">
-                        <button><i class="far fa-heart"></i></button>
-        
-                        <div class="title">
-                            <h3>SMASH BROSS NINTENDO SWITCH</h3>
-                        </div>
-                        <div class="info">
-                            <p class="price">$ 3.560</p>
-                            <p class="discount">12x $ 1.012,39 sin interés</p>
-                        </div>
-                    </div>
-                </a>
-            </article>
-            <article>
-                <a href="/products/detail-Product" class="a-article">
-                    <div class="contenedor-img">
-                        <img src="/images/consolas/switch/nintendo.jpg" alt="SWITCH">
-                    </div>
-
-                    <div class="product-info">
-                        <button><i class="far fa-heart"></i></button>
-        
-                        <div class="title">
-                            <h3>NINTENDO SWITCH</h3>
-                        </div>
-                        <div class="info"> 
-                            <p class="price">$ 159.000</p>
-                            <p class="discount">12x $ 1.012,39 sin interés</p>
-                        </div>
-                    </div>
-                </a>
-            </article>
+                                <div class="title">
+                                    <h3><%=product.name %> </h3>
+                                </div>
+                                <div class="info">
+                                    <p class="price">$<%=toThousand(product.price)%> </p>
+                                    <%if(product.payMethod > 0){%>
+                                        <p class="discount"><%=product.payMethod%>x $ <%=toThousand((product.price / product.payMethod).toFixed(0))%> sin interés</p>
+                                    <%}%>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                 <% } %> 
+            <% }) %> 
         </section>
 
         <h2>Ofertas</h2>
@@ -224,83 +121,31 @@
         </div>
 
         <section class="productos">
+            <% products.forEach(product => { %> 
+                <% if (product.category == "in-sale"){ %> 
+                    <article>
+                        <a href="/products/detail-Product" class="a-article">
+                            <div class="contenedor-img">
+                                <img src="/images/<%=product.type%>/<%=product.name%>/<%=product.image%>" alt="image">
+                            </div>
 
-            <article>
-                <a href="/products/detail-Product" class="a-article">
-                    <div class="contenedor-img">
-                        <img src="/images/Pc/pc-premire/pc-premire.jpg" alt="Pc de Edicion">
-                    </div>
+                            <div class="product-info">
+                                <button><i class="far fa-heart"></i></button>
 
-                    <div class="product-info">
-                        <button><i class="far fa-heart"></i></button>
-
-                        <div class="title">
-                            <h3>COMPUTADORA PARA EDICION</h3>
-                        </div>
-                        <div class="info">
-                            <p class="price">$ 560.000</p>
-                            <p class="discount">12x $ 1.012,39 sin interés</p>
-                        </div>
-                    </div>
-                </a>
-            </article>
-            <article>
-                <a href="/products/detail-Product" class="a-article">
-                    <div class="contenedor-img">
-                        <img src="/images/consolas/xbox-s.jpg" alt="XBOX ONE S">
-                    </div>
-
-                    <div class="product-info">
-                        <button><i class="far fa-heart"></i></button>
-
-                        <div class="title">
-                            <h3>XBOX ONE S</h3>
-                        </div>
-                        <div class="info">
-                            <p class="price">$ 59.000</p>
-                            <p class="discount">12x $ 1.012,39 sin interés</p>
-                        </div>
-                    </div>
-                </a>
-            </article>
-            <article>
-                <a href="/products/detail-Product" class="a-article">
-                    <div class="contenedor-img">
-                        <img src="/images/juegos/spiderman.jpg" alt="SPIDERMAN PS4">
-                    </div>
-
-                    <div class="product-info">
-                        <button><i class="far fa-heart"></i></button>
-
-                        <div class="title">
-                            <h3>SPIDERMAN PS4</h3>
-                        </div>
-                        <div class="info">
-                            <p class="price">$ 3.560</p>
-                            <!-- <p class="discount">12x $ 1.012,39 sin interés</p> -->
-                        </div>
-                    </div>
-                </a>
-            </article>
-            <article>
-                <a href="/products/detail-Product" class="a-article">
-                    <div class="contenedor-img">
-                        <img src="/images/juegos/callOfDuty-ps5.png" alt="COD PS5">
-                    </div>
-
-                    <div class="product-info">
-                        <button><i class="far fa-heart"></i></button>
-
-                        <div class="title">
-                            <h3>COD COLD WAR PS5</h3>
-                        </div>
-                        <div class="info">
-                            <p class="price">$ 3.560</p>
-                            <p class="discount">12x $ 1.012,39 sin interés</p>
-                        </div>
-                    </div>
-                </a>
-            </article>
+                                <div class="title">
+                                    <h3><%=product.name %> </h3>
+                                </div>
+                                <div class="info">
+                                    <p class="price">$<%=toThousand(product.price)%> </p>
+                                    <%if(product.payMethod > 0){%>
+                                        <p class="discount"><%=product.payMethod%>x $ <%=toThousand((product.price / product.payMethod).toFixed(0))%> sin interés</p>
+                                    <%}%>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                 <% } %> 
+            <% }) %> 
         </section>
     </div>
     </main>
@@ -310,3 +155,4 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
+

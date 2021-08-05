@@ -16,12 +16,12 @@
 
         <section class="vista">
             <div class="div-img-miniaturas">
-                <!-- <div class="vista-miniaturas">
-                    <button class="b-miniatura"><img src="/images/Pc/PC-Armada-Media-0026_600.jpg" alt="PC gama media AMD"></button>
+                <div class="vista-miniaturas">
+                    <!-- <button class="b-miniatura"><img src="/images/Pc/PC-Armada-Media-0026_600.jpg" alt="PC gama media AMD"></button>
                     <button class="b-miniatura"><img src="/images/Pc/fuente.jpg" alt="Fuente"></button>
                     <button class="b-miniatura"><img src="/images/Pc/mobo.jpg" alt="Motherboard"></button>
-                    <button class="b-miniatura"><img src="/images/Pc/ram.jpg" alt="Ram"></button>
-                </div> -->
+                    <button class="b-miniatura"><img src="/images/Pc/ram.jpg" alt="Ram"></button> -->
+                </div>
                 <div class="contenedor-img vista-img">
                     <img src="/images/<%=product.type%>/<%=product.name%>/<%=product.image%> " alt="<%=product.name %> ">
                     <button class="fav"><i class="far fa-heart"></i></button>
@@ -29,7 +29,7 @@
             </div>
             <div class="vista-info">
 
-                <h3> <%= product.name %>  </h3>
+                <h3 style="height: 70px;"> <%= product.name %>  </h3>
                 <%if(product.category == "in-sale"){%>
                     <p class="vendido">Oferta</p>
                 <%}else if(product.category == "new-release"){%>
@@ -39,10 +39,12 @@
                 <%}%>
                 <p class="price">$ <%= toThousand(product.price) %> </p>
                 <button class="cart-add"><i class="fas fa-cart-plus"></i></button>
-                <%if(product.payMethod > 0){%>
-                    <p class="t-cuotas"><%=product.payMethod%>x $ <%=toThousand((product.price / product.payMethod).toFixed(0))%> sin interés</p>
-                <%}%>
-                <button class="b-cuotas">calcular cuotas</button>
+                <div style="height: 41px;">
+                    <%if(product.payMethod > 0){%>
+                        <p class="t-cuotas"><%=product.payMethod%>x $ <%=toThousand((product.price / product.payMethod).toFixed(0))%> sin interés</p>
+                        <button class="b-cuotas">calcular cuotas</button>
+                    <%}%>
+                </div>
                 <div class="envios">
                     <i class="fas fa-truck"></i>
                     <p class="t-envios">Envios a todo el pais</p>

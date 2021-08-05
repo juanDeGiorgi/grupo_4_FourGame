@@ -7,124 +7,85 @@
     <%- include("./partials/header") %> 
     <main>
         <article class="contenedor">
-            <form action="/products/create" method="POST">
+            <form action="/products/create" method="POST" style="    width: 80%;
+            margin: 5vw auto 0 auto;
+            background-color: white;
+            padding: 15px;
+            border-radius: 10px;">
 
-                <section class="primero">
-                    <h2 class="elige"> Elige el tipo de producto y su categoría</h2>
-                    <div class="c-select">
-                        <select class="boton1" name="type" required>
-                            <option selected hidden>categoria</option>
-                            <option value="consolas">Consolas</option>
-                            <option value="pc">Pc armadas</option>
-                            <option value="juegos">Juegos</option>
-                        </select>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="c-select">
-                        <select class="boton2" name="category" required>
-                            <option selected hidden>producto</option>
-                            <option value="new-release"> Nuevos lanzamientos</option>
-                            <option value="in-sale" > En oferta</option>
-                            <option value="best-seller"> Más vendidos</option>
-                        </select>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                </section>
+            <!----------------------------------    BOOSTRAP   ------------------------------------------>
+              <div class="mb-3" style="    width: 71.1vw;
+              margin: auto;">
+                <label for="validationServer01" class="form-label">Selecciona una imagen principal :</label>
+                <input type="file" class="form-control" aria-label="file example" required>
+                <div class="invalid-feedback">Example invalid form file feedback</div>
+              </div>
+              <div style="display: flex;flex-wrap: wrap;justify-content: space-around;">
+                  <div class="col-md-3">
+                    <label for="validationServer01" class="form-label">Nombre :</label>
+                    <input type="text" class="form-control" id="validationServer01" placeholder="Nombre" required>
+                    <!-- <div class="valid-feedback">
+                      Looks good!
+                    </div> -->
+                  </div>
 
+                  <div class="mb-4" style="width: 19.3vw;">
+                    <label for="validationServer01" class="form-label">Tipo de producto :</label>
+                    <select class="form-select" required aria-label="select example">
+                      <option selected hidden>Producto</option>
+                      <option value="1">Consolas</option>
+                      <option value="2">Juegos</option>
+                      <option value="3">Pc armadas</option>
+                    </select>
+                    <div class="invalid-feedback">Example invalid select feedback</div>
+                  </div>
 
-                <section class="segundo">
+                  <div class="mb-4" style="width: 19.3vw;">
+                    <label for="validationServer01" class="form-label">Categoria :</label>
+                    <select class="form-select" required aria-label="select example">
+                      <option selected hidden>Categoria</option>
+                      <option value="1">En oferta</option>
+                      <option value="2">Mas vendido</option>
+                      <option value="3">Nuevo lanzamiento</option>
+                    </select>
+                    <div class="invalid-feedback">Example invalid select feedback</div>
+                  </div>
 
-                    <div class="caja-grande">
+                  <div class="col-md-3">
+                    <label for="validationServer01" class="form-label">Precio :</label>
+                    <input type="text" class="form-control" id="validationServer01" placeholder="Precio" required>
+                    <!-- <div class="valid-feedback">
+                      Looks good!
+                    </div> -->
+                  </div>
 
+                  <div class="col-md-3">
+                    <label for="validationServer01" class="form-label">Descuento :</label>
+                    <input type="text" class="form-control" id="validationServer01" placeholder="Descuento" required>
+                    <!-- <div class="valid-feedback">
+                      Looks good!
+                    </div> -->
+                  </div>
+                 
+                  <div class="mb-4" style="width: 19.3vw;">
+                    <label for="validationServer01" class="form-label">Medio pago :</label>
+                    <select class="form-select" required aria-label="select example">
+                      <option selected hidden>Medio de pago</option>
+                      <option value="1">6 cuotas</option>
+                      <option value="2">12 cuotas</option>
+                      <option value="3">Efectivo</option>
+                    </select>
+                    <div class="invalid-feedback">Example invalid select feedback</div>
+                  </div>
+              </div>
+              
 
-                        <div class="cont-mini-pctablet">
-                            <!-- <img class="img-mini-tablet-pc" src="/images/consolas/ps5/mando.jpeg" alt="" width="100%">
-                            <img class="img-mini-tablet-pc" src="/images/juegos/juego-ps5-2.png" alt="" width="100%">
-                            <img class="img-mini-tablet-pc" src="/images/juegos/Demons-Souls-PS5.png" alt=""
-                                width="100%"> -->
-
-                            <label for="img" class="c-img"><i class="fas fa-plus-circle"></i></label>
-                            <input type="file" name="image" id="img" accept=".jpg,.png,.svg" hidden> 
-
-                        </div>
-
-                        <div class="contenedor-producto">
-                            <img class="img-producto" src="/images/consolas/ps5/ps5.jpg" alt="" width="100%">
-                        </div>
-
-
-                    </div>
-
-                    <div class="contenedor-form">
-
-                        <div class="div-form">
-                            <input type="text" name="name" placeholder="Nombre" required>
-                            <input type="text" name="price" placeholder="Precio" required>
-                            <input type="text" name="discount" placeholder="descuento" required>
-                        </div>
-                        <div class="c-select">
-                            <select class="boton2" name="payMethod" required>
-                                <option selected hidden>Medios de pago</option>
-                                <option value="6"> 6 cuotas</option>
-                                <option value="12" >12 cuotas</option>
-                                <option value="0">Efectivo</option>
-                            </select>
-                        </div>
-                    </div>
-                </section>
-
-
-                <section class="tercero">
-
-                    <h3>Descripción</h3>
-
-                    <div class="lineaRosa"></div>
-
-                    <div class="contenedor-descripcion">
-                        <textarea name="descripcion" class="description" type="text"
-                            placeholder="Ingrese la Descripción del producto"></textarea>
-                    </div>
-
-                    <!-- <h3>Especificaciones</h3>
-
-                    <div class="lineaRosa"></div>
+            
+            <!----------------------------------    BOOSTRAP   ------------------------------------------>
+                
 
 
-                    <div class="SiEncontrasteEsteEasterEgg">
-                        <img src="/images/icon/cpu.svg" alt="" class="componentepc" width="15%">
-                        <textarea name="cpu" type="text" class="titulocomponente" required></textarea>
-                    </div>
-                    <div class="SiEncontrasteEsteEasterEgg">
-                        <img src="/images/icon/motherboard.svg" alt="" class="componentepc" width="15%">
-                        <textarea name="motherboard" type="text" class="titulocomponente" required></textarea>
-                    </div>
-                    <div class="SiEncontrasteEsteEasterEgg">
-                        <img src="/images/icon/ram.svg" alt="" class="componentepc" width="15%">
-                        <textarea name="ram" type="text" class="titulocomponente" required></textarea>
-                    </div>
-                    <div class="SiEncontrasteEsteEasterEgg">
-                        <img src="/images/icon/gpu.svg" class=" componentepc" width="15%">
-                        <textarea name="gpu" type="text" class="titulocomponente" required></textarea>
-                    </div>
-                    <div class="SiEncontrasteEsteEasterEgg">
-                        <img src="/images/icon/almacenamiento.svg" alt="" class="componentepc" width="15%">
-                        <textarea name="almacenamiento" type="text" class="titulocomponente" required></textarea>
-                    </div>
-                    <div class="SiEncontrasteEsteEasterEgg">
-                        <img src="/images/icon/fuente.svg" alt="" class="componentepc" width="15%">
-                        <textarea name="fuente" type="text" class="titulocomponente" required></textarea>
-                    </div>
-                    <div class="SiEncontrasteEsteEasterEgg">
-                        <img src="/images/icon/gabo.svg" alt="" class="componentepc" width="15%">
-                        <textarea name="gabinete" type="text" class="titulocomponente" required></textarea>
-                    </div>
- -->
-
-
-                </section>
-                <button type="submit" class="finalizar">Cargar producto</button>
             </form>
-        </article>
 
     </main>
 <%- include("./partials/footer") %> 

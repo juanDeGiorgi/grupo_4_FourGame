@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <%- include("./partials/head") %> 
+
+<body class="loading">
+    <%- include("./partials/header") %> 
+    <main>
+        <article class="contenedor">
+            <form action="/products/create" method="POST">
+
+                <section class="primero">
+                    <h2 class="elige"> Elige el tipo de producto y su categoría</h2>
+                    <div class="c-select">
+                        <select class="boton1" name="type" required>
+                            <option selected hidden>categoria</option>
+                            <option value="consolas">Consolas</option>
+                            <option value="pc">Pc armadas</option>
+                            <option value="juegos">Juegos</option>
+                        </select>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="c-select">
+                        <select class="boton2" name="category" required>
+                            <option selected hidden>producto</option>
+                            <option value="new-release"> Nuevos lanzamientos</option>
+                            <option value="in-sale" > En oferta</option>
+                            <option value="best-seller"> Más vendidos</option>
+                        </select>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </section>
+
+
+                <section class="segundo">
+
+                    <div class="caja-grande">
+
+
+                        <div class="cont-mini-pctablet">
+                            <!-- <img class="img-mini-tablet-pc" src="/images/consolas/ps5/mando.jpeg" alt="" width="100%">
+                            <img class="img-mini-tablet-pc" src="/images/juegos/juego-ps5-2.png" alt="" width="100%">
+                            <img class="img-mini-tablet-pc" src="/images/juegos/Demons-Souls-PS5.png" alt=""
+                                width="100%"> -->
+
+                            <label for="img" class="c-img"><i class="fas fa-plus-circle"></i></label>
+                            <input type="file" name="image" id="img" accept=".jpg,.png,.svg" hidden> 
+
+                        </div>
+
+                        <div class="contenedor-producto">
+                            <img class="img-producto" src="/images/consolas/ps5/ps5.jpg" alt="" width="100%">
+                        </div>
+
+
+                    </div>
+
+                    <div class="contenedor-form">
+
+                        <div class="div-form">
+                            <input type="text" name="name" placeholder="Nombre" required>
+                            <input type="text" name="price" placeholder="Precio" required>
+                            <input type="text" name="discount" placeholder="descuento" required>
+                        </div>
+                        <div class="c-select">
+                            <select class="boton2" name="payMethod" required>
+                                <option selected hidden>Medios de pago</option>
+                                <option value="6"> 6 cuotas</option>
+                                <option value="12" >12 cuotas</option>
+                                <option value="0">Efectivo</option>
+                            </select>
+                        </div>
+                    </div>
+                </section>
+
+
+                <section class="tercero">
+
+                    <h3>Descripción</h3>
+
+                    <div class="lineaRosa"></div>
+
+                    <div class="contenedor-descripcion">
+                        <textarea name="descripcion" class="description" type="text"
+                            placeholder="Ingrese la Descripción del producto"></textarea>
+                    </div>
+
+                    <!-- <h3>Especificaciones</h3>
+
+                    <div class="lineaRosa"></div>
+
+
+                    <div class="SiEncontrasteEsteEasterEgg">
+                        <img src="/images/icon/cpu.svg" alt="" class="componentepc" width="15%">
+                        <textarea name="cpu" type="text" class="titulocomponente" required></textarea>
+                    </div>
+                    <div class="SiEncontrasteEsteEasterEgg">
+                        <img src="/images/icon/motherboard.svg" alt="" class="componentepc" width="15%">
+                        <textarea name="motherboard" type="text" class="titulocomponente" required></textarea>
+                    </div>
+                    <div class="SiEncontrasteEsteEasterEgg">
+                        <img src="/images/icon/ram.svg" alt="" class="componentepc" width="15%">
+                        <textarea name="ram" type="text" class="titulocomponente" required></textarea>
+                    </div>
+                    <div class="SiEncontrasteEsteEasterEgg">
+                        <img src="/images/icon/gpu.svg" class=" componentepc" width="15%">
+                        <textarea name="gpu" type="text" class="titulocomponente" required></textarea>
+                    </div>
+                    <div class="SiEncontrasteEsteEasterEgg">
+                        <img src="/images/icon/almacenamiento.svg" alt="" class="componentepc" width="15%">
+                        <textarea name="almacenamiento" type="text" class="titulocomponente" required></textarea>
+                    </div>
+                    <div class="SiEncontrasteEsteEasterEgg">
+                        <img src="/images/icon/fuente.svg" alt="" class="componentepc" width="15%">
+                        <textarea name="fuente" type="text" class="titulocomponente" required></textarea>
+                    </div>
+                    <div class="SiEncontrasteEsteEasterEgg">
+                        <img src="/images/icon/gabo.svg" alt="" class="componentepc" width="15%">
+                        <textarea name="gabinete" type="text" class="titulocomponente" required></textarea>
+                    </div>
+ -->
+
+
+                </section>
+                <button type="submit" class="finalizar">Cargar producto</button>
+            </form>
+        </article>
+
+    </main>
+<%- include("./partials/footer") %> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

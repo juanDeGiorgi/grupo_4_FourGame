@@ -325,7 +325,7 @@
     width: 80vw;
     height: 131.3vw;
     padding: 15px;
-    margin: auto;
+    margin: 0 auto 50px auto;
     box-shadow: 0px 0px 10px rgb(100,100,100);
     position: relative;
     cursor: pointer;
@@ -597,6 +597,7 @@
     .detail main .productos {
         display: flex;
         justify-content: space-evenly;
+        flex-wrap: wrap;
     }
 
     .detail main .producto-tablet{

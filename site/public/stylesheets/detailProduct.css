@@ -36,7 +36,7 @@
 .detail main .vista{
     background-color: #ffffff;
     margin: 3% 0% 0% 0%;
-    height: 235vw;
+    height:  256vw;
     padding: 0px 20px 0px 20px;
     border-radius: 20px;
     position: relative;
@@ -218,22 +218,30 @@
     text-align: center;
 }
 
-.detail main .vista .vista-info .b-comprar{
-    background-color: #F2204D;
+.detail main .vista .vista-info .b-editar{
+    background-color:
+    
+}
+.detail main .vista .vista-info .b-borrar{
+    background-color:#f70303
+}
+.detail main .vista .vista-info .b-comprar {
+    /* background-color: #F2204D; */
     color: #ffffff;
-    padding: 6px 0px;
-    font-size: 10vw;
-    border-radius: 25px;
-    width: 65vw;
-    margin: -4.2vw;
+    padding: 3px 0px;
+    font-size: 26px;
+    border-radius: 26px;
+    width: 39vw;
+    margin: 3% auto 3% auto;
+    display: block;
 }
 
 .detail main .vista .vista-info .b-comprar:hover{
-    background-color: #cc1a40;
+   /*  background-color: #cc1a40; */
 }
 
 .detail main .vista .vista-info .b-comprar:active{
-    background-color: #a81535;
+ /*    background-color: #a81535; */
 }
 
 /*                   */
@@ -410,7 +418,7 @@
     /*  SECTION DEL ARTICULO ENTERO  */
 
     .detail main .vista {
-        height: 172.2vw;
+        height: 190.2vw;
     }
 
     /*         IMG EN MINIATURA      */
@@ -535,7 +543,7 @@
     .detail main .vista .vista-info .b-comprar {
         font-size: 7.3vw;
         width: 44.1vw;
-        margin: -8.8%;
+    
     }
 
 
@@ -658,7 +666,7 @@
     /*      ARTICULO ENTERO */
 
     .detail main .vista {
-        height: 42.4vw;
+        height: 46vw;
         width: 90%;
         display: flex;
         margin: 1.7% auto 0% auto;
@@ -792,12 +800,11 @@
     /*      COMPRAR         */
 
     .detail main .vista .vista-info .b-comprar {
-        font-size: 2.7vw;
-        width: 18.9vw;
-        margin: 0.8vw 0vw 0vw 0vw;
+        font-size: 2vw;
+        width: 12.9vw;
         cursor: pointer;
+        display: inline-block;
     }
-
     /* SECTION COMENTARIOS */
 
     .detail main .comentarios {

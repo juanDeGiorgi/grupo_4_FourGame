@@ -33,8 +33,9 @@ module.exports={
    res.redirect('/')
     },
 
-    edit : (req,res)=> res.render('productEdit'),
-   
+    edit : (req,res)=>{ res.render('productEdit',{product : products.find(product=> product.id==req.params.id)
+    })
+},
     update : (req,res)=> {
 
     },

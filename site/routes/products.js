@@ -10,7 +10,7 @@ router.get('/detail/:id', controller.detail);
 /* Product create*/ 
 
 router.get('/create', controller.loading);
-router.post('/create', controller.loading);
+router.post('/create', controller.save);
 
 /* Product edit */
 

@@ -7,25 +7,25 @@
     <%- include("./partials/header") %> 
     <main>
         <article class="contenedor">
-            <form action="">
+            <form action="/products/create" method="POST">
 
                 <section class="primero">
                     <h2 class="elige"> Elige el tipo de producto y su categoría</h2>
                     <div class="c-select">
-                        <select class="boton1" name="categoria" required>
+                        <select class="boton1" name="type" required>
                             <option selected hidden>categoria</option>
-                            <option>Consolas</option>
-                            <option>Pc armadas</option>
-                            <option>Juegos</option>
+                            <option value="consolas">Consolas</option>
+                            <option value="pc">Pc armadas</option>
+                            <option value="juegos">Juegos</option>
                         </select>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="c-select">
-                        <select class="boton2" name="producto" required>
+                        <select class="boton2" name="category" required>
                             <option selected hidden>producto</option>
-                            <option>Playstation 5</option>
-                            <option>Xbox series X</option>
-                            <option>Nintendo Switch</option>
+                            <option value="new-release"> Nuevos lanzamientos</option>
+                            <option value="in-sale" > En oferta</option>
+                            <option value="best-seller"> Más vendidos</option>
                         </select>
                         <i class="fas fa-chevron-down"></i>
                     </div>
@@ -38,13 +38,13 @@
 
 
                         <div class="cont-mini-pctablet">
-                            <img class="img-mini-tablet-pc" src="/images/consolas/ps5/mando.jpeg" alt="" width="100%">
+                            <!-- <img class="img-mini-tablet-pc" src="/images/consolas/ps5/mando.jpeg" alt="" width="100%">
                             <img class="img-mini-tablet-pc" src="/images/juegos/juego-ps5-2.png" alt="" width="100%">
                             <img class="img-mini-tablet-pc" src="/images/juegos/Demons-Souls-PS5.png" alt=""
-                                width="100%">
+                                width="100%"> -->
 
                             <label for="img" class="c-img"><i class="fas fa-plus-circle"></i></label>
-                            <input type="file" name="img-producto" id="img" accept=".jpg,.png,.svg" hidden> 
+                            <input type="file" name="image" id="img" accept=".jpg,.png,.svg" hidden> 
 
                         </div>
 
@@ -58,11 +58,18 @@
                     <div class="contenedor-form">
 
                         <div class="div-form">
-                            <input type="text" name="nombreProducto" placeholder="Nombre" required>
-                            <input type="text" name="precio" placeholder="Precio" required>
-                            <input type="text" name="stock" placeholder="Stock" required>
+                            <input type="text" name="name" placeholder="Nombre" required>
+                            <input type="text" name="price" placeholder="Precio" required>
+                            <input type="text" name="discount" placeholder="descuento" required>
                         </div>
-
+                        <div class="c-select">
+                            <select class="boton2" name="payMethod" required>
+                                <option selected hidden>Medios de pago</option>
+                                <option value="6"> 6 cuotas</option>
+                                <option value="12" >12 cuotas</option>
+                                <option value="0">Efectivo</option>
+                            </select>
+                        </div>
                     </div>
                 </section>
 
@@ -78,7 +85,7 @@
                             placeholder="Ingrese la Descripción del producto"></textarea>
                     </div>
 
-                    <h3>Especificaciones</h3>
+                    <!-- <h3>Especificaciones</h3>
 
                     <div class="lineaRosa"></div>
 
@@ -111,7 +118,7 @@
                         <img src="/images/icon/gabo.svg" alt="" class="componentepc" width="15%">
                         <textarea name="gabinete" type="text" class="titulocomponente" required></textarea>
                     </div>
-
+ -->
 
 
                 </section>

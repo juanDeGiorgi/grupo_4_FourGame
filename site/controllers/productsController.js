@@ -36,10 +36,34 @@ module.exports={
     edit : (req,res)=>{ res.render('productEdit',{product : products.find(product=> product.id==req.params.id)
     })
 },
-    update : (req,res)=> {
+    update : (req,res)=> { 
+            products.forEach(product => {
+                if(product.id == req.params.id){
+                     
+                    product.name = req.body.name,
+                    product.description = req.body.description,
+                    product.price = +req.body.price,
+                    product.discount = +req.body.discount,
+                    product.category = req.body.category,
+                    product.type = req.body.type,
+                    product.payMethod = +req.body.payMethod
 
+                }
+            });
+            
+            fs.mkdirSync(path.join(__dirname,`../public/images/${req.body.type}/${req.body.name}`));
+            fs.writeFileSync(path.join(__dirname,'../data/products.json'),JSON.stringify(products),'utf-8'); 
+            res.redirect('/');
     },
     destroy : (req,res)=> {
+                for (let posicion = 0; posicion < products.length; posicion++) {
+                    if (products[posicion].id == req.params.id){
+                            products.splice(posicion, 1) 
+                    }
+                    
+                }
+            fs.writeFileSync(path.join(__dirname,'../data/products.json'),JSON.stringify(products),'utf-8'); 
+            res.redirect('/');
 
    }
 }

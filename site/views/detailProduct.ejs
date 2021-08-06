@@ -69,7 +69,7 @@
                 <div class="div-comprar">
                     <!-- <button class="b-comprar">Comprar</button> -->
                    <a href="/products/edit/<%=product.id%>" class="b-editar">Editar</a>
-                   <form>
+                   <form action="/products/delete/<%=product.id%>?_method=DELETE" method="POST">
                        <button type="submit" class="b-borrar">Borrar</button>
                    </form>
                 </div>

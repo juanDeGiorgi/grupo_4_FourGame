@@ -17,6 +17,11 @@ router.post('/create', controller.save);
 router.get('/edit/:id', controller.edit);
 router.put('/edit/:id', controller.edit);
 
+/* Product delete */
+
+router.delete('/delete/:id', controller.destroy);
+
+
 
 
 module.exports = router;

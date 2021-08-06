@@ -27,10 +27,10 @@ module.exports={
             type : req.body.type,
             payMethod : +req.body.payMethod,
         }
-   products.push(product)
-   fs.mkdirSync(path.join(__dirname,`../public/images/${product.type}/${product.name}`))
-   fs.writeFileSync(path.join(__dirname,'../data/products.json'),JSON.stringify(products),'utf-8') 
-   res.redirect('/')
+        products.push(product)
+        fs.mkdirSync(path.join(__dirname,`../public/images/${product.type}/${product.name}`))
+        fs.writeFileSync(path.join(__dirname,'../data/products.json'),JSON.stringify(products),'utf-8') 
+        res.redirect('/')
     },
 
     edit : (req,res)=>{ res.render('productEditv2',{product : products.find(product=> product.id==req.params.id)

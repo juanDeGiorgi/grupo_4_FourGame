@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path= require('path');
+const fsMethods = require("../utils/fsMethods");
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
@@ -16,7 +17,7 @@ module.exports={
     loading : (req,res)=> res.render('productLoadingv2'),
   
     save : (req,res) => {
-        let product= {
+        let product = {
             id : products[products.length-1].id +1,
             name : req.body.name,
             description : req.body.description,
@@ -28,8 +29,8 @@ module.exports={
             payMethod : +req.body.payMethod,
         }
         products.push(product)
-        fs.mkdirSync(path.join(__dirname,`../public/images/${product.type}/${product.name}`))
-        fs.writeFileSync(path.join(__dirname,'../data/products.json'),JSON.stringify(products),'utf-8') 
+        fs.mkdirSync(fsMethods.join(`../public/images/${product.type}/${product.name}`))
+        fs.writeFileSync(fsMethods.join('../data/products.json'),JSON.stringify(products),'utf-8') 
         res.redirect('/')
     },
 
@@ -39,6 +40,7 @@ module.exports={
         products.forEach(product => {
             if(product.id == req.params.id){
                     
+                fs.renameSync(fsMethods.join(`../public/images/${product.type}/${product.name}`),path.join(__dirname,`../public/images/${req.body.type}/${req.body.name}`));
                 product.name = req.body.name,
                 product.description = req.body.description,
                 product.price = +req.body.price,
@@ -47,33 +49,25 @@ module.exports={
                 product.type = req.body.type,
                 product.payMethod = +req.body.payMethod
 
-<<<<<<< HEAD
-            }
-        });
-        
-        fs.mkdirSync(path.join(__dirname,`../public/images/${req.body.type}/${req.body.name}`));
-        fs.writeFileSync(path.join(__dirname,'../data/products.json'),JSON.stringify(products),'utf-8'); 
-        res.redirect('/');
-=======
                 }
             });
             
-            fs.renameSync(`../public/images/${req.body.type}/${req.body.name}`);
-            fs.writeFileSync(path.join(__dirname,'../data/products.json'),JSON.stringify(products),'utf-8'); 
+            fs.writeFileSync(fsMethods.join('../data/products.json'),JSON.stringify(products),'utf-8'); 
             res.redirect('/');
->>>>>>> 64e2382d40bb23c229785c784e6210a63eb35650
     },
     destroy : (req,res)=> {
         for (let posicion = 0; posicion < products.length; posicion++) {
             if (products[posicion].id == req.params.id){
-                    fs.unlinkSync(path.join(__dirname,`../public/images/${products[posicion].type}/${products[posicion].name}`))
+                    fsMethods.deleteFolder(fsMethods.join(`../public/images/${products[posicion].type}/${products[posicion].name}`));
                     products.splice(posicion, 1) 
             }
             
         }
-        fs.writeFileSync(path.join(__dirname,'../data/products.json'),JSON.stringify(products),'utf-8'); 
+        fs.writeFileSync(fsMethods.join('../data/products.json'),JSON.stringify(products),'utf-8'); 
         res.redirect('/');
 
    }
 }
+
+
 

@@ -29,17 +29,27 @@
             </div>
             <div class="vista-info">
 
-                <h3 style="height: 70px;"> <%= product.name %>  </h3>
-                <%if(product.category == "in-sale"){%>
-                    <p class="vendido">Oferta</p>
-                <%}else if(product.category == "new-release"){%>
-                    <p class="vendido">Lanzamiento</p>
-                <%}else{%>
-                    <p class="vendido">Mas vendido</p>
-                <%}%>
-                <p class="price">$ <%= toThousand(product.price) %> </p>
+                <div style="height: 9.5vw;">
+                    <h3> <%= product.name %> </h3>
+                
+                    <%if(product.category == "in-sale"){%>
+                        <p class="vendido">Oferta</p>
+                    <%}else if(product.category == "new-release"){%>
+                        <p class="vendido">Lanzamiento</p>
+                    <%}else{%>
+                        <p class="vendido">Mas vendido</p>
+                    <%}%>
+                </div>
+                <p class="product-detail-price small">
+                    <%if (product.discount !== 0){%>
+                        <span>$<%=toThousand(product.price)%></span>
+                        /
+                        <b><%=product.discount%>% OFF</b>
+                    <%}%>
+                </p>
+                <p class="price">$ <%= toThousand(Math.round(product.price - ((product.discount / 100) * product.price))) %> </p>
                 <button class="cart-add"><i class="fas fa-cart-plus"></i></button>
-                <div style="height: 41px;">
+                <div style="height: 4.1vw; margin: 1vw 0vw;">
                     <%if(product.payMethod > 0){%>
                         <p class="t-cuotas"><%=product.payMethod%>x $ <%=toThousand((product.price / product.payMethod).toFixed(0))%> sin interés</p>
                         <button class="b-cuotas">calcular cuotas</button>
@@ -58,8 +68,10 @@
                 </div>
                 <div class="div-comprar">
                     <!-- <button class="b-comprar">Comprar</button> -->
-                    <button class="b-comprar b-editar">Editar</button>
-                    <button class="b-comprar b-borrar">Borrar</button>
+                   <a href="/products/edit/<%=product.id%>" class="b-editar">Editar</a>
+                   <form>
+                       <button type="submit" class="b-borrar">Borrar</button>
+                   </form>
                 </div>
             </div>
         </section>
@@ -82,7 +94,7 @@
                     <!-- LINEA DECORATIVA -->
                 </div>
 
-                <p> <%= product.description %> </p>
+                <p><%=product.description %> </p>
             </div>
            <!-- <div class="especificaciones">
                 <h2>Especificaciones</h2>

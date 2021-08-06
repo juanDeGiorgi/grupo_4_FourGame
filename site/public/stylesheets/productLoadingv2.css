@@ -1,0 +1,118 @@
+
+/* titulo */
+
+.loading main .title{
+    color: black;
+    text-align: center;
+    margin: 10% 0% 2% 0%;
+    font-size: 8vw;
+    width: 80%;
+}
+
+/* Formulario */
+
+/* Input file */
+
+.loading main form .input-file{
+    width: 71.1vw;
+    margin: auto;
+}
+
+/* resto de Inputs */
+
+.loading main form .container-inputs{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.loading main form .container-inputs .input-selects{
+    width: 19.3vw;
+}
+
+.loading main form .input-text-area{
+    width: 71.1vw;
+    margin: auto;
+    resize: none;
+}
+
+.loading main form .container-buttons{
+    text-align: end;
+    width: 93%;
+    margin: auto;
+}
+
+.loading main form .container-buttons .btn-editar{
+    background-color: #3D2ED0;
+    color: white;
+    border-radius: 25px;
+    margin: 1vw;
+
+}
+
+.loading main form .container-buttons .btn-editar:hover {
+    color: #fff;
+    background-color: #372aad;
+}
+
+.loading main form .container-buttons .btn-borrar{
+    background-color: #dc3545;
+    color: white;
+    border-radius: 25px;
+    margin: 1vw;
+
+}
+
+.loading main form .container-buttons .btn-borrar:hover {
+    color: #fff;
+    background-color: #bb2d3b;
+    border-color: #b02a37;
+}
+
+
+.loading form .form-control:focus,.form-select:focus{
+    border-color: #3D2ED0;
+    box-shadow: 0 0 0 0.25rem #3e2ed063;
+} 
+
+
+@media (min-width:768px){
+
+/* titulo */
+
+    .loading main .title{
+        font-size: 4vw;
+        margin: 3.7vw auto 0% auto;
+        text-align: left;
+    }
+
+/* Formulario */
+
+    .loading main .formCreacion{
+        width: 80%;
+        margin: 3vw auto 0 auto;
+        background-color: white;
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+/* Input file */
+
+
+}
+
+@media (min-width:1024px){
+
+/* titulo */
+
+    .loading main .title{
+        font-size: 2.5vw;
+    }
+    
+/* Formulario */
+
+
+/* Input file */
+
+
+}

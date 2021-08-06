@@ -67,9 +67,12 @@
                                     <h3><%=product.name %> </h3>
                                 </div>
                                 <div class="info">
-                                    <p class="price">$<%=toThousand(product.price)%> </p>
+                                    <p class="price">$ <%=toThousand(product.price)%> </p>
+                                    <%if (product.discount !== 0){%>
+										<span class="discount"><%=product.discount%>% OFF</span>
+									<%}%>
                                     <%if(product.payMethod > 0){%>
-                                        <p class="discount"><%=product.payMethod%>x $ <%=toThousand((product.price / product.payMethod).toFixed(0))%> sin interés</p>
+                                        <p class="payMethod"><%=product.payMethod%>x $ <%=toThousand((product.price / product.payMethod).toFixed(0))%> sin interés</p>
                                     <%}%>
                                 </div>
                             </div>
@@ -102,9 +105,12 @@
                                     <h3><%=product.name %> </h3>
                                 </div>
                                 <div class="info">
-                                    <p class="price">$<%=toThousand(product.price)%> </p>
+                                    <p class="price">$ <%=toThousand(product.price)%> </p>
+                                    <%if (product.discount !== 0){%>
+										<span class="discount"><%=product.discount%>% OFF</span>
+									<%}%>
                                     <%if(product.payMethod > 0){%>
-                                        <p class="discount"><%=product.payMethod%>x $ <%=toThousand((product.price / product.payMethod).toFixed(0))%> sin interés</p>
+                                        <p class="payMethod"><%=product.payMethod%>x $ <%=toThousand((product.price / product.payMethod).toFixed(0))%> sin interés</p>
                                     <%}%>
                                 </div>
                             </div>
@@ -136,9 +142,12 @@
                                     <h3><%=product.name %> </h3>
                                 </div>
                                 <div class="info">
-                                    <p class="price">$<%=toThousand(product.price)%> </p>
+                                    <p class="price">$ <%=toThousand(product.price)%> </p>
+                                    <%if (product.discount !== 0){%>
+										<span class="discount"><%=product.discount%>% OFF</span>
+									<%}%>
                                     <%if(product.payMethod > 0){%>
-                                        <p class="discount"><%=product.payMethod%>x $ <%=toThousand((product.price / product.payMethod).toFixed(0))%> sin interés</p>
+                                        <p class="payMethod"><%=product.payMethod%>x $ <%=toThousand((product.price / product.payMethod).toFixed(0))%> sin interés</p>
                                     <%}%>
                                 </div>
                             </div>

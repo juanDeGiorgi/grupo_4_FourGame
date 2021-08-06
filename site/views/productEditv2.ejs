@@ -6,7 +6,7 @@
 <body class="loading">
     <%- include("./partials/header")%> 
     <main>
-          <h1 class="title">Formulario de creacion :</h1>
+          <h1 class="title"><small>Estas editando el producto</small> : <%=product.name%></h1>
           
           <form class="formCreacion" action="/products/create" method="POST">
 
@@ -88,7 +88,7 @@
             <!----------------------------------    BOOSTRAP   ------------------------------------------>
                 
             <div class="container-buttons">
-                <button type="submit" class="btn btn-editar">Cargar producto</button>
+                <button type="submit" class="btn btn-editar">Guardar Producto</button>
                 <a href="/" class="btn btn-borrar">Cancelar</a>
             </div>
           </form>

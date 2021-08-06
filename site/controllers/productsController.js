@@ -13,7 +13,7 @@ module.exports={
         relatedProducts : products
     }),
 
-    loading : (req,res)=> res.render('productLoading'),
+    loading : (req,res)=> res.render('productLoadingv2'),
   
     save : (req,res) => {
         let product= {
@@ -33,7 +33,7 @@ module.exports={
    res.redirect('/')
     },
 
-    edit : (req,res)=>{ res.render('productEdit',{product : products.find(product=> product.id==req.params.id)
+    edit : (req,res)=>{ res.render('productEditv2',{product : products.find(product=> product.id==req.params.id)
     })
 },
     update : (req,res)=> { 

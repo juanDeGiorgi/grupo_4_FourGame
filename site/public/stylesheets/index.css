@@ -132,10 +132,19 @@
         font-size: 10vw;
         margin-bottom: 3%;
     }
-    
+
     .home main section article div .discount{
+        font-size: 1.2vw;
+        font-weight: 300;
         color: #33CC33;
+        margin: 0 0 0 10px;
+    }
+    
+    .home main section article div .payMethod{
+        /* color: #33CC33; */
+        color: #3D2ED0;
         font-size: 5vw;
+        font-weight: 500;
     }
     
     
@@ -211,7 +220,7 @@
             font-size: 5.7vw;
         }
     
-        .home main section article div .discount {
+        .home main section article div .payMethod {
             font-size: 2.7vw;
         }
     
@@ -241,10 +250,11 @@
         }
     
         .home main section article div .price {
-            font-size: 2.8vw;
+            font-size: 2vw;
+            display: inline-block;
         }
     
-        .home main section article div .discount {
+        .home main section article div .payMethod {
             font-size: 1.3vw;
         }
     

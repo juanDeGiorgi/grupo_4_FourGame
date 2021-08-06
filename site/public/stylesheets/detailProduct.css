@@ -212,21 +212,52 @@
 
 /*                   */
 
-/*      COMPRAR      */
+/*      COMPRAR,EDITAR Y BORRAR      */
 
 .detail main .vista .vista-info .div-comprar{
     text-align: center;
+    display: flex;    
+    align-items: center;
+
 }
 
 .detail main .vista .vista-info .b-editar{
-    background-color:
+    background-color: #3D2ED0;
+    color: #ffffff;
+    padding: 6px 0px;
+    font-size: 26px;
+    border-radius: 26px;
+    width: 39vw;
+    margin: 3% auto 3% auto;
+    display: block;
     
 }
-.detail main .vista .vista-info .b-borrar{
-    background-color:#f70303
+
+.detail main .vista .vista-info .b-editar:hover{
+    color: #fff;
+    background-color: #372aad;
 }
+
+.detail main .vista .vista-info .b-borrar{
+    background-color:#f70303;
+    color: #ffffff;
+    padding: 6px 0px;
+    font-size: 26px;
+    border-radius: 26px;
+    width: 39vw;
+    margin: 3% auto 3% auto;
+    display: block;
+    
+}
+
+.detail main .vista .vista-info .b-borrar:hover{
+    color: #fff;
+    background-color: #bb2d3b;
+    border-color: #b02a37;
+}
+
 .detail main .vista .vista-info .b-comprar {
-    /* background-color: #F2204D; */
+    background-color: #F2204D;
     color: #ffffff;
     padding: 3px 0px;
     font-size: 26px;
@@ -237,12 +268,9 @@
 }
 
 .detail main .vista .vista-info .b-comprar:hover{
-   /*  background-color: #cc1a40; */
+    background-color: #cc1a40;
 }
 
-.detail main .vista .vista-info .b-comprar:active{
- /*    background-color: #a81535; */
-}
 
 /*                   */
 
@@ -251,7 +279,7 @@
 .detail main .comentarios{
     background-color: #ffffff;
     height: 40vw;
-    border-radius: 25px;
+    border-radius: 20px;
     text-align: center;
     margin: 7.2vw 0
 }
@@ -506,7 +534,7 @@
     /*      ENVIOS          */
 
     .detail main .vista .vista-info .envios {
-        margin: 0vw 0;
+        margin: 1vw 0;
     }
 
     .detail main .vista .vista-info .envios .fa-truck {
@@ -541,6 +569,18 @@
     /*      COMPRAR         */
 
     .detail main .vista .vista-info .b-comprar {
+        font-size: 7.3vw;
+        width: 44.1vw;
+    
+    }
+
+    .detail main .vista .vista-info .b-editar {
+        font-size: 7.3vw;
+        width: 44.1vw;
+    
+    }
+
+    .detail main .vista .vista-info .b-borrar {
         font-size: 7.3vw;
         width: 44.1vw;
     
@@ -659,7 +699,7 @@
     /*  MAPA DEL SITIO */
 
     .detail main .map {
-        font-size: 2vw;
+        font-size: 1.5vw;
         margin: 10% auto 0;
         width: 90%;
     }
@@ -726,7 +766,7 @@
      /*      TITULO Y MAS VENDIDO */
 
     .detail main .vista .vista-info h3 {
-        font-size: 2.9vw;
+        font-size: 2.3vw;
     }
 
     .detail main .vista .vista-info .vendido {
@@ -738,13 +778,29 @@
 
     .detail main .vista .vista-info .price {
         font-size: 3.5vw;
-        margin: 1.5vw 0px 0.6vw;
+        margin: 0vw 0vw 0.6vw;
     }
 
     .detail main .vista .vista-info .cart-add {
         font-size: 3.7vw;
-        margin-left: 7.3vw;
+        margin-left: 9.1vw;
         cursor: pointer;
+    }
+
+    /*      DESCUENTO        */
+
+    .detail .small {
+        font-size: 1.8em;
+        color: #33CC33;
+    }
+
+    .detail .product-detail-price {
+        font-size: 1.5vw;
+        margin: 0px 0;
+    }
+
+    .detail .small span {
+        text-decoration: line-through;
     }
 
     /*      CUOTAS           */
@@ -780,7 +836,7 @@
     /*      CANTIDAD     */
 
     .detail main .vista .vista-info .cantidad {
-        margin: 0vw;
+        margin: 1.2vw 0vw;
     }
 
     .detail main .vista .vista-info .cantidad .t-cantidad {
@@ -798,9 +854,23 @@
         font-size: 3.6vw;
     }
 
-    /*      COMPRAR         */
+    /*      COMPRAR,EDITAR Y BORRAR        */
 
     .detail main .vista .vista-info .b-comprar {
+        font-size: 2.5vw;
+        width: 15vw;    
+        cursor: pointer;
+        display: inline-block;
+    }
+
+    .detail main .vista .vista-info .b-editar {
+        font-size: 2vw;
+        width: 12.9vw;
+        cursor: pointer;
+        display: inline-block;
+    }
+
+    .detail main .vista .vista-info .b-borrar {
         font-size: 2vw;
         width: 12.9vw;
         cursor: pointer;
@@ -809,10 +879,12 @@
     /* SECTION COMENTARIOS */
 
     .detail main .comentarios {
-        height: 9vw;
-        width: 90%;
+        height: 6.1vw;
+        width: 84%;
         text-align: left;
         margin: 5vw auto;
+        display: flex;
+        align-items: center;
     }
 
     .detail main .comentarios .div-stars{

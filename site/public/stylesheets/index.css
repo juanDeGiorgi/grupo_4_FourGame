@@ -1,4 +1,12 @@
 
+  .home main{
+    /* background-image: url(https://cdn.pixabay.com/photo/2016/08/01/20/15/green-1562016_1280.png); */
+    /* background-image: url(https://images.unsplash.com/photo-1572040917409-60ca0cfcc2df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80); */
+    background-image: url(https://images8.alphacoders.com/860/thumb-1920-860215.jpg);
+    background-position: left;
+    background-size:cover;
+    background-attachment: fixed;
+    }
 
                /*                          MOBILE                            */
 
@@ -134,14 +142,16 @@
     .home main section article div .price{
         font-size: 10vw;
         margin-bottom: 3%;
+        display: inline-block;
     }
 
     .home main section article div .discount{
-        font-size: 1.2vw;
+        font-size: 5.5vw;
         font-weight: 300;
         color: #33CC33;
         margin: 0 0 0 10px;
     }
+
     
     .home main section article div .payMethod{
         /* color: #33CC33; */
@@ -223,6 +233,10 @@
             font-size: 5.7vw;
         }
     
+        .home main section article div .discount {
+            font-size: 3.1vw;
+        }
+            
         .home main section article div .payMethod {
             font-size: 2.7vw;
         }
@@ -254,9 +268,12 @@
     
         .home main section article div .price {
             font-size: 2vw;
-            display: inline-block;
         }
-    
+
+        .home main section article div .discount{
+            font-size: 1.2vw;
+        }
+
         .home main section article div .payMethod {
             font-size: 1.3vw;
         }

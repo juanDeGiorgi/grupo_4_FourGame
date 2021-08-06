@@ -3,45 +3,45 @@
 
     <%- include("./partials/head") %> 
 
-<body class="register">
-<%- include("./partials/header") %> 
-    <main>
-        <div class="ruta">
-            <a href="/">Inicio</a>
-            <span>></span>
-            <a href="/users/login">Iniciar sesión</a>
-            <span>></span>
-            <a class="a-posicion" href="/users/register">Crear cuenta</a>
-        </div>
-
-
-        <form class="contenedorlogin" action="">
-
-            <i class="fas fa-user-circle item-user"></i>
-            <h1>Crear cuenta</h1>
-
-            <input name="nombre" class="sesioninit" type="text" placeholder="Nombre" required>
-            <input name="email" class="sesioninit" type="email" placeholder="Email" required>
-            <input name="password" class="sesioninit" type="password" placeholder="Contraseña" required>
-            <input name="confirmPassword" class="sesioninit" type="password" placeholder="Confirmar contraseña" required>
-
-            <div class="captcha">
-                <input type="checkbox" name="captcha" id="captcha" required>
-                <label for="captcha" >No soy un robot</label>
-            </div>
-            <button class="enter" type="submit">Crear cuenta</button>
-
-            <div class="notenescuenta">
-                <h4>¿ya tenes cuenta?</h4>
+    <body class="register">
+    <%- include("./partials/header") %> 
+        <main>
+            <div class="ruta">
+                <a href="/">Inicio</a>
+                <span>></span>
                 <a href="/users/login">Iniciar sesión</a>
+                <span>></span>
+                <a class="a-posicion" href="/users/register">Crear cuenta</a>
             </div>
 
-            <p class="condiciones">Al crear una cuenta, acepta los <span class="terminos">términos y condiciones</span> 
-                de uso de FourGame</p>
-        </form>
 
-    </main>
-    <%- include("./partials/footer") %> 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+            <form class="contenedorlogin">
 
-</body>
+                <i class="fas fa-user-circle item-user"></i>
+                <h1>Crear cuenta</h1>
+
+                <input name="nombre" class="sesioninit" type="text" placeholder="Nombre" required>
+                <input name="email" class="sesioninit" type="email" placeholder="Email" required>
+                <input name="password" class="sesioninit" type="password" placeholder="Contraseña" required>
+                <input name="confirmPassword" class="sesioninit" type="password" placeholder="Confirmar contraseña" required>
+
+                <div class="captcha">
+                    <input type="checkbox" name="captcha" id="captcha" required>
+                    <label for="captcha" >No soy un robot</label>
+                </div>
+                <button class="enter" type="submit">Crear cuenta</button>
+
+                <div class="notenescuenta">
+                    <h4>¿ya tenes cuenta?</h4>
+                    <a href="/users/login">Iniciar sesión</a>
+                </div>
+
+                <p class="condiciones">Al crear una cuenta, acepta los <span class="terminos">términos y condiciones</span> de uso de FourGame</p>
+            </form>
+
+        </main>
+        <%- include("./partials/footer") %> 
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    </body>
+</html>

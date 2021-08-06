@@ -15,7 +15,7 @@ router.post('/create', controller.save);
 /* Product edit */
 
 router.get('/edit/:id', controller.edit);
-router.put('/edit/:id', controller.edit);
+router.put('/edit/:id', controller.update);
 
 /* Product delete */
 

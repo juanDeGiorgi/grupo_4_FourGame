@@ -47,12 +47,21 @@ module.exports={
                 product.type = req.body.type,
                 product.payMethod = +req.body.payMethod
 
+<<<<<<< HEAD
             }
         });
         
         fs.mkdirSync(path.join(__dirname,`../public/images/${req.body.type}/${req.body.name}`));
         fs.writeFileSync(path.join(__dirname,'../data/products.json'),JSON.stringify(products),'utf-8'); 
         res.redirect('/');
+=======
+                }
+            });
+            
+            fs.renameSync(`../public/images/${req.body.type}/${req.body.name}`);
+            fs.writeFileSync(path.join(__dirname,'../data/products.json'),JSON.stringify(products),'utf-8'); 
+            res.redirect('/');
+>>>>>>> 64e2382d40bb23c229785c784e6210a63eb35650
     },
     destroy : (req,res)=> {
         for (let posicion = 0; posicion < products.length; posicion++) {

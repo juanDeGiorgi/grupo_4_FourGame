@@ -51,7 +51,7 @@ module.exports={
                 }
             });
             
-            fs.mkdirSync(path.join(__dirname,`../public/images/${req.body.type}/${req.body.name}`));
+            fs.renameSync(`../public/images/${req.body.type}/${req.body.name}`);
             fs.writeFileSync(path.join(__dirname,'../data/products.json'),JSON.stringify(products),'utf-8'); 
             res.redirect('/');
     },

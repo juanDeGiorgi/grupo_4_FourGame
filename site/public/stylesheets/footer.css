@@ -1,14 +1,12 @@
                /*                          MOBILE                            */
 
-
-footer{
-    background-color: #FF7F00;
-    margin-top: 150px;
-    color: #ffffff;
-    text-align: center;
-    padding: 30px 10px 30px 10px;
-}
-
+ footer{
+  background-color: #505050;
+/*  margin-top: 150px; */
+  color: #ffffff;
+  text-align: center;
+  padding: 30px 10px 30px 10px;
+ }
 footer .contain-footer{
     width: 100%;
     max-width: 500px;
@@ -109,9 +107,9 @@ footer nav ul li a:active{
 
 @media (min-width:600px){
 
-    footer {
+    /* footer {
         margin-top: 12%;
-    }
+    } */
 
     footer .contain-footer{
         max-width: none;

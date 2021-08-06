@@ -18,13 +18,14 @@
         }
 
         .home main section .redes{
-            background-color: #F2204D;
+            /* background-color: #F2204D; */
             border-radius: 40px;
             color: #ffffff;
             padding: 5%;
-            margin: 10% auto 5% auto;
+            /* margin: 10% auto 5% auto; */
             max-width: 414px;
             text-align: center;
+            text-shadow: 0px 3px 6px rgb(250, 0, 59);
         }
 
         .home main section .redes h3{
@@ -76,7 +77,9 @@
         position: relative;
         cursor: pointer;
     }
-
+    .home main section article:last-child{
+        margin: 0 auto 0 auto;
+    }
     .home main article:hover{
         box-shadow: 0px 0px 20px #3D2ED0;
     }

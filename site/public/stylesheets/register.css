@@ -1,36 +1,19 @@
 .register header{
-    display:none;
-}
-.register footer{
     display: none;
 }
-
-
-.register main{
-    background-color: #E7E6E6;
-
+.register  footer{
+    display: none;
 }
-.register main .contenedorlogin {
-    background-color: rgb(255, 255, 255);
-    width: 90vw;
-    height: 194.5vw;
-    margin: 19% auto;
-    display:flex;
-    flex-direction: column;
-    border-radius: 45px;
-    position: relative;
+.register {
+    background-image: url(https://images.unsplash.com/photo-1538481199705-c710c4e965fc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1132&q=80);
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 
-
-                           /*   MOBILE   */
-
-
-
-
-.register main .ruta{
+.register main .ruta {
     width: 100%;
-    height: 16vw;
+    height: 5vw;
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
@@ -38,50 +21,70 @@
     font-weight: 500;
     padding-left: 5%;
     color: #3D2ED0;
-
+    margin-bottom: 10%;
 }
-
-.register main .ruta a{
-    color: #3D2ED0;
+.register main .ruta a {
+    color: #FCFCFC;
+    text-shadow: 3px 1px 7px black;
 }
 
 .register .ruta .a-posicion{
     font-weight: 700;
     font-size: 4.9vw;
 }
-.register .ruta span{
+.register .ruta span {
     margin: 0% 0.5%;
+    color: #ff00fb;
 }
-
-.register .item-user{
+.register main .contenedorlogin {
+    background-color: rgba(0, 0, 0, 0.57);  
+  width: 90vw;
+    height: 170vw;
+    margin: 19% auto 10% auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    position: relative;
+}
+.register .item-user {
     position: absolute;
-    top: -7.32%;
+    top: -5.32%;
     display: flex;
     width: 30%;
     align-self: center;
-    color: #3D2ED0;
-   justify-content: center;
-   font-size: 25vw;
+    color: #1F1F1F;
+    justify-content: center;
+    font-size: 59px;
+    text-shadow: 1px 4px 7px white;
 }
-.register h1{
+.register h1 {
     text-align: center;
     margin: 15% 0% 16% 0%;
     font-size: 11vw;
     font-weight: 700;
+    color: white;
+    text-shadow: 3px 1px 7px black;
 }
-.register .sesioninit{
-    background-color: #F2204D;
+.register .box-input{
+    width: 100%;
+    text-align: center;
+}
+.register .box-input2{
+    width: 100%;
+    text-align: center;
+}
+.register .sesioninit {
+    background-color: #918C8D4D;
     color: white;
     width: 90%;
     margin: 4% auto;
     height: 11vw;
     font-size: 6vw;
-    border-radius: 40px;
+    border-radius: 4px;
     text-indent: 4%;
     font-weight: 500;
     border: none;
-    box-shadow: 0px 5px 12px -4px black;
-
+    box-shadow: 0px 5px 12px 3px black;
 }
 
 .register .sesioninit::placeholder{
@@ -93,14 +96,15 @@
     border: 2px solid #3D2ED0;
 }
 
-.register .captcha{
-    margin: 8% auto;
+.register .captcha {
+    margin: 0% auto;
     display: flex;
     border: 1px solid black;
     width: 80%;
-    height: 19vw;
+    height: 5vw;
     justify-content: center;
     align-items: center;
+    border: none;
 }
 .register .captcha label {
     margin: 8% 5%;
@@ -134,128 +138,170 @@
     display: inline-block;
     color: #3D2ED0;
 }
-.register .notenescuenta a{
+.register .notenescuenta a {
     font-size: 5vw;
     font-weight: 700;
-    color: #3D2ED0;
+    color: #FFF;
 }
 
-.register .condiciones{
-    color: #3D2ED0;
-    text-align: center;
-    font-size: 4.7vw;
-    margin-bottom: 0%;
+
+.register .sesioninit::placeholder{
+    color: gainsboro;
 }
 
-.register .condiciones .terminos{
-    font-weight: 700;
+.register .sesioninit:focus{
+    outline: none;
+    border: 2px solid #3D2ED0;
 }
-
+.register .vacio{
+    height: 40vw;
+}
 
                            /*  TABLET  */
 
+
+
+
+
+
 @media (min-width:768px){
+   
+    .register main .ruta {
+        font-size: 1.8vw;
+        align-items: center;
+    }
+    .register .ruta .a-posicion {
+        font-weight: 700;
+        font-size: 2.5vw;
+    }
     
-.register main .ruta{
-    height: 4vw;
-    font-size: 1.5vw;
-    margin-bottom: 2.5vw;    
-}
+    .register main .contenedorlogin{
+        width: 55vw;
+        height: 79vw;
+        margin: 7% auto;
+    }
+    
+    .register .ruta{
+        font-size: 2.4vw;
+    }
+    .register .item-user{
+        top: -9.32%;
+        font-size: 12vw;
+    }
+    .register h1{
+        font-size: 5vw;
+        font-weight: 500;
+        margin: 20% 0% 5% 0%;
+    }
+    .register .sesioninit{
+        height: 6vw;
+        font-size: 3vw;
+        width: 73%;
+    }
+    .register .captcha {
+        width: 40%;
+        height: 7vw;
+    }
+    
+    .register .captcha label{
+        font-size: 2.2vw;
+        margin: 10.95% 5%;
+    }
+    .register .enter {
+        border-radius: 50px;
+        height: 7vw;
+        width: 47%;
+        font-size: 1.5em;
+    }
+    .register .captcha input{
+        margin: 10.6% 1% 10% 3%;
+        width: 12.5%;
+        height: 100%;
+    }
+    .register .notenescuenta h4 {
+        font-size: 2vw;
+    }
+    .register .notenescuenta a {
+        font-size: 2.4vw;
+    }
+    .register .enter{
+        border-radius: 50px;
+    }
+    
+    }
 
-.register main .contenedorlogin {
-    width: 30vw;
-    margin: -0.8% auto;
-    height: 43.1vw;
-    flex-wrap: wrap;
-}
 
-.register .item-user{
-    font-size: 5.5vw;
-    top: -7.6%;
-}
-
-.register h1 {
-    font-size: 1.2em;
-    margin: 7.9% 0% 3.1% 0%;
-}
-
-.register .sesioninit {
-    height: 2.5vw;
-    font-size: 0.7em;
-    width: 22vw;
-    margin: 3% auto;
-}
-
-.register .captcha {
-    width: 43%;
-    height: 4vw;
-    margin: 2% auto;
-}
-
-.register .captcha label {
-    font-size: 0.55em;
-}
-
-.register .enter {
-    width: 40%;
-    height: 3vw;
-    font-size: 0.7em;
-    margin: 4% auto 1.8% auto;
-}
-
-.register .notenescuenta h4 {
-    font-size: 0.6em;
-}
-
-.register .notenescuenta a {
-    font-size: 0.8em;
-}
-
-.register .ruta {
-    font-size: 1.4vw;
-    height: 7vw;
-}
-.register .ruta .a-posicion {
-    font-size: 1.2em;
-}
-
+<<<<<<< HEAD
 .register .condiciones {
     font-size: 1.4vw;
 } 
 
 } 
+=======
+>>>>>>> 392105a3715029fa3362562ea7c873a954cf67ba
 
 @media (min-width:1024px){
-    
-    .register main .contenedorlogin {
-        height: 40vw;
+    .register main .ruta{
+        margin-bottom: 3%;
     }
-
+    .register .item-user {
+        top: -10.32%;
+        font-size: 6vw;
+    }
     .register h1 {
-        font-size: 1.5em;
-    }    
-
+        font-size: 30px;
+        font-weight: 500;
+        margin: 6% 0% 5% 0%;
+    }
+    .register main .contenedorlogin {
+        width: 65vw;
+        height: 36vw;
+        margin: -1% auto;
+    }
     .register .sesioninit {
-        font-size: 1em;
+        height: 40px;
+        font-size: 16px;
+        width: 90%;
     }
-
-    
-    .register .captcha label {
-        font-size: 0.75em;
+    .register .box-input {
+        width: 40%;
+        text-align: center;
+        display: inline-block;
+        height: 120px;
     }
-
-    
+    .register .box-input2 {
+        width: 40%;
+        text-align: center;
+    }
     .register .enter {
-        font-size: 1em;
+        border-radius: 17px;
+        width: 18%;
+        height: 3vw;
+        font-size: 24px;
     }
-
     .register .notenescuenta h4 {
-        font-size: 0.8em;
+        font-size: 14px;
     }
-        
     .register .notenescuenta a {
-        font-size: 1em;
+        font-size: 18px;
     }
+    .register .cajapadre{
+        width: 80%;
+        display: flex;
+    }
+    .register .cajapadre {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .register .captcha {
+        width: 40%;
+        height: 2vw;
+    }
+<<<<<<< HEAD
 
 
 }
+=======
+}
+>>>>>>> 392105a3715029fa3362562ea7c873a954cf67ba

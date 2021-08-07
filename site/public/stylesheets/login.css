@@ -5,19 +5,19 @@
     display: none;
 }
 
-
-.login main{
-    background-color: #E7E6E6;
-
+.login  {
+    background-image: url(https://images.unsplash.com/photo-1538481199705-c710c4e965fc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1132&q=80);
+    background-size: cover;
+    background-attachment: fixed;
 }
 .login main .contenedorlogin {
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.57);
     width: 90vw;
-    height: 180vw;
-    margin: 19% auto;
-    display:flex;
+    height: 112vw;
+    margin: 19% auto 0% auto;
+    display: flex;
     flex-direction: column;
-    border-radius: 45px;
+    border-radius: 20px;
     position: relative;
 }
 
@@ -41,47 +41,50 @@
 
 }
 
-.login main .ruta a{
-    color: #3D2ED0;
+.login main .ruta a {
+    color: #FCFCFC;
+    text-shadow: 3px 1px 7px black;
 }
 
 .login .ruta .a-posicion{
     font-weight: 700;
     font-size: 4.9vw;
 }
-.login .ruta span{
+.login .ruta span {
     margin: 0% 0.5%;
+    color: #ff00fb;
 }
-
-.login .item-user{
+.login .item-user {
     position: absolute;
-    top: -7.32%;
+    top: -9.32%;
     display: flex;
     width: 30%;
     align-self: center;
-    color: #3D2ED0;
-   justify-content: center;
-   font-size: 25vw;
+    color: #1F1F1F;
+    justify-content: center;
+    font-size: 25vw;
+    text-shadow: 1px 4px 7px white;
 }
-.login h1{
+.login h1 {
     text-align: center;
     margin: 15% 0% 16% 0%;
     font-size: 11vw;
     font-weight: 700;
+    color: white;
+    text-shadow: 3px 1px 7px black;
 }
-.login .sesioninit{
-    background-color: #F2204D;
+.login .sesioninit {
+    background-color: #918C8D4D;
     color: white;
     width: 90%;
     margin: 4% auto;
     height: 11vw;
     font-size: 6vw;
-    border-radius: 40px;
+    border-radius: 4px;
     text-indent: 4%;
     font-weight: 500;
     border: none;
-    box-shadow: 0px 5px 12px -4px black;
-
+    box-shadow: 0px 5px 12px 3px black;
 }
 
 .login .sesioninit::placeholder{
@@ -93,14 +96,11 @@
     border: 2px solid #3D2ED0;
 }
 
-.login .captcha{
-    margin: 8% auto;
-    display: flex;
-    border: 1px solid black;
-    width: 80%;
-    height: 19vw;
-    justify-content: center;
-    align-items: center;
+.login .captcha {
+    width: 43%;
+    height: 0vw;
+    margin: 2% auto;
+    border: none;
 }
 .login .captcha label {
     margin: 8% 5%;
@@ -134,10 +134,10 @@
     display: inline-block;
     color: #3D2ED0;
 }
-.login .notenescuenta a{
+.login .notenescuenta a {
     font-size: 5vw;
     font-weight: 700;
-    color: #3D2ED0;
+    color: #FFF;
 }
 
 

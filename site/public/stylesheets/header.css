@@ -342,7 +342,7 @@ header .c-header .nav-1 .c-user-cart{
     }
 
     header .nav-2 .ul-nav-2 li .item:hover{
-        background-color: #ff972f;
+        background-color: #5F5E5D;
         border-bottom: 5px solid white;
         transition: all 60ms ease;
     }

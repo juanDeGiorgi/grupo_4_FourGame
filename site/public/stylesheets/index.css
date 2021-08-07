@@ -1,7 +1,5 @@
 
-  .home main{
-    /* background-image: url(https://cdn.pixabay.com/photo/2016/08/01/20/15/green-1562016_1280.png); */
-    /* background-image: url(https://images.unsplash.com/photo-1572040917409-60ca0cfcc2df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80); */
+  .home{
     background-image: url(https://images8.alphacoders.com/860/thumb-1920-860215.jpg);
     background-position: left;
     background-size:cover;
@@ -55,6 +53,10 @@
 
     /* SECTION ARTICLES */
 
+    .home main section{
+        margin-bottom: 50px;
+    }
+
     .home main h2{
         color: #ffffff;
         text-align: center;
@@ -89,7 +91,7 @@
         margin: 0 auto 0 auto;
     }
     .home main article:hover{
-        box-shadow: 0px 0px 20px #3D2ED0;
+        box-shadow: 0px 0px 20px rgb(250 0 59);
     }
 
     
@@ -230,7 +232,7 @@
         }
     
         .home main section article div .price {
-            font-size: 5.7vw;
+            font-size: 4.3vw;
         }
     
         .home main section article div .discount {

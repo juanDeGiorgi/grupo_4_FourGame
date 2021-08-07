@@ -11,7 +11,7 @@
     color: #3D2ED0;
     text-align: center;
     margin: 33% 0% 0% 0%;
-    font-size: 4.8vw;
+    font-size: 3.9vw;
 }
 
 .detail main .map a{
@@ -36,7 +36,7 @@
 .detail main .vista{
     background-color: #ffffff;
     margin: 3% 0% 0% 0%;
-    height:  256vw;
+    /* height:  266.3vw; */
     padding: 0px 20px 0px 20px;
     border-radius: 20px;
     position: relative;
@@ -75,8 +75,18 @@
     
 }
 
+.detail main .vista .vista-info .c-name-category{
+    /* height: 37.3vw; */
+}
+
+.detail .small {
+    color: #33CC33;
+    font-size: 5vw;
+    margin: 2vw 0 1vw 0;
+}
+
 .detail main .vista .vista-info h3{
-    font-size: 7vw;
+    font-size: 6.5vw;
     margin:10px 0px;
 }
 
@@ -95,7 +105,6 @@
     font-size: 10vw;
     font-weight: 500;
     display: inline-block;
-    margin: 10vw 0px 5vw;
 }
 
 .detail main .vista .vista-info .cart-add{
@@ -113,7 +122,12 @@
 
 /*                   */
 
-/*      CUOUTAS      */
+/*      CUOTAS      */
+
+
+.detail main .vista .vista-info .payMethod{
+    margin: 2vw 0vw;
+}
 
 .detail main .vista .vista-info .t-cuotas{
     color: #33CC33;
@@ -143,7 +157,7 @@
 
 .detail main .vista .vista-info .envios{
     position: relative;
-    margin: 10vw 0;
+    margin: 3.3vw 0;
 }
 
 .detail main .vista .vista-info .envios .fa-truck{
@@ -214,20 +228,21 @@
 
 /*      COMPRAR,EDITAR Y BORRAR      */
 
-.detail main .vista .vista-info .div-comprar{
+.detail main .vista .vista-info .div-comprar {
     text-align: center;
-    display: flex;    
+    display: flex;
     align-items: center;
-
+    flex-direction: column;
+    padding: 0 0 10vw 0;
 }
 
 .detail main .vista .vista-info .b-editar{
     background-color: #3D2ED0;
     color: #ffffff;
     padding: 6px 0px;
-    font-size: 26px;
+    font-size: 28.5px;
     border-radius: 26px;
-    width: 39vw;
+    width: 51.2vw;
     margin: 3% auto 3% auto;
     display: block;
     
@@ -242,9 +257,9 @@
     background-color:#f70303;
     color: #ffffff;
     padding: 6px 0px;
-    font-size: 26px;
+    font-size: 28.5px;
     border-radius: 26px;
-    width: 39vw;
+    width: 51.2vw;
     margin: 3% auto 3% auto;
     display: block;
     
@@ -311,6 +326,12 @@
     background-color: #ffffff;
     border-radius: 25px;
     padding: 16px;
+    margin: 0 auto 30vw auto;
+}
+
+.detail main .info-detail .descripcion {
+    text-align: center;
+    margin: 0 auto 5vw auto;
 }
 
 .detail main .info-detail .descripcion p{
@@ -349,7 +370,7 @@
     width: 100%;
     height: 10px;
     border-radius: 20px;
-    margin: 0% 0% 2.5vw 0%;
+    margin: 0% 0% 6.4vw 0%;
 }
 
 .detail main section article a{
@@ -368,7 +389,7 @@
 }
 
 .detail main article:hover{
-    box-shadow: 0px 0px 20px #3D2ED0;
+    box-shadow: 0px 0px 20px rgb(250 0 59);
 }
 
 .detail main section article i:active{
@@ -420,15 +441,18 @@
 .detail main section article div .price{
     font-size: 10vw;
     margin-bottom: 3%;
+    display: inline-block;
 }
 
 .detail main section article div .discount{
     color: #33CC33;
     font-size: 5vw;
+    margin: 0 0 0 10px;
 }
 
-.detail main .producto-tablet,.producto-desktop{
-    display: none;
+.detail main section article div .payMethod{
+    color: #3D2ED0;
+    font-weight: 500;
 }
 
     /*                          TABLET                            */
@@ -439,15 +463,11 @@
 
     .detail main .map {
         text-align: left;
-        font-size: 3vw;
+        font-size: 2.4vw;
         margin-top: 15vw;
     }
 
     /*  SECTION DEL ARTICULO ENTERO  */
-
-    .detail main .vista {
-        height: 190.2vw;
-    }
 
     /*         IMG EN MINIATURA      */
 
@@ -497,8 +517,11 @@
 
     /*      TITULO Y MAS VENDIDO */
 
+    .detail main .vista .vista-info .c-name-category {
+    }
+
     .detail main .vista .vista-info h3 {
-        font-size: 5.7vw;
+        font-size: 4.8vw;
     }
 
     .detail main .vista .vista-info .vendido {
@@ -506,12 +529,16 @@
         font-size: 3.4vw;
     }
 
+    .detail .small {
+        font-size: 2.7vw;
+        margin: 5vw 0 1vw 0;
+    }
 
     /*    PPRECIO Y CARRITO    */
 
     .detail main .vista .vista-info .price {
         font-size: 7.6vw;
-        margin: 7.8vw 0px 5vw;
+        margin: 0vw 0px 5vw;
     }
 
     .detail main .vista .vista-info .cart-add {
@@ -568,6 +595,14 @@
 
     /*      COMPRAR         */
 
+    .detail main .vista .vista-info .div-comprar {
+        text-align: center;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
     .detail main .vista .vista-info .b-comprar {
         font-size: 7.3vw;
         width: 44.1vw;
@@ -575,14 +610,15 @@
     }
 
     .detail main .vista .vista-info .b-editar {
-        font-size: 7.3vw;
-        width: 44.1vw;
+        font-size: 6vw;
+        width: 26.3vw;
+        margin: 0;
     
     }
 
     .detail main .vista .vista-info .b-borrar {
-        font-size: 7.3vw;
-        width: 44.1vw;
+        font-size: 6vw;
+        width: 26.3vw;
     
     }
 
@@ -607,6 +643,7 @@
 
     .detail main .info-detail {
         padding: 16px 34.1px;
+        margin: 0 auto 15vw auto;
     }
 
     .detail main .info-detail .descripcion p {
@@ -684,6 +721,10 @@
 
     .detail main section article div .price {
         font-size: 5.7vw;
+    }
+
+    .detail main section article div .payMethod {
+        font-size: 2.9vw;
     }
 
     .detail main section article div .discount {
@@ -765,6 +806,10 @@
 
      /*      TITULO Y MAS VENDIDO */
 
+    .detail main .vista .vista-info .c-name-category{
+        height: 9.5vw;
+    }
+
     .detail main .vista .vista-info h3 {
         font-size: 2.3vw;
     }
@@ -789,11 +834,6 @@
 
     /*      DESCUENTO        */
 
-    .detail .small {
-        font-size: 1.8em;
-        color: #33CC33;
-    }
-
     .detail .product-detail-price {
         font-size: 1.5vw;
         margin: 0px 0;
@@ -804,6 +844,11 @@
     }
 
     /*      CUOTAS           */
+
+    .detail main .vista .vista-info .payMethod {
+        height: 4.1vw; 
+        margin: 1vw 0vw;
+    }
 
     .detail main .vista .vista-info .t-cuotas {
         font-size: 1.7vw;
@@ -855,6 +900,13 @@
     }
 
     /*      COMPRAR,EDITAR Y BORRAR        */
+
+
+    .detail main .vista .vista-info .div-comprar{
+        flex-direction: row;
+        justify-content: space-evenly;
+        padding: 0;
+    }
 
     .detail main .vista .vista-info .b-comprar {
         font-size: 2.5vw;
@@ -909,6 +961,7 @@
     .detail main .info-detail {
         width: 90%;
         margin: auto;
+        margin: 0 auto 10vw auto;
     }
 
     .detail main .info-detail h2 {
@@ -919,7 +972,7 @@
 
     .detail main .info-detail .descripcion {
         text-align: initial;
-        height: 18.6vw;
+        margin: 0 auto 5vw auto;
     }
 
     .detail main .info-detail .descripcion p {        
@@ -952,11 +1005,7 @@
     }
 
     .detail main .decoracion {
-        margin: 0% 0% 2,.5vw 0%;
-    }
-
-    .detail main .producto-desktop{
-        display: initial;
+        margin: 0% 0% 2.5vw 0%;
     }
 
     .detail main section article {
@@ -970,10 +1019,16 @@
     }
 
     .detail main section article div .price {
-        font-size: 2.8vw;
+        font-size: 2.1vw;
     }
 
     .detail main section article div .discount {
         font-size: 1.3vw;
+    }
+
+    .detail main section article div .payMethod{
+        color: #3D2ED0;
+        font-size: 1.3vw;
+        font-weight: 500;
     }
 }

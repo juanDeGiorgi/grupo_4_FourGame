@@ -29,7 +29,7 @@
             </div>
             <div class="vista-info">
 
-                <div style="height: 9.5vw;">
+                <div class="c-name-category">
                     <h3> <%= product.name %> </h3>
                 
                     <%if(product.category == "in-sale"){%>
@@ -49,7 +49,7 @@
                 </p>
                 <p class="price">$ <%= toThousand(Math.round(product.price - ((product.discount / 100) * product.price))) %> </p>
                 <button class="cart-add"><i class="fas fa-cart-plus"></i></button>
-                <div style="height: 4.1vw; margin: 1vw 0vw;">
+                <div class="payMethod">
                     <%if(product.payMethod > 0){%>
                         <p class="t-cuotas"><%=product.payMethod%>x $ <%=toThousand((product.price / product.payMethod).toFixed(0))%> sin interés</p>
                         <button class="b-cuotas">calcular cuotas</button>
@@ -143,27 +143,32 @@
         <section class="productos">
             <%relatedProducts.forEach(relatedProduct => {%>
                 <%if(relatedProduct.type == product.type){%>
-                    <article>
-                        <a href="/products/detail/<%=relatedProduct.id%>" class="a-article">
-                            <div class="contenedor-img">
-                                <img src="/images/<%=relatedProduct.type%>/<%=relatedProduct.name%>/<%=relatedProduct.image%>" alt="<%=relatedProduct.name%>">
-                            </div>
-
-                            <div class="product-info">
-                                <button><i class="far fa-heart"></i></button>
-
-                                <div class="title">
-                                    <h3> <%=relatedProduct.name%>  </h3>
+                    <%if(relatedProduct.id !== product.id){%>
+                        <article>
+                            <a href="/products/detail/<%=relatedProduct.id%> " class="a-article">
+                                <div class="contenedor-img">
+                                    <img src="/images/<%=relatedProduct.type%>/<%=relatedProduct.name%>/<%=relatedProduct.image%>" alt="image">
                                 </div>
-                                <div class="info">
-                                    <p class="price">$ <%=toThousand(relatedProduct.price)  %>  </p>
-                                    <%if(relatedProduct.payMethod > 0){%>
-                                        <p class="t-cuotas"><%=relatedProduct.payMethod%>x $ <%=toThousand((relatedProduct.price / relatedProduct.payMethod).toFixed(0))%> sin interés</p>
-                                    <%}%>
+
+                                <div class="product-info">
+                                    <button><i class="far fa-heart"></i></button>
+
+                                    <div class="title">
+                                        <h3><%=relatedProduct.name %> </h3>
+                                    </div>
+                                    <div class="info">
+                                        <p class="price">$ <%=toThousand(relatedProduct.price)%> </p>
+                                        <%if (relatedProduct.discount !== 0){%>
+                                            <span class="discount"><%=relatedProduct.discount%>% OFF</span>
+                                        <%}%>
+                                        <%if(relatedProduct.payMethod > 0){%>
+                                            <p class="payMethod"><%=relatedProduct.payMethod%>x $ <%=toThousand((relatedProduct.price / relatedProduct.payMethod).toFixed(0))%> sin interés</p>
+                                        <%}%>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                    </article>
+                            </a>
+                        </article>
+                    <%}%>
                 <%}%>
             <%})%>
         </section>

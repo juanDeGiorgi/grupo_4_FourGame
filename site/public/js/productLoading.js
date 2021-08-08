@@ -1,37 +1,42 @@
 
 
-document.getElementById("image").onchange = e =>{
-    let reader = new FileReader();
-    reader.readAsDataURL(e.target.files[0]);
-    reader.onload = () =>{
-        let preview = document.getElementById("preview");
-        image = document.createElement("img");
-        image.src = reader.result;
-        preview.innerHTML = " ";
-        preview.append(image);
-    }
-};
+showImage = (input,idImage) =>{
+    document.getElementById(input).onchange = e =>{
+        let reader = new FileReader();
+        reader.readAsDataURL(e.target.files[0]);
+        reader.onload = () =>{
+            document.getElementById(idImage).src = reader.result;
+        }
+    };
 
-document.getElementById("image1").onchange = e =>{
-    let reader = new FileReader();
-    reader.readAsDataURL(e.target.files[0]);
-    reader.onload = () =>{
-        let preview1 = document.getElementById("preview1");
-        image = document.createElement("img");
-        image.src = reader.result;
-        preview1.innerHTML = " ";
-        preview1.append(image);
-    }
-};
+}
 
-document.getElementById("image2").onchange = e =>{
-    let reader = new FileReader();
-    reader.readAsDataURL(e.target.files[0]);
-    reader.onload = () =>{
-        let preview2 = document.getElementById("preview2");
-        image = document.createElement("img");
-        image.src = reader.result;
-        preview2.innerHTML = " ";
-        preview2.append(image);
-    }
-};
+showImage("image","preview-image");
+showImage("image1","preview-image1");
+showImage("image2","preview-image2");
+
+
+limpiar = (inputId,imageId) =>{
+    document.getElementById(inputId).value = "";
+    document.getElementById(imageId).src = "/images/default-image1.png";
+}
+
+
+// OLD SHOW IMAGE PREVIEW FUNCTION
+
+// showImage = (input,div,idImage) =>{
+//     document.getElementById(input).onchange = e =>{
+//         let reader = new FileReader();
+//         reader.readAsDataURL(e.target.files[0]);
+//         reader.onload = () =>{
+//             let preview1 = document.getElementById(div);
+//             image = document.createElement("img");
+//             image.id = idImage;
+//             image.src = reader.result;
+//             preview1.innerHTML = " ";
+//             preview1.append(image);
+//         }
+//     };
+
+// }
+

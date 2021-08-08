@@ -141,5 +141,49 @@
     "category": "in-sale",
     "type": "juegos",
     "payMethod": 3
+  },
+  {
+    "id": 14,
+    "name": "",
+    "description": "",
+    "image": "default-image.png",
+    "price": 0,
+    "discount": 0,
+    "category": "Categoria",
+    "type": "Producto",
+    "payMethod": null
+  },
+  {
+    "id": 15,
+    "name": "",
+    "description": "",
+    "image": "default-image.png",
+    "price": 0,
+    "discount": 0,
+    "category": "Categoria",
+    "type": "Producto",
+    "payMethod": null
+  },
+  {
+    "id": 16,
+    "name": "",
+    "description": "",
+    "image": "default-image.png",
+    "price": 0,
+    "discount": 0,
+    "category": "Categoria",
+    "type": "Producto",
+    "payMethod": null
+  },
+  {
+    "id": 17,
+    "name": "",
+    "description": "",
+    "image": "default-image.png",
+    "price": 0,
+    "discount": 0,
+    "category": "Categoria",
+    "type": "Producto",
+    "payMethod": null
   }
 ]

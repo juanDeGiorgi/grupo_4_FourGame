@@ -11,25 +11,54 @@
 
 /* Formulario */
 
-/* Input file */
+/* Inputs files */
+
+.loading main form .title-images{
+    width: 71.1vw;
+    display: block;
+    margin: auto;
+}
 
 .loading main form .c-imagenes{
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    /* justify-content: space-around; */
+}
+
+.loading main form .c-imagenes .input-file{
+    width: 19.3vw;
+    text-align: center;
+    margin: 3.1vw;
+}
+
+.loading main form .c-imagenes .file{
+    display: none;
 }
 
 .loading main form .c-imagenes .preview{
     height: 16vw;
-    text-align: center;
     padding: 1vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .loading main form .c-imagenes .preview img{
     width: 80%;
 }
 
-.loading main form .c-imagenes .input-file{
-    width: 19.3vw;
+
+.loading main form .c-imagenes .file-agregar{
+    background-color: #3D2ED0;
+    color: white;
+    margin: 1vw;
+}
+
+.loading main form .c-imagenes .file-quitar{
+    background-color: #dc3545;
+    color: white;
+    margin: 1vw;
 }
 
 /* resto de Inputs */

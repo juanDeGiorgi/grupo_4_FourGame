@@ -13,9 +13,23 @@
 
 /* Input file */
 
-.loading main form .input-file{
-    width: 71.1vw;
-    margin: auto;
+.loading main form .c-imagenes{
+    display: flex;
+    justify-content: space-around;
+}
+
+.loading main form .c-imagenes .preview{
+    height: 16vw;
+    text-align: center;
+    padding: 1vw;
+}
+
+.loading main form .c-imagenes .preview img{
+    width: 80%;
+}
+
+.loading main form .c-imagenes .input-file{
+    width: 19.3vw;
 }
 
 /* resto de Inputs */
@@ -45,7 +59,6 @@
 .loading main form .container-buttons .btn-editar{
     background-color: #3D2ED0;
     color: white;
-    border-radius: 25px;
     margin: 1vw;
 
 }
@@ -58,7 +71,6 @@
 .loading main form .container-buttons .btn-borrar{
     background-color: #dc3545;
     color: white;
-    border-radius: 25px;
     margin: 1vw;
 
 }
@@ -90,7 +102,7 @@
 
     .loading main .formCreacion{
         width: 80%;
-        margin: 3vw auto 0 auto;
+        margin: 3vw auto 10vw auto;
         background-color: white;
         padding: 15px;
         border-radius: 10px;

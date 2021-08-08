@@ -4,15 +4,24 @@ const path = require("path");
 
 module.exports = {
 
-    join : route =>{
+    join : route => {
         return path.join(__dirname,route)
     },
 
-    deleteFolder : path => {
+    saveFile : file => {
+        fs.writeFileSync(path.join(__dirname,'../data/products.json'),JSON.stringify(file,null,2),'utf-8') 
+    },
 
-        if( fs.existsSync(path)) {
-            fs.readdirSync(path).forEach(file => {
-                let pathFile = path + "/" + file;
+    renameFolder : (oldPath,newPath) => {
+        fs.renameSync(path.join(__dirname,oldPath),path.join(__dirname,newPath));
+    },
+
+    deleteFolder : route => {
+        let absolutePath = path.join(__dirname,route);
+        
+        if( fs.existsSync(absolutePath)) {
+            fs.readdirSync(absolutePath).forEach(file => {
+                let pathFile = absolutePath + "/" + file;
     
                 if(fs.statSync(pathFile).isDirectory()) { // callback
                      deleteFolder(pathFile);
@@ -21,7 +30,7 @@ module.exports = {
                 }
                 
             });
-            fs.rmdirSync(path);
+            fs.rmdirSync(absolutePath);
         }
     },
 }

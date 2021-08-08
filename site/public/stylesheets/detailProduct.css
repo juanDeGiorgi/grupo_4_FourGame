@@ -75,10 +75,6 @@
     
 }
 
-.detail main .vista .vista-info .c-name-category{
-    /* height: 37.3vw; */
-}
-
 .detail .small {
     color: #33CC33;
     font-size: 5vw;
@@ -516,10 +512,7 @@
 
 
     /*      TITULO Y MAS VENDIDO */
-
-    .detail main .vista .vista-info .c-name-category {
-    }
-
+        
     .detail main .vista .vista-info h3 {
         font-size: 4.8vw;
     }
@@ -805,13 +798,13 @@
     }
 
      /*      TITULO Y MAS VENDIDO */
-
+/* 
     .detail main .vista .vista-info .c-name-category{
         height: 9.5vw;
-    }
+    } */
 
     .detail main .vista .vista-info h3 {
-        font-size: 2.3vw;
+        font-size: 1.9vw;
     }
 
     .detail main .vista .vista-info .vendido {

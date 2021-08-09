@@ -1,6 +1,7 @@
-.home main{
-    /* background-image: url(https://cdn.pixabay.com/photo/2016/08/01/20/15/green-1562016_1280.png); */
-    /* background-image: url(https://images.unsplash.com/photo-1572040917409-60ca0cfcc2df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80); */
+
+  /* IMAGEN DE FONDO*/
+
+.home{
     background-image: url(https://images8.alphacoders.com/860/thumb-1920-860215.jpg);
     background-position: left;
     background-size:cover;
@@ -69,6 +70,10 @@
       border-radius: 20px;
       margin: 0% 0% 7.8vw 0%;
   }
+
+  .home main .productos{
+      margin-bottom: 15vw;
+  }
   
   .home main section article a{
       color: black;
@@ -88,7 +93,7 @@
       margin: 0 auto 0 auto;
   }
   .home main article:hover{
-      box-shadow: 0px 0px 20px #3D2ED0;
+      box-shadow: 0px 0px 20px rgb(250 0 59);
   }
 
   
@@ -139,14 +144,21 @@
   }
   
   .home main section article div .price{
-      font-size: 10vw;
-      margin-bottom: 3%;
+    font-size: 10vw;
+    margin: 0 1.5vw 3% 0;
+    display: inline-block;
   }
   
   .home main section article div .discount{
       color: #33CC33;
       font-size: 5vw;
   }
+
+  .home main section article div .payMethod{
+    color: #3D2ED0;
+    font-weight: 500;
+    font-size: 5vw;
+}
   
   
                  /*                          TABLET                            */
@@ -218,12 +230,16 @@
       }
   
       .home main section article div .price {
-          font-size: 5.7vw;
+          font-size: 4.7vw;
       }
   
       .home main section article div .discount {
           font-size: 2.7vw;
       }
+
+      .home main section article div .payMethod {
+        font-size: 3.1vw;
+    }
   
   }
   
@@ -251,12 +267,17 @@
       }
   
       .home main section article div .price {
-          font-size: 2.8vw;
+          font-size: 1.8vw;
+          margin: 0 0.5vw 3% 0;
       }
   
       .home main section article div .discount {
           font-size: 1.3vw;
       }
+
+      .home main section article div .payMethod {
+        font-size: 1.3vw;
+    }
   
   }
 

@@ -377,4 +377,125 @@
             
             
             }
+<<<<<<< HEAD
+
+        /*----------------------------------    MENU TELEFONO    ------------------------------------------*/
+
+
+/*----------------------------------    BOOSTRAP    ------------------------------------------*/
+
+header .c-header .nav-1 .c-user-cart{
+    display: none;
+}
+
+
+               /*                          TABLET                            */
+
+
+@media (min-width:768px){
+
+    header .logo{
+        display: inline-block;
+        width: 111.61px;
+        margin-right: 5.4vw;
+    }
+
+    header .logo img {
+        width: 15vw;
+    }
+    
+    header .c-header .nav-1 .btn-primary{
+        display: none;
+    }
+
+    header .search {
+        margin: 0% 3% 6.8% 0%;
+        width: 50%;
+        height: 5vw;
+        position: relative;
+        bottom: 4.2vw;
+        right: 1.5vw;
+    }
+
+    header .user,.i-cart{
+        display: initial;
+        color: #ffffff;
+        margin-left: 2.1%;
+        margin-right: 0vw;
+        bottom: 3.9vw;
+        font-size: 200%;
+        text-shadow: 0px 5px 4px rgb(100 100 100 / 57%);
+    }
+
+    header .i-cart:hover{
+        text-shadow: none;
+        transition: all 100ms ease;
+    }
+
+    header .nav-2{
+        width: 100%;
+        margin-top: -40px;
+    }
+    
+    header .nav-2 .ul-nav-2{
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        margin: 0%;
+        padding: 0%;
+    }
+    
+    header .nav-2 .ul-nav-2 li{
+        display: inline-block;
+        margin: 0% 2% 0.4vw 2%;
+    }
+
+    header .nav-2 .ul-nav-2 li .item {
+        color: #ffffff;
+        font-size: 157.2%;
+        font-weight: 700;
+        text-shadow: 0px 5px 4px rgb(100 100 100 / 57%);
+        padding: 0.5vw 1vw 0 1vw;
+    }
+
+    header .nav-2 .ul-nav-2 li .item:hover{
+        background-color: #5F5E5D;
+        border-bottom: 5px solid white;
+        transition: all 60ms ease;
+    }
+
+    header .c-header .nav-1 .c-user-cart{
+        display: inline;
+        position: relative;
+        bottom: 3.8vw;
+    }
+
+    
+
+
+}
+
+               /*                          DESKTOP                            */
+
+
+@media (min-width:1024px){
+
+    header .logo img{
+        width: 10.9vw;
+    }
+
+    header .search{
+        margin: 0% 3% 3.2% 0%;
+        height: 40px;
+    }
+
+    header .nav-2 .ul-nav-2 li .item{
+        font-size: 170%;
+    }
+
+
+}
+             
+=======
                          
+>>>>>>> 392105a3715029fa3362562ea7c873a954cf67ba

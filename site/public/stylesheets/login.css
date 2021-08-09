@@ -106,10 +106,12 @@
     margin: 8% 5%;
     font-size: 6vw;
     font-weight: 600;
+    display: none;
 }
 .login .captcha input{
     width: 9%;
     height: 100%;
+    display: none;
 }
 .login .enter{
     color: rgb(255, 255, 255);

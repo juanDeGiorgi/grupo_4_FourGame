@@ -11,11 +11,54 @@
 
 /* Formulario */
 
-/* Input file */
+/* Inputs files */
 
-.loading main form .input-file{
+.loading main form .title-images{
     width: 71.1vw;
+    display: block;
     margin: auto;
+}
+
+.loading main form .c-imagenes{
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-around; */
+}
+
+.loading main form .c-imagenes .input-file{
+    width: 19.3vw;
+    text-align: center;
+    margin: 3.1vw;
+}
+
+.loading main form .c-imagenes .file{
+    display: none;
+}
+
+.loading main form .c-imagenes .preview{
+    height: 16vw;
+    padding: 1vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading main form .c-imagenes .preview img{
+    width: 80%;
+}
+
+
+.loading main form .c-imagenes .file-agregar{
+    background-color: #3D2ED0;
+    color: white;
+    margin: 1vw;
+}
+
+.loading main form .c-imagenes .file-quitar{
+    background-color: #dc3545;
+    color: white;
+    margin: 1vw;
 }
 
 /* resto de Inputs */
@@ -45,7 +88,6 @@
 .loading main form .container-buttons .btn-editar{
     background-color: #3D2ED0;
     color: white;
-    border-radius: 25px;
     margin: 1vw;
 
 }
@@ -58,7 +100,6 @@
 .loading main form .container-buttons .btn-borrar{
     background-color: #dc3545;
     color: white;
-    border-radius: 25px;
     margin: 1vw;
 
 }
@@ -90,7 +131,7 @@
 
     .loading main .formCreacion{
         width: 80%;
-        margin: 3vw auto 0 auto;
+        margin: 3vw auto 10vw auto;
         background-color: white;
         padding: 15px;
         border-radius: 10px;

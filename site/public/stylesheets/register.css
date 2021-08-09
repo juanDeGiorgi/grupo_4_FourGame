@@ -110,10 +110,12 @@
     margin: 8% 5%;
     font-size: 6vw;
     font-weight: 600;
+    display: none;      
 }
 .register .captcha input{
     width: 9%;
     height: 100%;
+    display: none;
 }
 .register .enter{
     color: rgb(255, 255, 255);
@@ -133,6 +135,11 @@
     width: 100%;
     text-align: center;
 }
+
+.register .condiciones{
+    text-align: center;
+}
+
 .register .notenescuenta h4{
     font-size: 4.5vw;
     display: inline-block;

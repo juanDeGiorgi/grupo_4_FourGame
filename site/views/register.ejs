@@ -18,30 +18,37 @@
         <form class="contenedorlogin" action="">
 
             <i class="fas fa-user-circle item-user"></i>
-            <h1>Crear cuenta</h1>
+            <h1>Registrate</h1>
+           <div class="cajapadre">
+            <div class="box-input">
+                <input name="text" class="sesioninit" type="text" placeholder="Nombre" required>
+                <input name="email" class="sesioninit" type="email" placeholder="Email" required>
+            </div>
 
-            <input name="nombre" class="sesioninit" type="text" placeholder="Nombre" required>
-            <input name="email" class="sesioninit" type="email" placeholder="Email" required>
+           <div class="box-input2">
             <input name="password" class="sesioninit" type="password" placeholder="Contraseña" required>
-            <input name="confirmPassword" class="sesioninit" type="password" placeholder="Confirmar contraseña" required>
+            <input name="password" class="sesioninit" type="password" placeholder="Confirmar contraseña" required>
+           </div>
+        </div>
+
 
             <div class="captcha">
-                <input type="checkbox" name="captcha" id="captcha" required>
-                <label for="captcha" >No soy un robot</label>
-            </div>
-            <button class="enter" type="submit">Crear cuenta</button>
+           </div>
+            <button class="enter" type="submit">Ingresar</button>
 
             <div class="notenescuenta">
-                <h4>¿ya tenes cuenta?</h4>
-                <a href="/users/login">Iniciar sesión</a>
+                <h4>¿Ya tenés una cuenta?</h4>
+                <a href="/users/login">Inicia sesion</a>
             </div>
 
-            <p class="condiciones">Al crear una cuenta, acepta los <span class="terminos">términos y condiciones</span> 
-                de uso de FourGame</p>
         </form>
+            <div class="vacio">
 
+            </div>
     </main>
     <%- include("./partials/footer") %> 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 </body>
+
+</html>

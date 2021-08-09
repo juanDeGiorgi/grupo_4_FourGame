@@ -1,4 +1,13 @@
 /* /* main                          */
+
+.cart {
+    background-image: url(https://images2.alphacoders.com/105/thumb-1920-1052293.jpg);
+
+    background-position: center;
+    background-size:cover;
+    background-attachment: fixed;
+}
+
 .cart main section .contenedor-c{
     display: flex;
     align-items: baseline;
@@ -9,14 +18,19 @@
 }
 
 .cart main section .carrito{
-    font-size: 110%;
-    margin: 20% 21% 0% 14%;
-    display: inline-block;
+    font-size: 22px;
+    margin: 10% 0% 0% 10%;
+    color: white;
+    font-weight: bold;
+    text-shadow: -2px 2px 2px black;
 }
 
 .cart main section  .back{
     font-size: 200%;
-    text-shadow: 0px 5px 4px rgb(100 100 100 / 57%);
+    text-shadow: 6px 2px 8px rgb(0, 0, 0);}
+
+.cart main section  .back i{
+    color: white;
 }
 
 .cart main section  .back:active{
@@ -26,8 +40,8 @@
 /* producto */
 
 .cart main section article{
-    background-color: white;
-    border-radius: 20px;
+    background-color: #ffffffd6;
+    border-radius: 12px;
     padding: 7%;
     margin: 5% 10% 10% 10%;
     position: relative;
@@ -48,6 +62,11 @@
 
 .cart main section .eliminar:active{
     text-shadow: none;
+}
+
+.cart main section .eliminar i{
+    color: red;
+    text-shadow: 2px 2px 2px black;
 }
 
 .cart main section .descripcion {
@@ -84,7 +103,7 @@
 
 .cart main section .b-suma {
     color: #F2204D;
-    background-color: white;
+    background-color: #fff0;
     font-size: 8vw;
 }
 
@@ -174,8 +193,8 @@
 .cart main section article .ahora12{
     width: 25%;
     position: absolute;
-    top: 67%;
-    left: 35%;
+    top: 57.2%;
+    left: 4.3%;
 }
 
 .cart main section article .p-total{

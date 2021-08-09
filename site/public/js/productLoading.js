@@ -14,6 +14,8 @@ showImage = (input,idImage) =>{
 showImage("image","preview-image");
 showImage("image1","preview-image1");
 showImage("image2","preview-image2");
+showImage("image3","preview-image3");
+showImage("image4","preview-image4");
 
 
 limpiar = (inputId,imageId) =>{

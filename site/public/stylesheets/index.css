@@ -2,8 +2,8 @@
   /* IMAGEN DE FONDO*/
 
 .home{
-    background-image: url(https://images8.alphacoders.com/860/thumb-1920-860215.jpg);
-    background-position: left;
+    background-image: url('/images/background/arcade\ con\ zoom.jpg');
+    background-position: center;
     background-size:cover;
     background-attachment: fixed;
 }
@@ -59,8 +59,12 @@
       color: #ffffff;
       text-align: center;
       margin: 10% 0% 2% 0%;
-      font-size: 8vw;
+      font-size: 22px;
+      font-weight: bold;
+      text-shadow: -2px 2px 2px black;
   }
+
+
   
   .home main .decoracion{
       background-color: #F77490;

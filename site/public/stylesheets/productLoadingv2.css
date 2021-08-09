@@ -1,4 +1,8 @@
-
+.loading  {
+    background-image: url('/images/background/atari.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
 /* titulo */
 
 .loading main .title{

@@ -1,4 +1,10 @@
+.detail  {
+    background-image: url('/images/background/consolasRetro.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
 
+}
 .detail main{
     width: 90%;
     margin: auto;
@@ -7,28 +13,32 @@
 
 /*  MAPA DEL SITIO  */
 
-.detail main .map{
+.detail main .ruta {
+    width: 100%;
+    height: 5vw;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    font-size: 4.8vw;
+    font-weight: 500;
+    padding-left: 5%;
     color: #3D2ED0;
-    text-align: center;
-    margin: 33% 0% 0% 0%;
-    font-size: 3.9vw;
+    margin-bottom: 10%;
+    flex-wrap: wrap;
+    margin: 5% 0% 19% 0%;
+}
+.detail main .ruta a {
+    color: #FCFCFC;
+    text-shadow: 3px 1px 7px black;
 }
 
-.detail main .map a{
-    color: #3D2ED0;
-
-}
-
-.detail main .map a:hover{
-    color: #6152e2;
-}
-
-.detail main .map a:active{
-    color: #897fe4;
-}
-
-.detail main .map a:last-child{
+.detail .ruta .a-posicion{
     font-weight: 700;
+    font-size: 4.9vw;
+}
+.detail .ruta span {
+    margin: 0% 0.5%;
+    color: #ff00fb;
 }
 
 /*                   */
@@ -456,11 +466,16 @@
 @media (min-width:600px){
 
     /*  MAPA DEL SITIO   */
-
-    .detail main .map {
-        text-align: left;
+    .detail main .ruta {
+        font-size: 1.8vw;
+        align-items: center;
+    }
+    .detail .ruta .a-posicion {
+        font-weight: 700;
+        font-size: 2vw;
+    }
+    .detail .ruta{
         font-size: 2.4vw;
-        margin-top: 15vw;
     }
 
     /*  SECTION DEL ARTICULO ENTERO  */
@@ -732,10 +747,8 @@
 
     /*  MAPA DEL SITIO */
 
-    .detail main .map {
-        font-size: 1.5vw;
-        margin: 10% auto 0;
-        width: 90%;
+    .register main .ruta{
+        margin-bottom: 3%;
     }
 
     /*      ARTICULO ENTERO */

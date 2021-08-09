@@ -12,6 +12,10 @@ module.exports = {
         fs.writeFileSync(path.join(__dirname,'../data/products.json'),JSON.stringify(file,null,2),'utf-8') 
     },
 
+    deleteFile : file =>{
+        fs.unlinkSync(path.join(__dirname,file));
+    },
+
     renameFolder : (oldPath,newPath) => {
         fs.renameSync(path.join(__dirname,oldPath),path.join(__dirname,newPath));
     },

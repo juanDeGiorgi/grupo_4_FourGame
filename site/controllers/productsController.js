@@ -38,13 +38,16 @@ module.exports={
     edit : (req,res)=>{ res.render('productEditv2',{product : products.find(product=> product.id==req.params.id)})},
 
     update : (req,res)=> {
-        let oldPath,newPath ;
+        let oldPath,newPath,oldImagePath;
 
         products.forEach(product => {
             if(product.id == req.params.id){
                     
+                oldImagePath = `../public/images/${product.type}/${product.name}/${product.image}`;
+                fsMethods.renameFolder(`../public/images/${req.file.filename}`,`../public/images/${product.type}/${product.name}/${req.file.filename}`)
                 oldPath = `../public/images/${product.type}/${product.name}`;
                 newPath = `../public/images/${req.body.type.trim().replace(":","")}/${req.body.name.trim().replace(":","")}`;
+                
                 product.name = req.body.name.trim().replace(":",""),
                 product.description = req.body.description.trim().replace(":",""),
                 product.price = +req.body.price,
@@ -52,12 +55,14 @@ module.exports={
                 product.category = req.body.category,
                 product.type = req.body.type,
                 product.payMethod = +req.body.payMethod
+                product.image = req.file ? req.file.filename : product.image
                 
             }
         });
         
         fsMethods.saveFile(products);
         fsMethods.renameFolder(oldPath,newPath);
+        fsMethods.deleteFile(oldImagePath);
         res.redirect(`/products/detail/${req.params.id}`);
     },
 

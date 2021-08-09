@@ -8,12 +8,11 @@
     <main>
           <h1 class="title">Formulario de creacion :</h1>
           
-          <form class="formCreacion" action="/products/create" method="POST">
+          <form class="formCreacion" action="/products/create" method="POST" enctype="multipart/form-data">
 
             <!----------------------------------    BOOSTRAP   ------------------------------------------>
             <label class="form-label title-images">Selecciona las imagenes : </label>
-              <input type="file" name="hola">
-              <!-- <div class="c-imagenes">
+              <div class="c-imagenes">
                 <div class="mb-3 input-file">
                   <div class="preview" id="preview">
                     <img id="preview-image" src="/images/default-image1.png">
@@ -59,7 +58,7 @@
                   <button type="button" id="quitar" onclick="limpiar(`image4`,`preview-image4`)" class="file-quitar btn">Quitar</button>
                 </div>
 
-              </div> -->
+              </div>
               
               <div class="container-inputs">
                   <div class="col-md-3">

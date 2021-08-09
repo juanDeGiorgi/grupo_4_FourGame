@@ -21,7 +21,7 @@ module.exports={
             id : products[products.length-1].id +1,
             name : req.body.name.trim().replace(":",""),
             description : req.body.description.trim().replace(":",""),
-            image : "default-image.png",
+            image : req.file ? req.file.filename : "default-image.png",
             price : +req.body.price,
             discount : +req.body.discount,
             category : req.body.category,
@@ -31,6 +31,7 @@ module.exports={
         products.push(product)
         fsMethods.saveFile(products);
         fs.mkdirSync(fsMethods.join(`../public/images/${product.type}/${product.name}`))
+        fsMethods.renameFolder(`../public/images/${req.file.filename}`,`../public/images/${product.type}/${product.name}/${req.file.filename}`)
         res.redirect('/');
     },
 

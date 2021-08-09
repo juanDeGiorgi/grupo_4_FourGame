@@ -144,46 +144,13 @@
   },
   {
     "id": 14,
-    "name": "",
-    "description": "",
-    "image": "default-image.png",
-    "price": 0,
+    "name": "juan de giorgi",
+    "description": "etrt",
+    "image": "img-1628495781236.jpg",
+    "price": 444,
     "discount": 0,
-    "category": "Categoria",
-    "type": "Producto",
-    "payMethod": null
-  },
-  {
-    "id": 15,
-    "name": "",
-    "description": "",
-    "image": "default-image.png",
-    "price": 0,
-    "discount": 0,
-    "category": "Categoria",
-    "type": "Producto",
-    "payMethod": null
-  },
-  {
-    "id": 16,
-    "name": "",
-    "description": "",
-    "image": "default-image.png",
-    "price": 0,
-    "discount": 0,
-    "category": "Categoria",
-    "type": "Producto",
-    "payMethod": null
-  },
-  {
-    "id": 17,
-    "name": "",
-    "description": "",
-    "image": "default-image.png",
-    "price": 0,
-    "discount": 0,
-    "category": "Categoria",
-    "type": "Producto",
-    "payMethod": null
+    "category": "best-seller",
+    "type": "pc",
+    "payMethod": 0
   }
 ]

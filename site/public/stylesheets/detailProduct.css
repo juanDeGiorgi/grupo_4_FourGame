@@ -475,6 +475,7 @@
     .detail main .ruta {
         font-size: 1.8vw;
         align-items: center;
+        margin: 5% 0% 5% 0%;
     }
     .detail .ruta .a-posicion {
         font-weight: 700;

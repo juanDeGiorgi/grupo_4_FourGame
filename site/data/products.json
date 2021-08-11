@@ -133,46 +133,24 @@
   },
   {
     "id": 14,
-    "name": "",
-    "description": "",
-    "image": "default-image.png",
-    "price": 0,
+    "name": "ejemplo",
+    "description": "etrt",
+    "image": "img-1628546077614.png",
+    "price": 444,
     "discount": 0,
-    "category": "Categoria",
-    "type": "Producto",
-    "payMethod": null
+    "category": "best-seller",
+    "type": "pc",
+    "payMethod": 0
   },
   {
     "id": 15,
-    "name": "",
-    "description": "",
-    "image": "default-image.png",
-    "price": 0,
-    "discount": 0,
-    "category": "Categoria",
-    "type": "Producto",
-    "payMethod": null
-  },
-  {
-    "id": 16,
-    "name": "",
-    "description": "",
-    "image": "default-image.png",
-    "price": 0,
-    "discount": 0,
-    "category": "Categoria",
-    "type": "Producto",
-    "payMethod": null
-  },
-  {
-    "id": 17,
-    "name": "",
-    "description": "",
-    "image": "default-image.png",
-    "price": 0,
-    "discount": 0,
-    "category": "Categoria",
-    "type": "Producto",
-    "payMethod": null
+    "name": "werewr",
+    "description": "wrer",
+    "image": "img-1628653037799.jpg",
+    "price": 3,
+    "discount": 10,
+    "category": "in-sale",
+    "type": "consolas",
+    "payMethod": 0
   }
 ]

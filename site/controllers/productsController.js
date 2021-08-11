@@ -21,7 +21,7 @@ module.exports={
             id : products[products.length-1].id +1,
             name : req.body.name.trim().replace(":",""),
             description : req.body.description.trim().replace(":",""),
-            image : "default-image.png",
+            image : req.file ? req.file.filename : `default-image.png`,
             price : +req.body.price,
             discount : +req.body.discount,
             category : req.body.category,
@@ -30,37 +30,47 @@ module.exports={
         }
         products.push(product)
         fsMethods.saveFile(products);
-        fs.mkdirSync(fsMethods.join(`../public/images/${product.type}/${product.name}`))
+        fsMethods.createFolder(`../public/images/${product.type}/${product.name}`);
+        if(req.file){
+            fsMethods.moveFile(`../public/images/${req.file.filename}`,`../public/images/${product.type}/${product.name}/${req.file.filename}`);
+        }else{
+            fsMethods.copyFile(`../public/images/default-image.png`,`../public/images/${product.type}/${product.name}/default-image.png`);
+        }
         res.redirect('/');
     },
 
     edit : (req,res)=>{ res.render('productEditv2',{product : products.find(product=> product.id==req.params.id)})},
 
     update : (req,res)=> {
-        let oldPath,newPath ;
+        let oldPath,newPath,oldImagePath;
 
         products.forEach(product => {
             if(product.id == req.params.id){
                     
+                oldImagePath = `../public/images/${product.type}/${product.name}/${product.image}`;
+                if(req.file) fsMethods.renameFolder(`../public/images/${req.file.filename}`,`../public/images/${product.type}/${product.name}/${req.file.filename}`)
                 oldPath = `../public/images/${product.type}/${product.name}`;
                 newPath = `../public/images/${req.body.type.trim().replace(":","")}/${req.body.name.trim().replace(":","")}`;
-                product.name = req.body.name.trim().replace(":",""),
-                product.description = req.body.description.trim().replace(":",""),
-                product.price = +req.body.price,
-                product.discount = +req.body.discount,
-                product.category = req.body.category,
-                product.type = req.body.type,
-                product.payMethod = +req.body.payMethod
+                
+                product.name = req.body.name.trim().replace(":","");
+                product.description = req.body.description.trim().replace(":","");
+                product.price = +req.body.price;
+                product.discount = +req.body.discount;
+                product.category = req.body.category;
+                product.type = req.body.type;
+                product.payMethod = +req.body.payMethod;
+                product.image = req.file ? req.file.filename : product.image;
                 
             }
         });
         
         fsMethods.saveFile(products);
         fsMethods.renameFolder(oldPath,newPath);
+        if(req.file) fsMethods.deleteFile(oldImagePath);
         res.redirect(`/products/detail/${req.params.id}`);
     },
 
-    destroy : (req,res)=> {
+    destroy : (req,res) => {
 
         let deletePath
 

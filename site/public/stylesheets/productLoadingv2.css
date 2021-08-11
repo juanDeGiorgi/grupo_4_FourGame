@@ -1,7 +1,8 @@
 .loading  {
-    background-image: url('/images/background/atari.jpg');
-    background-size: cover;
+    background-image: url('/images/background/TecladoMecanicoAmarillo.jpg');
+    background-size: contain;
     background-attachment: fixed;
+    background-position:center;
 }
 /* titulo */
 

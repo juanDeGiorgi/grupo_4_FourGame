@@ -24,9 +24,9 @@
   {
     "id": 3,
     "name": "Resident Evil Village Collector's Edition Capcom PS4 Físico",
-    "description": "Jueguito de zombies re loco",
+    "description": "Juego para disfrutar con la luz encendida y un rosario en el cuello. No apto para pacientes de riesgo, epilépticos ni vacunados con Sputnik (Los zombies tienen Astrazeneca)",
     "image": "resident-evil-village.jpg",
-    "price": 2650,
+    "price": 7999,
     "discount": 0,
     "category": "new-release",
     "type": "juegos",
@@ -34,21 +34,21 @@
   },
   {
     "id": 4,
-    "name": "COMPUTADORA ARMADA PARA PHOTOSHOP",
+    "name": "Pc Armada Amd Ryzen 5 3400g + A320 + 16gb Ddr4 + 1tb",
     "description": "Con tu consola PlayStation 4",
     "image": "pc.jpg",
     "price": 120080,
-    "discount": 5,
+    "discount": 10,
     "category": "new-release",
     "type": "pc",
     "payMethod": 12
   },
   {
     "id": 5,
-    "name": "Sony PlayStation 5 825GB Digital Edition color blanco y negro",
+    "name": "Sony PlayStation 5 825GB Digital Edition White color",
     "description": "Con tu consola PlayStation 5 tendrás entretenimiento asegurado todos los días. Su tecnología fue creada para poner nuevos retos tanto a jugadores principiantes como expertos.PlayStation renovó las expectativas del mundo virtual con esta nueva consola y su gran rendimiento. Cuenta con una interfaz de usuario más rápida y fácil de navegar que en anteriores modelos. Además, podrás jugar durante horas desafiando a millones de contrincantes alrededor del mundo que esperan nuevos retos.",
     "image": "ps5.jpg",
-    "price": 198000,
+    "price": 234900,
     "discount": 15,
     "category": "new-release",
     "type": "consolas",
@@ -123,24 +123,13 @@
   {
     "id": 12,
     "name": "Marvel's Spider-Man Miles Morales Standard Edition Sony PS5 Físico",
-    "description": "Con tu consola PlayStation 4",
+    "description": "Disfruta de ésta edición, acompañando a Peter Parker en sus aventuras.",
     "image": "spiderman.webp",
     "price": 2980,
     "discount": 0,
     "category": "best-seller",
     "type": "juegos",
     "payMethod": 0
-  },
-  {
-    "id": 13,
-    "name": "Konami PES 2020 ",
-    "description": " El Pro Evolution Soccer PES 2020 cuenta con varias mejoras respecto de la edicion anterior.\r\nAhora vas a poder aprovechar los descuidos y equivocaciones de tus oponentes y adaptar cada \r\npartido a tu estilo de juego personal. ",
-    "image": "pes2020.jpg",
-    "price": 1999,
-    "discount": 12,
-    "category": "in-sale",
-    "type": "juegos",
-    "payMethod": 3
   },
   {
     "id": 14,

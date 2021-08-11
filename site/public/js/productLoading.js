@@ -19,6 +19,7 @@ showImage("image4","preview-image4");
 
 
 limpiar = (inputId,imageId) =>{
+
     document.getElementById(inputId).value = "";
     document.getElementById(imageId).src = "/images/default-image1.png";
 }

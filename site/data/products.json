@@ -25,7 +25,7 @@
     "id": 3,
     "name": "Resident Evil Village Collector's Edition Capcom PS4 Físico",
     "description": "Juego para disfrutar con la luz encendida y un rosario en el cuello. No apto para pacientes de riesgo, epilépticos ni vacunados con Sputnik (Los zombies tienen Astrazeneca)",
-    "image": "resident-evil-village.jpg",
+    "image": "img-1628746860772.jpg",
     "price": 7999,
     "discount": 0,
     "category": "new-release",
@@ -129,28 +129,6 @@
     "discount": 0,
     "category": "best-seller",
     "type": "juegos",
-    "payMethod": 0
-  },
-  {
-    "id": 14,
-    "name": "ejemplo",
-    "description": "etrt",
-    "image": "img-1628546077614.png",
-    "price": 444,
-    "discount": 0,
-    "category": "best-seller",
-    "type": "pc",
-    "payMethod": 0
-  },
-  {
-    "id": 15,
-    "name": "werewr",
-    "description": "wrer",
-    "image": "img-1628653037799.jpg",
-    "price": 3,
-    "discount": 10,
-    "category": "in-sale",
-    "type": "consolas",
     "payMethod": 0
   }
 ]

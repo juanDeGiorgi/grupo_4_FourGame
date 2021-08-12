@@ -1,527 +1,208 @@
+.loading  {
+    background-image: url('/images/background/TecladoMecanicoAmarillo.jpg');
+    background-size: contain;
+    background-attachment: fixed;
+    background-position:center;
+}
+/* titulo */
+
+.loading main .title {
+    font-size: 7.3vw;
+    color: #ffffff;
+    text-align: center;
+    margin: 10% 0% 2% 0%;
+    font-weight: bold;
+    text-shadow: -2px 2px 2px black;
+}
+
+/* Formulario */
 
 
-.loading header .cart{
+.loading main .formCreacion{
+    width: 95%;
+    margin: 3vw auto 10vw auto;
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/* Inputs files */
+
+.loading main form .title-images{
+    width: 71.1vw;
+    display: block;
+    margin: auto;
+}
+
+.loading main form .c-imagenes{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-bottom: 20vw;
+}
+
+.loading main form .c-imagenes .input-file{
+    text-align: center;
+    margin: 3.1vw;
+}
+
+.loading main form .c-imagenes .file{
     display: none;
 }
 
-
-/*MAIN*/
-
-
-.loading main{
-    width: 100%;
-    background-color: #E7E6E6;
-    margin-bottom: 5%;
-}
-
-
-/*Primer sección*/
-
-
-.loading .contenedor {
-    background-color: #E7E6E6;
-    width: 90%;
-    margin: auto;
-}
-
-
-.loading .primero{
-    background-color: white;
-    width:80% ;
-    border-radius:35px;
-    margin: 15% auto 10% auto;
-    padding-bottom: 7%;
-}
-.loading main .contenedor .primero .elige{
-    padding: 20px 19.6px;
-    margin-bottom:  15px;
-    font-size: 1em;
-    text-align: center;
-    font-weight: 700;
-}
-.loading .boton1, .boton2{   
-    width:100%;
-    display: block; 
-    color: rgb(255, 255, 255);
-    background-color: #F2204D;
-    border-radius: 40px;
-    padding: 8px 18px;
-    margin-bottom: 9%;
-    /* margin-left: 26%; */
-    border: none;
-    font-size: 1em;
-    box-shadow: 0px 5px 12px -4px black;
-    font-weight: bold;
-    appearance: none;
-    outline: none;
-}
-
-.loading .botones{
-    padding-bottom: 8%;
-}
-
-.loading .c-select{
-    width: 48vw;
-    margin: auto;
-    position: relative;
-}
-
-.loading .c-select i{
-    position: absolute;
-    color: white;
-    right: 3.7vw;
-    top: 9.9px;
-}
-
-.loading h3{
-    color: #666;
-    font-weight: 800;
-    margin: auto;
-}
-
-
-/*Segunda sección*/
-
-.loading .segundo{
-    background-color: white;
-    width:80% ;
-    border-radius:35px;
-    margin: 10% auto 10% auto;
-}
-
-
-.loading .img-producto{
-    margin: 8% 17%;
-    width: 66%;
-
-}
-.loading .cont-mini-pctablet{
-    height: 70px;
-    width: 100%;
+.loading main form .c-imagenes .preview{
+    padding: 1vw;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
-    justify-content: space-around;
-
 }
 
-.loading .img-mini-tablet-pc, .icon{
-    display: flex;
-    width: 14%;
-}
-
-.loading .c-img{
-    width: 14%;
-    color: #F2204D;
-}
-
-.loading .c-img:hover{
-    color: #9c1f38;
-}
-
-.loading .c-img  i{
-    font-size: 12.6vw;
-}
-
-.loading .segundo .div-form{
-    text-align: center;
-    display: inline-block;
-    background-color: white;
-    border-radius: 40px;
-    padding-bottom: 22%;
-    margin-top: 8%;
-}
-.loading .segundo .div-form input{
-    width: 50vw;
-    display: inline-block;  
-    text-align: left;
-    background-color: #F2204D;
-    color: white;
-    font-size: 5vw;
-    border-radius: 40px;
-    text-indent: 4%;
-    font-weight: 500;
-    border: none;
-    padding: 8px 5px;
-    box-shadow: 0px 5px 12px -4px black;
-    margin: 6% 0%;
-    height: 8vw;
-
-}
-.loading .segundo .div-form input::placeholder{
-color: white }
-.loading .segundo .div-form input:focus{
-    outline: none;
-    border: 2px solid #3D2ED0;
+.loading main form .c-imagenes .preview img{
+    width: 80%;
 }
 
 
-
-
-/*Tercer sección*/
-
-
-.loading .tercero{
-    height: auto;
-    background-color: white;
-    width:90% ;
-    border-radius:35px;
-    margin: 10% 5% 10% 5%;
-    padding-bottom: 6%;
-}
-.loading .tercero h3{
-    width: 89%;
-    color: #666;
-    font-weight: 800;
-    text-align: center;
-    font-size: 1.5em;
-    padding: 7% 10% 1% 10%;
-}
-.loading .lineaRosa{
-    margin: auto;
-    width: 89%;
-    height: 3px;
-    background-color: #F77490;
-    border-radius: 40px;
-    padding: 1px 1px;
-}
-.loading .description{
-    margin: 9% auto;
-    width: 89%;
-    height: 100%;
-    display: block;
-    background-color:#FEEFEF;
-    border-radius: 10px;
-    padding: 10px;
-    resize: none;
-}
-.loading .description .SiEncontrasteEsteEasterEgg{
-    height: 140px ;
-    width: 100%;
-    text-align: center;
-    display: block;
-    background-color:#FEEFEF;
-    border-radius: 10px;
-    padding: 5%;
-    border-color: rgba(47, 79, 79, 0.377);
-}
-.loading .description .SiEncontrasteEsteEasterEgg:focus {
-    outline: none;
-    border: 2px solid #3D2ED0;
-}
-
-.loading .SiEncontrasteEsteEasterEgg{
-    /* Es porque estás corrigiendo bien el código XD */
-    margin: 12.8% 0%;
-}
-.loading .contenedor-descripcion{
-    height: 26vw;
-
-}
-
-
-.loading .componentepc{
-    display: flex;
-    align-items: flex-end;
-    margin: 10% 10% 10% 5%;
-}
-.loading .titulocomponente {
-    margin: -21.6% 9%;
-    position: absolute;
-    left: 20%;
-    width: 56.3%;
-    background-color:#FEEFEF;
-    border-radius: 5.5px;
-    border-color: rgba(47, 79, 79, 0.377);
-    text-align: left;
-    resize: none;
-    height: 17vw;
-    padding: 2px;
-}
-.loading textarea:focus {
-    outline: none;
-     border: 2px solid #3D2ED0;
- }
-
-
-
-/*CARGAR PRODUCTO*/
-
-.loading .finalizar {
-    color: white;
-    width: 63vw;
-    font-size: 6.5vw;
+.loading main form .c-imagenes .file-agregar{
     background-color: #3D2ED0;
-    margin-left: 16%;
-    margin-top: -4%;
-    margin-bottom: -5%;
-    border-radius: 40px;
-    text-align: center;
-    font-weight: bold;
-    box-shadow: 0px 5px 12px -4px black;
-    text-shadow: 2px 2px 7px rgba(0, 0, 0, 0.64);
-    border: none;
-    height: 14vw;
-    cursor: pointer;
+    color: white;
+    margin: 1vw;
 }
 
-.loading .finalizar:hover{
-    background-color: #3021b9;
+.loading main form .c-imagenes .file-quitar{
+    background-color: #dc3545;
+    color: white;
+    margin: 1vw;
 }
 
-.loading .finalizar:active{
-    background-color: #241a81;
+/* resto de Inputs */
+
+.loading main form .container-inputs{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
 
-.loading footer {
-    margin-top: 130px;
+.loading main form .container-inputs .inputs-text{
+    margin-bottom: 7vw;
 }
 
 
+.loading main form .input-text-area{
+    margin: auto;
+    resize: none;
+}
+
+.loading main form .container-buttons{
+    text-align: end;
+    width: 93%;
+    margin: auto;
+}
+
+.loading main form .container-buttons .btn-editar{
+    background-color: #3D2ED0;
+    color: white;
+    margin: 0.6vw;
+
+}
+
+.loading main form .container-buttons .btn-editar:hover {
+    color: #fff;
+    background-color: #372aad;
+}
+
+.loading main form .container-buttons .btn-borrar{
+    background-color: #dc3545;
+    color: white;
+    margin: 1vw;
+
+}
+
+.loading main form .container-buttons .btn-borrar:hover {
+    color: #fff;
+    background-color: #bb2d3b;
+    border-color: #b02a37;
+}
 
 
-               /*                          TABLET                            */
+.loading form .form-control:focus,.form-select:focus{
+    border-color: #3D2ED0;
+    box-shadow: 0 0 0 0.25rem #3e2ed063;
+} 
 
 
- @media (min-width:768px){
+@media (min-width:768px){
 
+/* titulo */
 
-    .loading main .contenedor .primero .elige {
-        font-size: 1.3em;
+    .loading main .title{
+        width: 80%;
+        font-size: 4vw;
+        margin: 3.7vw auto 0% auto;
+        text-align: left;
     }
 
+/* Formulario */
 
-    .loading header .cart{
-        display: initial;
-    }   
-/*MAIN*/
+    .loading main .formCreacion{
+        width: 80%;
+        margin: 3vw auto 10vw auto;
+        background-color: white;
+        padding: 15px;
+        border-radius: 10px;
+    }
 
+/* Input file */
 
+    .loading main form .c-imagenes{
+        flex-direction: row;
+        margin-bottom: 0;
+    }
 
+    .loading main form .c-imagenes .input-file{
+        width: 19.3vw;
+    }
 
+    .loading main form .c-imagenes .preview{
+        height: 16vw;
+    }
 
+/* resto de Inputs */
 
-/*Primer seccion*/
+    .loading main form .container-inputs{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;        
+        flex-direction: row;
 
+    }
 
-.loading h2{
-    font-size: 1.8em;
-    font-weight: 800;
+    .loading main form .container-inputs .inputs-text {
+        margin-bottom: 0vw;
+    }
+
+    .loading main form .container-inputs .input-selects{
+        width: 19.3vw;
+    }
+
+    .loading main form .input-text-area{
+        width: 71.1vw;
+    }
 
 }
 
-.loading .c-select {
-    width: 45.5vw;
-}
+@media (min-width:1024px){
 
-.loading .boton1, .boton2{   
-    display: inline-block; 
-    border-radius: 40px;
-    padding: 8px 18px;
-    margin: 6.5% 0 5% 0;
-    font-size: 1em;
-    height: 6vw;
-}
+/* titulo */
 
-.loading .c-select i {
-    top: 30.3px;
-    font-size: 3.9vw;
-}
-
-
-
-
-
-
-
-
-/*Segunda sección*/
-.loading .segundo .div-form input {
-    height: 6vw;
-    font-size: 1.4em;
-}
+    .loading main .title{
+        font-size: 2.5vw;
+    }
     
-.loading .caja-grande{
-    display: flex;
-}
-.loading .contenedor-producto{
-    display: inline-block;
-    width: 80%;
-}
-
-.loading .cont-mini-pctablet{
-flex-direction: column;
-justify-content: space-between;
-width: 19%;
-height: 400px;
-padding-left: 4%;
-}
-
-.loading .img-mini-tablet-pc{
-    width: 60%;
-    margin-top: 4%;
-}
-
-.loading .c-img {
-    width: 60%;
-}
-
-.loading .c-img i{
-    font-size: 7.8vw;
-}
-
-.loading .tercero h3{
-    font-size: 1.7em;
-}
-
-.loading .lineaRosa{
-    height: 6px;
-}
+/* Formulario */
 
 
+/* Input file */
 
 
-/*TERCER SECCIÓN*/
-.loading .tercero{
-    width: 80%;
-    margin: 0% auto;
 }
-.loading .contenedor-descripcion{
-    height: 17.3vw;
-
-}
-
-.loading .titulocomponente {
-
-    margin: -23% 9%;
-    padding: 7px;
-    width: 53.3%;
-    height: 10vw;
-    top: 160%;
-
-}
-
-.loading .description {
-    margin: 5.1% auto;
-    width: 89%;
-    height: 100%;
-    font-size: 2vw;
-}
-.loading .finalizar {
-    height: 7vw;
-    width: 35vw;
-    margin: 6% 30%;
-    font-size: 1.5em;
-}
-
-.loading .SiEncontrasteEsteEasterEgg {
-    margin: 0%;
-    position: relative;
-}
-
-/*DESKTOP */ 
-
-
-@media (min-width:1024px){ 
-
-.loading .primero{
-    padding: 1% 0%;
-    text-align: center;
-    width: 55%;
-    margin: 5% auto -6% auto;
-}
-
-.loading main .contenedor .primero .elige {
-    display: inline-block;
-}
-.loading .c-select i{
-    top: 7%;
-left: 59%;
-font-size: 2em;
-}
-
-.loading .segundo{
-    display: flex;
-   margin-bottom: 5%;
-    width: 55%;
-    padding-right: 3%;
-}
-.loading .contenedor-form{
-    width: 120%;
-}
-.loading .contenedor-producto{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%
-}
-.loading .cont-mini-pctablet {
-    justify-content: space-evenly;
-    padding-top: 5%;
-}
-
-.loading .img-producto{
-    width: 100%;
-    margin: 0%;
-}
-.loading .segundo .div-form input{
-    width: 12.9vw;
-    height: 2vw;
-    font-size: 1em;
-}
-.loading .segundo form {
-    padding-top: 34%;
-    margin-top: 0%;
-}
-
-.loading .c-select {
-    width: 36.5vw;
-}
-
-.loading .boton1, .boton2 {
-    width: 65%;
-    margin: 0.5% 0 5.2% 0;
-    height: 2.5vw;
-}
-
-.loading .c-img i{
-    font-size: 2.3vw;
-}
-
-.loading .tercero{
-    width: 55%;
-}
-
-.loading .tercero h3{
-    padding: 5% 0% 1% 0;
-    font-size: 2em;
-    text-align: left;
-}
-.loading .contenedor-descripcion {
-    height: 10.3vw;
-}
-.loading .description {
-    margin: 5.1% auto;
-    width: 65%;
-    height: 10vw;
-    font-size: 1em;
-}
-.loading .titulocomponente {
-    padding: 10px;
-    font-size: 2vw;
-    height: 7vw;
-}
-
-.loading .finalizar {
-    width: 20.7vw;
-    height: 4.5vw;
-    margin-left: 26%;
-    font-size: 2em;
-    text-align: center;
-    padding: 0%;
-    margin: 5% 39%;
-}
-
-}
-}
-
- 

@@ -130,27 +130,5 @@
     "category": "best-seller",
     "type": "juegos",
     "payMethod": 0
-  },
-  {
-    "id": 14,
-    "name": "ejemplo",
-    "description": "etrt",
-    "image": "img-1628546077614.png",
-    "price": 444,
-    "discount": 0,
-    "category": "best-seller",
-    "type": "pc",
-    "payMethod": 0
-  },
-  {
-    "id": 15,
-    "name": "werewr",
-    "description": "wrer",
-    "image": "img-1628653037799.jpg",
-    "price": 3,
-    "discount": 10,
-    "category": "in-sale",
-    "type": "consolas",
-    "payMethod": 0
   }
 ]

@@ -15,48 +15,53 @@
             <div class="c-imagenes">
               <div class="mb-3 input-file">
                 <div class="preview" id="preview">
-                  <img id="preview-image" src="/images/<%=product.type%>/<%=product.name%>/<%=product.image%>">
+                  <img id="preview-image" src="<%=product.image[0] ? `/images/products/${product.image[0]}` : "/images/icon/default-image1.png" %>">
+                  <input class="delete" type="checkbox" name="deleteImages" value=6 id="0" checked>
                 </div>
                 <input type="file" id="image" name="image" class="file">
-                <label for="image" class="file-agregar btn">Agregar</label>
-                <button type="button" id="quitar" onclick="limpiar(`image`,`preview-image`)" class="file-quitar btn">Quitar</button>
+                <label for="image" class="file-agregar btn" onclick="document.getElementById(`0`).value = `0`;">Agregar</label>
+                <button type="button" id="quitar" onclick="limpiar(`image`,`preview-image`,`0`)" class="file-quitar btn">Quitar</button>
               </div>
 
-              <!-- <div class="mb-3 input-file">
+              <div class="mb-3 input-file">
                 <div class="preview" id="preview1">
-                  <img id="preview-image1" src="/images/default-image1.png">
+                  <img id="preview-image1" src="<%= product.image[1] ? `/images/products/${product.image[1]}` : "/images/icon/default-image1.png" %>">
+                  <input class="delete" type="checkbox" name="deleteImages" value=6 id="1" checked>
                 </div>
                 <input type="file" id="image1" name="image1" class="file">
-                <label for="image1" class="file-agregar btn">Agregar</label>
-                <button type="button" id="quitar" onclick="limpiar(`image1`,`preview-image1`)" class="file-quitar btn">Quitar</button>
+                <label for="image1" class="file-agregar btn" onclick="document.getElementById(`1`).value = `1`;">Agregar</label>
+                <button type="button" id="quitar" onclick="limpiar(`image1`,`preview-image1`,`1`)" class="file-quitar btn">Quitar</button>
               </div>
 
               <div class="mb-3 input-file">
                 <div class="preview" id="preview2">
-                  <img id="preview-image2" src="/images/default-image1.png">
+                  <img id="preview-image2" src="<%= product.image[2] ? `/images/products/${product.image[2]}` : "/images/icon/default-image1.png" %>">
+                  <input class="delete" type="checkbox" name="deleteImages" value=6 id="2" checked>
                 </div>
                 <input type="file" id="image2" name="image2" class="file">
-                <label for="image2" class="file-agregar btn">Agregar</label>
-                <button type="button" id="quitar" onclick="limpiar(`image2`,`preview-image2`)" class="file-quitar btn">Quitar</button>
+                <label for="image2" class="file-agregar btn" onclick="document.getElementById(`2`).value = `2`;">Agregar</label>
+                <button type="button" id="quitar" onclick="limpiar(`image2`,`preview-image2`,`2`)" class="file-quitar btn">Quitar</button>
               </div>
 
               <div class="mb-3 input-file">
                 <div class="preview" id="preview3">
-                  <img id="preview-image3" src="/images/default-image1.png">
+                  <img id="preview-image3" src="<%= product.image[3] ? `/images/products/${product.image[3]}` : "/images/icon/default-image1.png" %>">
+                  <input class="delete" type="checkbox" name="deleteImages" value=6 id="3" checked>
                 </div>
                 <input type="file" id="image3" name="image3" class="file">
-                <label for="image3" class="file-agregar btn">Agregar</label>
-                <button type="button" id="quitar" onclick="limpiar(`image3`,`preview-image3`)" class="file-quitar btn">Quitar</button>
+                <label for="image3" class="file-agregar btn" onclick="document.getElementById(`3`).value = `3`;">Agregar</label>
+                <button type="button" id="quitar" onclick="limpiar(`image3`,`preview-image3`,`3`)" class="file-quitar btn">Quitar</button>
               </div>
 
               <div class="mb-3 input-file">
                 <div class="preview" id="preview4">
-                  <img id="preview-image4" src="/images/default-image1.png">
+                  <img id="preview-image4" src="<%= product.image[4] ? `/images/products/${product.image[4]}` : "/images/icon/default-image1.png" %>">
+                  <input class="delete" type="checkbox" name="deleteImages" value=6 id="4" checked>
                 </div>
                 <input type="file" id="image4" name="image4" class="file">
-                <label for="image4" class="file-agregar btn">Agregar</label>
-                <button type="button" id="quitar" onclick="limpiar(`image4`,`preview-image4`)" class="file-quitar btn">Quitar</button>
-              </div> -->
+                <label for="image4" class="file-agregar btn" onclick="document.getElementById(`4`).value = `4`;">Agregar</label>
+                <button type="button" id="quitar" onclick="limpiar(`image4`,`preview-image4`,`4`)" class="file-quitar btn">Quitar</button>
+              </div>
 
             </div>
               
@@ -122,7 +127,7 @@
 
               <div class="mb-3 input-text-area inputs-text">
                 <label for="description" class="form-label">Descripcion :</label>
-                <textarea class="form-control input-text-area" id="description" name="description" placeholder="Ingresa la descripcion del producto" rows="6"> <%=product.description %> </textarea>
+                <textarea class="form-control input-text-area" id="description" name="description" placeholder="Ingresa la descripcion del producto" rows="6"><%=product.description %> </textarea>
                 <div class="invalid-feedback">
                   aca va el error
                 </div>
@@ -132,7 +137,7 @@
                 
             <div class="container-buttons">
                 <button type="submit" class="btn btn-editar">Guardar Producto</button>
-                <a href="/" class="btn btn-borrar">Cancelar</a>
+                <a href="/products/detail/<%=product.id%>" class="btn btn-borrar">Cancelar</a>
             </div>
           </form>
 

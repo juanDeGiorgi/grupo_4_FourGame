@@ -18,10 +18,11 @@ showImage("image3","preview-image3");
 showImage("image4","preview-image4");
 
 
-limpiar = (inputId,imageId) =>{
+limpiar = (inputId,imageId,deleteId) =>{
 
     document.getElementById(inputId).value = "";
-    document.getElementById(imageId).src = "/images/default-image1.png";
+    document.getElementById(imageId).src = "/images/icon/default-image1.png";
+    document.getElementById(deleteId).value = deleteId;
 }
 
 

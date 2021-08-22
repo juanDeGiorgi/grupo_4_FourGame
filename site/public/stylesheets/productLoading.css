@@ -1,6 +1,6 @@
 .loading  {
     background-image: url('/images/background/TecladoMecanicoAmarillo.jpg');
-    background-size: contain;
+    /* background-size: contain; */
     background-attachment: fixed;
     background-position:center;
 }
@@ -56,10 +56,15 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 .loading main form .c-imagenes .preview img{
-    width: 80%;
+    width: 70%;
+}
+
+.loading main form .c-imagenes .preview .delete{
+    display: none;
 }
 
 

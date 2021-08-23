@@ -1,8 +1,8 @@
-const {check, body} = require('express-validator');
+const {body} = require('express-validator');
 
 module.exports = [
 
-    check('name')
+    body('name')
     .notEmpty().withMessage('El nombre es obligatorio').bail()
     .isLength({
         min : 2,
@@ -11,11 +11,11 @@ module.exports = [
     .isAlpha().withMessage('El nombre debe contener solo letras'),
 
 
-    check('email')
+    body('email')
     .isEmail().withMessage('Debes ingresar un email válido'),
 
 
-    check('password')
+    body('password')
     .isLength({
         min : 6,
         max : 12
@@ -31,6 +31,6 @@ module.exports = [
     }).withMessage('Las contraseñas no coinciden'),
 
     
-    check('acepta')
+    body('acepta')
     .isString('on').withMessage('Debes aceptar los términos y condiciones')
 ]

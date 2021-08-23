@@ -16,13 +16,12 @@
         <section class="vista">
             <div class="div-img-miniaturas">
                 <div class="vista-miniaturas">
-                    <!-- <button class="b-miniatura"><img src="/images/Pc/PC-Armada-Media-0026_600.jpg" alt="PC gama media AMD"></button>
-                    <button class="b-miniatura"><img src="/images/Pc/fuente.jpg" alt="Fuente"></button>
-                    <button class="b-miniatura"><img src="/images/Pc/mobo.jpg" alt="Motherboard"></button>
-                    <button class="b-miniatura"><img src="/images/Pc/ram.jpg" alt="Ram"></button> -->
+                    <%product.image.forEach((image,index)=>{%>
+                        <button onmouseover="document.getElementById(`imagePrincipal`).setAttribute(`src`,`/images/products/<%=image%>`)" id="tinyImage" class="b-miniatura"><img src="/images/products/<%=image%>" alt="image"></button>
+                    <%})%>
                 </div>
                 <div class="contenedor-img vista-img">
-                    <img src="/images/<%=product.type%>/<%=product.name%>/<%=product.image%> " alt="<%=product.name %> ">
+                    <img id="imagePrincipal" src="/images/products/<%=product.image[0]%> " alt="<%=product.name %> ">
                     <button class="fav"><i class="far fa-heart"></i></button>
                 </div>
             </div>
@@ -146,7 +145,7 @@
                         <article>
                             <a href="/products/detail/<%=relatedProduct.id%> " class="a-article">
                                 <div class="contenedor-img">
-                                    <img src="/images/<%=relatedProduct.type%>/<%=relatedProduct.name%>/<%=relatedProduct.image%>" alt="image">
+                                    <img src="/images/products/<%=relatedProduct.image[0]%>" alt="image">
                                 </div>
 
                                 <div class="product-info">

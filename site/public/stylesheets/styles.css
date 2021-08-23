@@ -3,10 +3,11 @@
 
 @import url("./general.css");
 @import url("./index.css");
-@import url("./productLoadingv2.css");
+@import url("./productLoading.css");
 @import url("./detailProduct.css");
 @import url("./cart.css");
 @import url("./register.css");
 @import url("./login.css");
 @import url("./header.css");
 @import url("./footer.css");
+

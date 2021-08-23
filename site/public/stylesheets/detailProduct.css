@@ -340,7 +340,7 @@
     margin: 0 auto 5vw auto;
 }
 .detail main .descripcion .text{
-    text-shadow: 3px 1px 2px #34343482;
+    text-shadow: 3px 1px 2px #ffffff82;
     color: #919090;
 }
 
@@ -417,7 +417,7 @@
 }
 
 .detail main section article .contenedor-img img{
-    width: 87%;
+    width: 70%;
 }
 
 .detail main section article .product-info{
@@ -492,15 +492,26 @@
     .detail main .vista .div-img-miniaturas{
         display: flex;
         padding: 4vw 1vw;
+        justify-content: space-evenly;
     }
 
     .detail main .vista .div-img-miniaturas .vista-miniaturas {
-        display: initial;
+        display: flex;
         width: 12.3%;
+        text-align: center;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
     }
 
     .detail main .vista .div-img-miniaturas .vista-miniaturas .b-miniatura{
-        margin-bottom: 15px;
+        margin-bottom: 15px;    
+        border: 2px solid rgba(199, 196, 196, 0.25);
+        border-radius: 5px;
+        height: 13%;
+        width: 75%;
+        overflow: hidden;
+        padding: 2px;
     }
 
     .detail main .vista .div-img-miniaturas .vista-miniaturas .b-miniatura img{
@@ -710,8 +721,8 @@
     }
 
     .detail main section .contenedor-img {
-        /* height: 32.65vw; */
         height: 50%;
+        padding: 5px;
     }
 
     .detail main section article .product-info {
@@ -761,7 +772,7 @@
     /*      ARTICULO ENTERO */
 
     .detail main .vista {
-        height: 46vw;
+        height: 40.5vw;
         width: 90%;
         display: flex;
         margin: 1.7% auto 0% auto;
@@ -772,11 +783,11 @@
     .detail main .vista .div-img-miniaturas {
         padding: 0vw;
         width: 60%;
+        height: 90%;
     }
 
     .detail main .vista .div-img-miniaturas .vista-miniaturas {
-        padding-top: 4vw;
-        margin-right: 10px;
+        padding-top: 2.1vw;
     }
 
     .detail main .vista .div-img-miniaturas .vista-miniaturas .b-miniatura{
@@ -785,11 +796,11 @@
     }
 
     .detail main .vista .div-img-miniaturas .vista-miniaturas .b-miniatura:hover{
-        border: 3px solid #3D2ED0;
+        border-color: #3D2ED0;
     }
 
     .detail main .vista .div-img-miniaturas .vista-miniaturas .b-miniatura img {
-        width: 87.8%;
+        width: 70%;
     }
 
     /*      IMG PRINCIPAL Y CORZON     */
@@ -799,13 +810,13 @@
     }
 
     .detail main .vista .vista-img img {
-        width: 84%;
+        width: 70%;
+        overflow: hidden;
     }
 
     .detail main .vista .vista-img .fav {
-        top: 3.7%;
-        right: -4.9%;
-        font-size: 3.8vw;
+        top: 5%;
+        font-size: 3.2vw;
         cursor: pointer;
     }
 
@@ -824,18 +835,18 @@
     } */
 
     .detail main .vista .vista-info h3 {
-        font-size: 1.9vw;
+        font-size: 1.7vw;
     }
 
     .detail main .vista .vista-info .vendido {
-        width: 10.8vw;
-        font-size: 1.5vw;
+        width: 10vw;
+        font-size: 1.3vw;
     }
 
     /*    PPRECIO Y CARRITO    */
 
     .detail main .vista .vista-info .price {
-        font-size: 3.5vw;
+        font-size: 3.1vw;
         margin: 0vw 0vw 0.6vw;
     }
 
@@ -864,29 +875,29 @@
     }
 
     .detail main .vista .vista-info .t-cuotas {
-        font-size: 1.7vw;
+        font-size: 1.5vw;
         margin: 0vw;
     }
 
     .detail main .vista .vista-info .b-cuotas {
-        font-size: 1.6vw;
+        font-size: 1.3vw;
         cursor: pointer;
     }
 
     /*      ENVIOS          */
 
     .detail main .vista .vista-info .envios .fa-truck {
-        font-size: 4vw;
+        font-size: 3.3vw;
         margin: 1.6vw 2.6vw 0.8vw 0;
     }
 
     .detail main .vista .vista-info .envios .t-envios {
-        font-size: 2vw;
-        top: 1.3vw;
+        font-size: 1.6vw;
+        top: 1vw;
     }
 
     .detail main .vista .vista-info .envios .b-envios {
-        font-size: 1.5vw;
+        font-size: 1.3vw;
         bottom: 1vw;
         cursor: pointer;
     }
@@ -894,22 +905,22 @@
     /*      CANTIDAD     */
 
     .detail main .vista .vista-info .cantidad {
-        margin: 1.2vw 0vw;
+        margin: 1vw 0vw;
     }
 
     .detail main .vista .vista-info .cantidad .t-cantidad {
-        font-size: 2.2vw;
+        font-size: 1.8vw;
         margin-right: 2.3vw;
     }
 
     .detail main .vista .vista-info .cantidad button {
-        font-size: 3.1vw;
+        font-size: 2.4vw;
         margin: 0 1.4vw;
         cursor: pointer;
     }
 
     .detail main .vista .vista-info .cantidad .n-cantidad {
-        font-size: 3.6vw;
+        font-size: 2.5vw;
     }
 
     /*      COMPRAR,EDITAR Y BORRAR        */

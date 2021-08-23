@@ -4,123 +4,146 @@
     <%- include("./partials/head") %> 
 
 <body class="loading">
-    <%- include("./partials/header") %> 
+    <%- include("./partials/header")%> 
     <main>
-        <article class="contenedor">
-            <form action="">
+          <h1 class="title"><small>Estas editando el producto</small> : <%=product.name%></h1>
+          
+          <form class="formCreacion" action="/products/edit/<%=product.id %>?_method=PUT " method="POST" enctype="multipart/form-data">
 
-                <section class="primero">
-                    <h2 class="elige"> Elige el tipo de producto y su categoría</h2>
-                    <div class="c-select">
-                        <select class="boton1" name="categoria" required>
-                            <option selected hidden>categoria</option>
-                            <option>Consolas</option>
-                            <option>Pc armadas</option>
-                            <option>Juegos</option>
-                        </select>
-                        <i class="fas fa-chevron-down"></i>
+            <!----------------------------------    BOOSTRAP   ------------------------------------------>
+            <label class="form-label title-images">Selecciona las imagenes : </label>
+            <div class="c-imagenes">
+              <div class="mb-3 input-file">
+                <div class="preview" id="preview">
+                  <img id="preview-image" src="<%=product.image[0] ? `/images/products/${product.image[0]}` : "/images/icon/default-image1.png" %>">
+                  <input class="delete" type="checkbox" name="deleteImages" value=6 id="0" checked>
+                </div>
+                <input type="file" id="image" name="image" class="file">
+                <label for="image" class="file-agregar btn" onclick="document.getElementById(`0`).value = `0`;">Agregar</label>
+                <button type="button" id="quitar" onclick="limpiar(`image`,`preview-image`,`0`)" class="file-quitar btn">Quitar</button>
+              </div>
+
+              <div class="mb-3 input-file">
+                <div class="preview" id="preview1">
+                  <img id="preview-image1" src="<%= product.image[1] ? `/images/products/${product.image[1]}` : "/images/icon/default-image1.png" %>">
+                  <input class="delete" type="checkbox" name="deleteImages" value=6 id="1" checked>
+                </div>
+                <input type="file" id="image1" name="image1" class="file">
+                <label for="image1" class="file-agregar btn" onclick="document.getElementById(`1`).value = `1`;">Agregar</label>
+                <button type="button" id="quitar" onclick="limpiar(`image1`,`preview-image1`,`1`)" class="file-quitar btn">Quitar</button>
+              </div>
+
+              <div class="mb-3 input-file">
+                <div class="preview" id="preview2">
+                  <img id="preview-image2" src="<%= product.image[2] ? `/images/products/${product.image[2]}` : "/images/icon/default-image1.png" %>">
+                  <input class="delete" type="checkbox" name="deleteImages" value=6 id="2" checked>
+                </div>
+                <input type="file" id="image2" name="image2" class="file">
+                <label for="image2" class="file-agregar btn" onclick="document.getElementById(`2`).value = `2`;">Agregar</label>
+                <button type="button" id="quitar" onclick="limpiar(`image2`,`preview-image2`,`2`)" class="file-quitar btn">Quitar</button>
+              </div>
+
+              <div class="mb-3 input-file">
+                <div class="preview" id="preview3">
+                  <img id="preview-image3" src="<%= product.image[3] ? `/images/products/${product.image[3]}` : "/images/icon/default-image1.png" %>">
+                  <input class="delete" type="checkbox" name="deleteImages" value=6 id="3" checked>
+                </div>
+                <input type="file" id="image3" name="image3" class="file">
+                <label for="image3" class="file-agregar btn" onclick="document.getElementById(`3`).value = `3`;">Agregar</label>
+                <button type="button" id="quitar" onclick="limpiar(`image3`,`preview-image3`,`3`)" class="file-quitar btn">Quitar</button>
+              </div>
+
+              <div class="mb-3 input-file">
+                <div class="preview" id="preview4">
+                  <img id="preview-image4" src="<%= product.image[4] ? `/images/products/${product.image[4]}` : "/images/icon/default-image1.png" %>">
+                  <input class="delete" type="checkbox" name="deleteImages" value=6 id="4" checked>
+                </div>
+                <input type="file" id="image4" name="image4" class="file">
+                <label for="image4" class="file-agregar btn" onclick="document.getElementById(`4`).value = `4`;">Agregar</label>
+                <button type="button" id="quitar" onclick="limpiar(`image4`,`preview-image4`,`4`)" class="file-quitar btn">Quitar</button>
+              </div>
+
+            </div>
+              
+              <div class="container-inputs">
+                  <div class="col-md-3 inputs-text">
+                    <label for="name" class="form-label">Nombre :</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Nombre" value="<%=product.name  %> ">
+                    <div class="invalid-feedback">
+                     Por favor ingrese su nombre
                     </div>
-                    <div class="c-select">
-                        <select class="boton2" name="producto" required>
-                            <option selected hidden>producto</option>
-                            <option>Playstation 5</option>
-                            <option>Xbox series X</option>
-                            <option>Nintendo Switch</option>
-                        </select>
-                        <i class="fas fa-chevron-down"></i>
+                  </div>
+
+                  <div class="mb-4 input-selects">
+                    <label for="type" class="form-label">Tipo de producto :</label>
+                    <select class="form-select" id="type" name="type">
+                      <option selected hidden>Producto</option>
+                      <option value="consolas" <%= "consolas" == product.type ? 'selected' : null %>>Consolas</option>
+                      <option value="juegos" <%= "juegos" == product.type ? 'selected' : null %>>Juegos</option>
+                      <option value="pc" <%= "pc" == product.type ? 'selected' : null %>>Pc armadas</option>
+                    </select>
+                    <div class="invalid-feedback">Debe seleccionar el tipo de producto</div>
+                  </div>
+
+                  <div class="mb-4 input-selects">
+                    <label for="category" class="form-label">Categoria :</label>
+                    <select class="form-select" id="category" name="category">
+                      <option selected hidden>Categoria</option>
+                      <option value="in-sale" <%= "in-sale" == product.category ? 'selected' : null %>>En oferta</option>
+                      <option value="best-seller" <%= "best-seller" == product.category ? 'selected' : null %>>Mas vendido</option>
+                      <option value="new-release" <%= "new-release" == product.category ? 'selected' : null %>>Nuevo lanzamiento</option>
+                    </select>
+                    <div class="invalid-feedback">Debe seleccionar la categoria del producto</div>
+                  </div>
+
+                  <div class="col-md-3 inputs-text">
+                    <label for="price" class="form-label">Precio :</label>
+                    <input type="text" class="form-control" id="price" name="price" placeholder="Precio" value="<%=product.price %>">
+                    <div class="invalid-feedback">
+                     Ingrese el precio
                     </div>
-                </section>
+                  </div>
 
-
-                <section class="segundo">
-
-                    <div class="caja-grande">
-
-
-                        <div class="cont-mini-pctablet">
-                            <img class="img-mini-tablet-pc" src="/images/consolas/ps5/mando.jpeg" alt="" width="100%">
-                            <img class="img-mini-tablet-pc" src="/images/juegos/juego-ps5-2.png" alt="" width="100%">
-                            <img class="img-mini-tablet-pc" src="/images/juegos/Demons-Souls-PS5.png" alt=""
-                                width="100%">
-
-                            <label for="img" class="c-img"><i class="fas fa-plus-circle"></i></label>
-                            <input type="file" name="img-producto" id="img" accept=".jpg,.png,.svg" hidden> 
-
-                        </div>
-
-                        <div class="contenedor-producto">
-                            <img class="img-producto" src="/images/consolas/ps5/ps5.jpg" alt="" width="100%">
-                        </div>
-
-
+                  <div class="col-md-3 inputs-text">
+                    <label for="discount" class="form-label">Descuento :</label>
+                    <input type="text" class="form-control" id="discount" name="discount"  placeholder="Descuento" value="<%=product.discount %>">
+                    <div class="invalid-feedback">
+                     Ingrese el valor del descuento
                     </div>
+                  </div>
+                 
+                  <div class="mb-4 input-selects">
+                    <label for="payMethod" class="form-label">Medio pago :</label>
+                    <select class="form-select" id="payMethod" name="payMethod">
+                      <option selected hidden>Medio de pago</option>
+                      <option value="3" <%= "3" == product.payMethod ? 'selected' : null %>>3 cuotas</option>
+                      <option value="6" <%= "6" == product.payMethod ? 'selected' : null %> >6 cuotas</option>
+                      <option value="12"<%= "12" == product.payMethod ? 'selected' : null %>>12 cuotas</option>
+                      <option value="0" <%= "0" == product.payMethod ? 'selected' : null %>>Efectivo</option>
+                    </select>
+                    <div class="invalid-feedback">Seleccione medio de pago</div>
+                  </div>
+              </div>
 
-                    <div class="contenedor-form">
-
-                        <div class="div-form">
-                            <input type="text" name="nombreProducto" placeholder="Nombre" required>
-                            <input type="text" name="precio" placeholder="Precio" required>
-                            <input type="text" name="stock" placeholder="Stock" required>
-                        </div>
-
-                    </div>
-                </section>
-
-
-                <section class="tercero">
-
-                    <h3>Descripción</h3>
-
-                    <div class="lineaRosa"></div>
-
-                    <div class="contenedor-descripcion">
-                        <textarea name="descripcion" class="description" type="text"
-                            placeholder="Ingrese la Descripción del producto"></textarea>
-                    </div>
-
-                    <h3>Especificaciones</h3>
-
-                    <div class="lineaRosa"></div>
-
-
-                    <div class="SiEncontrasteEsteEasterEgg">
-                        <img src="/images/icon/cpu.svg" alt="" class="componentepc" width="15%">
-                        <textarea name="cpu" type="text" class="titulocomponente" required></textarea>
-                    </div>
-                    <div class="SiEncontrasteEsteEasterEgg">
-                        <img src="/images/icon/motherboard.svg" alt="" class="componentepc" width="15%">
-                        <textarea name="motherboard" type="text" class="titulocomponente" required></textarea>
-                    </div>
-                    <div class="SiEncontrasteEsteEasterEgg">
-                        <img src="/images/icon/ram.svg" alt="" class="componentepc" width="15%">
-                        <textarea name="ram" type="text" class="titulocomponente" required></textarea>
-                    </div>
-                    <div class="SiEncontrasteEsteEasterEgg">
-                        <img src="/images/icon/gpu.svg" class=" componentepc" width="15%">
-                        <textarea name="gpu" type="text" class="titulocomponente" required></textarea>
-                    </div>
-                    <div class="SiEncontrasteEsteEasterEgg">
-                        <img src="/images/icon/almacenamiento.svg" alt="" class="componentepc" width="15%">
-                        <textarea name="almacenamiento" type="text" class="titulocomponente" required></textarea>
-                    </div>
-                    <div class="SiEncontrasteEsteEasterEgg">
-                        <img src="/images/icon/fuente.svg" alt="" class="componentepc" width="15%">
-                        <textarea name="fuente" type="text" class="titulocomponente" required></textarea>
-                    </div>
-                    <div class="SiEncontrasteEsteEasterEgg">
-                        <img src="/images/icon/gabo.svg" alt="" class="componentepc" width="15%">
-                        <textarea name="gabinete" type="text" class="titulocomponente" required></textarea>
-                    </div>
-
-
-
-                </section>
-                <button type="submit" class="finalizar">Cargar producto</button>
-            </form>
-        </article>
+              <div class="mb-3 input-text-area inputs-text">
+                <label for="description" class="form-label">Descripcion :</label>
+                <textarea class="form-control input-text-area" id="description" name="description" placeholder="Ingresa la descripcion del producto" rows="6"><%=product.description %> </textarea>
+                <div class="invalid-feedback">
+                  aca va el error
+                </div>
+              </div>
+  
+            <!----------------------------------    BOOSTRAP   ------------------------------------------>
+                
+            <div class="container-buttons">
+                <button type="submit" class="btn btn-editar">Guardar Producto</button>
+                <a href="/products/detail/<%=product.id%>" class="btn btn-borrar">Cancelar</a>
+            </div>
+          </form>
 
     </main>
 <%- include("./partials/footer") %> 
+    <script src="/js/productLoading.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>

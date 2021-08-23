@@ -14,14 +14,14 @@ module.exports={
         relatedProducts : products
     }),
 
-    loading : (req,res) => res.render('productLoadingv2'),
+    loading : (req,res) => res.render('productLoading'),
   
     save : (req,res) => {
         let product = {
             id : products[products.length-1].id +1,
             name : req.body.name.trim().replace(":",""),
             description : req.body.description.trim().replace(":",""),
-            image : req.file ? req.file.filename : `default-image.png`,
+            image : req.files.length != 0 ? req.files.map(image => image.filename) : [`default-image.png`],
             price : +req.body.price,
             discount : +req.body.discount,
             category : req.body.category,
@@ -30,27 +30,22 @@ module.exports={
         }
         products.push(product)
         fsMethods.saveFile(products);
-        fsMethods.createFolder(`../public/images/${product.type}/${product.name}`);
-        if(req.file){
-            fsMethods.moveFile(`../public/images/${req.file.filename}`,`../public/images/${product.type}/${product.name}/${req.file.filename}`);
-        }else{
-            fsMethods.copyFile(`../public/images/default-image.png`,`../public/images/${product.type}/${product.name}/default-image.png`);
-        }
+      
         res.redirect('/');
     },
 
-    edit : (req,res)=>{ res.render('productEditv2',{product : products.find(product=> product.id==req.params.id)})},
+    edit : (req,res)=>{ res.render('productEdit',{product : products.find(product=> product.id==req.params.id)})},
 
     update : (req,res)=> {
-        let oldPath,newPath,oldImagePath;
+        let oldImages,images;
 
         products.forEach(product => {
             if(product.id == req.params.id){
                     
-                oldImagePath = `../public/images/${product.type}/${product.name}/${product.image}`;
-                if(req.file) fsMethods.renameFolder(`../public/images/${req.file.filename}`,`../public/images/${product.type}/${product.name}/${req.file.filename}`)
-                oldPath = `../public/images/${product.type}/${product.name}`;
-                newPath = `../public/images/${req.body.type.trim().replace(":","")}/${req.body.name.trim().replace(":","")}`;
+                oldImages = product.image.map(imageName => imageName) ;
+
+                images = product.image.filter((item,index) => index != req.body.deleteImages[index])
+                req.files.length != 0 ? req.files.forEach(file => images.push(file.filename)) : null
                 
                 product.name = req.body.name.trim().replace(":","");
                 product.description = req.body.description.trim().replace(":","");
@@ -59,31 +54,27 @@ module.exports={
                 product.category = req.body.category;
                 product.type = req.body.type;
                 product.payMethod = +req.body.payMethod;
-                product.image = req.file ? req.file.filename : product.image;
+                product.image = images.length != 0 ? images : ["default-image.png"];
                 
             }
         });
         
         fsMethods.saveFile(products);
-        fsMethods.renameFolder(oldPath,newPath);
-        if(req.file) fsMethods.deleteFile(oldImagePath);
+        req.body.deleteImages.forEach((image,index) => {if(image != 6 && typeof oldImages[index] != "undefined" && oldImages[index] != "default-image.png") fsMethods.deleteFile(`../public/images/products/${oldImages[index]}`)})
         res.redirect(`/products/detail/${req.params.id}`);
     },
 
     destroy : (req,res) => {
 
-        let deletePath
-
         for (let posicion = 0; posicion < products.length; posicion++) {
             if (products[posicion].id == req.params.id){
-                deletePath = `../public/images/${products[posicion].type}/${products[posicion].name}`;
+                products[posicion].image.forEach(item => item != "default-image.png" ? fsMethods.deleteFile(`../public/images/products/${item}`) : null)
                 products.splice(posicion, 1) 
             }
             
         }
 
         fsMethods.saveFile(products);
-        fsMethods.deleteFolder(deletePath);
         res.redirect('/');
 
    }

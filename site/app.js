@@ -31,8 +31,8 @@ app.use(session({
   saveUninitialized: true
 }))
 
-app.use(cookieCheck);
-app.use(localsUserCheck);
+//app.use(cookieCheck);
+//app.use(localsUserCheck);
 
 // config routes
 app.use('/',indexRouter);

@@ -4,7 +4,7 @@ const controller = require('../controllers/usersController');
 const validation = require("../validations/registerValidator")
 
 router.get('/register', controller.register);
-router.post('/register',validation,controller.registerProcess);
+router.post('/register',validation,controller.processRegister);
 router.get('/login', controller.login);
 
 module.exports = router;

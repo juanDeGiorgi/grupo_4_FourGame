@@ -1,5 +1,8 @@
 const path= require('path');
-
+const fs= require('fs');
+const users=require('../data/users_db')
+const bcrypt= require('bcryptjs')
+const {validationResult}= require('express-validator')
 
 module.exports={
     login : (req,res)=> res.render('login'),
@@ -7,38 +10,25 @@ module.exports={
     register : (req,res)=> res.render('register'),
    
     processRegister : (req,res) => {
-        let errors = validationResult(req);
-        let {nombre,email,contrasenia,pais,genero,hobbies} = req.body;
-        if(typeof hobbies === "string"){
-            hobbies = hobbies.split()
-        }
-        if(errors.isEmpty()){
-            let usuario = {
-                id : usuarios.length > 0 ? usuarios[usuarios.length - 1].id + 1 : 1,
-                nombre,
-                email,
-                contrasenia : bcrypt.hashSync(contrasenia,10),
-                pais,
-                genero,
-                hobbies : typeof hobbies === 'undefined' ? [] : hobbies,
-                rol : "user"
-            }
-            usuarios.push(usuario);
-            guardar(usuarios);
+        const errors = validationResult(req);
 
-            req.session.userLogin = {
-                id : usuario.id,
-                nombre : usuario.nombre,
-                rol : usuario.rol
+        if(errors.isEmpty()){
+            let newUser = {
+                id : users[users.length-1].id +1,
+                name: req.body.name,
+                email: req.body.email,
+                password : bcrypt.hashSync(req.body.password,12),
+                acces: "user",
+                image:  req.file ? req.file.filename : "default-image.png",
             }
-            return res.redirect('/')
+            users.push(newUser);
+            fs.writeFileSync(path.join(__dirname, '../data/users.json'), JSON.stringify(users,null,2), "utf-8") 
+            res.redirect('/')
+
         }else{
-            return res.render('register',{
-                productos,
-                paises,
-                old : req.body,
-                errores : errors.mapped()
+            res.render("register",{
+                errors : errors.mapped() 
             })
-        }
+       }
     }
 }

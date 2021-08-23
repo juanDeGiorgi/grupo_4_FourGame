@@ -493,6 +493,7 @@
         display: flex;
         padding: 4vw 1vw;
         justify-content: space-evenly;
+        height: 53.2vw;
     }
 
     .detail main .vista .div-img-miniaturas .vista-miniaturas {
@@ -508,7 +509,7 @@
         margin-bottom: 15px;    
         border: 2px solid rgba(199, 196, 196, 0.25);
         border-radius: 5px;
-        height: 13%;
+        height: 15.6%;
         width: 75%;
         overflow: hidden;
         padding: 2px;
@@ -521,7 +522,7 @@
     /*      IMG PRINCIPAL Y CORAZON           */
 
     .detail main .vista .vista-img {
-        height: 40%;
+        height: 100%;
         width: 76.8%;
     }
 
@@ -746,7 +747,7 @@
     }
 
     .detail main section article div .price {
-        font-size: 5.7vw;
+        font-size: 5vw;
     }
 
     .detail main section article div .payMethod {
@@ -793,6 +794,7 @@
     .detail main .vista .div-img-miniaturas .vista-miniaturas .b-miniatura{
         margin-bottom: 18.7px;
         cursor: pointer;
+        height: 12%;
     }
 
     .detail main .vista .div-img-miniaturas .vista-miniaturas .b-miniatura:hover{

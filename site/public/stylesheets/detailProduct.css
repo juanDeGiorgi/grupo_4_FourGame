@@ -915,6 +915,7 @@
     .detail main .vista .vista-info .b-comprar {
         font-size: 2vw;
         width: 12.9vw;
+        padding: 6px 0px;
         cursor: pointer;
         display: inline-block;
     }
@@ -922,6 +923,7 @@
     .detail main .vista .vista-info .b-editar {
         font-size: 2vw;
         width: 12.9vw;
+        padding: 6px 0px;
         cursor: pointer;
         display: inline-block;
     }

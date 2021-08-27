@@ -22,5 +22,13 @@
     "password": "$2a$12$049w4AP/dQ0L/H1NDFPvG.j/H6Wgf.Maa7D5h0xUy61s6hsDFcZ5q",
     "access": "admin",
     "image": "default-image.png"
+  },
+  {
+    "id": 4,
+    "name": "juan",
+    "email": "juanmadegiorgi@gmail.com",
+    "password": "$2a$12$wL2ZSsc19lTwGCqZiUC4GedUcwQILqXtakNLsEdiVefjho7MKMMNu",
+    "access": "user",
+    "image": "default-image.png"
   }
 ]

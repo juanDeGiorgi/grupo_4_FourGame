@@ -105,7 +105,7 @@
                             <a class="c-user-controls-user" href="#"><img src="/images/users/default-user-image.png"> <%= userLogged.name %> <i class="fas fa-chevron-down" style="margin: 0 0.6vw;"></i></a>
                         
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">Ver perfil</a></li>
+                                <li><a class="dropdown-item" href="/user/profile">Ver perfil</a></li>
                                 <% if (userLogged.access == 'admin') { %>
                                     <li><a class="dropdown-item" href="/products/create">Cargar producto</a></li>
                                 <% } %>

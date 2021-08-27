@@ -7,6 +7,7 @@ const {validationResult}= require('express-validator');
 
 
 module.exports={
+
     login : (req,res)=> res.render('login'),
 
     processLogin: (req, res) => {
@@ -58,5 +59,7 @@ module.exports={
                 errors : errors.mapped() 
             })
        }
-    }
+    },
+
+    profile : (req,res) => res.render("userProfile"),
 }

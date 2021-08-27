@@ -6,13 +6,15 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const methodOverride = require("method-override");
 const session = require('express-session');
-const cookieCheck= require('./middlewares/cookieChek')
+const cookieCheck= require('./middlewares/cookieChek');
+const localsCheck = require('./middlewares/localsCheck');
 
 // import routers
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const productsRouter = require('./routes/products');
 const cartRouter = require('./routes/cart');
+
 
 const app = express();
 
@@ -33,6 +35,8 @@ app.use(session({
   saveUninitialized: true
 }))
 app.use(cookieCheck);
+app.use(localsCheck);
+
 //app.use(localsUserCheck);
 
 // config routes

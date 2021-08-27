@@ -94,19 +94,26 @@
             </form>
             
             <div class="nav-1-controls">
+
                 <div class="c-user-controls">
-                    <!-- <a class="c-user-controls-login" href="/users/login">Iniciar sesion</a>
-                    <a class="c-user-controls-register" href="/users/register">Registrarse</a> -->
-                    <div class="dropdown drop-user">
-                        <a class="c-user-controls-user" href="#"><img src="/images/users/default-user-image.png"> Juan<i class="fas fa-chevron-down" style="margin: 0 0.6vw;"></i></a>
-                    
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Ver perfil</a></li>
-                            <li><a class="dropdown-item" href="/products/create">Cargar producto</a></li>
-                            <li><hr class="dropdown-divider"></li> 
-                            <li><a class="dropdown-item" href="#">Cerra sesion</a></li>
-                        </ul>
-                    </div>
+                    <% if (!locals.userLogged){%> 
+                        <a class="c-user-controls-login" href="/users/login">Iniciar sesion</a>
+                       <a class="c-user-controls-register" href="/users/register">Registrarse</a> 
+                    <% }else{ %> 
+                        <div class="dropdown drop-user">
+                            
+                            <a class="c-user-controls-user" href="#"><img src="/images/users/default-user-image.png"> <%= userLogged.name %> <i class="fas fa-chevron-down" style="margin: 0 0.6vw;"></i></a>
+                        
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <li><a class="dropdown-item" href="#">Ver perfil</a></li>
+                                <% if (userLogged.access == 'admin') { %>
+                                    <li><a class="dropdown-item" href="/products/create">Cargar producto</a></li>
+                                <% } %>
+                                <li><hr class="dropdown-divider"></li> 
+                                <li><a class="dropdown-item" href="#">Cerra sesion</a></li>
+                            </ul>
+                        </div>
+                    <% } %> 
                 </div>
                 
                 <a href="/cart" class="i-cart"><i class="fas fa-shopping-cart"></i></a>

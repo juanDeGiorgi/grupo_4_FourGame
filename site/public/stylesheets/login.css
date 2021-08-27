@@ -96,19 +96,23 @@
     border: 2px solid #3D2ED0;
 }
 
-.login .captcha {
+.login .rememberSession {
     width: 43%;
     height: 0vw;
     margin: 2% auto;
     border: none;
 }
-.login .captcha label {
+.login .rememberSession label {
     margin: 8% 5%;
     font-size: 6vw;
     font-weight: 600;
     display: none;
 }
-.login .captcha input{
+.login .labelremember{
+    color: white;
+    font-size: 0.9vw;
+}
+.login .rememberSession input{
     width: 9%;
     height: 100%;
     display: none;
@@ -184,12 +188,12 @@
     font-size: 3vw;
     width: 73%;
 }
-.login .captcha {
+.login .rememberSession {
     width: 40%;
     height: 7vw;
 }
 
-.login .captcha label{
+.login .rememberSession label{
     font-size: 2.2vw;
     margin: 10.95% 5%;
 }
@@ -199,7 +203,7 @@
     width: 47%;
     font-size: 1.5em;
 }
-.login .captcha input{
+.login .rememberSession input{
     margin: 10.6% 1% 10% 3%;
     width: 12.5%;
     height: 100%;
@@ -244,13 +248,13 @@
     width: 22vw;
     margin: 3% auto;
 }
-.login .captcha {
+.login .rememberSession {
     width: 43%;
     height: 4vw;
     margin: 5% auto;
 }
 
-.login .captcha label {
+.login .rememberSession label {
     font-size: 0.75em;
 }
 

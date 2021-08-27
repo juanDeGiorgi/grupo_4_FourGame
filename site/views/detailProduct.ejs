@@ -64,14 +64,17 @@
                     <button><i class="fas fa-plus-circle"></i></button>
                 </div>
                 <div class="div-comprar">
-
-                   <a href="#" class="b-editar">Comprar</a>   
-                   <a href="#" class="b-comprar">Agregar <i class="fas fa-cart-plus"></i></a>
-
-                   <!-- <a href="/products/edit/<%=product.id%>" class="b-editar">Editar</a>
-                   <form action="/products/delete/<%=product.id%>?_method=DELETE" method="POST">
-                       <button type="submit" class="b-borrar">Borrar</button>
-                   </form> -->
+                    <% if (locals.userLogged && userLogged.access == 'admin') { %>
+                        <a href="/products/edit/<%=product.id%>" class="b-editar">Editar</a>
+                        <form action="/products/delete/<%=product.id%>?_method=DELETE" method="POST">
+                            <button type="submit" class="b-borrar">Borrar</button>
+                        </form>
+                    <% }else{ %>
+                        <a href="#" class="b-editar">Comprar</a>   
+                        <a href="#" class="b-comprar">Agregar <i class="fas fa-cart-plus"></i></a>
+                        <% } %> 
+                        
+                  
 
                 </div>
             </div>

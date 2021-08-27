@@ -12,17 +12,21 @@
         </div>
 
 
-        <form class="contenedorlogin" action="">
+        <form class="contenedorlogin" method="POST" action = '/users/login'>
 
             <i class="fas fa-user-circle item-user"></i>
             <h1>Iniciar sesión</h1>
-            <input name="email" class="sesioninit" type="email" placeholder="Email" required>
-            <input name="password" class="sesioninit" type="password" placeholder="Contraseña" required>
+            <input name="email" class="sesioninit" type="email" placeholder="Email">
+            <input name="password" class="sesioninit" type="password" placeholder="Contraseña">
 
-            <div class="captcha">
-                <input type="checkbox" name="captcha" id="captcha" required>
-                <label for="captcha" >No soy un robot</label>
+            <div style="text-align:center;">
+                <input type="checkbox" name="rememberSession" id="rememberSession">
+                <label for="rememberSession" class="labelremember" >Recordarme</label>
             </div>
+            <%if( locals.errors && locals.errors.email){%>
+                <p style="color: red; font-size: 15px;"><%=errors.email.msg%></p>
+            <%}%>
+
             <button class="enter" type="submit">Ingresar</button>
 
             <div class="notenescuenta">

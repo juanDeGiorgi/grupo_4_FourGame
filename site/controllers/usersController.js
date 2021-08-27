@@ -61,5 +61,15 @@ module.exports={
        }
     },
 
+    logout : (req,res) => {
+        req.session.destroy()
+        res.cookie("rememberSession",null, {maxAge: -1})
+        res.redirect('/')
+    },
+
     profile : (req,res) => res.render("userProfile"),
+
+    updateProfile : (req,res) => {
+
+    }
 }

@@ -8,14 +8,6 @@
     "image": "default-user-image.png"
   },
   {
-    "id": 2,
-    "name": "juan",
-    "email": "juanmadegiorgi@gmail.com",
-    "password": "$2a$12$g7MREa9py5oZbf4m1A7g2uvF/dK3TYEi0QAB1zLZ91P0UiZUrrwXO",
-    "access": "user",
-    "image": "default-image.png"
-  },
-  {
     "id": 3,
     "name": "gonzalo",
     "email": "gonzalo220201@gmail.com",
@@ -28,7 +20,7 @@
     "name": "juan",
     "email": "juanmadegiorgi@gmail.com",
     "password": "$2a$12$wL2ZSsc19lTwGCqZiUC4GedUcwQILqXtakNLsEdiVefjho7MKMMNu",
-    "access": "user",
+    "access": "admin",
     "image": "default-image.png"
   }
 ]

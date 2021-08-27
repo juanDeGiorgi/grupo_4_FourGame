@@ -23,23 +23,23 @@
             <div class="box-input">
                 <input name="name" class="sesioninit" type="text" placeholder="Nombre" >
                 <%if(locals.errors && errors.name){%>  
-                <p style="color: red; font-size: 15px;"><%=errors.name.msg%></p> 
+                    <p class="error"><%=errors.name.msg%></p> 
                 <%}%>
 
                 <input name="email" class="sesioninit" type="text" placeholder="Email" >
                 <%if(locals.errors && errors.email){%>  
-                    <p style="color: red; font-size: 15px;"><%=errors.email.msg%></p> 
-                    <%}%>
+                    <p class="error"><%=errors.email.msg%></p> 
+                <%}%>
             </div>
 
            <div class="box-input2">
             <input name="password" class="sesioninit" type="password" placeholder="Contraseña" >
             <%if (locals.errors && errors.password) {%>
-                <p style="color: red; font-size: 15px;"><%=errors.password.msg%></p>
+                <p class="error"><%=errors.password.msg%></p>
             <% } %> 
             <input name="password2" class="sesioninit" type="password" placeholder="Confirmar contraseña" >
             <%if (locals.errors && errors.password2) {%>
-                <p style="color: red; font-size: 15px;"><%=errors.password2.msg%></p>
+                <p class="error"><%=errors.password2.msg%></p>
             <% } %> 
         </div>
         </div>

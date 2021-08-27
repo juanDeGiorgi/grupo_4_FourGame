@@ -13,7 +13,6 @@
 .login main .contenedorlogin {
     background-color: rgba(0, 0, 0, 0.57);
     width: 90vw;
-    height: 112vw;
     margin: 19% auto 0% auto;
     display: flex;
     flex-direction: column;
@@ -67,7 +66,7 @@
 }
 .login h1 {
     text-align: center;
-    margin: 15% 0% 16% 0%;
+    margin: 15% 0% 8% 0%;
     font-size: 11vw;
     font-weight: 700;
     color: white;
@@ -96,33 +95,41 @@
     border: 2px solid #3D2ED0;
 }
 
+.login .c-rememberSession{
+    text-align:center;
+    height: 10.5vw;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+}
+
 .login .rememberSession {
-    width: 43%;
-    height: 0vw;
-    margin: 2% auto;
-    border: none;
+    margin-right: 4vw;
 }
-.login .rememberSession label {
-    margin: 8% 5%;
-    font-size: 6vw;
-    font-weight: 600;
-    display: none;
-}
+
 .login .labelremember{
     color: white;
-    font-size: 0.9vw;
+    font-size: 5.4vw;
 }
-.login .rememberSession input{
-    width: 9%;
-    height: 100%;
-    display: none;
+
+.login .c-error{
+    text-align: center;
 }
+
+.login .c-error .error{
+    color: red; 
+    font-size: 4.7vw;
+}
+
 .login .enter{
     color: rgb(255, 255, 255);
     width: 63vw;
-    font-size: 1.4em;
+    font-size: 8vw;
     background-color: #3D2ED0;
-    margin: 4% auto;
+    margin: 6% auto;
     text-align: center;
     font-weight: bold;
     box-shadow: 0px 5px 12px -4px black;
@@ -156,67 +163,66 @@
 
 @media (min-width:768px){
     
-.login main .ruta{
-    font-size: 1.8vw;
-    align-items: center;
-}
-.login .ruta .a-posicion {
-    font-weight: 700;
-    font-size: 2.5vw;
-}
+    .login main .ruta{
+        font-size: 1.8vw;
+        align-items: center;
+    }
+    .login .ruta .a-posicion {
+        font-weight: 700;
+        font-size: 2.5vw;
+    }
 
-.login main .contenedorlogin{
-    width: 55vw;
-    height: 79vw;
-    margin: 7% auto;
-}
+    .login main .contenedorlogin{
+        width: 55vw;
+        height: 79vw;
+        margin: 7% auto;
+    }
 
-.login .ruta{
-    font-size: 2.4vw;
-}
-.login .item-user{
-    top: -9.32%;
-    font-size: 12vw;
-}
-.login h1{
-    font-size: 5vw;
-    font-weight: 500;
-    margin: 20% 0% 5% 0%;
-}
-.login .sesioninit{
-    height: 6vw;
-    font-size: 3vw;
-    width: 73%;
-}
-.login .rememberSession {
-    width: 40%;
-    height: 7vw;
-}
+    .login .ruta{
+        font-size: 2.4vw;
+    }
+    .login .item-user{
+        top: -9.32%;
+        font-size: 12vw;
+    }
+    .login h1{
+        font-size: 5vw;
+        font-weight: 500;
+        margin: 20% 0% 5% 0%;
+    }
+    .login .sesioninit{
+        height: 6vw;
+        font-size: 3vw;
+        width: 73%;
+    }
 
-.login .rememberSession label{
-    font-size: 2.2vw;
-    margin: 10.95% 5%;
-}
-.login .enter {
-    border-radius: 50px;
-    height: 7vw;
-    width: 47%;
-    font-size: 1.5em;
-}
-.login .rememberSession input{
-    margin: 10.6% 1% 10% 3%;
-    width: 12.5%;
-    height: 100%;
-}
-.login .notenescuenta h4 {
-    font-size: 1.5vw;
-}
-.login .notenescuenta a {
-    font-size: 1.8vw;
-}
-.login .enter{
-    border-radius: 50px;
-}
+    .login .c-error .error {
+        font-size: 19.5px;
+    }
+
+    .login .rememberSession {
+        margin-right: 2.8vw;
+    }
+
+    .login .labelremember{
+        font-size: 3.2vw;
+    }
+
+    .login .enter {
+        border-radius: 50px;
+        height: 7vw;
+        width: 47%;
+        font-size: 3.5vw;
+    }
+
+    .login .notenescuenta h4 {
+        font-size: 2vw;
+    }
+
+    .login .notenescuenta a {
+        font-size: 2.4vw;
+        margin-left: 1vw;
+    }
 
 }
 
@@ -229,9 +235,9 @@
 }
 
 .login main .contenedorlogin {
-        width: 30vw;
-        margin: 3% auto;
-        height: 36vw;
+    width: 30vw;
+    margin: 3% auto;
+    height: 36vw;
 }
 
 .login .item-user{
@@ -248,20 +254,23 @@
     width: 22vw;
     margin: 3% auto;
 }
-.login .rememberSession {
-    width: 43%;
-    height: 4vw;
-    margin: 5% auto;
+
+.login .c-rememberSession {
+    height: 5vw;
 }
 
-.login .rememberSession label {
-    font-size: 0.75em;
+.login .rememberSession {
+    margin-right: 1.4vw;
+}
+
+.login .labelremember{
+    font-size: 1.4vw;
 }
 
 .login .enter {
     width: 40%;
     height: 3vw;
-    font-size: 1em;
+    font-size: 1.5vw;
     margin: 4% auto 4% auto;
 }
 .login .notenescuenta h4 {

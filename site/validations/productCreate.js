@@ -48,7 +48,7 @@ module.exports = [
         }else{
             for (let i=0;i< req.files.length; i++) {
                 if(!extensions.includes(path.extname(req.files[i].originalname))){
-                    throw new Error(`las extenciones permitidas son ${extensions.join(", ")}`);
+                    throw new Error(`las extensiones permitidas son ${extensions.join(", ")}`);
                 }
             }
             return true

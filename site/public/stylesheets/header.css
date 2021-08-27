@@ -172,11 +172,12 @@
         width: 90%;
         margin: auto;
         border-bottom: 1px solid grey;
-        padding-top: 1vw;
+        padding: 0.3vw 0;
     }
 
     header nav .nav-1 .logo-desktop{
-        width: 8vw;
+        /* width: 8vw; */
+        width: 15vw;
     }
 
     header nav .nav-1 .search{
@@ -295,6 +296,7 @@
         border-radius: initial;
         display: initial;
         padding: 10px 0;
+        
     }
 
     header .btn-productos::after{
@@ -341,7 +343,6 @@
     .dropdown-item:focus, .dropdown-item:hover {
         background-color: #e9ecef;
         color: rgb(61, 46, 208);
-        /* font-weight: 700; */
     }
 
     .dropdown-menu{
@@ -363,7 +364,6 @@
         display: flex;
         transform: translate3d(0px, 8px, 0px);
     }
-
 
     /*----------------------------------    MENU DESPLEGABLE    ------------------------------------------*/
 

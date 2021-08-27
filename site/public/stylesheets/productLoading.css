@@ -157,6 +157,22 @@
         border-radius: 10px;
     }
 
+    .loading main .formCreacion .c-title-error{
+        width: 90%;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    } 
+
+    .loading main .formCreacion .c-title-error .title-images{
+        display: inline-block;
+        width: unset;
+        margin: unset;
+    }
+
 /* Input file */
 
     .loading main form .c-imagenes{

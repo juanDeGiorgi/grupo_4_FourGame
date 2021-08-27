@@ -21,12 +21,12 @@
             <h1>Registrate</h1>
            <div class="cajapadre">
             <div class="box-input">
-                <input name="name" class="sesioninit" type="text" placeholder="Nombre" >
+                <input name="name" class="sesioninit" type="text" placeholder="Nombre" value = <%= typeof old != 'undefined' && old.name ? old.name : null %>  >
                 <%if(locals.errors && errors.name){%>  
                     <p class="error"><%=errors.name.msg%></p> 
                 <%}%>
 
-                <input name="email" class="sesioninit" type="text" placeholder="Email" >
+                <input name="email" class="sesioninit" type="text" placeholder="Email" value = <%= typeof old != 'undefined' && old.email ? old.email : null %> >
                 <%if(locals.errors && errors.email){%>  
                     <p class="error"><%=errors.email.msg%></p> 
                 <%}%>

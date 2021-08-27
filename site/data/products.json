@@ -175,5 +175,18 @@
     "category": "best-seller",
     "type": "juegos",
     "payMethod": 0
+  },
+  {
+    "id": 13,
+    "name": "juand",
+    "description": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "image": [
+      "default-image.png"
+    ],
+    "price": 70000,
+    "discount": 40,
+    "category": "best-seller",
+    "type": "juegos",
+    "payMethod": 0
   }
 ]

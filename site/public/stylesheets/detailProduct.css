@@ -113,19 +113,6 @@
     display: inline-block;
 }
 
-.detail main .vista .vista-info .cart-add{
-    font-size: 10vw;
-    margin-left: 16vw;
-}
-
-.detail main .vista .vista-info .cart-add:hover{
-    color: rgb(43, 42, 42);
-}
-
-.detail main .vista .vista-info .cart-add:active{
-    color: rgb(61, 60, 60);
-}
-
 /*                   */
 
 /*      CUOTAS      */
@@ -246,8 +233,8 @@
     background-color: #3D2ED0;
     color: #ffffff;
     padding: 6px 0px;
-    font-size: 28.5px;
-    border-radius: 26px;
+    font-size: 27.4px;
+    border-radius: 20px;
     width: 51.2vw;
     margin: 3% auto 3% auto;
     display: block;
@@ -280,10 +267,10 @@
 .detail main .vista .vista-info .b-comprar {
     background-color: #F2204D;
     color: #ffffff;
-    padding: 3px 0px;
-    font-size: 26px;
-    border-radius: 26px;
-    width: 39vw;
+    padding: 6px 0px;
+    font-size: 27.4px;
+    border-radius: 20px;
+    width: 51.2vw;
     margin: 3% auto 3% auto;
     display: block;
 }
@@ -493,6 +480,7 @@
         display: flex;
         padding: 4vw 1vw;
         justify-content: space-evenly;
+        height: 53.2vw;
     }
 
     .detail main .vista .div-img-miniaturas .vista-miniaturas {
@@ -508,7 +496,7 @@
         margin-bottom: 15px;    
         border: 2px solid rgba(199, 196, 196, 0.25);
         border-radius: 5px;
-        height: 13%;
+        height: 15.6%;
         width: 75%;
         overflow: hidden;
         padding: 2px;
@@ -521,7 +509,7 @@
     /*      IMG PRINCIPAL Y CORAZON           */
 
     .detail main .vista .vista-img {
-        height: 40%;
+        height: 100%;
         width: 76.8%;
     }
 
@@ -566,12 +554,6 @@
         font-size: 7.6vw;
         margin: 0vw 0px 5vw;
     }
-
-    .detail main .vista .vista-info .cart-add {
-        font-size: 7.6vw;
-        margin-left: 12vw;
-    }
-
 
     /*      CUOTAS           */
 
@@ -630,14 +612,17 @@
     }
 
     .detail main .vista .vista-info .b-comprar {
-        font-size: 7.3vw;
-        width: 44.1vw;
+        font-size: 5vw;
+        width: 30.9vw;
+        margin: 0;
+        padding: 14.6px 0px;
     
     }
 
     .detail main .vista .vista-info .b-editar {
-        font-size: 6vw;
-        width: 26.3vw;
+        font-size: 5vw;
+        width: 26.8vw;
+        padding: 14.6px 0px;
         margin: 0;
     
     }
@@ -746,7 +731,7 @@
     }
 
     .detail main section article div .price {
-        font-size: 5.7vw;
+        font-size: 5vw;
     }
 
     .detail main section article div .payMethod {
@@ -793,6 +778,7 @@
     .detail main .vista .div-img-miniaturas .vista-miniaturas .b-miniatura{
         margin-bottom: 18.7px;
         cursor: pointer;
+        height: 12%;
     }
 
     .detail main .vista .div-img-miniaturas .vista-miniaturas .b-miniatura:hover{
@@ -848,12 +834,6 @@
     .detail main .vista .vista-info .price {
         font-size: 3.1vw;
         margin: 0vw 0vw 0.6vw;
-    }
-
-    .detail main .vista .vista-info .cart-add {
-        font-size: 3.7vw;
-        margin-left: 9.1vw;
-        cursor: pointer;
     }
 
     /*      DESCUENTO        */
@@ -933,8 +913,9 @@
     }
 
     .detail main .vista .vista-info .b-comprar {
-        font-size: 2.5vw;
-        width: 15vw;    
+        font-size: 2vw;
+        width: 12.9vw;
+        padding: 6px 0px;
         cursor: pointer;
         display: inline-block;
     }
@@ -942,6 +923,7 @@
     .detail main .vista .vista-info .b-editar {
         font-size: 2vw;
         width: 12.9vw;
+        padding: 6px 0px;
         cursor: pointer;
         display: inline-block;
     }

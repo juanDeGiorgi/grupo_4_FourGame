@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 
-    <%- include("./partials/head") %> 
+    <%- include("./partials/head",{title : "Cargar Producto"}) %> 
 
 <body class="loading">
     <%- include("./partials/header")%> 
@@ -11,7 +11,12 @@
           <form class="formCreacion" action="/products/create" method="POST" enctype="multipart/form-data">
 
             <!----------------------------------    BOOSTRAP   ------------------------------------------>
-            <label class="form-label title-images">Selecciona las imagenes : </label>
+              <div class="c-title-error">
+                <label class="form-label title-images">Selecciona las imagenes : </label>
+                <%if( locals.errors && locals.errors.image){%>
+                  <p style="color: red;margin: unset;"><%=errors.image.msg%></p>
+                <%}%>
+              </div>
               <div class="c-imagenes">
                 <div class="mb-3 input-file">
                   <div class="preview" id="preview">
@@ -35,7 +40,7 @@
                   <div class="preview" id="preview2">
                     <img id="preview-image2" src="/images/icon/default-image1.png">
                   </div>
-                  <input type="file" id="image2" name="image2" class="file">
+                  <input type="file" id="image2" name="image2" class="file" >
                   <label for="image2" class="file-agregar btn">Agregar</label>
                   <button type="button" id="quitar" onclick="limpiar(`image2`,`preview-image2`)" class="file-quitar btn">Quitar</button>
                 </div>
@@ -44,7 +49,7 @@
                   <div class="preview" id="preview3">
                     <img id="preview-image3" src="/images/icon/default-image1.png">
                   </div>
-                  <input type="file" id="image3" name="image3" class="file">
+                  <input type="file" id="image3" name="image3" class="file" >
                   <label for="image3" class="file-agregar btn">Agregar</label>
                   <button type="button" id="quitar" onclick="limpiar(`image3`,`preview-image3`)" class="file-quitar btn">Quitar</button>
                 </div>
@@ -57,74 +62,93 @@
                   <label for="image4" class="file-agregar btn">Agregar</label>
                   <button type="button" id="quitar" onclick="limpiar(`image4`,`preview-image4`)" class="file-quitar btn">Quitar</button>
                 </div>
-
               </div>
               
               <div class="container-inputs">
                   <div class="col-md-3 inputs-text">
                     <label for="name" class="form-label">Nombre :</label>
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Nombre">
-                    <div class="invalid-feedback">
-                      aca va el error 
+                    <input type="text" class="form-control <%= locals.errors && errors.name ? "is-invalid" : null%>" id="name" name="name" placeholder="Nombre" value="<%= typeof old != "undefined" ? old.name : "" %>">
+                    <div class="invalid-feedback" style="margin: 1vw 0;">
+                      <%if(locals.errors && errors.name){%>
+                        <%=errors.name.msg%>
+                      <%}%>
                     </div>
                   </div>
 
                   <div class="mb-4 input-selects">
                     <label for="type" class="form-label">Tipo de producto :</label>
-                    <select class="form-select" id="type" name="type">
-                      <option selected hidden>Producto</option>
-                      <option value="consolas">Consolas</option>
-                      <option value="juegos">Juegos</option>
-                      <option value="pc">Pc armadas</option>
+                    <select class="form-select  <%= locals.errors && errors.type ? "is-invalid" : null%>" id="type" name="type">
+                      <option selected hidden value="">Producto</option>
+                      <option value="consolas" <%= locals.old && old.type === "consolas" ? 'selected' : null %>>Consolas</option>
+                      <option value="juegos"   <%= locals.old && old.type === "juegos" ? 'selected' : null %>>Juegos</option>
+                      <option value="pc"       <%= locals.old && old.type === "pc" ? 'selected' : null %>>Pc armadas</option>
                     </select>
-                    <div class="invalid-feedback">aca va el error</div>
+                    <div class="invalid-feedback" style="margin: 1vw 0;">
+                      <%if(locals.errors && errors.type){%>
+                        <%=errors.type.msg%>
+                      <%}%>
+                    </div>
                   </div>
 
                   <div class="mb-4 input-selects">
                     <label for="category" class="form-label">Categoria :</label>
-                    <select class="form-select" id="category" name="category">
-                      <option selected hidden>Categoria</option>
-                      <option value="in-sale">En oferta</option>
-                      <option value="best-seller">Mas vendido</option>
-                      <option value="new-release">Nuevo lanzamiento</option>
+                    <select class="form-select <%= locals.errors && errors.category ? "is-invalid" : null%>" id="category" name="category">
+                      <option selected hidden value="">Categoria</option>
+                      <option value="in-sale"     <%= locals.old && old.category === "in-sale" ? 'selected' : null %>>En oferta</option>
+                      <option value="best-seller" <%= locals.old && old.category === "best-seller" ? 'selected' : null %>>Mas vendido</option>
+                      <option value="new-release" <%= locals.old && old.category === "new-release" ? 'selected' : null %>>Nuevo lanzamiento</option>
                     </select>
-                    <div class="invalid-feedback">aca va el error</div>
+                    <div class="invalid-feedback" style="margin: 1vw 0;">
+                      <%if(locals.errors && errors.category){%>
+                        <%=errors.category.msg%>
+                      <%}%>
+                    </div>
                   </div>
 
                   <div class="col-md-3 inputs-text">
                     <label for="price" class="form-label">Precio :</label>
-                    <input type="text" class="form-control" id="price" name="price" placeholder="Precio">
-                    <div class="invalid-feedback">
-                      aca va el error
+                    <input type="text" class="form-control <%= locals.errors && errors.price ? "is-invalid" : null%>" id="price" name="price" placeholder="Precio" value="<%= typeof old != "undefined" ? old.price : "" %>">
+                    <div class="invalid-feedback" style="margin: 1vw 0;">
+                      <%if(locals.errors && errors.price){%>
+                        <%=errors.price.msg%>
+                      <%}%>
                     </div>
                   </div>
 
                   <div class="col-md-3 inputs-text">
                     <label for="discount" class="form-label">Descuento :</label>
-                    <input type="text" class="form-control" id="discount" name="discount"  placeholder="Descuento">
-                    <div class="invalid-feedback">
-                      aca va el error
+                    <input type="text" class="form-control <%= locals.errors && errors.discount  ? "is-invalid" : null%>" id="discount" name="discount"  placeholder="Descuento" value="<%= typeof old != "undefined" ? old.discount : "" %>">
+                    <div class="invalid-feedback" style="margin: 1vw 0;">
+                      <%if(locals.errors && errors.discount){%>
+                        <%=errors.discount.msg%>
+                      <%}%>
                     </div>
                   </div>
                  
                   <div class="mb-4 input-selects">
                     <label for="payMethod" class="form-label">Medio pago :</label>
-                    <select class="form-select" id="payMethod" name="payMethod">
-                      <option selected hidden>Medio de pago</option>
-                      <option value="0">Efectivo</option>
-                      <option value="3">3 cuotas</option>
-                      <option value="6">6 cuotas</option>
-                      <option value="12">12 cuotas</option>
+                    <select class="form-select <%= locals.errors && errors.payMethod ? "is-invalid" : null%>" id="payMethod" name="payMethod">
+                      <option selected hidden value="">Medio de pago</option>
+                      <option value="0"  <%= locals.old && old.payMethod === "0" ? 'selected' : null %>>Efectivo</option>
+                      <option value="3"  <%= locals.old && old.payMethod === "3" ? 'selected' : null %>>3 cuotas</option>
+                      <option value="6"  <%= locals.old && old.payMethod === "6" ? 'selected' : null %>>6 cuotas</option>
+                      <option value="12" <%= locals.old && old.payMethod === "12" ? 'selected' : null %>>12 cuotas</option>
                     </select>
-                    <div class="invalid-feedback">aca va el error</div>
+                    <div class="invalid-feedback" style="margin: 1vw 0;">
+                      <%if(locals.errors && errors.payMethod){%>
+                        <%=errors.payMethod.msg%>
+                      <%}%>
+                    </div>
                   </div>
               </div>
 
               <div class="mb-3 input-text-area inputs-text">
                 <label for="description" class="form-label">Descripcion :</label>
-                <textarea class="form-control input-text-area" id="description" name="description" placeholder="Ingresa la descripcion del producto" rows="6"></textarea>
-                <div class="invalid-feedback">
-                  aca va el error
+                <textarea class="form-control input-text-area <%= locals.errors && errors.description ? "is-invalid" : null%>" id="description" name="description" placeholder="Ingresa la descripcion del producto" rows="6"><%= typeof old != "undefined" ? old.description : null %></textarea>
+                <div class="invalid-feedback" style="margin: 1vw 0;">
+                  <%if(locals.errors && errors.description){%>
+                    <%=errors.description.msg%>
+                  <%}%>
                 </div>
               </div>
   

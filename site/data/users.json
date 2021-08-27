@@ -1,117 +1,17 @@
 [
   {
     "id": 1,
-    "firstName": "Jhon",
-    "lastName": "Carlos",
-    "email": "jhoncarlitos@gmail.com",
-    "password": "jhon123",
-    "access": "user",
-    "image": "default-image.png"
-  },
-  {
-    "id": 2,
-    "firstName": "Gonzalo",
-    "lastName": "Horacio",
-    "email": "Rulogonzales@yahoo.com",
-    "password": "rulitoman321",
-    "access": "admin",
-    "image": "default-image.png"
-  },
-  {
-    "id": 3,
-    "firstName": "Juan",
-    "lastName": "mike",
-    "email": "jjuangamer@gmail.com",
-    "password": "holapato535",
-    "access": "admin",
-    "image": "default-image.png"
-  },
-  {
-    "id": 4,
-    "firstName": "Domingo",
-    "lastName": "Faustino",
-    "email": "domingofaustinosarmiento@gmail.com",
-    "password": "ahreloco569324",
-    "access": "user",
-    "image": "default-image.png"
-  },
-  {
-    "id": 5,
-    "firstName": "Stuart",
-    "lastName": "little",
-    "email": "ratonperez@hotmail.com",
-    "password": "eldientudo76543",
-    "access": "user",
-    "image": "default-image.png"
-  },
-  {
-    "id": 6,
-    "firstName": "Carlitox",
-    "lastName": "Mojojo",
-    "email": "elcarlo@gmail.com",
-    "password": "perro53254432hola",
-    "access": "user",
-    "image": "default-image.png"
-  },
-  {
-    "id": 7,
-    "firstName": "Tommy",
-    "lastName": "Jerry",
-    "email": "tomasshleby@hotmail.com",
-    "password": "peakyblenders4532",
-    "access": "user",
-    "image": "default-image.png"
-  },
-  {
-    "id": 8,
-    "firstName": "Winnie",
-    "lastName": "Poo",
-    "email": "Winniepoohgangster",
-    "password": "cascoparacaniche753",
-    "access": "user",
-    "image": "default-image.png"
-  },
-  {
-    "id": 9,
-    "firstName": "Robert",
-    "lastName": "Deniro",
-    "email": "deniroelrobert@hotmail.com",
-    "password": "gjdnf23",
-    "access": " user",
-    "image": "default-image.png"
-  },
-  {
-    "id": 10,
-    "firstName": "Alan",
-    "lastName": "Gaviota",
-    "email": "lagaviota@gmail.com",
-    "password": "torre7456",
-    "access": "user",
-    "image": "default-image.png"
-  },
-  {
-    "id": 11,
-    "firstName": "Diegote",
-    "lastName": "Armando",
-    "email": "tirandopasesenelcielo@gmail.com",
-    "password": "eeeeh87",
-    "access": "user",
-    "image": "default-image.png"
-  },
-  {
-    "id": 12,
-    "firstName": "Rulo",
-    "lastName": "Emperador",
-    "email": "ruloelmascrackdomundo@yopmail.com",
-    "password": "jejox7tr5",
-    "access": "user",
-    "image": "default-image.png"
-  },
-  {
-    "id": 13,
     "name": "salomon",
     "email": "ezequielrango29@gmail.com",
     "password": "$2a$12$kTkBcpJ4buhlFeXQH/75/OjeQU/6BVj4EDoxEUVCpS9KOBJxMgR4.",
+    "acces": "user",
+    "image": "default-user-image.png"
+  },
+  {
+    "id": 2,
+    "name": "juan",
+    "email": "juanmadegiorgi@gmail.com",
+    "password": "$2a$12$g7MREa9py5oZbf4m1A7g2uvF/dK3TYEi0QAB1zLZ91P0UiZUrrwXO",
     "acces": "user",
     "image": "default-image.png"
   }

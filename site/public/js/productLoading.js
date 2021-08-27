@@ -5,11 +5,14 @@ showImage = (input,idImage) =>{
         let reader = new FileReader();
         reader.readAsDataURL(e.target.files[0]);
         reader.onload = () =>{
+            localStorage.setItem("pathImage",reader.result)
             document.getElementById(idImage).src = reader.result;
         }
     };
 
 }
+
+
 
 showImage("image","preview-image");
 showImage("image1","preview-image1");

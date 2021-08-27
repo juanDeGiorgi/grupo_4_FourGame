@@ -1,501 +1,434 @@
-               
-               /*                          MOBILE                            */
-
-               header{
-                background-color: #5F5E5D;
-                position: relative;
-            }
-            
-            header .c-header{
-                width: 90%;
-                margin: auto;
-            }
-            
-            header .logo{
-                width: 50%;
-                margin: auto;
-                display: block;
-                max-width: 190px;
-            }
-            
-            header .logo img{
-                vertical-align: initial;
-                
-            }
-            
-            header .b-menu{
-                display: inline-block;
-                position: relative;
-                top: 7px;
-                /* left: 10px; */
-                margin: 0% 0% 0% 5%;
-                color: white;
-                font-size: 250%;
-                text-shadow: 0px 5px 4px rgba(100, 100, 100, 0.568);
-            
-            }
-            
-            header .search{
-                display: inline-block;
-                margin: 0% 0% 5.9% 4%;
-                width: 70%;
-                height: 40px;
-                position: relative;
-                border-radius: 30px;
-            }
-            
-            header .search .search-bar{
-                border: none;
-                width: 100%;
-                height: 100%;
-                display: inline-block;
-                border-radius: 30px;
-                text-indent: 4%;
-                font-weight: 500;
-                font-size: 20px;
-            }
-            
-            header .search :focus{
-                border-radius: 30px;
-                outline: none;
-            }
-            
-            header .search .search-icon,.b-menu{
-                position: absolute;
-                top: 17%;
-                right: 3.8%;
-                font-size: 20px;
-                text-shadow: 0px 5px 4px rgba(100, 100, 100, 0.568);
-                cursor: pointer;
-            }
-            
-            header .user,.i-cart{
-                display: none;
-            }
-            
-            header .user,.i-cart:hover{
-                color: #ffffff;
-            }
-            
-            header .nav-2 .ul-nav-2{
-                display: none;
-            }
-            
-            header .nav-1{
-                text-align: center;
-            }
-            
-            /*----------------------------------    BOOSTRAP    ------------------------------------------*/
-            
-                    /*----------------------------------    MENU DESPLEGABLE    ------------------------------------------*/
-            
-                        header .btn-productos{
-                            background: none;
-                            line-height: initial;
-                            border: none;
-                            vertical-align: initial;
-                            border-radius: initial;
-                            display: initial;
-                        }
-            
-                        header .btn-productos::after{
-                            content: none;
-                        }
-            
-                        header .btn-productos:hover + .dropdown-menu.show:hover{
-                            border: none;
-                            display: block;
-                        }
-            
-                        header .btn-productos:active{
-                            border: none;
-                            background: none;
-                            box-shadow: none;
-                        }
-            
-                        .btn-check:active+.btn-secondary:focus, .btn-check:checked+.btn-secondary:focus, .btn-secondary.active:focus, .btn-secondary:active:focus, .show>.btn-secondary.dropdown-toggle:focus {
-                            box-shadow: none;
-                        }
-            
-                        header .btn-productos:focus{
-                            border: none;
-                            background: none;
-                            box-shadow: none;
-                        }
-            
-                        header .nav-2 .ul-nav-2 .dropdown .item-productos{
-                            width: 100%;
-                            margin: 0;
-                        }
-            
-                        .btn-secondary:hover {
-                            color: #fff;
-                            background: none;
-                            border: none;
-                        }
-            
-                        .dropdown-header{
-                            font-weight: 600;
-                            font-size: 20px;
-                        }
-            
-                        .dropdown-item:focus, .dropdown-item:hover {
-                            background-color: #e9ecef;
-                            color: rgb(61, 46, 208);
-                            /* font-weight: 700; */
-                        }
-            
-                        .dropdown-menu{
-                            border: none;
-                        }
-            
-                        .dropdown-menu.show {
-                            display: initial;
-                        }
-            
-                        .dropdown:hover > .dropdown-menu{
-                            display: block;
-                            transform: translate3d(0px, 5px, 0px);
-            
-                        }
-            
-                        .dropdown2:hover > .dropdown-menu2{
-                            display: flex;
-                            transform: translate3d(0px, 8px, 0px);
-                        }
-            
-            
-                     /*----------------------------------    MENU DESPLEGABLE    ------------------------------------------*/
-            
-                     /*----------------------------------    MENU TELEFONO    ------------------------------------------*/
-            
-                        .btn-close{
-                            font-size: 10vw;
-                        }
-            
-                        .btn-close:focus {
-                            outline: 0;
-                            box-shadow: 0 0 0 0.25rem rgb(61, 46,208,25%);
-                            opacity: 1;
-                        }
-            
-                        .btn-primary{
-                            padding: 0;
-                            font-size: 40px;
-                            width: 40px;
-                            height: 40px;
-                            text-shadow: 0px 5px 4px rgb(100 100 100 / 57%);
-                            margin-bottom: 24px;
-                            background:none;
-                            border: none;
-                        }
-            
-                        .btn-primary:hover{
-                            box-shadow: none;
-                            background:none;
-                            border: none;
-                        }
-            
-                        .btn-primary:active{
-                            box-shadow: none;
-                            background:none;
-                            border: none;
-                        }
-            
-                        .btn-primary:focus,.dropdown-toggle:focus{
-                            box-shadow: none;
-                            background:none;
-                            border: none;
-                        }
-            
-                        .btn-check:active+.btn-primary:focus, .btn-check:checked+.btn-primary:focus, .btn-primary.active:focus, .btn-primary:active:focus, .show>.btn-primary.dropdown-toggle:focus {
-                            box-shadow: none;
-                            background:none;
-                            border: none;
-                        }
-            
-                        .no-acordion::after{
-                            background-image: none;
-                        }
-            
-                        .accordion-button{
-                            font-size: 7vw;
-                            font-weight: 500;
-                            background-image: none;
-            
-                        }
-            
-                        .accordion-button:focus {
-                            border-color: #3D2ED0;
-                        }
-            
-                        .accordion-button:hover{
-                            border-color: none;
-                            box-shadow: inset 0 -1px 0 rgb(0 0 0 / 13%);
-                            background-color: #3D2ED0;
-                            color: white;
-                        }
-            
-                        .accordion-button:not(.collapsed)::after {
-                            background-image: none;
-                            
-                        }
-            
-                        .accordion-button:not(.collapsed) {
-                            color: white;
-                            background-color: #3D2ED0;
-                            box-shadow: inset 0 -1px 0 rgb(0 0 0 / 13%);
-                        }
-            
-                        header .accordion-body{
-                            background-color: gainsboro;
-                            padding: 1rem 0rem;
-                        }
-            
-                        header .nav-1 .offcanvas-body .accordion .accordion-item .accordion-header .icon-b-acordion{
-                            margin-left: 8vw;
-                        }
-            
-                        header .nav-1 offcanvas-body .dropdown-item{
-                            font-size: 6vw;
-                            padding: 2vw 3vw;
-                        }
-            
-                    /*----------------------------------    MENU TELEFONO    ------------------------------------------*/
-            
-            
-            /*----------------------------------    BOOSTRAP    ------------------------------------------*/
-            
-            header .c-header .nav-1 .c-user-cart{
-                display: none;
-            }
-            
-            
-                           /*                          TABLET                            */
-            
-            
-            @media (min-width:768px){
-            
-                header .logo{
-                    display: inline-block;
-                    width: 111.61px;
-                    margin-right: 5.4vw;
-                }
-            
-                header .logo img {
-                    width: 15vw;
-                }
-                
-                header .c-header .nav-1 .btn-primary{
-                    display: none;
-                }
-            
-                header .search {
-                    margin: 0% 3% 6.8% 0%;
-                    width: 50%;
-                    height: 5vw;
-                    position: relative;
-                    bottom: 4.2vw;
-                    right: 1.5vw;
-                }
-            
-                header .user,.i-cart{
-                    display: initial;
-                    color: #ffffff;
-                    margin-left: 2.1%;
-                    margin-right: 0vw;
-                    bottom: 3.9vw;
-                    font-size: 200%;
-                    text-shadow: 0px 5px 4px rgb(100 100 100 / 57%);
-                }
-            
-                header .i-cart:hover{
-                    text-shadow: none;
-                    transition: all 100ms ease;
-                }
-            
-                header .nav-2{
-                    width: 100%;
-                    margin-top: -40px;
-                }
-                
-                header .nav-2 .ul-nav-2{
-                    display: inline-block;
-                    width: 100%;
-                    text-align: center;
-                    margin: 0%;
-                    padding: 0%;
-                }
-                
-                header .nav-2 .ul-nav-2 li{
-                    display: inline-block;
-                    margin: 0% 2% 0.4vw 2%;
-                }
-            
-                header .nav-2 .ul-nav-2 li .item {
-                    color: #ffffff;
-                    font-size: 157.2%;
-                    font-weight: 700;
-                    text-shadow: 0px 5px 4px rgb(100 100 100 / 57%);
-                    padding: 0.5vw 1vw 0 1vw;
-                }
-            
-                header .nav-2 .ul-nav-2 li .item:hover{
-                    background-color: #ff972f;
-                    border-bottom: 5px solid white;
-                    transition: all 60ms ease;
-                }
-            
-                header .c-header .nav-1 .c-user-cart{
-                    display: inline;
-                    position: relative;
-                    bottom: 3.8vw;
-                }
-            
-                
-            
-            
-            }
-            
-                           /*                          DESKTOP                            */
-            
-            
-            @media (min-width:1024px){
-            
-                header .logo img{
-                    width: 10.9vw;
-                }
-            
-                header .search{
-                    margin: 0% 3% 3.2% 0%;
-                    height: 40px;
-                }
-            
-                header .nav-2 .ul-nav-2 li .item{
-                    font-size: 170%;
-                }
-            
-            
-            }
-<<<<<<< HEAD
-
-        /*----------------------------------    MENU TELEFONO    ------------------------------------------*/
-
-
-/*----------------------------------    BOOSTRAP    ------------------------------------------*/
-
-header .c-header .nav-1 .c-user-cart{
-    display: none;
-}
-
-
-               /*                          TABLET                            */
-
-
-@media (min-width:768px){
-
-    header .logo{
-        display: inline-block;
-        width: 111.61px;
-        margin-right: 5.4vw;
+    header a{
+        color: white;
     }
 
-    header .logo img {
-        width: 15vw;
+    header a:hover{
+        color: grey;
+    }
+
+    header nav{
+        background-color: #383736;
+    }
+
+/*----------------------------------    BOOSTRAP   MENU TELEFONO ------------------------------------------*/
+
+    header nav .nav-0 .logo-mobile{
+        width: 40%;
+        display: block;
+        margin: auto;
+    }
+
+    header nav .nav-0 .c-button-menu-search{
+        display: flex;
+        width: 100%;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: row;
+        padding: 5vw 0;
+    }
+
+    header nav .nav-0 .c-button-menu-search .button-menu{
+        display: inline-block;
+        padding: 1.5vw 3vw;
+        background-color: #3D2ED0;
+        font-size: 8vw;
+        border-radius: 5px;
+        box-shadow: 0px 9px 6px rgb(0 0 0 / 21%);
+    }
+
+    header nav .nav-0 .c-button-menu-search .search-mobile{
+        display: flex;
+        align-items: center;
+        position: relative;
+        height: 11.5vw;
+        width: 70vw;
     }
     
-    header .c-header .nav-1 .btn-primary{
+    header nav .nav-0 .c-button-menu-search .search-mobile .search-bar-mobile{
+        border: unset;
+        text-indent: 3vw;
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+    }
+
+    header nav .nav-0 .c-button-menu-search .search-mobile .search-icon-mobile{
+        position: absolute;
+        right: 3.5vw;
+        font-size: 7vw;
+        text-shadow: 0px 5px 10px rgb(0 0 0 / 47%);
+    }
+
+    /*----------------------------------    MENU TELEFONO    ------------------------------------------*/
+
+        .btn-close{
+            font-size: 10vw;
+        }
+
+        .btn-close:focus {
+            outline: 0;
+            box-shadow: 0 0 0 0.25rem rgb(61, 46,208,25%);
+            opacity: 1;
+        }
+
+        .btn-primary{
+            padding: 0;
+            font-size: 40px;
+            width: 40px;
+            height: 40px;
+            text-shadow: 0px 5px 4px rgb(100 100 100 / 57%);
+            margin-bottom: 24px;
+            background:none;
+            border: none;
+        }
+
+        .btn-primary:hover{
+            box-shadow: none;
+            background:none;
+            border: none;
+        }
+
+        .btn-primary:active{
+            box-shadow: none;
+            background:none;
+            border: none;
+        }
+
+        .btn-primary:focus,.dropdown-toggle:focus{
+            box-shadow: none;
+            background:none;
+            border: none;
+        }
+
+        .btn-check:active+.btn-primary:focus, .btn-check:checked+.btn-primary:focus, .btn-primary.active:focus, .btn-primary:active:focus, .show>.btn-primary.dropdown-toggle:focus {
+            box-shadow: none;
+            background:none;
+            border: none;
+        }
+
+        .no-acordion::after{
+            background-image: none;
+        }
+
+        .accordion-button{
+            font-size: 7vw;
+            font-weight: 500;
+            background-image: none;
+
+        }
+
+        .accordion-button:focus {
+            border-color: #3D2ED0;
+        }
+
+        .accordion-button:hover{
+            border-color: none;
+            box-shadow: inset 0 -1px 0 rgb(0 0 0 / 13%);
+            background-color: #3D2ED0;
+            color: white;
+        }
+
+        .accordion-button:not(.collapsed)::after {
+            background-image: none;
+            
+        }
+
+        .accordion-button:not(.collapsed) {
+            color: white;
+            background-color: #3D2ED0;
+            box-shadow: inset 0 -1px 0 rgb(0 0 0 / 13%);
+        }
+
+        header .accordion-body{
+            background-color: gainsboro;
+            padding: 1rem 0rem;
+        }
+
+        header .accordion-body .dropdown-item{
+            font-size: 7vw;
+        }
+
+        header .nav-1 .offcanvas-body .accordion .accordion-item .accordion-header .icon-b-acordion{
+            margin-left: 8vw;
+        }
+
+        header .nav-1 offcanvas-body .dropdown-item{
+            font-size: 6vw;
+            padding: 2vw 3vw;
+        }
+
+    /*----------------------------------    MENU TELEFONO    ------------------------------------------*/
+
+/*----------------------------------    BOOSTRAP   MENU TELEFONO ------------------------------------------*/
+
+
+    header nav .nav-1{
+        display: flex;
+        align-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        width: 90%;
+        margin: auto;
+        border-bottom: 1px solid grey;
+        padding: 0.3vw 0;
+    }
+
+    header nav .nav-1 .logo-desktop{
+        /* width: 8vw; */
+        width: 15vw;
+    }
+
+    header nav .nav-1 .search{
+        width: 32vw;
+        position: relative;
+        height: 2.5vw;
+        border-radius: 30px;
+        display: flex;
+        align-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    header nav .nav-1 .search .search-bar{
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+        border: none;
+        font-weight: 500;
+        text-indent: 1vw;
+        box-shadow: 0px 10px 10px rgb(0 0 0 / 21%);
+    }
+
+    header nav .nav-1 .search .search-icon{
+        position: absolute;
+        left: 29.6vw;;
+    }
+
+    header nav .nav-1 .nav-1-controls{
+        display: flex;
+        flex-wrap: wrap;
+        width: 26.2%;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    header nav .nav-1 .nav-1-controls .c-user-controls{
+        display: flex;
+        width: 76%;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    header nav .nav-1 .nav-1-controls .c-user-controls .c-user-controls-login{
+        border: 1px solid white;
+        border-radius: 15px;
+        padding: 0.5vw 1vw;
+        font-size: 1vw;
+        box-shadow: 0px 9px 6px rgb(0 0 0 / 21%);
+        transition: all 50ms;
+    }
+
+    header nav .nav-1 .nav-1-controls .c-user-controls .c-user-controls-register{
+        border: 1px solid white;
+        border-radius: 15px;
+        padding: 0.5vw 1vw;
+        font-size: 1vw;
+        box-shadow: 0px 9px 6px rgb(0 0 0 / 21%);
+    }
+
+    header nav .nav-1 .nav-1-controls .c-user-controls .drop-user{
+        display: inline-block;
+        padding: 1vw 0;
+    }
+
+    header nav .nav-1 .nav-1-controls .c-user-controls .c-user-controls-user{
+        border: 1px solid white;
+        border-radius: 15px;
+        padding: 0.5vw 0.5vw;
+        font-size: 1vw;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 0px 9px 6px rgb(0 0 0 / 21%);
+    }
+
+    header nav .nav-1 .nav-1-controls .c-user-controls .c-user-controls-user img{
+        width: 1.5vw; 
+        border-radius: 100%;
+        margin: 0 0.6vw;
+    }
+
+    header nav .nav-1 .nav-1-controls .i-cart{
+        font-size: 1.3vw;
+        box-shadow: 0px 9px 6px rgb(0 0 0 / 21%);
+        border: 1px solid white;
+        border-radius: 15px;
+        padding: 0.4vw 1.6vw;
+        text-align: center;
+        align-items: center;
+    }
+
+    header nav .nav-2{
+        width: 80.4%;
+        margin: auto;
+        padding: 0.8vw 0;
+    }
+
+    header nav .nav-2 .ul-nav-2{
+        display: flex; 
+        align-items: center;
+        font-size: 1.4vw;
+    }
+
+    header nav .nav-2 .ul-nav-2 li{
+        margin-right: 3vw;
+    }
+
+   /*----------------------------------    MENU DESPLEGABLE    ------------------------------------------*/
+            
+    header .btn-productos{
+        background: none;
+        line-height: initial;
+        border: none;
+        vertical-align: initial;
+        border-radius: initial;
+        display: initial;
+        padding: 10px 0;
+        
+    }
+
+    header .btn-productos::after{
+        content: none;
+    }
+
+    header .btn-productos:hover + .dropdown-menu.show:hover{
+        border: none;
+        display: block;
+    }
+
+    header .btn-productos:active{
+        border: none;
+        background: none;
+        box-shadow: none;
+    }
+
+    .btn-check:active+.btn-secondary:focus, .btn-check:checked+.btn-secondary:focus, .btn-secondary.active:focus, .btn-secondary:active:focus, .show>.btn-secondary.dropdown-toggle:focus {
+        box-shadow: none;
+    }
+
+    header .btn-productos:focus{
+        border: none;
+        background: none;
+        box-shadow: none;
+    }
+
+    header .nav-2 .ul-nav-2 .dropdown .item-productos{
+        width: 100%;
+        margin: 0;
+    }
+
+    .btn-secondary:hover {
+        color: #fff;
+        background: none;
+        border: none;
+    }
+
+    .dropdown-header{
+        font-weight: 600;
+        font-size: 20px;
+    }
+
+    .dropdown-item:focus, .dropdown-item:hover {
+        background-color: #e9ecef;
+        color: rgb(61, 46, 208);
+    }
+
+    .dropdown-menu{
+        border: none;
+        border-radius: unset;
+    }
+
+    .dropdown-menu.show {
+        display: initial;
+    }
+
+    .dropdown:hover > .dropdown-menu{
+        display: block;
+        transform: translate3d(0px, 5px, 0px);
+
+    }
+
+    .dropdown2:hover > .dropdown-menu2{
+        display: flex;
+        transform: translate3d(0px, 8px, 0px);
+    }
+
+    /*----------------------------------    MENU DESPLEGABLE    ------------------------------------------*/
+
+    header nav .nav-1,.nav-2{
         display: none;
     }
 
-    header .search {
-        margin: 0% 3% 6.8% 0%;
-        width: 50%;
-        height: 5vw;
-        position: relative;
-        bottom: 4.2vw;
-        right: 1.5vw;
-    }
+    /*----------------------------------   HEADER TABLET ------------------------------------------*/
 
-    header .user,.i-cart{
-        display: initial;
-        color: #ffffff;
-        margin-left: 2.1%;
-        margin-right: 0vw;
-        bottom: 3.9vw;
-        font-size: 200%;
-        text-shadow: 0px 5px 4px rgb(100 100 100 / 57%);
-    }
+    @media (min-width:550px){
 
-    header .i-cart:hover{
-        text-shadow: none;
-        transition: all 100ms ease;
-    }
+    /*----------------------------------    MENU DESPLEGABLE    ------------------------------------------*/
 
-    header .nav-2{
-        width: 100%;
-        margin-top: -40px;
-    }
+        .btn-close {
+            font-size: 4.1vw;
+        }
+
+        .accordion-button {
+            font-size: 2.8vw;
+        }
+
+        .icon-b-acordion-cart{
+            margin-left: 8.6vw !important;
+        }
+
+        header .accordion-body .dropdown-item {
+            font-size: 2.4vw;
+        }
+        
+        
+    /*----------------------------------    MENU DESPLEGABLE    ------------------------------------------*/
+
+        header nav .nav-0 .logo-mobile {
+            width: 17.9%;
+        }
+
+        header nav .nav-0 .c-button-menu-search {  
+            padding: 2vw 0;
+        }
     
-    header .nav-2 .ul-nav-2{
-        display: inline-block;
-        width: 100%;
-        text-align: center;
-        margin: 0%;
-        padding: 0%;
-    }
+        header nav .nav-0 .c-button-menu-search .button-menu {
+            padding: 0.9vw 2.3vw;
+            font-size: 2.9vw;
+        }
     
-    header .nav-2 .ul-nav-2 li{
-        display: inline-block;
-        margin: 0% 2% 0.4vw 2%;
-    }
-
-    header .nav-2 .ul-nav-2 li .item {
-        color: #ffffff;
-        font-size: 157.2%;
-        font-weight: 700;
-        text-shadow: 0px 5px 4px rgb(100 100 100 / 57%);
-        padding: 0.5vw 1vw 0 1vw;
-    }
-
-    header .nav-2 .ul-nav-2 li .item:hover{
-        background-color: #5F5E5D;
-        border-bottom: 5px solid white;
-        transition: all 60ms ease;
-    }
-
-    header .c-header .nav-1 .c-user-cart{
-        display: inline;
-        position: relative;
-        bottom: 3.8vw;
-    }
-
+        header nav .nav-0 .c-button-menu-search .search-mobile {
+            height: 5vw;
+            width: 54vw;
+        }
     
-
-
-}
-
-               /*                          DESKTOP                            */
-
-
-@media (min-width:1024px){
-
-    header .logo img{
-        width: 10.9vw;
+        header nav .nav-0 .c-button-menu-search .search-mobile .search-icon-mobile {
+            right: 2.1vw;
+            font-size: 3.3vw;
+        }
     }
 
-    header .search{
-        margin: 0% 3% 3.2% 0%;
-        height: 40px;
+    /*----------------------------------   HEADER DESKTOP ------------------------------------------*/
+
+    @media (min-width:1024px){
+
+        header nav .nav-1,.nav-2{
+            display: flex;
+        }
+
+        header nav .nav-0{
+            display: none;
+        }
     }
-
-    header .nav-2 .ul-nav-2 li .item{
-        font-size: 170%;
-    }
-
-
-}
-             
-=======
-                         
->>>>>>> 392105a3715029fa3362562ea7c873a954cf67ba

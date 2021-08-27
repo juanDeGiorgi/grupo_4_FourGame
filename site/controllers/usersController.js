@@ -1,12 +1,38 @@
 const path= require('path');
 const fs= require('fs');
-const users=require('../data/users_db')
-const bcrypt= require('bcryptjs')
-const {validationResult}= require('express-validator')
+const users=require('../data/users_db');
+const bcrypt= require('bcryptjs');
+const {validationResult}= require('express-validator');
+
 
 
 module.exports={
+
     login : (req,res)=> res.render('login'),
+
+    processLogin: (req, res) => {
+        const errors = validationResult(req);
+
+        if(errors.isEmpty()){
+            let user = users.find(user => user.email === req.body.email );
+            req.session.userLogged = {
+                id : user.id,
+                name : user.name,
+                access : user.access,
+                }
+         if (req.body.rememberSession) {
+             res.cookie('rememberSession', req.session.userLogged, {maxAge : 10000 * 60});
+
+         }       
+
+         res.redirect('/');
+
+        }else{
+            res.render('login' ,{
+                errors : errors.mapped()
+            })
+      }
+    },
 
     register : (req,res)=> res.render('register'),
    
@@ -20,7 +46,7 @@ module.exports={
                 name: req.body.name,
                 email: req.body.email,
                 password : bcrypt.hashSync(req.body.password,12),
-                acces: "user",
+                access: "user",
                 image:  req.file ? req.file.filename : "default-image.png",
             }
             users.push(newUser)
@@ -33,5 +59,7 @@ module.exports={
                 errors : errors.mapped() 
             })
        }
-    }
+    },
+
+    profile : (req,res) => res.render("userProfile"),
 }

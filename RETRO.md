@@ -41,3 +41,31 @@
 
 ## Dejar de hacer : 
 
+    -------------------------------------------------------------------------------
+
+# Retrospectiva sprint 5
+
+## Seguir haciendo :
+
+    Reuniones cortas frecuentes
+    dividir las tareas igualitariamente
+    Reuniones de repaso general
+
+
+## Hacer más:
+
+    -------------
+
+
+## Empezar a hacer: 
+
+    -------------
+
+## Hacer menos:
+
+    Leer el sprint de una manera rápida y poco compleja. Dejando de lado pequeños detalles de vital importancia
+
+
+## Dejar de hacer : 
+
+    -------------

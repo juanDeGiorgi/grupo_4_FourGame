@@ -16,17 +16,19 @@ module.exports={
 
         if(errors.isEmpty()){
             let user = users.find(user => user.email === req.body.email );
+
             req.session.userLogged = {
                 id : user.id,
                 name : user.name,
+                image : user.image,
                 access : user.access,
-                }
-         if (req.body.rememberSession) {
-             res.cookie('rememberSession', req.session.userLogged, {maxAge : 10000 * 60});
+            }
 
-         }       
+            if (req.body.rememberSession) {
+                res.cookie('rememberSession', req.session.userLogged, {maxAge : 10000 * 60});
+            }       
 
-         res.redirect('/');
+            res.redirect(`/users/profile/${user.id}`);
 
         }else{
             res.render('login' ,{
@@ -51,8 +53,7 @@ module.exports={
                 image:  req.file ? req.file.filename : "default-image.png",
             }
             users.push(newUser)
-           // utils.saveFile(users)
-        fs.writeFileSync(path.join(__dirname, '../data/users.json'), JSON.stringify(users,null,2), "utf-8") 
+            fsMethods.saveUsers(users);
             res.redirect('/')
 
         }else{
@@ -73,15 +74,37 @@ module.exports={
 
     updateProfile : (req,res) => {
         const errors = validationResult(req);
+        let oldImage,image
 
         if(errors.isEmpty()){
             users.forEach(user => {
                 if(user.id === +req.params.id){
 
+                    oldImage = user.image
+                    image = req.file ? req.file.filename : user.image
+
+                    user.name = req.body.name
+                    user.email = req.body.email
+                    user.access = req.body.access
+                    user.image = image != req.body.deleteImage ? image : "default-user-image.png"
                 }
             });
+
+            fsMethods.saveUsers(users);
+            req.body.deleteImage != "noBorrar" && oldImage != "default-user-image.png" ? fsMethods.deleteFile(`../public/images/users/${oldImage}`) : null; 
+
+            let updatedUser = users.find(user => user.id === +req.params.id)
+                
+            req.session.userLogged = updatedUser
+            req.session.save( (err) => {
+                req.session.reload((err) => {
+                  res.redirect(`/`);
+                });
+             });
+                
         }else{
             req.file ? fsMethods.deleteFile(`../public/images/users/${req.file.filename}`) : null
+
             res.render("userProfile",{
                 errors : errors.mapped(),
                 old : req.body,

@@ -126,7 +126,7 @@
                     <% }else{ %> 
                         <div class="dropdown drop-user">
                             
-                            <a class="c-user-controls-user" href="#"><img src="/images/users/default-user-image.png"> <%= userLogged.name %> <i class="fas fa-chevron-down" style="margin: 0 0.6vw;"></i></a>
+                            <a class="c-user-controls-user" href="#"><img src="/images/users/<%=userLogged.image%>"> <%= userLogged.name %> <i class="fas fa-chevron-down" style="margin: 0 0.6vw;"></i></a>
                         
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                 <li><a class="dropdown-item" href="/users/profile/<%=userLogged.id%>">Ver perfil</a></li>

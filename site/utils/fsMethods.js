@@ -8,8 +8,12 @@ module.exports = {
         return path.join(__dirname,route)
     },
 
-    saveFile : file => {
+    saveProducts : file => {
         fs.writeFileSync(path.join(__dirname,'../data/products.json'),JSON.stringify(file,null,2),'utf-8') 
+    },
+
+    saveUsers : file => {
+        fs.writeFileSync(path.join(__dirname,'../data/users.json'),JSON.stringify(file,null,2),'utf-8') 
     },
 
     deleteFile : file =>{

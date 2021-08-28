@@ -20,7 +20,7 @@ module.exports = [
 
     body("name")
     .notEmpty().withMessage("debes introducir un nombre")
-    .isLength({min : 5}).withMessage("el nombre debe tener al menos 5 caracteres"),
+    .isLength({min : 3}).withMessage("el nombre debe tener al menos 3 caracteres"),
 
     body('email')
     .isEmail().withMessage('Debes ingresar un email válido')

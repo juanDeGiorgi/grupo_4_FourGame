@@ -20,11 +20,11 @@
                   <div class="mb-3 input-file">
                     <div class="preview" id="preview">
                       <img id="preview-image" src="<%= user.image ? `/images/users/${user.image}` : `/images/icon/default-image1.png`%>">
-                      <input class="delete" type="checkbox" name="deleteImages" value=6 id="0" checked>
+                      <input class="delete" type="text" name="deleteImage" value=noBorrar id="<%=user.image%>">
                     </div>
                     <input type="file" id="image" name="image" class="file">
-                    <label for="image" class="file-agregar btn" onclick="document.getElementById(`0`).value = `0`;">Agregar</label>
-                    <button type="button" id="quitar" onclick="limpiar(`image`,`preview-image`,`0`)" class="file-quitar btn">Quitar</button>
+                    <label for="image" class="file-agregar btn" onclick="document.getElementById(`<%=user.image%>`).value = `<%=user.image%>`;">Agregar</label>
+                    <button type="button" id="quitar" onclick="limpiar(`image`,`preview-image`,`<%=user.image%>`)" class="file-quitar btn">Quitar</button>
                   </div>
                 </div>
                 
@@ -52,10 +52,14 @@
   
                     <div class="mb-4 input-selects">
                       <label for="type" class="form-label">Tipo de acceso :</label>
-                      <select class="form-select  <%= locals.errors && errors.access ? "is-invalid" : null%>" id="access" name="access">
-                        <option selected hidden value="">Acceso</option>
-                        <option value="user" <%= locals.old && old.access === "user" || user.access === "user" ? 'selected' : null %>>Usuario</option>
-                        <option value="admin"   <%= locals.old && old.access === "admin" || user.access === "admin" ? 'selected' : null %>>Admin</option>
+                      <select class="form-select  <%= locals.errors && errors.access ? "is-invalid" : null%>" id="access" name="access">                       
+                        <%if(locals.old && old.access){%>
+                          <option value="user"  <%= old.access === "user"  ? 'selected' : null %>>Usuario</option>
+                          <option value="admin" <%= old.access === "admin" ? 'selected' : null %>>Admin</option>  
+                        <%}else{%>
+                          <option value="user"  <%= user.access === "user"  ? 'selected' : null %>>Usuario</option>
+                          <option value="admin"  <%= user.access === "admin"  ? 'selected' : null %>>Admin</option>
+                        <%}%>
                       </select>
                       <div class="invalid-feedback" style="margin: 1vw 0;">
                         <%if(locals.errors && errors.access){%>
@@ -76,7 +80,7 @@
 
     </main>
 <%- include("./partials/footer") %> 
-    <script src="/js/productLoading.js"></script>
+    <script src="/js/userProfile.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>

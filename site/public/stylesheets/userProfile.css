@@ -1,0 +1,139 @@
+
+    /* Formulario */
+
+.profile main .formProfile{
+    width: 95%;
+    margin: 3vw auto 10vw auto;
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.profile .c-image-inputs{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-evenly;
+}
+
+/* Inputs files */
+
+.profile main form .title-images{
+    width: 71.1vw;
+    display: block;
+    margin: auto;
+}
+
+.profile main form .c-imagenes{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-bottom: 20vw;
+}
+
+.profile main form .c-imagenes .input-file{
+    text-align: center;
+}
+
+.profile main form .c-imagenes .file{
+    display: none;
+}
+
+.profile main form .c-imagenes .preview{
+    padding: 1vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.profile main form .c-imagenes .preview img{
+    width: 70%;
+}
+
+.profile main form .c-imagenes .preview .delete{
+    display: none;
+}
+
+
+.profile main form .c-imagenes .file-agregar{
+    background-color: #3D2ED0;
+    color: white;
+    margin: 1vw;
+}
+
+.profile main form .c-imagenes .file-quitar{
+    background-color: #dc3545;
+    color: white;
+    margin: 1vw;
+}
+
+/* resto de Inputs */
+
+.profile .inputs-text{
+    width: 20vw;
+    margin-bottom: 1.5vw;
+}
+
+.profile main form .container-buttons{
+    text-align: end;
+    width: 82.7%;
+    margin: auto;
+}
+
+.profile main form .container-buttons .btn-editar{
+    background-color: #3D2ED0;
+    color: white;
+    margin: 0.6vw;
+
+}
+
+.profile main form .container-buttons .btn-editar:hover {
+    color: #fff;
+    background-color: #372aad;
+}
+
+.profile main form .container-buttons .btn-borrar{
+    background-color: #dc3545;
+    color: white;
+    margin: 1vw;
+
+}
+
+.profile main form .container-buttons .btn-borrar:hover {
+    color: #fff;
+    background-color: #bb2d3b;
+    border-color: #b02a37;
+}
+
+                /*              TABLET                       */
+
+@media (min-width:768px){
+    
+    /* Formulario */
+    
+        .profile main .formProfile{
+            width: 60%;
+            margin: 3vw auto 10vw auto;
+            background-color: white;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+    /* Input file */
+
+        .profile main form .c-imagenes{
+            flex-direction: row;
+            margin-bottom: 0;
+        }
+
+        .profile main form .c-imagenes .input-file{
+            width: 19.3vw;
+        }
+
+        .profile main form .c-imagenes .preview{
+            height: 16vw;
+        }
+
+}

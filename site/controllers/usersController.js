@@ -1,5 +1,6 @@
 const path= require('path');
-const fs= require('fs');
+const fs = require('fs');
+const fsMethods = require("../utils/fsMethods");
 const users=require('../data/users_db');
 const bcrypt= require('bcryptjs');
 const {validationResult}= require('express-validator');
@@ -68,9 +69,25 @@ module.exports={
         res.redirect('/')
     },
 
-    profile : (req,res) => res.render("userProfile"),
+    profile : (req,res) => res.render("userProfile",{user : users.find(user => user.id === +req.params.id)}),
 
     updateProfile : (req,res) => {
+        const errors = validationResult(req);
 
+        if(errors.isEmpty()){
+            users.forEach(user => {
+                if(user.id === +req.params.id){
+
+                }
+            });
+        }else{
+            req.file ? fsMethods.deleteFile(`../public/images/users/${req.file.filename}`) : null
+            res.render("userProfile",{
+                errors : errors.mapped(),
+                old : req.body,
+                user : users.find(user => user.id === +req.params.id)
+            })
+        }
     }
+
 }

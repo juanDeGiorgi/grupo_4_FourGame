@@ -8,6 +8,7 @@ const controller = require('../controllers/usersController');
 const validation = require("../validations/registerValidator");
 const userValidator = require('../validations/userValidator');
 const profileValidator = require("../validations/profileValidator");
+const usersCheck = require("../middlewares/usersCheck");
 
 /* Config multer storage */
 
@@ -24,13 +25,13 @@ const upload = multer({storage : storage});
 
 /* routes */
 
-router.get('/register', controller.register);
+router.get('/register',controller.register);
 router.post('/register',validation,controller.processRegister);
 
-router.get('/login', controller.login);
-router.post('/login', userValidator, controller.processLogin);
+router.get('/login',controller.login);
+router.post('/login',userValidator, controller.processLogin);
 
-router.get('/profile/:id',controller.profile);
+router.get('/profile/:id',usersCheck,controller.profile);
 router.post('/profile/:id',upload.single("image"),profileValidator,controller.updateProfile);
 
 

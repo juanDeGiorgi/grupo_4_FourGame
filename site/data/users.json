@@ -17,10 +17,10 @@
   },
   {
     "id": 4,
-    "name": "juand",
+    "name": "juan",
     "email": "juanmadegiorgi@gmail.com",
     "password": "$2a$12$wL2ZSsc19lTwGCqZiUC4GedUcwQILqXtakNLsEdiVefjho7MKMMNu",
-    "access": "admin",
+    "access": "user",
     "image": "img-1630181477130.png"
   }
 ]

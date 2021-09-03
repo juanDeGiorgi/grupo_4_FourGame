@@ -50,7 +50,7 @@ module.exports={
                 email: req.body.email,
                 password : bcrypt.hashSync(req.body.password,12),
                 access: "user",
-                image:  req.file ? req.file.filename : "default-image.png",
+                image:  req.file ? req.file.filename : "default-user-image.png",
             }
             users.push(newUser)
             fsMethods.saveUsers(users);

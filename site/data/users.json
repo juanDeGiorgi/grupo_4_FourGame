@@ -22,5 +22,13 @@
     "password": "$2a$12$wL2ZSsc19lTwGCqZiUC4GedUcwQILqXtakNLsEdiVefjho7MKMMNu",
     "access": "user",
     "image": "img-1630181477130.png"
+  },
+  {
+    "id": 5,
+    "name": "pepe",
+    "email": "pepe@gmail.com",
+    "password": "$2a$12$2JwGz9CvLz4mTeYuDy.abOhCWCEpyoAsYJAQBmYi5XG63c3PYBwSa",
+    "access": "user",
+    "image": "default-user-image.png"
   }
 ]

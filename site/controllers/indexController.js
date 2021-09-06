@@ -11,4 +11,5 @@ module.exports={
         products,
         toThousand
     }),
+    about : (req,res)=> res.render('about'),
 }

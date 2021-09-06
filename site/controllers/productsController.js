@@ -34,7 +34,7 @@ module.exports={
                 payMethod : +req.body.payMethod,
             }
             products.push(product)
-            fsMethods.saveFile(products);
+            fsMethods.saveProducts(products);
           
             res.redirect('/');
         }else{
@@ -75,7 +75,7 @@ module.exports={
                 }
             });
             
-            fsMethods.saveFile(products);
+            fsMethods.saveProducts(products);
             req.body.deleteImages.forEach((image,index) => {if(image != 6 && typeof oldImages[index] != "undefined" && oldImages[index] != "default-image.png") fsMethods.deleteFile(`../public/images/products/${oldImages[index]}`)})
             res.redirect(`/products/detail/${req.params.id}`);
         }else{
@@ -98,7 +98,7 @@ module.exports={
             
         }
 
-        fsMethods.saveFile(products);
+        fsMethods.saveProducts(products);
         res.redirect('/');
 
    }

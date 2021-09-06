@@ -1,5 +1,6 @@
 const path= require('path');
-const fs= require('fs');
+const fs = require('fs');
+const fsMethods = require("../utils/fsMethods");
 const users=require('../data/users_db');
 const bcrypt= require('bcryptjs');
 const {validationResult}= require('express-validator');
@@ -15,17 +16,19 @@ module.exports={
 
         if(errors.isEmpty()){
             let user = users.find(user => user.email === req.body.email );
+
             req.session.userLogged = {
                 id : user.id,
                 name : user.name,
+                image : user.image,
                 access : user.access,
-                }
-         if (req.body.rememberSession) {
-             res.cookie('rememberSession', req.session.userLogged, {maxAge : 10000 * 60});
+            }
 
-         }       
+            if (req.body.rememberSession) {
+                res.cookie('rememberSession', req.session.userLogged, {maxAge : 10000 * 60});
+            }       
 
-         res.redirect('/');
+            res.redirect(`/users/profile/${user.id}`);
 
         }else{
             res.render('login' ,{
@@ -47,19 +50,67 @@ module.exports={
                 email: req.body.email,
                 password : bcrypt.hashSync(req.body.password,12),
                 access: "user",
-                image:  req.file ? req.file.filename : "default-image.png",
+                image:  req.file ? req.file.filename : "default-user-image.png",
             }
             users.push(newUser)
-           // utils.saveFile(users)
-        fs.writeFileSync(path.join(__dirname, '../data/users.json'), JSON.stringify(users,null,2), "utf-8") 
+            fsMethods.saveUsers(users);
             res.redirect('/')
 
         }else{
             res.render("register",{
-                errors : errors.mapped() 
+                errors : errors.mapped(),
+                old : req.body
             })
        }
     },
 
-    profile : (req,res) => res.render("userProfile"),
+    logout : (req,res) => {
+        req.session.destroy()
+        res.cookie("rememberSession",null, {maxAge: -1})
+        res.redirect('/')
+    },
+
+    profile : (req,res) => res.render("userProfile",{user : users.find(user => user.id === +req.params.id)}),
+
+    updateProfile : (req,res) => {
+        const errors = validationResult(req);
+        let oldImage,image
+
+        if(errors.isEmpty()){
+            users.forEach(user => {
+                if(user.id === +req.params.id){
+
+                    oldImage = user.image
+                    image = req.file ? req.file.filename : user.image
+
+                    user.name = req.body.name
+                    user.email = req.body.email
+                    user.access = req.body.access
+                    user.image = image != req.body.deleteImage ? image : "default-user-image.png"
+                }
+            });
+
+            fsMethods.saveUsers(users);
+            req.body.deleteImage != "noBorrar" && oldImage != "default-user-image.png" ? fsMethods.deleteFile(`../public/images/users/${oldImage}`) : null; 
+
+            let updatedUser = users.find(user => user.id === +req.params.id)
+                
+            req.session.userLogged = updatedUser
+            req.session.save( (err) => {
+                req.session.reload((err) => {
+                  res.redirect(`/`);
+                });
+             });
+                
+        }else{
+            req.file ? fsMethods.deleteFile(`../public/images/users/${req.file.filename}`) : null
+
+            res.render("userProfile",{
+                errors : errors.mapped(),
+                old : req.body,
+                user : users.find(user => user.id === +req.params.id)
+            })
+        }
+    }
+
 }

@@ -18,26 +18,50 @@
                         <div class="offcanvas-body" style="text-align: left;">
                             <div>
                                 <div class="accordion" id="accordionExample">
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="headingOne">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                            Mi cuenta
-                                            <i class="fas fa-user-circle icon-b-acordion" style="margin-left: 5vw;"></i>  
-                                        </button>
-                                        </h2>
-                                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                        <div class="accordion-body">
-                                            <a class="dropdown-item" href="/users/login">Iniciar sesión</a>
-                                            <a class="dropdown-item" href="/users/register">Registrarse</a>
-                                            <a class="dropdown-item" href="/products/create">Cargar producto</a>
+
+                                    <% if (!locals.userLogged){%> 
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingTwo">
+                                                <a href="/users/login" class="accordion-button collapsed no-acordion" type="button">
+                                                    Iniciar sesión
+                                                    <i class="fas fa-sign-in-alt" style="margin-left: 18.2vw;"></i>
+                                                </a>
+                                            </h2>
                                         </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingTwo">
+                                                <a href="/users/register" class="accordion-button collapsed no-acordion" type="button">
+                                                    Registrarse
+                                                    <i class="fas fa-user-plus" style="margin-left: 24.1vw;"></i>
+                                                </a>
+                                            </h2>
                                         </div>
-                                    </div>
+                                    <%}else{%>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingOne">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                                <!-- Mi cuenta -->
+                                                <%= userLogged.name %>
+                                                <i class="fas fa-user-circle icon-b-acordion" style="margin-left: 46.4vw;"></i>  
+                                            </button>
+                                            </h2>
+                                            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <a class="dropdown-item" href="/users/profile/<%=userLogged.id%>">Ver perfil</a>
+                                                <% if (userLogged.access == 'admin') { %>
+                                                    <a class="dropdown-item" href="/products/create">Cargar producto</a>
+                                                <%}%>
+                                                <a><hr class="dropdown-divider"></a> 
+                                               <a class="dropdown-item" href="/users/logout">Cerra sesion</a>
+                                            </div>
+                                            </div>
+                                        </div>
+                                    <%}%>
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="headingTwo">
                                             <a href="/cart" class="accordion-button collapsed no-acordion" type="button">
                                                 Carrito
-                                                <i class="fas fa-shopping-cart icon-b-acordion-cart" style="margin-left: 13.6vw;"></i>
+                                                <i class="fas fa-shopping-cart icon-b-acordion-cart" style="margin-left: 37.3vw;"></i>
                                             </a>
                                         </h2>
                                     </div>
@@ -102,15 +126,15 @@
                     <% }else{ %> 
                         <div class="dropdown drop-user">
                             
-                            <a class="c-user-controls-user" href="#"><img src="/images/users/default-user-image.png"> <%= userLogged.name %> <i class="fas fa-chevron-down" style="margin: 0 0.6vw;"></i></a>
+                            <a class="c-user-controls-user" href="#"><img src="/images/users/<%=userLogged.image%>"> <%= userLogged.name %> <i class="fas fa-chevron-down" style="margin: 0 0.6vw;"></i></a>
                         
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <li><a class="dropdown-item" href="/user/profile">Ver perfil</a></li>
+                                <li><a class="dropdown-item" href="/users/profile/<%=userLogged.id%>">Ver perfil</a></li>
                                 <% if (userLogged.access == 'admin') { %>
                                     <li><a class="dropdown-item" href="/products/create">Cargar producto</a></li>
                                 <% } %>
                                 <li><hr class="dropdown-divider"></li> 
-                                <li><a class="dropdown-item" href="#">Cerra sesion</a></li>
+                                <li><a class="dropdown-item" href="/users/logout">Cerra sesion</a></li>
                             </ul>
                         </div>
                     <% } %> 

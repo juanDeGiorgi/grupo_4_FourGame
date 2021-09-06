@@ -19,13 +19,16 @@
             <input name="email" class="sesioninit" type="email" placeholder="Email">
             <input name="password" class="sesioninit" type="password" placeholder="Contraseña">
 
-            <div style="text-align:center;">
-                <input type="checkbox" name="rememberSession" id="rememberSession">
+            <div class="c-error">
+                <%if( locals.errors && locals.errors.email){%>
+                    <p class="error"><%=errors.email.msg%></p>
+                <%}%>
+            </div>
+
+            <div class="c-rememberSession">
+                <input type="checkbox" class="rememberSession" name="rememberSession" id="rememberSession">
                 <label for="rememberSession" class="labelremember" >Recordarme</label>
             </div>
-            <%if( locals.errors && locals.errors.email){%>
-                <p style="color: red; font-size: 15px;"><%=errors.email.msg%></p>
-            <%}%>
 
             <button class="enter" type="submit">Ingresar</button>
 

@@ -1,13 +1,86 @@
 <!DOCTYPE html>
 <html lang="es">
-    <%- include("./partials/head",{title : `Iniciar sesion`}) %> 
 
-<body class="userProfile">
-    <%- include("./partials/header") %> 
-    <main>
-    
+    <%- include("./partials/head",{title : "Editar perfil"}) %> 
+
+<body class="profile">
+    <%- include("./partials/header")%> 
+    <main>            
+          <form class="formProfile" action="/users/profile/<%=user.id%>" method="POST" enctype="multipart/form-data">
+
+            <!----------------------------------    BOOSTRAP   ------------------------------------------>
+              <div class="c-title-error">
+                <label class="form-label title-images">Imagen de perfil : </label>
+                <%if( locals.errors && locals.errors.image){%>
+                  <p style="color: red;margin: unset;"><%=errors.image.msg%></p>
+                <%}%>
+              </div>
+              <div class="c-image-inputs">
+                <div class="c-imagenes">
+                  <div class="mb-3 input-file">
+                    <div class="preview" id="preview">
+                      <img id="preview-image" src="<%= user.image ? `/images/users/${user.image}` : `/images/icon/default-image1.png`%>">
+                      <input class="delete" type="text" name="deleteImage" value=noBorrar id="<%=user.image%>">
+                    </div>
+                    <input type="file" id="image" name="image" class="file">
+                    <label for="image" class="file-agregar btn" onclick="document.getElementById(`<%=user.image%>`).value = `<%=user.image%>`;">Agregar</label>
+                    <button type="button" id="quitar" onclick="limpiar(`image`,`preview-image`,`<%=user.image%>`)" class="file-quitar btn">Quitar</button>
+                  </div>
+                </div>
+                
+                <div class="container-inputs">
+                    <div class="col-md-3 inputs-text">
+                      <label for="name" class="form-label">Nombre :</label>
+                      <input type="text" class="form-control <%= locals.errors && errors.name ? "is-invalid" : null%>" id="name" name="name" placeholder="Nombre" value="<%= typeof old != "undefined" ? old.name : user.name %>">
+                      <div class="invalid-feedback" style="margin: 1vw 0;">
+                        <%if(locals.errors && errors.name){%>
+                          <%=errors.name.msg%>
+                        <%}%>
+                      </div>
+                    </div>
+                    
+                    <div class="col-md-3 inputs-text">
+                      <label for="email" class="form-label">Email :</label>
+                      <input type="text" class="form-control <%= locals.errors && errors.email ? "is-invalid" : null%>" id="email" name="email" placeholder="Email" value="<%= typeof old != "undefined" ? old.email : user.email %>">
+                      <input type="text" style="display: none;" value="<%=user.email%>" name="originalEmail">
+                      <div class="invalid-feedback" style="margin: 1vw 0;">
+                        <%if(locals.errors && errors.email){%>
+                          <%=errors.email.msg%>
+                        <%}%>
+                      </div>
+                    </div>
+  
+                    <div class="mb-4 input-selects">
+                      <label for="type" class="form-label">Tipo de acceso :</label>
+                      <select class="form-select  <%= locals.errors && errors.access ? "is-invalid" : null%>" id="access" name="access">                       
+                        <%if(locals.old && old.access){%>
+                          <option value="user"  <%= old.access === "user"  ? 'selected' : null %>>Usuario</option>
+                          <option value="admin" <%= old.access === "admin" ? 'selected' : null %>>Admin</option>  
+                        <%}else{%>
+                          <option value="user"  <%= user.access === "user"  ? 'selected' : null %>>Usuario</option>
+                          <option value="admin"  <%= user.access === "admin"  ? 'selected' : null %>>Admin</option>
+                        <%}%>
+                      </select>
+                      <div class="invalid-feedback" style="margin: 1vw 0;">
+                        <%if(locals.errors && errors.access){%>
+                          <%=errors.access.msg%>
+                        <%}%>
+                      </div>
+                    </div>
+                </div>
+              </div>
+  
+            <!----------------------------------    BOOSTRAP   ------------------------------------------>
+                
+            <div class="container-buttons">
+                <button type="submit" class="btn btn-editar">Guardar perfil</button>
+                <a href="/" class="btn btn-borrar">Cancelar</a>
+            </div>
+          </form>
+
     </main>
-    <%- include("./partials/footer") %> 
+<%- include("./partials/footer") %> 
+    <script src="/js/userProfile.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
 </body>
+</html>

@@ -2,8 +2,9 @@ const express = require('express');
 const router =  express.Router();
 const multer = require("multer");
 const path = require("path");
-const validations = require("../validations/productCreate")
 
+const validations = require("../validations/productCreate")
+const accessCheck = require("../middlewares/accessCheck");
 
 /* Config multer storage */
 
@@ -28,17 +29,17 @@ router.get('/detail/:id', controller.detail);
 
 /* Product create*/ 
 
-router.get('/create', controller.loading);
+router.get('/create',accessCheck,controller.loading);
 router.post('/create',upload.any(),validations,controller.save);
 
 /* Product edit */
 
-router.get('/edit/:id', controller.edit);
+router.get('/edit/:id',accessCheck,controller.edit);
 router.put('/edit/:id',upload.any(),validations,controller.update);
 
 /* Product delete */
 
-router.delete('/delete/:id', controller.destroy);
+router.delete('/delete/:id',accessCheck,controller.destroy);
 
 
 

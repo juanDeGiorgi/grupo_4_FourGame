@@ -30,5 +30,13 @@
     "password": "$2a$12$2JwGz9CvLz4mTeYuDy.abOhCWCEpyoAsYJAQBmYi5XG63c3PYBwSa",
     "access": "user",
     "image": "default-user-image.png"
+  },
+  {
+    "id": 6,
+    "name": "Rango",
+    "email": "ezequielrango290@gmail.com",
+    "password": "$2a$12$ADn4LaKEisc1oTVlijocyuPCOCnUCyklVv0h8r5vwd2tpSHWnZGnK",
+    "access": "user",
+    "image": "img-1630902354443.jpg"
   }
 ]

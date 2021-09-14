@@ -1,6 +1,6 @@
 module.exports = (sequelize,dataTypes) => {
 
-    const alias = "favorite"; 
+    const alias = "favorites"; 
 
     const cols = {
        
@@ -11,16 +11,15 @@ module.exports = (sequelize,dataTypes) => {
             allowNull: false
         },
 
-      productId: {
-          type:dataTypes.INTEGER,
-          allowNull: false,
-      },
+        productId: {
+            type:dataTypes.INTEGER,
+            allowNull: false,
+        },
 
-      userId: {
-          Type: dataTypes.INTEGER,
-          allowNull: false,
-          
-      }
+        userId: {
+            Type: dataTypes.INTEGER,
+            allowNull: false,
+        }
 
     }
 
@@ -29,8 +28,8 @@ module.exports = (sequelize,dataTypes) => {
         tableName= "favorites",
     }
 
-    const favorites = sequelize.define(alias,cols,config);
+    const Favorite = sequelize.define(alias,cols,config);
 
-    return favorites ; 
+    return Favorite; 
 
 }

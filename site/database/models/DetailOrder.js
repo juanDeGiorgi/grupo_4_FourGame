@@ -12,20 +12,19 @@ module.exports = (sequelize,dataTypes) => {
         },
 
         orderId:{
-              type: dataTypes.INTEGER,
-              allowNull: false,
+            type: dataTypes.INTEGER,
+            allowNull: false,
         },
 
         productId:{
             type: dataTypes.INTEGER,
             allowNull: false,
-      },
+        },
       
-      quantity:{
-        type: dataTypes.INTEGER,
-        allowNull: false,
-  },
- 
+        quantity:{
+            type: dataTypes.INTEGER,
+            allowNull: false,
+        },
 
     }
 
@@ -34,8 +33,8 @@ module.exports = (sequelize,dataTypes) => {
         tableName= "detailOrder",
     }
 
-    const detailOrder = sequelize.define(alias,cols,config);
+    const DetailOrder = sequelize.define(alias,cols,config);
 
-    return detailOrder ; 
+    return DetailOrder ; 
 
 }

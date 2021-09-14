@@ -12,7 +12,7 @@ module.exports = (sequelize,dataTypes) => {
         },
 
         name: {
-            type:dataTypes.STRING(255),
+            type: dataTypes.STRING(255),
             allowNull: false,
         },
 
@@ -24,8 +24,8 @@ module.exports = (sequelize,dataTypes) => {
     }
 
     const config = {
-        timestamps = true,
-        tableName= "productImages",
+        timestamps: true,
+        tableName: "productimages",
     }
 
     const ProductImage = sequelize.define(alias,cols,config);

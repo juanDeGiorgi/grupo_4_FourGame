@@ -93,7 +93,7 @@ CREATE TABLE `address` (
 );
 
 CREATE TABLE `orders` (
-   `id` INT NOT NULL,
+   `id` INT NOT NULL AUTO_INCREMENT,
    `finalPrice` INT UNSIGNED NOT NULL,
    `status` TINYINT NOT NULL DEFAULT 0,
    `cardQuantity` TINYINT NOT NULL DEFAULT 1,
@@ -112,7 +112,7 @@ CREATE TABLE `payMethods` (
 );
 
 CREATE TABLE `detailOrder` (
-   `id` INT NOT NULL,
+   `id` INT NOT NULL AUTO_INCREMENT,
    `orderId` INT NOT NULL,
    `productId` INT NOT NULL,
    `quantity` INT NOT NULL,

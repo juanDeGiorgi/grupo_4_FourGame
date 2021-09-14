@@ -47,8 +47,8 @@ module.exports = (sequelize,dataTypes) => {
     }
 
     const config = {
-        timestamps = true,
-        tableName= "orders",
+        timestamps: true,
+        tableName: "orders",
     }
 
     const Order = sequelize.define(alias,cols,config);

@@ -33,7 +33,8 @@ module.exports = (sequelize,dataTypes) => {
         },
 
         deletedAt: {
-            type: dataTypes.DATE
+            type: dataTypes.DATE,
+            allowNull: true
         },
 
         loginDate: {
@@ -58,8 +59,8 @@ module.exports = (sequelize,dataTypes) => {
     }
 
     const config = {
-        timestamps = true,
-        tableName= "users",
+        timestamps: true,
+        tableName: "users",
     }
 
     const User = sequelize.define(alias,cols,config);

@@ -53,8 +53,8 @@ module.exports = (sequelize,dataTypes) => {
     }
 
     const config = {
-        timestamps = false,
-        tableName= "address",
+        timestamps: false,
+        tableName: "address",
     }
 
     const Address = sequelize.define(alias,cols,config);

@@ -24,8 +24,8 @@ module.exports = (sequelize,dataTypes) => {
     }
 
     const config = {
-        timestamps = true,
-        tableName= "favorites",
+        timestamps: false,
+        tableName: "favorites",
     }
 
     const Favorite = sequelize.define(alias,cols,config);

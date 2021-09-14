@@ -20,7 +20,7 @@ module.exports = (sequelize,dataTypes) => {
 
     const config = {
         timestamps = true,
-        tableName= "typeProducts",
+        tableName= "typeproducts",
     }
 
     const TypeProduct = sequelize.define(alias,cols,config);

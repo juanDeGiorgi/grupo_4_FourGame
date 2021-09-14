@@ -12,15 +12,15 @@ module.exports = (sequelize,dataTypes) => {
         },
 
         name: {
-            type:dataTypes.STRING(255),
+            type: dataTypes.STRING(255),
             allowNull: false,
         },
 
     }
 
     const config = {
-        timestamps = true,
-        tableName= "access",
+        timestamps: false,
+        tableName: "access",
     }
 
     const Access = sequelize.define(alias,cols,config);

@@ -41,23 +41,6 @@
     "payMethod": 12
   },
   {
-    "id": 4,
-    "name": "Pc Armada Amd Ryzen 5 3400g + A320 + 16gb Ddr4 + 1tb",
-    "description": "Con tu consola PlayStation 4",
-    "image": [
-      "pc.jpg",
-      "fuente.jpg",
-      "img-1629433876055.jpg",
-      "img-1629433934009.png",
-      "img-1629434787156.jpg"
-    ],
-    "price": 120080,
-    "discount": 10,
-    "category": "new-release",
-    "type": "pc",
-    "payMethod": 12
-  },
-  {
     "id": 5,
     "name": "Sony PlayStation 5 825GB Digital Edition White color",
     "description": "Con tu consola PlayStation 5 tendrás entretenimiento asegurado todos los días. Su tecnología fue creada para poner nuevos retos tanto a jugadores principiantes como expertos.PlayStation renovó las expectativas del mundo virtual con esta nueva consola y su gran rendimiento. Cuenta con una interfaz de usuario más rápida y fácil de navegar que en anteriores modelos. Además, podrás jugar durante horas desafiando a millones de contrincantes alrededor del mundo que esperan nuevos retos.",
@@ -178,15 +161,15 @@
   },
   {
     "id": 13,
-    "name": "juand",
-    "description": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "name": "dddddd",
+    "description": "ddddddddddddddddddddddddddddddddddd",
     "image": [
       "default-image.png"
     ],
-    "price": 70000,
-    "discount": 40,
-    "category": "best-seller",
+    "price": 66999,
+    "discount": 15,
+    "category": "new-release",
     "type": "juegos",
-    "payMethod": 0
+    "payMethod": 3
   }
 ]

@@ -70,7 +70,31 @@
                             <button type="submit" class="b-borrar">Borrar</button>
                         </form>
                     <% }else{ %>
-                        <a href="#" class="b-editar">Comprar</a>   
+                        <!-- <a href="#" class="b-editar">Comprar</a>  -->
+                        <!-- Button trigger modal -->
+                        <button type="button" class="b-editar" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Comprar
+                        </button>
+                        
+                        
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                ...
+                                </div>
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn ">Save changes</button>
+                                </div>
+                            </div>
+                            </div>
+                        </div>  
                         <a href="#" class="b-comprar">Agregar <i class="fas fa-cart-plus"></i></a>
                         <% } %> 
                         

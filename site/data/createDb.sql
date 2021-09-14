@@ -1,7 +1,7 @@
 
-DROP DATABASE IF EXISTS fourGame;
-CREATE DATABASE fourGame;
-USE fourGame;
+DROP DATABASE IF EXISTS  fourGame_dev;
+CREATE DATABASE fourGame_dev;
+USE  fourGame_dev;
 
 CREATE TABLE `products` (
    `id` INT NOT NULL AUTO_INCREMENT,

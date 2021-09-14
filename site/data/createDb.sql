@@ -81,11 +81,11 @@ CREATE TABLE `states` (
 
 CREATE TABLE `address` (
    `id` INT NOT NULL AUTO_INCREMENT,
-   `street` VARCHAR(255) NOT NULL,
+   `street` INT NOT NULL,
    `number` VARCHAR(255) NOT NULL,
    `postalCode` TINYINT NOT NULL,
    `neighborhood` VARCHAR(255) NOT NULL,
-   `note` VARCHAR(255),
+   `note` VARCHAR(500),
    `countryId` INT NOT NULL,
    `stateId` INT NOT NULL,
    `userId` INT NOT NULL,

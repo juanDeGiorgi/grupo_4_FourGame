@@ -1,0 +1,153 @@
+
+DROP DATABASE IF EXISTS fourGame;
+CREATE DATABASE fourGame;
+USE fourGame;
+
+CREATE TABLE `products` (
+   `id` INT NOT NULL AUTO_INCREMENT,
+   `name` VARCHAR(255) NOT NULL,
+   `price` INT UNSIGNED NOT NULL,
+   `discount` INT UNSIGNED NOT NULL DEFAULT 0,
+   `description` VARCHAR(500) NOT NULL,
+   `createdAt` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+   `updatedAt` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+   `deletedAt` DATETIME,
+   `delete` TINYINT NOT NULL DEFAULT 0,
+   `categoryId` INT NOT NULL,
+   `userId` INT NOT NULL,
+   `typeProductId` INT NOT NULL,
+   PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `productImages` (
+   `id` INT NOT NULL AUTO_INCREMENT,
+   `name` VARCHAR(255) NOT NULL,
+   `productId` INT NOT NULL ,
+   PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `typeProducts` (
+   `id` INT NOT NULL AUTO_INCREMENT,
+   `name` VARCHAR(255) NOT NULL,
+   PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `categories` (
+   `id` INT NOT NULL AUTO_INCREMENT,
+   `name` VARCHAR(255) NOT NULL,
+   PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `users` (
+   `id` INT NOT NULL AUTO_INCREMENT,
+   `name` VARCHAR(255) NOT NULL,
+   `email` VARCHAR(255) NOT NULL,
+   `image` VARCHAR(255) NOT NULL DEFAULT 'default-user-image.png',
+   `password` VARCHAR(255) NOT NULL,
+   `createdAt` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+   `updatedAt` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+   `deletedAt` DATETIME,
+   `loginDate` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+   `delete` TINYINT NOT NULL DEFAULT 0,
+   `accessId` INT NOT NULL DEFAULT 1,
+   PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `access` (
+   `id` INT NOT NULL AUTO_INCREMENT,
+   `name` VARCHAR(255) NOT NULL,
+   PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `favorites` (
+   `id` INT NOT NULL AUTO_INCREMENT,
+   `productId` INT NOT NULL ,
+   `userId` INT NOT NULL ,
+   PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `countrys` (
+   `id` INT NOT NULL AUTO_INCREMENT,
+   `name` VARCHAR(255) NOT NULL,
+   PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `states` (
+   `id` INT NOT NULL AUTO_INCREMENT,
+   `name` VARCHAR(255) NOT NULL,
+   `countryId` INT NOT NULL ,
+   PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `address` (
+   `id` INT NOT NULL AUTO_INCREMENT,
+   `street` VARCHAR(255) NOT NULL,
+   `number` VARCHAR(255) NOT NULL,
+   `postalCode` TINYINT NOT NULL,
+   `neighborhood` VARCHAR(255) NOT NULL,
+   `note` VARCHAR(255),
+   `countryId` INT NOT NULL,
+   `stateId` INT NOT NULL,
+   `userId` INT NOT NULL,
+   PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `orders` (
+   `id` INT NOT NULL,
+   `finalPrice` INT UNSIGNED NOT NULL,
+   `status` TINYINT NOT NULL DEFAULT 0,
+   `cardQuantity` TINYINT NOT NULL DEFAULT 1,
+   `createdAt` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+   `updatedAt` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+   `userId` INT NOT NULL,
+   `addressId` INT NOT NULL,
+   `payMethodId` INT NOT NULL DEFAULT 1,
+   PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `payMethods` (
+   `id` INT NOT NULL AUTO_INCREMENT,
+   `name` VARCHAR(255) NOT NULL,
+   PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `detailOrder` (
+   `id` INT NOT NULL,
+   `orderId` INT NOT NULL,
+   `productId` INT NOT NULL,
+   `quantity` INT NOT NULL,
+   PRIMARY KEY (`id`)
+);
+
+
+ALTER TABLE `products` ADD CONSTRAINT `FK_d8c8e5e2-d698-476b-8af2-c309f1f3c67f` FOREIGN KEY (`typeProductId`) REFERENCES `typeProducts`(`id`);
+
+ALTER TABLE `products` ADD CONSTRAINT `FK_418feb3d-d2b5-42bb-adba-044d29827552` FOREIGN KEY (`categoryId`) REFERENCES `categories`(`id`);
+
+ALTER TABLE `products` ADD CONSTRAINT `FK_03a76175-8f9b-4842-825f-5aac561ed541` FOREIGN KEY (`userId`) REFERENCES `users`(`id`);
+
+ALTER TABLE `productImages` ADD CONSTRAINT `FK_37e75634-cb13-44fe-81ef-7c03659395cd` FOREIGN KEY (`productId`) REFERENCES `products`(`id`);
+
+ALTER TABLE `users` ADD CONSTRAINT `FK_feb7d98d-c838-4adb-b8c3-a1b4c1ca5668` FOREIGN KEY (`accessId`) REFERENCES `access`(`id`);
+
+ALTER TABLE `favorites` ADD CONSTRAINT `FK_736122bf-3278-4757-8d0e-5f4e02b22e6d` FOREIGN KEY (`productId`) REFERENCES `products`(`id`);
+
+ALTER TABLE `favorites` ADD CONSTRAINT `FK_a16c7b5f-ed29-4ae6-8018-133f0bad20dc` FOREIGN KEY (`userId`) REFERENCES `users`(`id`);
+
+ALTER TABLE `states` ADD CONSTRAINT `FK_2fc1f8d8-a93f-457f-9e82-34fe537bcec3` FOREIGN KEY (`countryId`) REFERENCES `countrys`(`id`);
+
+ALTER TABLE `address` ADD CONSTRAINT `FK_002ec1a0-3ea3-4b13-8c6d-c6165574adb9` FOREIGN KEY (`countryId`) REFERENCES `countrys`(`id`);
+
+ALTER TABLE `address` ADD CONSTRAINT `FK_9f6ac0d0-2209-477c-9366-4ee340a1a15e` FOREIGN KEY (`stateId`) REFERENCES `states`(`id`);
+
+ALTER TABLE `address` ADD CONSTRAINT `FK_eb33374d-1a31-47d4-9011-f1facaeaf53d` FOREIGN KEY (`userId`) REFERENCES `users`(`id`);
+
+ALTER TABLE `orders` ADD CONSTRAINT `FK_51ca60e4-c75d-4a21-8e29-cf91e1910d92` FOREIGN KEY (`userId`) REFERENCES `users`(`id`);
+
+ALTER TABLE `orders` ADD CONSTRAINT `FK_47bb05b7-f55c-490a-9ba9-16c1564878b8` FOREIGN KEY (`addressId`) REFERENCES `address`(`id`);
+
+ALTER TABLE `orders` ADD CONSTRAINT `FK_d8dc20de-f195-4d7f-898b-200bf10cf065` FOREIGN KEY (`payMethodId`) REFERENCES `payMethods`(`id`);
+
+ALTER TABLE `detailOrder` ADD CONSTRAINT `FK_e9397a06-e46e-4ea0-8aa6-b980a2d8da74` FOREIGN KEY (`orderId`) REFERENCES `orders`(`id`);
+
+ALTER TABLE `detailOrder` ADD CONSTRAINT `FK_e74d7049-449b-4520-9cf0-a650062c7df1` FOREIGN KEY (`productId`) REFERENCES `products`(`id`);

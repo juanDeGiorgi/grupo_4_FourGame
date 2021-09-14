@@ -67,6 +67,7 @@ module.exports={
     logout : (req,res) => {
         req.session.destroy()
         res.cookie("rememberSession",null, {maxAge: -1})
+        res.cookie("sessionPersistance",null, {maxAge: -1})
         res.redirect('/')
     },
 
@@ -94,13 +95,16 @@ module.exports={
             req.body.deleteImage != "noBorrar" && oldImage != "default-user-image.png" ? fsMethods.deleteFile(`../public/images/users/${oldImage}`) : null; 
 
             let updatedUser = users.find(user => user.id === +req.params.id)
-                
-            req.session.userLogged = updatedUser
-            req.session.save( (err) => {
-                req.session.reload((err) => {
-                  res.redirect(`/`);
-                });
-             });
+            
+            req.session.save(err =>{
+                req.session.userLogged = updatedUser
+                res.redirect("/")
+            })
+            
+            if (req.cookies.rememberSession) {
+                res.cookie('rememberSession', req.session.userLogged, {maxAge : 10000 * 60});
+            }     
+
                 
         }else{
             req.file ? fsMethods.deleteFile(`../public/images/users/${req.file.filename}`) : null

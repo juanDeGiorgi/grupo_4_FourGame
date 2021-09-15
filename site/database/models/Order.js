@@ -51,7 +51,31 @@ module.exports = (sequelize,dataTypes) => {
         tableName: "orders",
     }
 
+
+
     const Order = sequelize.define(alias,cols,config);
+
+    Order.associate = (models) => {
+
+        Order.belongsTo(models.payMethods,{
+            as : "payMethod",
+            foreignKey: "payMethodId"
+        }),
+        Order.belongsTo(models.address,{
+            as : "address",
+            foreignKey: "addressId"
+        })
+        Order.belongsTo(models.users,{
+            as: "user",
+            foreignKey: "userId"
+        })
+        Order.belongsToMany(models.detailOrder,{
+            as: "details",
+            through: "detailOrder",
+            foreignKey : "orderId",
+            otherKey : "productId"
+        })
+    }
 
     return Order ; 
 

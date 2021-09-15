@@ -59,6 +59,29 @@ module.exports = (sequelize,dataTypes) => {
 
     const Address = sequelize.define(alias,cols,config);
 
+    Address.assoicate = (models) =>{
+
+        Address.belongsTo(models.users,{
+            as: "user",
+            foreignKey: "userId"
+        }),
+
+        Address.belongsTo(models.countrys,{
+            as: "country",
+            foreignKey: "countryId"
+        }),
+
+        Address.belongsTo(models.states,{
+            as: "state",
+            foreignKey: "stateId"
+        }),
+
+        Address.hasMany(models.orders,{
+            as: "orders",
+            foreignKey: "addressId"
+        })
+    }
+
     return Address ; 
 
 }

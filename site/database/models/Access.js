@@ -25,6 +25,13 @@ module.exports = (sequelize,dataTypes) => {
 
     const Access = sequelize.define(alias,cols,config);
 
+    Access.associate = (models) =>{
+        Access.hasMany(models.users,{
+            as: "users",
+            foreignKey: "accessId"
+        })
+    }
+
     return Access; 
 
 }

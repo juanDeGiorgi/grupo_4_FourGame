@@ -25,5 +25,18 @@ module.exports = (sequelize,dataTypes) =>{
 
     const Country = sequelize.define(alias,cols,config);
 
+    Country.associate = (models) =>{
+
+        Country.hasMany(models.address,{
+            as: "address",
+            foreignKey: "countryId"
+        }),
+
+        Country.hasMany(models.states,{
+            as: "states",
+            foreignKey: "countryId"
+        })
+    }
+
     return Country;
 }

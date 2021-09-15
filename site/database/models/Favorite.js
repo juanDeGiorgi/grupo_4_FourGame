@@ -12,12 +12,12 @@ module.exports = (sequelize,dataTypes) => {
         },
 
         productId: {
-            type:dataTypes.INTEGER,
+            type: dataTypes.INTEGER,
             allowNull: false,
         },
 
         userId: {
-            Type: dataTypes.INTEGER,
+            type: dataTypes.INTEGER,
             allowNull: false,
         }
 

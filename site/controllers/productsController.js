@@ -48,34 +48,47 @@ module.exports={
     },
 
 
-    // res.render('detailProduct',{
-    //     product : products.find(product=>product.id === +req.params.id),
-    //     toThousand,
-    //     relatedProducts : products
-    // }),
-
     loading : (req,res) => res.render('productLoading'),
   
+
     save : (req,res) => {
 
         const errors = validationResult(req);
 
         if(errors.isEmpty()){
-            let product = {
-                id : products[products.length-1].id +1,
-                name : req.body.name.trim().replace(":",""),
-                description : req.body.description.trim().replace(":",""),
-                image : req.files.length != 0 ? req.files.map(image => image.filename) : [`default-image.png`],
-                price : +req.body.price,
-                discount : req.body.discount ? +req.body.discount : 0,
-                category : req.body.category,
-                type : req.body.type,
-                payMethod : +req.body.payMethod,
-            }
-            products.push(product)
-            fsMethods.saveProducts(products);
-          
-            res.redirect('/');
+
+            db.products.create({
+                
+                name: req.body.name.trim() ,
+                price: +req.body.price,
+                discount: +req.body.discount ,
+                description: req.body.description.trim() ,
+                categoryId: +req.body.category  ,
+                userId: +req.params.id ,
+                typeProductId: +req.body.type,
+            }).then(newProduct => {
+             
+                if (req.files.length>0) {
+                      let images =[];
+                      let nameImages= req.files.map(image=>image.filename);
+                      nameImages.forEach(img=> {
+                         let newImage ={ 
+                           productId: newProduct.id,
+                           name: img,
+                         }
+                         images.push(newImage)
+                      })
+                 db.productImages.bulkCreate(images,{validate : true })
+                }
+                else{
+                    db.productImages.create({
+                        productId: newProduct.id,
+                        name: 'default-image.png',
+                    })
+                }
+                res.redirect('/');
+            })
+
         }else{
             req.files.forEach(image => fsMethods.deleteFile(`../public/images/products/${image.filename}`))
             res.render("productLoading",{

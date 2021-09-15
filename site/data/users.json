@@ -38,5 +38,13 @@
     "password": "$2a$12$ADn4LaKEisc1oTVlijocyuPCOCnUCyklVv0h8r5vwd2tpSHWnZGnK",
     "access": "user",
     "image": "img-1630902354443.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Ezequiel",
+    "email": "eze@gmail.com",
+    "password": "$2a$12$2cl/6x39lrsfMcIzyDLrNOhs2lgvKS31sc5PKYbE9rIaBZwbu94tm",
+    "access": "admin",
+    "image": "default-user-image.png"
   }
 ]

@@ -30,7 +30,7 @@ router.get('/detail/:id', controller.detail);
 /* Product create*/ 
 
 router.get('/create',accessCheck,controller.loading);
-router.post('/create',upload.any(),validations,controller.save);
+router.post('/create/:id',upload.any(),validations,controller.save);
 
 /* Product edit */
 

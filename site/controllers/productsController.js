@@ -2,18 +2,56 @@ const fs = require('fs');
 const path= require('path');
 const fsMethods = require("../utils/fsMethods");
 const {validationResult} = require('express-validator')
+const db = require('../database/models')
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+// const products= require('../data/products')
 
-const products= require('../data/products')
+
 
 module.exports={
 
-    detail : (req,res) => res.render('detailProduct',{
-        product : products.find(product=>product.id === +req.params.id),
-        toThousand,
-        relatedProducts : products
-    }),
+
+    detail : (req,res) => {
+    
+        db.products.findByPk(req.params.id,{
+            include : [
+                {association : "category"},
+                {association : "type"},
+                {association : "images"}
+            ]
+        }).then(product => {
+            db.typeProducts.findAll({
+                where : {
+                    id : product.typeProductId,
+                },
+
+                include : [     
+                    { 
+                      association : 'products',
+                        include : [                       
+                            {association : "category"},
+                            {association : "type"},
+                            {association : "images"}
+                        ]  
+                    }
+                ]
+            }).then(relatedProducts => {
+                res.render('detailProduct', {
+                    product,
+                    relatedProducts
+                })
+            })
+        })
+        
+    },
+
+
+    // res.render('detailProduct',{
+    //     product : products.find(product=>product.id === +req.params.id),
+    //     toThousand,
+    //     relatedProducts : products
+    // }),
 
     loading : (req,res) => res.render('productLoading'),
   

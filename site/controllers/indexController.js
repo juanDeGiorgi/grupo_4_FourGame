@@ -16,14 +16,15 @@ module.exports={
             ]
         })
             .then(products =>{
-                res.send(products)
+                res.render('index',{
+                    products,
+                    toThousand
+                })
             })
         },
-    // } res.render('index',{
-    //     products,
-    //     toThousand
-    // }),
 
+
+        
     about : (req,res)=> res.render('about'),
 
 }

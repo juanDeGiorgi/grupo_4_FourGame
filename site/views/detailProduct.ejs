@@ -16,12 +16,12 @@
         <section class="vista">
             <div class="div-img-miniaturas">
                 <div class="vista-miniaturas">
-                    <%product.image.forEach((image,index)=>{%>
-                        <button onmouseover="document.getElementById(`imagePrincipal`).setAttribute(`src`,`/images/products/<%=image%>`)" id="tinyImage" class="b-miniatura"><img src="/images/products/<%=image%>" alt="image"></button>
+                    <%product.images.forEach((image,index)=>{%>
+                        <button onmouseover="document.getElementById(`imagePrincipal`).setAttribute(`src`,`/images/products/<%=image.name%>`)" id="tinyImage" class="b-miniatura"><img src="/images/products/<%=image.name%>" alt="image"></button>
                     <%})%>
                 </div>
                 <div class="contenedor-img vista-img">
-                    <img id="imagePrincipal" src="/images/products/<%=product.image[0]%> " alt="<%=product.name %> ">
+                    <img id="imagePrincipal" src="/images/products/<%=product.images[0].name%> " alt="<%=product.name %> ">
                     <button class="fav"><i class="far fa-heart"></i></button>
                 </div>
             </div>
@@ -30,9 +30,9 @@
                 <div class="c-name-category">
                     <h3> <%= product.name %> </h3>
                 
-                    <%if(product.category == "in-sale"){%>
+                    <%if(product.category.name == "in-sale"){%>
                         <p class="vendido">Oferta</p>
-                    <%}else if(product.category == "new-release"){%>
+                    <%}else if(product.category.name == "new-release"){%>
                         <p class="vendido">Lanzamiento</p>
                     <%}else{%>
                         <p class="vendido">Mas vendido</p>
@@ -47,10 +47,10 @@
                 </p>
                 <p class="price">$ <%= toThousand(Math.round(product.price - ((product.discount / 100) * product.price))) %> </p>
                 <div class="payMethod">
-                    <%if(product.payMethod > 0){%>
-                        <p class="t-cuotas"><%=product.payMethod%>x $ <%=toThousand((product.price / product.payMethod).toFixed(0))%> sin interés</p>
-                        <button class="b-cuotas">calcular cuotas</button>
-                    <%}%>
+
+                    <p class="payMethod"> Hasta en 12 x $ <%=toThousand((product.price / 12).toFixed(0))%> sin interés</p>
+                    <button class="b-cuotas">calcular cuotas</button>
+
                 </div>
                 <div class="envios">
                     <i class="fas fa-truck"></i>
@@ -170,12 +170,12 @@
 
         <section class="productos">
             <%relatedProducts.forEach(relatedProduct => {%>
-                <%if(relatedProduct.type == product.type){%>
+                <%if(relatedProduct.type.name == product.type.name){%>
                     <%if(relatedProduct.id !== product.id){%>
                         <article>
                             <a href="/products/detail/<%=relatedProduct.id%> " class="a-article">
                                 <div class="contenedor-img">
-                                    <img src="/images/products/<%=relatedProduct.image[0]%>" alt="image">
+                                    <img src="/images/products/<%=relatedProduct.images[0].name%>" alt="image">
                                 </div>
 
                                 <div class="product-info">
@@ -189,9 +189,9 @@
                                         <%if (relatedProduct.discount !== 0){%>
                                             <span class="discount"><%=relatedProduct.discount%>% OFF</span>
                                         <%}%>
-                                        <%if(relatedProduct.payMethod > 0){%>
-                                            <p class="payMethod"><%=relatedProduct.payMethod%>x $ <%=toThousand((relatedProduct.price / relatedProduct.payMethod).toFixed(0))%> sin interés</p>
-                                        <%}%>
+                                 
+                                            <p class="payMethod">Hasta 12 x $ <%=toThousand((relatedProduct.price / 12).toFixed(0))%> sin interés</p>
+                                    
                                     </div>
                                 </div>
                             </a>

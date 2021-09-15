@@ -21,7 +21,7 @@ module.exports={
                 {association : "images"}
             ]
         }).then(product => {
-            db.typeProducts.findAll({
+            db.typeProducts.findOne({
                 where : {
                     id : product.typeProductId,
                 },
@@ -39,7 +39,8 @@ module.exports={
             }).then(relatedProducts => {
                 res.render('detailProduct', {
                     product,
-                    relatedProducts
+                    relatedProducts : relatedProducts.products,
+                    toThousand
                 })
             })
         })

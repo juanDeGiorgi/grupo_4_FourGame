@@ -38,7 +38,7 @@ module.exports = [
     body("description")
       .notEmpty().withMessage("el producto debe tener una descripcion")
       .isLength({min : 20}).withMessage("la descripcion debe tener un minimo de 20 caracteres")
-      .isLength({max : 400}).withMessage("la descripcion puede tener un maximo de 400 caracteres"),
+      .isLength({max : 500}).withMessage("la descripcion puede tener un maximo de 500 caracteres"),
 
     body("image").custom((value,{req})=>{
         let extensions = [".jpg",".jpeg",".gif",".png",]

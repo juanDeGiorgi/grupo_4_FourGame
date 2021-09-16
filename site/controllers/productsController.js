@@ -5,7 +5,6 @@ const {validationResult} = require('express-validator')
 const db = require('../database/models')
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-// const products= require('../data/products')
 
 
 
@@ -61,14 +60,14 @@ module.exports={
                 
                 name: req.body.name.trim() ,
                 price: +req.body.price,
-                discount: +req.body.discount ,
+                discount: req.body.discount ? +req.body.discount : 0 ,
                 description: req.body.description.trim() ,
                 categoryId: +req.body.category  ,
                 userId: +req.params.id ,
                 typeProductId: +req.body.type,
             }).then(newProduct => {
              
-                if (req.files.length>0) {
+                if (req.files.length > 0) {
                       let images =[];
                       let nameImages= req.files.map(image=>image.filename);
                       nameImages.forEach(img=> {
@@ -79,8 +78,8 @@ module.exports={
                          images.push(newImage)
                       })
                  db.productImages.bulkCreate(images,{validate : true })
-                }
-                else{
+
+                }else{
                     db.productImages.create({
                         productId: newProduct.id,
                         name: 'default-image.png',
@@ -99,7 +98,19 @@ module.exports={
         }
     },
 
-    edit : (req,res)=>{ res.render('productEdit',{product : products.find(product=> product.id==req.params.id)})},
+    edit : (req,res)=>{
+        db.products.findByPk(req.params.id,{
+            include : [
+                {association : "category"},
+                {association : "type"},
+                {association : "images"}
+            ]
+        }).then(product =>{
+            res.render("productEdit",{
+                product
+            })
+        })
+    },
 
     update : (req,res)=> {
         const errors = validationResult(req);
@@ -107,35 +118,85 @@ module.exports={
         let oldImages,images;
 
         if(errors.isEmpty()){
-            products.forEach(product => {
-                if(product.id == req.params.id){
-                        
-                    oldImages = product.image.map(imageName => imageName) ;
-    
-                    images = product.image.filter((item,index) => index != req.body.deleteImages[index])
-                    req.files.length != 0 ? req.files.forEach(file => images.push(file.filename)) : null
-                    
-                    product.name = req.body.name.trim().replace(":","");
-                    product.description = req.body.description.trim().replace(":","");
-                    product.price = +req.body.price;
-                    product.discount = +req.body.discount;
-                    product.category = req.body.category;
-                    product.type = req.body.type;
-                    product.payMethod = +req.body.payMethod;
-                    product.image = images.length != 0 ? images : ["default-image.png"];
-                    
+            db.productImages.findAll({
+                where : {
+                    productId : req.params.id
                 }
-            });
-            
-            fsMethods.saveProducts(products);
-            req.body.deleteImages.forEach((image,index) => {if(image != 6 && typeof oldImages[index] != "undefined" && oldImages[index] != "default-image.png") fsMethods.deleteFile(`../public/images/products/${oldImages[index]}`)})
-            res.redirect(`/products/detail/${req.params.id}`);
+            }).then(images =>{
+                oldImages = images.map(image => image.name)
+
+                imagesToDelete = oldImages.filter((item,index) => index == req.body.deleteImages[index])
+    
+                db.productImages.destroy({
+                    where : {
+                        name : imagesToDelete
+                    }
+                }).then(result =>{
+                    
+                    db.products.update({
+                        name: req.body.name.trim() ,
+                        price: +req.body.price,
+                        discount: req.body.discount ? +req.body.discount : 0,
+                        description: req.body.description.trim() ,
+                        categoryId: +req.body.category,
+                        typeProductId: +req.body.type,
+                    },{
+                        where : {
+                            id : req.params.id
+                        }
+                    }).then(productUpdated =>{
+
+                        if (req.files.length > 0) {
+                            let images =[];
+                            let nameImages= req.files.map(image=>image.filename);
+                            nameImages.forEach(img=> {
+                               let newImage ={ 
+                                 productId: req.params.id,
+                                 name: img,
+                               }
+                               images.push(newImage)
+                            })
+                            db.productImages.bulkCreate(images,{validate : true })
+                                .then(result =>{
+                                    req.body.deleteImages.forEach((image,index) => {if(image != 6 && typeof oldImages[index] != "undefined" && oldImages[index] != "default-image.png") fsMethods.deleteFile(`../public/images/products/${oldImages[index]}`)})
+                                    res.redirect(`/products/detail/${req.params.id}`);
+                                })
+                        }else{
+                            
+                            db.productImages.findAll({
+                                where : {
+                                    productId : req.params.id
+                                }
+                            }).then(images =>{
+                                if(images == 0){
+                                    db.productImages.create({
+                                        productId: req.params.id,
+                                        name: 'default-image.png',
+                                    })
+                                }
+                                
+                                req.body.deleteImages.forEach((image,index) => {if(image != 6 && typeof oldImages[index] != "undefined" && oldImages[index] != "default-image.png") fsMethods.deleteFile(`../public/images/products/${oldImages[index]}`)})
+                                res.redirect(`/products/detail/${req.params.id}`);
+                            })
+                        }
+
+                    })
+                })
+            })
         }else{
             req.files.forEach(image => fsMethods.deleteFile(`../public/images/products/${image.filename}`))
-            res.render("productEdit",{
-                errors : errors.mapped(),
-                old : req.body,
-                product : products.find(product=> product.id==req.params.id)
+            db.products.findByPk(req.params.id,{
+                include : [
+                    {association : "category"},
+                    {association : "type"},
+                    {association : "images"}
+                ]
+            }).then(product =>{
+                res.render("productEdit",{
+                    errors : errors.mapped(),
+                    old : req.body,
+                    product
+                })
             })
         }
     },

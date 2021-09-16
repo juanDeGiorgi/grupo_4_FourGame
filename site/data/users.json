@@ -1,43 +1,11 @@
 [
   {
     "id": 1,
-    "name": "salomon",
-    "email": "ezequielrango29@gmail.com",
-    "password": "$2a$12$kTkBcpJ4buhlFeXQH/75/OjeQU/6BVj4EDoxEUVCpS9KOBJxMgR4.",
-    "access": "user",
-    "image": "default-user-image.png"
-  },
-  {
-    "id": 3,
-    "name": "gonzalo",
-    "email": "gonzalo220201@gmail.com",
-    "password": "$2a$12$049w4AP/dQ0L/H1NDFPvG.j/H6Wgf.Maa7D5h0xUy61s6hsDFcZ5q",
-    "access": "admin",
-    "image": "default-user-image.png"
-  },
-  {
-    "id": 4,
     "name": "juan",
     "email": "juanmadegiorgi@gmail.com",
     "password": "$2a$12$wL2ZSsc19lTwGCqZiUC4GedUcwQILqXtakNLsEdiVefjho7MKMMNu",
     "access": "admin",
     "image": "img-1630181477130.png"
-  },
-  {
-    "id": 5,
-    "name": "pepe",
-    "email": "pepe@gmail.com",
-    "password": "$2a$12$2JwGz9CvLz4mTeYuDy.abOhCWCEpyoAsYJAQBmYi5XG63c3PYBwSa",
-    "access": "user",
-    "image": "default-user-image.png"
-  },
-  {
-    "id": 6,
-    "name": "Rango",
-    "email": "ezequielrango290@gmail.com",
-    "password": "$2a$12$ADn4LaKEisc1oTVlijocyuPCOCnUCyklVv0h8r5vwd2tpSHWnZGnK",
-    "access": "user",
-    "image": "img-1630902354443.jpg"
   },
   {
     "id": 2,

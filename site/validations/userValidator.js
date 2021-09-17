@@ -8,21 +8,15 @@ const db = require('../database/models');
   
       .custom((value, {req}) => {
 
-        db.users.finOne({
-          where: {
-            email : value,
-          }
-        }).then(user => {
-          if(!user || !bcrypt.compareSync(req.body.password,user.password)){
-           return Promise.reject()
-          }
-        }).catch(()=> Promise.reject('Credenciales inválidas'))
+          return db.users.findOne({
+                    where: {
+                    email : value,
+                   }
+                }).then(user => {
+                  if(!user || !bcrypt.compareSync(req.body.password,user.password)){
+                  return Promise.reject()
+                  }
+                }).catch(()=> Promise.reject('Credenciales inválidas'))
 
-        // let user = users.find(user => user.email === value && bcrypt.compareSync(req.body.password, user.password ))
-        // if(user){
-        //     return true
-        // } else {
-        //     return false
-        // }
-      }).withMessage('Credenciales Invalidas')
+              })
   ]

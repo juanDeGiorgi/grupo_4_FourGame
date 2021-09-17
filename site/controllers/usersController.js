@@ -18,7 +18,7 @@ module.exports={
             db.users.findOne({
                 where : {
                     email : req.body.email
-                }
+                 }
             }).then(user => {
                 req.session.userLogged = {
                     id : user.id,
@@ -94,7 +94,13 @@ module.exports={
         res.redirect('/')
     },
 
-    profile : (req,res) => res.render("userProfile",{user : users.find(user => user.id === +req.params.id)}),
+    profile : (req,res) => {
+        db.users.findByPk(req.params.id)
+        .then(user=> {
+            res.render('userProfile',{user})
+        })
+    },
+    //  res.render("userProfile",{user : users.find(user => user.id === +req.params.id)}),
 
     updateProfile : (req,res) => {
         const errors = validationResult(req);

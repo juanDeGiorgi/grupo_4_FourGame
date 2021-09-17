@@ -54,11 +54,11 @@
                       <label for="type" class="form-label">Tipo de acceso :</label>
                       <select class="form-select  <%= locals.errors && errors.access ? "is-invalid" : null%>" id="access" name="access">                       
                         <%if(locals.old && old.access){%>
-                          <option value="user"  <%= old.access === "user"  ? 'selected' : null %>>Usuario</option>
-                          <option value="admin" <%= old.access === "admin" ? 'selected' : null %>>Admin</option>  
+                          <option value="1"  <%= old.access == "1"  ? 'selected' : null %>>Usuario</option>
+                          <option value="2" <%= old.access == "2" ? 'selected' : null %>>Admin</option>  
                         <%}else{%>
-                          <option value="user"  <%= user.access === "user"  ? 'selected' : null %>>Usuario</option>
-                          <option value="admin"  <%= user.access === "admin"  ? 'selected' : null %>>Admin</option>
+                          <option value="1"  <%= user.accessId == "1"  ? 'selected' : null %>>Usuario</option>
+                          <option value="2"  <%= user.accessId == "2"  ? 'selected' : null %>>Admin</option>
                         <%}%>
                       </select>
                       <div class="invalid-feedback" style="margin: 1vw 0;">

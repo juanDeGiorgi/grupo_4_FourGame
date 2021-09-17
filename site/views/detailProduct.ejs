@@ -62,7 +62,7 @@
                     <button><i class="fas fa-plus-circle"></i></button>
                 </div>
                 <div class="div-comprar">
-                    <% if (locals.userLogged && userLogged.access == 'admin') { %>
+                    <% if (locals.userLogged && userLogged.access == '2') { %>
                         <a href="/products/edit/<%=product.id%>" class="b-editar">Editar</a>
                         <form action="/products/delete/<%=product.id%>?_method=DELETE" method="POST">
                             <button type="submit" class="b-borrar">Borrar</button>

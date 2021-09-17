@@ -48,7 +48,7 @@
                                             <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                             <div class="accordion-body">
                                                 <a class="dropdown-item" href="/users/profile/<%=userLogged.id%>">Ver perfil</a>
-                                                <% if (userLogged.access == 'admin') { %>
+                                                <% if (userLogged.access == '2') { %>
                                                     <a class="dropdown-item" href="/products/create">Cargar producto</a>
                                                 <%}%>
                                                 <a><hr class="dropdown-divider"></a> 
@@ -130,7 +130,7 @@
                         
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                 <li><a class="dropdown-item" href="/users/profile/<%=userLogged.id%>">Ver perfil</a></li>
-                                <% if (userLogged.access == 'admin') { %>
+                                <% if (userLogged.access == '2') { %>
                                     <li><a class="dropdown-item" href="/products/create">Cargar producto</a></li>
                                 <% } %>
                                 <li><hr class="dropdown-divider"></li> 

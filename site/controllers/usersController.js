@@ -26,33 +26,13 @@ module.exports={
                     image: user.image,
                     access: user.accessId,
                 }
-              if (req.body.rememberSession) {
-                 res.cookie('rememberSession', req.session.userLogged, {maxAge : 10000 * 60});
-              } 
 
-              res.redirect(`/users/profile/${user.id}`)
+                if (req.body.rememberSession) {
+                    res.cookie('rememberSession', req.session.userLogged, {maxAge : 10000 * 60});
+                } 
+
+                res.redirect(`/users/profile/${user.id}`)
             })
-
-
-
-
-
-
-            // let user = users.find(user => user.email === req.body.email );
-
-            // req.session.userLogged = {
-            //     id : user.id,
-            //     name : user.name,
-            //     image : user.image,
-            //     access : user.access,
-            // }
-
-            // if (req.body.rememberSession) {
-            //     res.cookie('rememberSession', req.session.userLogged, {maxAge : 10000 * 60});
-            // }       
-
-            // res.redirect(`/users/profile/${user.id}`);
-
         }else{
             res.render('login' ,{
                 errors : errors.mapped()
@@ -90,7 +70,6 @@ module.exports={
     logout : (req,res) => {
         req.session.destroy()
         res.cookie("rememberSession",null, {maxAge: -1})
-        res.cookie("sessionPersistance",null, {maxAge: -1})
         res.redirect('/')
     },
 
@@ -100,7 +79,6 @@ module.exports={
             res.render('userProfile',{user})
         })
     },
-    //  res.render("userProfile",{user : users.find(user => user.id === +req.params.id)}),
 
     updateProfile : (req,res) => {
         const errors = validationResult(req);

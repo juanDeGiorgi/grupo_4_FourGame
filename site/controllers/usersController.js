@@ -1,10 +1,9 @@
 const path= require('path');
 const fs = require('fs');
 const fsMethods = require("../utils/fsMethods");
-const users=require('../data/users_db');
 const bcrypt= require('bcryptjs');
 const {validationResult}= require('express-validator');
-
+const db = require('../database/models')
 
 
 module.exports={
@@ -15,20 +14,44 @@ module.exports={
         const errors = validationResult(req);
 
         if(errors.isEmpty()){
-            let user = users.find(user => user.email === req.body.email );
 
-            req.session.userLogged = {
-                id : user.id,
-                name : user.name,
-                image : user.image,
-                access : user.access,
-            }
+            db.users.findOne({
+                where : {
+                    email : req.body.email
+                }
+            }).then(user => {
+                req.session.userLogged = {
+                    id : user.id,
+                    name: user.name,
+                    image: user.image,
+                    access: user.accessId,
+                }
+              if (req.body.rememberSession) {
+                 res.cookie('rememberSession', req.session.userLogged, {maxAge : 10000 * 60});
+              } 
 
-            if (req.body.rememberSession) {
-                res.cookie('rememberSession', req.session.userLogged, {maxAge : 10000 * 60});
-            }       
+              res.redirect(`/users/profile/${user.id}`)
+            })
 
-            res.redirect(`/users/profile/${user.id}`);
+
+
+
+
+
+            // let user = users.find(user => user.email === req.body.email );
+
+            // req.session.userLogged = {
+            //     id : user.id,
+            //     name : user.name,
+            //     image : user.image,
+            //     access : user.access,
+            // }
+
+            // if (req.body.rememberSession) {
+            //     res.cookie('rememberSession', req.session.userLogged, {maxAge : 10000 * 60});
+            // }       
+
+            // res.redirect(`/users/profile/${user.id}`);
 
         }else{
             res.render('login' ,{

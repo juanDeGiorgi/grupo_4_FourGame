@@ -1,8 +1,8 @@
 const path= require('path');
 const fs = require('fs');
 const fsMethods = require("../utils/fsMethods");
-const bcrypt= require('bcryptjs');
-const {validationResult}= require('express-validator');
+const bcrypt = require('bcryptjs');
+const {validationResult, Result} = require('express-validator');
 const db = require('../database/models')
 
 
@@ -20,6 +20,15 @@ module.exports={
                     email : req.body.email
                  }
             }).then(user => {
+
+                db.users.update({
+                    loginDate : new Date
+                },{
+                    where : {
+                        id : user.id
+                    }
+                })
+
                 req.session.userLogged = {
                     id : user.id,
                     name: user.name,
@@ -47,17 +56,36 @@ module.exports={
         const errors = validationResult(req);
 
         if(errors.isEmpty()){
-            let newUser = {
-                id : users[users.length-1].id +1,
-                name: req.body.name,
-                email: req.body.email,
+
+            db.users.create({
+                name : req.body.name,
+                email : req.body.email,
                 password : bcrypt.hashSync(req.body.password,12),
-                access: "user",
-                image:  req.file ? req.file.filename : "default-user-image.png",
-            }
-            users.push(newUser)
-            fsMethods.saveUsers(users);
-            res.redirect('/')
+                access : 1,
+                image : req.file ? req.file.filename : "default-user-image.png"
+            }).then(userCreated => {
+
+                db.users.update({
+                    loginDate : new Date
+                },{
+                    where : {
+                        id : userCreated.id
+                    }
+                })
+
+                req.session.userLogged = {
+                    id : userCreated.id,
+                    name: userCreated.name,
+                    image: userCreated.image,
+                    access: userCreated.accessId,
+                }
+
+                if (req.body.rememberSession) {
+                    res.cookie('rememberSession', req.session.userLogged, {maxAge : 10000 * 60});
+                } 
+
+                res.redirect(`/users/profile/${userCreated.id}`)
+               })
 
         }else{
             res.render("register",{

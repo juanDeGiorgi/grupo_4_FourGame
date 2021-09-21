@@ -6,8 +6,6 @@ const db = require('../database/models')
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
-
-
 module.exports={
 
 
@@ -106,7 +104,7 @@ module.exports={
                 {association : "images"}
             ]
         }).then(product =>{
-            res.render("productEdit",{
+            return res.render("productEdit",{
                 product
             })
         })
@@ -147,7 +145,7 @@ module.exports={
                     }).then(productUpdated =>{
 
                         if (req.files.length > 0) {
-                            let images =[];
+                            let images = [];
                             let nameImages= req.files.map(image=>image.filename);
                             nameImages.forEach(img=> {
                                let newImage ={ 

@@ -68,10 +68,10 @@ module.exports={
                 if (req.files.length > 0) {
                       let images =[];
                       let nameImages= req.files.map(image=>image.filename);
-                      nameImages.forEach(img=> {
+                      nameImages.forEach(nameImage=> {
                          let newImage ={ 
                            productId: newProduct.id,
-                           name: img,
+                           name: nameImage,
                          }
                          images.push(newImage)
                       })
@@ -201,24 +201,23 @@ module.exports={
 
     destroy : (req,res) => {
 
-        db.products.destroy({
+        db.productImages.findAll({
             where : {
-                id : req.params.id
+                productId : req.params.id
             }
-        }).then(result =>{
-            res.redirect('/')
-        }).catch(err=> res.send(err))
-        
-        for (let posicion = 0; posicion < products.length; posicion++) {
-            if (products[posicion].id == req.params.id){
-                products[posicion].image.forEach(item => item != "default-image.png" ? fsMethods.deleteFile(`../public/images/products/${item}`) : null)
-                products.splice(posicion, 1) 
-            }
+        }).then(images =>{
+            images.forEach(image => fsMethods.deleteFile(`../public/images/products/${image.name}`))
             
-        }
-
-        fsMethods.saveProducts(products);
-        res.redirect('/');
+            db.products.destroy({
+                where : {
+                    id : req.params.id
+                }
+            }).then(result =>{
+                res.redirect('/')
+                
+            }).catch(err=> res.send(err))
+        })
+        
 
    }
 }

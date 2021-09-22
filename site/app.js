@@ -8,6 +8,7 @@ const methodOverride = require("method-override");
 const session = require('express-session');
 const cookieCheck= require('./middlewares/cookieChek');
 const localsCheck = require('./middlewares/localsCheck');
+const env = require('dotenv').config()
 
 // import routers
 const indexRouter = require('./routes/index');

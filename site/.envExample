@@ -1,0 +1,6 @@
+
+/* this is an example of the proyect env variables */
+
+DB_PASSWORD= pepe123
+DB_USER= root 
+DB_HOST= localhost

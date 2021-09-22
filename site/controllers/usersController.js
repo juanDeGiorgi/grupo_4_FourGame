@@ -106,42 +106,69 @@ module.exports={
         let oldImage,image
 
         if(errors.isEmpty()){
-            users.forEach(user => {
-                if(user.id === +req.params.id){
 
-                    oldImage = user.image
-                    image = req.file ? req.file.filename : user.image
+            db.users.findByPk(req.params.id)
+            .then(user=> {
+                oldImage= user.image
+                image = req.file ? req.file.filename : user.image
 
-                    user.name = req.body.name
-                    user.email = req.body.email
-                    user.access = req.body.access
-                    user.image = image != req.body.deleteImage ? image : "default-user-image.png"
-                }
-            });
+                db.users.update({
+                    name: req.body.name,
+                    email : req.body.email,
+                    accesId : +req.body.access,
+                    image : image != req.body.deleteImage ? image : "default-user-image.png"
+                },{
+                    where : {
+                        id : req.params.id
+                    }
+                }).then(result => {
+                     req.session.save(err => {
+                         req.session.userLogged = {
+                             name: user.name,  
+                             email : user.email,
+                             access : user.accessId
+                         }
+                         res.redirect("/")
+                     })
+            
+                     if (req.cookies.rememberSession) {
+                        res.cookie('rememberSession', req.session.userLogged, {maxAge : 10000 * 60});
+                     }     
+                })
+            })
+            // users.forEach(user => {
+            //     if(user.id === +req.params.id){
 
-            fsMethods.saveUsers(users);
+            //         oldImage = user.image
+            //         image = req.file ? req.file.filename : user.image
+
+            //         user.name = req.body.name
+            //         user.email = req.body.email
+            //         user.access = req.body.access
+            //         user.image = image != req.body.deleteImage ? image : "default-user-image.png"
+            //     }
+            // });
+
+            // fsMethods.saveUsers(users);
             req.body.deleteImage != "noBorrar" && oldImage != "default-user-image.png" ? fsMethods.deleteFile(`../public/images/users/${oldImage}`) : null; 
 
-            let updatedUser = users.find(user => user.id === +req.params.id)
             
-            req.session.save(err =>{
-                req.session.userLogged = updatedUser
-                res.redirect("/")
-            })
-            
-            if (req.cookies.rememberSession) {
-                res.cookie('rememberSession', req.session.userLogged, {maxAge : 10000 * 60});
-            }     
+
 
                 
         }else{
             req.file ? fsMethods.deleteFile(`../public/images/users/${req.file.filename}`) : null
 
-            res.render("userProfile",{
-                errors : errors.mapped(),
-                old : req.body,
-                user : users.find(user => user.id === +req.params.id)
+            db.users.findByPk(req.params.id)
+            .then(user => {
+                res.render("userProfile",{
+                   errors : errors.mapped(),
+                   old : req.body,
+                   user : user
+                })   
             })
+
+
         }
     }
 

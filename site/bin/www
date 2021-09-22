@@ -32,7 +32,7 @@ server.on('listening', onListening);
 
 /*--------  test conection DB  -------------*/
 
-const sequelize = new Sequelize('fourgame_dev', 'root', "2321", {
+const sequelize = new Sequelize('fourgame_dev', 'root', "1234", {
   host: 'localhost',
   dialect: 'mysql'
 });

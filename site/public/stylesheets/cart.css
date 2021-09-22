@@ -1,8 +1,9 @@
 /* /* main                          */
 
 .cart {
-    background-image: url(/images/background/GamerZone.jpg);
+    /* background-image: url(/images/background/GamerZone.jpg); */
 
+    background-color: gray;
     background-position: center;
     background-size:cover;
     background-attachment: fixed;

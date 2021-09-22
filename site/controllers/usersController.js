@@ -62,16 +62,9 @@ module.exports={
                 email : req.body.email,
                 password : bcrypt.hashSync(req.body.password,12),
                 access : 1,
-                image : req.file ? req.file.filename : "default-user-image.png"
+                image : req.file ? req.file.filename : "default-user-image.png",
+                loginDate : new Date
             }).then(userCreated => {
-
-                db.users.update({
-                    loginDate : new Date
-                },{
-                    where : {
-                        id : userCreated.id
-                    }
-                })
 
                 req.session.userLogged = {
                     id : userCreated.id,

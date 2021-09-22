@@ -201,6 +201,14 @@ module.exports={
 
     destroy : (req,res) => {
 
+        db.products.destroy({
+            where : {
+                id : req.params.id
+            }
+        }).then(result =>{
+            res.redirect('/')
+        }).catch(err=> res.send(err))
+        
         for (let posicion = 0; posicion < products.length; posicion++) {
             if (products[posicion].id == req.params.id){
                 products[posicion].image.forEach(item => item != "default-image.png" ? fsMethods.deleteFile(`../public/images/products/${item}`) : null)

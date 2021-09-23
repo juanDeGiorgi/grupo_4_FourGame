@@ -1,5 +1,5 @@
 const {body} = require('express-validator');
-const users = require('../data/users_db')
+const db = require("../database/models");
 
 module.exports = [
 
@@ -8,21 +8,21 @@ module.exports = [
     .isLength({
         min : 2,
         max : 50
-    }).withMessage('El nombre tiene que tener como mínimo 2 caracteres').bail()
-    .isAlpha().withMessage('El nombre debe contener solo letras'),
-
+    }).withMessage('El nombre tiene que tener como mínimo 2 caracteres').bail(),
 
     body('email')
     .isEmail().withMessage('Debes ingresar un email válido')
     .custom((value, {req})=> {
-        let emailRepeat = users.find(user => user.email == value)
-        if(!emailRepeat){
-            return true
-        }else{
-            return false 
-        }
-    }).withMessage('Este email ya esta registrado'),
-
+        return db.users.findOne({
+            where : {
+                email : value
+            }
+        }).then(user =>{
+            if(user){
+                return Promise.reject()
+            }
+        }).catch(() => Promise.reject("Este email ya esta registrado"))
+    }),
 
     body('password')
     .isLength({
@@ -38,8 +38,5 @@ module.exports = [
         }
         return true
     }).withMessage('Las contraseñas no coinciden'),
-
     
-   //  body('acepta')
-    //.isString('on').withMessage('Debes aceptar los términos y condiciones')
 ]

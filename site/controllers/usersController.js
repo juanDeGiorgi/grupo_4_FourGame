@@ -3,7 +3,9 @@ const fs = require('fs');
 const fsMethods = require("../utils/fsMethods");
 const bcrypt = require('bcryptjs');
 const {validationResult, Result} = require('express-validator');
-const db = require('../database/models')
+
+const db = require('../database/models');
+const { Op } = require('sequelize');
 
 
 module.exports={
@@ -108,8 +110,8 @@ module.exports={
         if(errors.isEmpty()){
 
             db.users.findByPk(req.params.id)
-            .then(user=> {
-                oldImage= user.image
+            .then(user => {
+                oldImage = user.image
                 image = req.file ? req.file.filename : user.image
 
                 db.users.update({
@@ -122,40 +124,26 @@ module.exports={
                         id : req.params.id
                     }
                 }).then(result => {
-                     req.session.save(err => {
-                         req.session.userLogged = {
-                             name: user.name,  
-                             email : user.email,
-                             access : user.accessId
-                         }
-                         res.redirect("/")
-                     })
-            
-                     if (req.cookies.rememberSession) {
-                        res.cookie('rememberSession', req.session.userLogged, {maxAge : 10000 * 60});
-                     }     
+                    db.users.findByPk(req.params.id)
+                    .then(userUpdated =>{
+                        req.session.save(err => {
+                            req.session.userLogged = {
+                                id : userUpdated.id,
+                                name: userUpdated.name,
+                                image: userUpdated.image,
+                                access: userUpdated.accessId,
+                            }
+                            if (req.cookies.rememberSession) {
+                                res.cookie('rememberSession', req.session.userLogged, {maxAge : 10000 * 60});
+                            }   
+                            
+                            req.body.deleteImage != "noBorrar" && oldImage != "default-user-image.png" ? fsMethods.deleteFile(`../public/images/users/${oldImage}`) : null; 
+                            res.redirect("/")
+                        })
+                    })
                 })
             })
-            // users.forEach(user => {
-            //     if(user.id === +req.params.id){
-
-            //         oldImage = user.image
-            //         image = req.file ? req.file.filename : user.image
-
-            //         user.name = req.body.name
-            //         user.email = req.body.email
-            //         user.access = req.body.access
-            //         user.image = image != req.body.deleteImage ? image : "default-user-image.png"
-            //     }
-            // });
-
-            // fsMethods.saveUsers(users);
-            req.body.deleteImage != "noBorrar" && oldImage != "default-user-image.png" ? fsMethods.deleteFile(`../public/images/users/${oldImage}`) : null; 
-
-            
-
-
-                
+       
         }else{
             req.file ? fsMethods.deleteFile(`../public/images/users/${req.file.filename}`) : null
 

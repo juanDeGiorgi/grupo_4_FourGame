@@ -2,7 +2,9 @@ const fs = require('fs');
 const path= require('path');
 const fsMethods = require("../utils/fsMethods");
 const {validationResult} = require('express-validator')
+
 const db = require('../database/models')
+const {Op} = require("sequelize");
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
@@ -217,9 +219,19 @@ module.exports={
                 
             }).catch(err=> res.send(err))
         })
-        
+   },
 
-   }
+   search : (req,res) =>{
+    db.products.findAll({
+        where : {
+            name : {
+                [Op.substring] : req.query.search
+            }
+        }
+    }).then(results =>{
+        res.json(results)
+    })
+}
 }
 
 

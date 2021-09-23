@@ -1,6 +1,4 @@
 const path= require('path');
-
-const products= require('../data/products');
 const db = require("../database/models")
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");

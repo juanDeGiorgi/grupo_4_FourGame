@@ -201,6 +201,10 @@
         box-shadow: 0px 10px 10px rgb(0 0 0 / 21%);
     }
 
+    header nav .nav-1 .search .search-bar:focus{
+        outline: none;
+    }
+
     header nav .nav-1 .search .search-icon{
         position: absolute;
         left: 29.6vw;;

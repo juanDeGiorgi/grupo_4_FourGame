@@ -123,23 +123,7 @@
                         <%=errors.discount.msg%>
                       <%}%>
                     </div>
-                  </div>
-                 
-                  <div class="mb-4 input-selects">
-                    <label for="payMethod" class="form-label">Medio pago :</label>
-                    <select class="form-select <%= locals.errors && errors.payMethod ? "is-invalid" : null%>" id="payMethod" name="payMethod">
-                      <option selected hidden value="">Medio de pago</option>
-                      <option value="0"  <%= locals.old && old.payMethod === "0" ? 'selected' : null %>>Efectivo</option>
-                      <option value="3"  <%= locals.old && old.payMethod === "3" ? 'selected' : null %>>3 cuotas</option>
-                      <option value="6"  <%= locals.old && old.payMethod === "6" ? 'selected' : null %>>6 cuotas</option>
-                      <option value="12" <%= locals.old && old.payMethod === "12" ? 'selected' : null %>>12 cuotas</option>
-                    </select>
-                    <div class="invalid-feedback" style="margin: 1vw 0;">
-                      <%if(locals.errors && errors.payMethod){%>
-                        <%=errors.payMethod.msg%>
-                      <%}%>
-                    </div>
-                  </div>
+                  </div>                 
               </div>
 
               <div class="mb-3 input-text-area inputs-text">

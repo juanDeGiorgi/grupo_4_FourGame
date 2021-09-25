@@ -142,22 +142,6 @@
                       <%}%>
                     </div>
                   </div>
-                 
-                  <div class="mb-4 input-selects">
-                    <label for="payMethod" class="form-label">Medio pago :</label>
-                    <select class="form-select" id="payMethod" name="payMethod">
-                      <option selected hidden>Medio de pago</option>
-                      <option value="3" <%= "3" == product.payMethod ? 'selected' : null %>>3 cuotas</option>
-                      <option value="6" <%= "6" == product.payMethod ? 'selected' : null %> >6 cuotas</option>
-                      <option value="12"<%= "12" == product.payMethod ? 'selected' : null %>>12 cuotas</option>
-                      <option value="0" <%= "0" == product.payMethod ? 'selected' : null %>>Efectivo</option>
-                    </select>
-                    <div class="invalid-feedback" style="margin: 1vw 0;">
-                      <%if(locals.errors && errors.payMethod){%>
-                        <%=errors.payMethod.msg%>
-                      <%}%>
-                    </div>
-                  </div>
               </div>
 
               <div class="mb-3 input-text-area inputs-text">

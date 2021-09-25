@@ -32,9 +32,6 @@ module.exports = [
     body("category")
     .notEmpty().withMessage("debes elegir una categoria"),  
 
-    body("payMethod")
-    .notEmpty().withMessage("debes elegir un metodo de pago"),
-
     body("description")
       .notEmpty().withMessage("el producto debe tener una descripcion")
       .isLength({min : 20}).withMessage("la descripcion debe tener un minimo de 20 caracteres")

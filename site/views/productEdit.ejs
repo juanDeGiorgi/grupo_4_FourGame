@@ -21,7 +21,7 @@
               <div class="mb-3 input-file">
                 <div class="preview" id="preview">
                   <img id="preview-image" src="<%=product.images[0] ? `/images/products/${product.images[0].name}` : "/images/icon/default-image1.png" %>">
-                  <input class="delete" type="checkbox" name="deleteImages" value=6 id="0" >
+                  <input class="delete" type="checkbox" name="deleteImages" value=6 id="0" checked>
                 </div>
                 <input type="file" id="image" name="image" class="file">
                 <label for="image" class="file-agregar btn" onclick="document.getElementById(`0`).value = `0`;">Agregar</label>

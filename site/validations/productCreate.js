@@ -41,7 +41,7 @@ module.exports = [
       .isLength({max : 500}).withMessage("la descripcion puede tener un maximo de 500 caracteres"),
 
     body("image").custom((value,{req})=>{
-        let extensions = [".jpg",".jpeg",".gif",".png",]
+        let extensions = [".jpg",".jpeg",".gif",".png",".webp"]
 
         if(req.files.length == 0){
             return true

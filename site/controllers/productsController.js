@@ -89,11 +89,16 @@ module.exports={
             })
 
         }else{
-            req.files.forEach(image => fsMethods.deleteFile(`../public/images/products/${image.filename}`))
-            res.render("productLoading",{
-                errors : errors.mapped(),
-                old : req.body,
-                oldImages : req.files
+            fs.readdir(path.join(__dirname,"../public/images/products"),(errorFs,productsFolder) =>{
+                req.files.forEach(file => {
+                  productsFolder.includes(file.filename) ? fsMethods.deleteFile(`../public/images/products/${file.filename}`) : null;
+                })
+                
+                res.render("productLoading",{
+                    errors : errors.mapped(),
+                    old : req.body,
+                    oldImages : req.files
+                })
             })
         }
     },
@@ -126,7 +131,7 @@ module.exports={
                 oldImages = images.map(image => image.name)
 
                 imagesToDelete = oldImages.filter((item,index) => index == req.body.deleteImages[index])
-    
+                console.log(req.body.deleteImages);
                 db.productImages.destroy({
                     where : {
                         name : imagesToDelete
@@ -148,7 +153,7 @@ module.exports={
 
                         if (req.files.length > 0) {
                             let images = [];
-                            let nameImages= req.files.map(image=>image.filename);
+                            let nameImages= req.files.map(image => image.filename);
                             nameImages.forEach(img=> {
                                let newImage ={ 
                                  productId: req.params.id,
@@ -208,8 +213,13 @@ module.exports={
                 productId : req.params.id
             }
         }).then(images =>{
-            images.forEach(image => fsMethods.deleteFile(`../public/images/products/${image.name}`))
             
+            fs.readdir(path.join(__dirname,"../public/images/products"),(errorFs,productsFolder) =>{
+                images.forEach(image => {
+                  productsFolder.includes(image.name) && image.name != "default-image.png" ? fsMethods.deleteFile(`../public/images/products/${image.name}`) : null;
+                })
+            })
+
             db.products.destroy({
                 where : {
                     id : req.params.id

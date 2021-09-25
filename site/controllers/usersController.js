@@ -117,7 +117,7 @@ module.exports={
                 db.users.update({
                     name: req.body.name,
                     email : req.body.email,
-                    accesId : +req.body.access,
+                    accessId : +req.body.access,
                     image : image != req.body.deleteImage ? image : "default-user-image.png"
                 },{
                     where : {

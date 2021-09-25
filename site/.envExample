@@ -1,5 +1,5 @@
 
-/* this is an example of the proyect env variables */
+/* ejemplo de las variables de entoron del proyecto */
 
 DB_PASSWORD= pepe123
 DB_USER= root 

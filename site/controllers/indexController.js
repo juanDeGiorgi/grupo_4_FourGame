@@ -29,14 +29,14 @@ module.exports={
                 {association : "category", 
                    where : {
                      id : {
-                        [Op.substring] : req.params.categoryId ? req.params.categoryId : ''
+                        [Op.substring] : req.body.categoryId ? req.body.categoryId : ''
                      }
                  }                       
                  },
                 {association : "type",
                    where : {
                         id : {
-                            [Op.substring] : req.params.typeId ? req.params.typeId : ''
+                            [Op.substring] : req.body.typeId ? req.body.typeId : ''
                         }
                     }
                 },
@@ -44,15 +44,15 @@ module.exports={
             ],
             where : {    //2do parámetro petición
                 name : {
-                    [Op.substring] : req.params.name ? req.params.name : ''
+                    [Op.substring] : req.body.name ? req.body.name : ''
                 }
             },
             order : [    //3er parámetro petición
-               ['price',req.params.price ? req.params.price : 'ASC']
+               ['price',req.body.price ? req.body.price : 'ASC']
             ]
         
         }).then(products => {
-            if(!products){
+            if(products.length == 0){
                 return Promise.reject() //Si no hay productos nos expulsa y continúa con el catch().
             }
             res.json(products)

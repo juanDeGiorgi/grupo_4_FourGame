@@ -1,14 +1,145 @@
-/* /* main                          */
 
 .cart {
-    /* background-image: url(/images/background/GamerZone.jpg); */
-
-    background-color: gray;
-    background-position: center;
+    background-image: url(/images/background/pcMasterRace.jpg);
+    background-position: left;
     background-size:cover;
     background-attachment: fixed;
 }
 
+.cart .product {
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    height: 30vw;
+    width: 80%;
+    margin: 10% auto 15%;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.cart .imageContainer {
+    background-color: rgb(255, 255, 255);
+    width: 36%;
+    border-radius: 10px;
+    height: 30vw;
+    order: -3;
+}
+.cart .imageContainer img {
+    width: 100%;
+    border-radius: 10px;
+    margin: 4% auto;
+}
+.cart .infoContainer {
+    background-color: rgb(255, 255, 255);
+    height: 10vw;
+    width: 60%;
+    border-radius: 10px;
+    order: -2;
+    display: flex;
+    align-items: first baseline;
+    justify-content: center;
+
+}
+.cart .name {
+    text-align: center;
+    margin: 6% 7%;
+    font-size: 1.1em;
+    line-height: 19px;
+    display: inline-block;
+}
+.cart .commandsContainer {
+    width: 55%;
+    height: 10vw;
+    order: -1;
+    margin: 4% auto;
+    text-align: center;
+}
+.cart .fa-trash-alt{
+    display: inline;
+    
+}
+.cart .trash{
+    margin: 2% 5%;
+}
+.cart .trash:hover{
+    animation: trash 1s infinite;
+}
+.cart .price {
+    display: block;
+    margin: 5% auto;
+    font-weight: bold;
+}
+.cart .quantity {
+    margin: 2% 7%;
+    font-size: 17px;
+    font-weight: bold;
+}
+.cart .fa-plus:hover{
+    color: rgb(35, 184, 5);
+    font-size: 1.3em;
+}
+.cart .fa-minus:hover{
+    color: rgb(182, 7, 7);
+    font-size: 1.3em;
+}
+.cart .payMethod {
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    height: 44vw;
+    width: 80%;
+    margin: 10% auto 15%;
+    border-radius: 10px;
+}
+.cart form{
+    width: 100%;
+}
+.cart form h3{
+    font-size: 1.3em;
+    text-align: center;
+    margin: 4% auto;
+    display: block;
+}
+.cart .radioContainer label{
+    font-size: 14px;
+}
+.cart .radioContainer label:hover{
+    font-size: 16px;
+}
+.cart .radioContainer{
+    display: block;
+    margin-bottom: 3%;
+    margin-left: 2%;
+}
+.cart .payMethod .totalPrice {
+    text-align: center;
+    display: block;
+    font-size: 1.33em;
+    color: #363694;
+    font-weight: normal;
+}
+.cart .buttonContainer{
+    width: 50%;
+    margin: 5% auto;
+}
+.cart .buy {
+    color: rgb(255, 255, 255);
+    width: 100%;
+    font-size: 1.4em;
+    background-color: #3D2ED0;
+    margin: 5% auto;
+}
+@keyframes trash{
+    0% { opacity: 50%;
+        color: red}
+    25% { transform : rotate(360deg);
+        opacity: 100%;
+        font-size : 1.5em
+    }
+    
+    100%{
+        transform: rotate(360deg);
+    }
+    
+}   
 /* tablet */
 
 @media (min-width:768px){

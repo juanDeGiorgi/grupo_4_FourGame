@@ -173,7 +173,18 @@ module.exports={
         const errors = validationResult(req);
 
         if(errors.isEmpty()){
-
+            db.address.create({
+                street: req.body.street,
+                number: req.body.number,
+                postalCode: req.body.postalCode,
+                neighborhood: req.body.neighborhood,
+                note: req.body.notes,
+                countryId: req.body.countryId,
+                stateId: req.body.stateId,
+                userId: req.params.id
+            }).then(addressCreated =>{
+                res.redirect(`/users/profile/${req.params.id}`)
+            })
         }else{
             const countrys = db.countrys.findAll()
             const states = db.states.findAll()

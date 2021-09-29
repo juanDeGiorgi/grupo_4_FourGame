@@ -15,7 +15,7 @@
               
               <div class="container-inputs">
                   <div class="col-md-3 inputs-text">
-                    <input type="text" class="form-control <%= locals.errors && errors.street ? "is-invalid" : null%>" id="street" name="street" placeholder="Calle" value="<%= typeof old != "undefined" ? old.name : "" %>">
+                    <input type="text" class="form-control <%= locals.errors && errors.street ? "is-invalid" : null%>" id="street" name="street" placeholder="Calle" value="<%= typeof old != "undefined" ? old.street : "" %>">
                     <div class="invalid-feedback" style="margin: 1vw 0;">
                       <%if(locals.errors && errors.street){%>
                         <%=errors.street.msg%>
@@ -24,7 +24,7 @@
                   </div>
 
                   <div class="col-md-3 inputs-text">
-                    <input type="text" class="form-control <%= locals.errors && errors.number ? "is-invalid" : null%>" id="number" name="number" placeholder="Altura" value="<%= typeof old != "undefined" ? old.name : "" %>">
+                    <input type="text" class="form-control <%= locals.errors && errors.number ? "is-invalid" : null%>" id="number" name="number" placeholder="Altura" value="<%= typeof old != "undefined" ? old.number : "" %>">
                     <div class="invalid-feedback" style="margin: 1vw 0;">
                       <%if(locals.errors && errors.number){%>
                         <%=errors.number.msg%>
@@ -45,7 +45,7 @@
                     <select class="form-select  <%= locals.errors && errors.countryId ? "is-invalid" : null%>" id="countryId" name="countryId">
                       <option selected hidden value="">País</option>
                       <% countrys.forEach(country => { %>
-                        <option value="<%= country.id %>" <%= locals.old && old.countryId === country.id ? 'selected' : null%> ><%= country.name %></option>
+                        <option value="<%= country.id %>" <%= locals.old && old.countryId == country.id ? 'selected' : null%> ><%= country.name %></option>
                        <% }) %>
 
                     </select>
@@ -57,10 +57,10 @@
                   </div>
 
                   <div class="mb-4 input-selects">
-                    <select class="form-select <%= locals.errors && errors.state ? "is-invalid" : null%>" id="state" name="state">
+                    <select class="form-select <%= locals.errors && errors.state ? "is-invalid" : null%>" id="stateId" name="stateId">
                       <option selected hidden value="">Provincia</option>
                       <% states.forEach(state => { %>
-                        <option value="<%= state.id %>" <%= locals.old && old.stateId === state.id ? 'selected' : null%> ><%= state.name %></option>
+                        <option value="<%= state.id %>" <%= locals.old && old.stateId == state.id ? 'selected' : null%> ><%= state.name %></option>
                        <% }) %>
                     </select>
                     <div class="invalid-feedback" style="margin: 1vw 0;">
@@ -93,7 +93,7 @@
                 
             <div class="container-buttons">
                 <button type="submit" class="btn btn-editar">Guardar</button>
-                <a href="/" class="btn btn-borrar">Cancelar</a>
+                <a href="/users/profile/<%=locals.userLogged.id%>" class="btn btn-borrar">Cancelar</a>
             </div>
           </form>
 

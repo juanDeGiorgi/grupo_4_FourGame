@@ -46,7 +46,6 @@ module.exports={
         
     },
 
-
     loading : (req,res) => res.render('productLoading'),
   
 

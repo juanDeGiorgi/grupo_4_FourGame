@@ -22,7 +22,7 @@ module.exports = [
 
     .notEmpty().withMessage('Debes seleccionar un país'),
 
-    body('state')
+    body('stateId')
 
     .notEmpty().withMessage('Debes seleccionar una provincia'),
 

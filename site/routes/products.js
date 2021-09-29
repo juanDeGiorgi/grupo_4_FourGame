@@ -41,9 +41,6 @@ router.put('/edit/:id',upload.any(),validations,controller.update);
 
 router.delete('/delete/:id',accessCheck,controller.destroy);
 
-/* Product search */
-
-router.get("/search",controller.search)
 
 module.exports = router;
 

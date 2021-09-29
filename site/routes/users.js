@@ -9,6 +9,7 @@ const validation = require("../validations/registerValidator");
 const userValidator = require('../validations/userValidator');
 const profileValidator = require("../validations/profileValidator");
 const usersCheck = require("../middlewares/usersCheck");
+const addressCheck = require ('../validations/addresValidator');
 
 /* Config multer storage */
 
@@ -34,6 +35,9 @@ router.post('/login',userValidator, controller.processLogin);
 router.get('/profile/:id',usersCheck,controller.profile);
 router.post('/profile/:id',upload.single("image"),profileValidator,controller.updateProfile);
 
+
+router.get('/address',usersCheck,controller.address)
+router.post('/address/:id',usersCheck,addressCheck,controller.createAddress)
 
 router.get('/logout',controller.logout);
 

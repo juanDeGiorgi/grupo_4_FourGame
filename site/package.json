@@ -3,11 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "test" : "nodemon ./bin/www",
+    "test": "nodemon ./bin/www",
     "start": "node ./bin/www"
   },
-  "nodemonConfig" : {
-    "ignore" : "data/*.json"
+  "nodemonConfig": {
+    "ignore": "data/*.json"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <%- include("./partials/head",{title : "Agregar dirección"}) %> 
+
+<body class="address">
+    <%- include("./partials/header")%> 
+    <main>
+          <h1 class="title"> Agregar dirección:</h1>
+          
+          <form class="formCreacion" action="/users/address/<%=locals.userLogged.id %> " method="POST" >
+
+            <!----------------------------------    BOOSTRAP   ------------------------------------------>
+ 
+              
+              <div class="container-inputs">
+                  <div class="col-md-3 inputs-text">
+                    <input type="text" class="form-control <%= locals.errors && errors.street ? "is-invalid" : null%>" id="street" name="street" placeholder="Calle" value="<%= typeof old != "undefined" ? old.name : "" %>">
+                    <div class="invalid-feedback" style="margin: 1vw 0;">
+                      <%if(locals.errors && errors.street){%>
+                        <%=errors.street.msg%>
+                      <%}%>
+                    </div>
+                  </div>
+
+                  <div class="col-md-3 inputs-text">
+                    <input type="text" class="form-control <%= locals.errors && errors.number ? "is-invalid" : null%>" id="number" name="number" placeholder="Altura" value="<%= typeof old != "undefined" ? old.name : "" %>">
+                    <div class="invalid-feedback" style="margin: 1vw 0;">
+                      <%if(locals.errors && errors.number){%>
+                        <%=errors.number.msg%>
+                      <%}%>
+                    </div>
+                  </div>
+                  
+                  <div class="col-md-3 inputs-text">
+                    <input type="text" class="form-control <%= locals.errors && errors.postalCode ? "is-invalid" : null%>" id="postalCode" name="postalCode" placeholder="Código postal" value="<%= typeof old != "undefined" ? old.postalCode : "" %>">
+                    <div class="invalid-feedback" style="margin: 1vw 0;">
+                      <%if(locals.errors && errors.postalCode){%>
+                        <%=errors.postalCode.msg%>
+                      <%}%>
+                    </div>
+                  </div>
+
+                  <div class="mb-4 input-selects">
+                    <select class="form-select  <%= locals.errors && errors.countryId ? "is-invalid" : null%>" id="countryId" name="countryId">
+                      <option selected hidden value="">País</option>
+                      <% countrys.forEach(country => { %>
+                        <option value="<%= country.id %>" <%= locals.old && old.countryId === country.id ? 'selected' : null%> ><%= country.name %></option>
+                       <% }) %>
+
+                    </select>
+                    <div class="invalid-feedback" style="margin: 1vw 0;">
+                      <%if(locals.errors && errors.countryId){%>
+                        <%=errors.countryId.msg%>
+                      <%}%>
+                    </div>
+                  </div>
+
+                  <div class="mb-4 input-selects">
+                    <select class="form-select <%= locals.errors && errors.state ? "is-invalid" : null%>" id="state" name="state">
+                      <option selected hidden value="">Provincia</option>
+                      <% states.forEach(state => { %>
+                        <option value="<%= state.id %>" <%= locals.old && old.stateId === state.id ? 'selected' : null%> ><%= state.name %></option>
+                       <% }) %>
+                    </select>
+                    <div class="invalid-feedback" style="margin: 1vw 0;">
+                      <%if(locals.errors && errors.state){%>
+                        <%=errors.state.msg%>
+                      <%}%>
+                    </div>
+                  </div>
+
+                  <div class="col-md-3 inputs-text">
+                    <input type="text" class="form-control <%= locals.errors && errors.neighborhood  ? "is-invalid" : null%>" id="neighborhood" name="neighborhood"  placeholder="Localidad" value="<%= typeof old != "undefined" ? old.neighborhood : "" %>">
+                    <div class="invalid-feedback" style="margin: 1vw 0;">
+                      <%if(locals.errors && errors.neighborhood){%>
+                        <%=errors.neighborhood.msg%>
+                      <%}%>
+                    </div>
+                  </div>                 
+              </div>
+
+              <div class="mb-3 input-text-area inputs-text">
+                <textarea class="form-control input-text-area <%= locals.errors && errors.notes ? "is-invalid" : null%>" id="notes" name="notes" placeholder="Aclaraciones para el envío" rows="6"><%= typeof old != "undefined" ? old.notes : null %></textarea>
+                <div class="invalid-feedback" style="margin: 1vw 0;">
+                  <%if(locals.errors && errors.notes){%>
+                    <%=errors.notes.msg%>
+                  <%}%>
+                </div>
+              </div>
+  
+            <!----------------------------------    BOOSTRAP   ------------------------------------------>
+                
+            <div class="container-buttons">
+                <button type="submit" class="btn btn-editar">Guardar</button>
+                <a href="/" class="btn btn-borrar">Cancelar</a>
+            </div>
+          </form>
+
+    </main>
+<%- include("./partials/footer") %> 
+    <script src="/js/productLoading.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+.address  {
+    background-image: url('/images/background/TecladoMecanicoAmarillo.jpg');
+    /* background-size: contain; */
+    background-attachment: fixed;
+    background-position:center;
+}
+/* titulo */
+
+.address main .title {
+    font-size: 7.3vw;
+    color: #ffffff;
+    text-align: center;
+    margin: 10% 0% 2% 0%;
+    font-weight: bold;
+    text-shadow: -2px 2px 2px black;
+}
+
+/* Formulario */
+
+
+.address main .formCreacion{
+    width: 95%;
+    margin: 3vw auto 10vw auto;
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/* Inputs files */
+
+.address main form .title-images{
+    width: 71.1vw;
+    display: block;
+    margin: auto;
+}
+
+.address main form .c-imagenes{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-bottom: 20vw;
+}
+
+.address main form .c-imagenes .input-file{
+    text-align: center;
+    margin: 3.1vw;
+}
+
+.address main form .c-imagenes .file{
+    display: none;
+}
+
+.address main form .c-imagenes .preview{
+    padding: 1vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.address main form .c-imagenes .preview img{
+    width: 70%;
+}
+
+.address main form .c-imagenes .preview .delete{
+    display: none;
+}
+
+
+.address main form .c-imagenes .file-agregar{
+    background-color: #3D2ED0;
+    color: white;
+    margin: 1vw;
+}
+
+.address main form .c-imagenes .file-quitar{
+    background-color: #dc3545;
+    color: white;
+    margin: 1vw;
+}
+
+/* resto de Inputs */
+
+.address main form .container-inputs{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.address main form .container-inputs .inputs-text{
+    margin-bottom: 7vw;
+}
+
+
+.address main form .input-text-area{
+    margin: auto;
+    resize: none;
+}
+
+.address main form .container-buttons{
+    text-align: end;
+    width: 93%;
+    margin: auto;
+}
+
+.address main form .container-buttons .btn-editar{
+    background-color: #3D2ED0;
+    color: white;
+    margin: 0.6vw;
+
+}
+
+.address main form .container-buttons .btn-editar:hover {
+    color: #fff;
+    background-color: #372aad;
+}
+
+.address main form .container-buttons .btn-borrar{
+    background-color: #dc3545;
+    color: white;
+    margin: 1vw;
+
+}
+
+.address main form .container-buttons .btn-borrar:hover {
+    color: #fff;
+    background-color: #bb2d3b;
+    border-color: #b02a37;
+}
+
+
+.address form .form-control:focus,.form-select:focus{
+    border-color: #3D2ED0;
+    box-shadow: 0 0 0 0.25rem #3e2ed063;
+} 
+
+
+@media (min-width:768px){
+
+/* titulo */
+
+    .address main .title{
+        width: 80%;
+        font-size: 4vw;
+        margin: 3.7vw auto 0% auto;
+        text-align: left;
+    }
+
+/* Formulario */
+
+    .address main .formCreacion{
+        width: 80%;
+        margin: 3vw auto 10vw auto;
+        background-color: white;
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    .address main .formCreacion .c-title-error{
+        width: 90%;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    } 
+
+    .address main .formCreacion .c-title-error .title-images{
+        display: inline-block;
+        width: unset;
+        margin: unset;
+    }
+
+/* Input file */
+
+    .address main form .c-imagenes{
+        flex-direction: row;
+        margin-bottom: 0;
+    }
+
+    .address main form .c-imagenes .input-file{
+        width: 19.3vw;
+    }
+
+    .address main form .c-imagenes .preview{
+        height: 16vw;
+    }
+
+/* resto de Inputs */
+
+    .address main form .container-inputs{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;        
+        flex-direction: row;
+
+    }
+
+    .address main form .container-inputs .inputs-text {
+        margin-bottom: 1vw;
+    }
+
+    .address main form .container-inputs .input-selects{
+        width: 19.3vw;
+    }
+
+    .address main form .input-text-area{
+        width: 71.1vw;
+    }
+
+}
+
+@media (min-width:1024px){
+
+/* titulo */
+
+    .address main .title{
+        font-size: 2.5vw;
+    }
+    
+/* Formulario */
+
+
+/* Input file */
+
+
+}

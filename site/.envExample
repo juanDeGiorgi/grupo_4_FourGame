@@ -1,6 +1,6 @@
 
 /* ejemplo de las variables de entoron del proyecto */
 
-DB_PASSWORD= pepe123
+DB_PASSWORD= 1234
 DB_USER= root 
 DB_HOST= localhost

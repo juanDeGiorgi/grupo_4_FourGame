@@ -158,6 +158,35 @@ module.exports={
 
 
         }
-    }
+    },
+    address : (req,res) => {
+       const countrys = db.countrys.findAll()
+       const states = db.states.findAll()
 
+       Promise.all([countrys,states])
+       .then(([countrys,states])=> {
+           res.render('address',{countrys,states})
+       })
+    },
+    
+    createAddress : (req,res) => {
+        const errors = validationResult(req);
+
+        if(errors.isEmpty()){
+
+        }else{
+            const countrys = db.countrys.findAll()
+            const states = db.states.findAll()
+     
+            Promise.all([countrys,states])
+            .then(([countrys,states])=> {
+                res.render('address',{
+                    countrys,
+                    states,
+                    old : req.body,
+                    errors : errors.mapped()
+                })
+            })
+        }
+    }
 }

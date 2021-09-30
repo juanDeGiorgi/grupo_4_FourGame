@@ -5,7 +5,32 @@
     background-size:cover;
     background-attachment: fixed;
 }
-
+.cart main {
+    position: relative;
+}
+.cart .titleContainer{
+    display: flex;
+    flex-direction: row;
+    margin-top: 6%;
+}
+.cart h1 {
+    display: inline-block;
+    color: rgb(255, 254, 254);
+    text-align: center;
+    margin-left: 3%;
+}
+.cart .fa-arrow-left {
+    font-size: 1em;
+    color: rgb(255, 254, 254);
+    position: absolute;
+    right: 12%;
+    font-size: 1.4em;
+    margin: 2%;
+}
+.cart .fa-arrow-left:hover {
+    font-size: 1.6em;
+    color: rgba(42, 138, 175, 0.774)
+}
 .cart .product {
     display: flex;
     background-color: rgb(255, 255, 255);
@@ -15,6 +40,7 @@
     border-radius: 10px;
     flex-wrap: wrap;
     flex-direction: column;
+    position: relative;
 }
 .cart .imageContainer {
     background-color: rgb(255, 255, 255);
@@ -54,8 +80,8 @@
     text-align: center;
 }
 .cart .fa-trash-alt{
-    display: inline;
-    
+    display: inline-block;
+
 }
 .cart .trash{
     margin: 2% 5%;
@@ -78,7 +104,7 @@
     font-size: 1.3em;
 }
 .cart .fa-minus:hover{
-    color: rgb(182, 7, 7);
+    color: #FF051C;
     font-size: 1.3em;
 }
 .cart .payMethod {
@@ -93,10 +119,11 @@
     width: 100%;
 }
 .cart form h3{
-    font-size: 1.3em;
+    font-size: 1.2em;
     text-align: center;
     margin: 4% auto;
     display: block;
+    padding: 0 2%;
 }
 .cart .radioContainer label{
     font-size: 14px;
@@ -118,18 +145,26 @@
 }
 .cart .buttonContainer{
     width: 50%;
-    margin: 5% auto;
+    margin: 5% auto 10% ;
 }
 .cart .buy {
     color: rgb(255, 255, 255);
     width: 100%;
     font-size: 1.4em;
-    background-color: #3D2ED0;
+    background-color: #CA2938D6;
     margin: 5% auto;
+    border-radius: 10px;
+    height: 40px;
+    font-weight: bold;
 }
+.cart .buy:hover {
+    background-color: #FF051C;
+
+}
+
 @keyframes trash{
     0% { opacity: 50%;
-        color: red}
+        color: #FF051C;}
     25% { transform : rotate(360deg);
         opacity: 100%;
         font-size : 1.5em
@@ -143,12 +178,106 @@
 /* tablet */
 
 @media (min-width:768px){
+    .cart .fa-arrow-left:hover {
+        font-size: 1.9em;
+    }
+    .cart .name {
+        font-size: 1.5em;
+    }
+    .cart .trash{
+    font-size: 1.7em;
+    }
+    .cart .imageContainer img {
+    margin: 7% auto;
+}
+    .cart .commandsContainer i {
+        font-size: 1.4em;
+    }
+    .cart .commandsContainer i:hover {
+        font-size: 1.5em;
+    }
+    .cart .quantity {
+        font-size: 23px;
+    }
+    .cart .price {
+        font-size: 1.2em;
+        margin-top: 6%;
+    }
+    .cart form h3 {
+        font-size: 1.4em;
+    }
+    .cart .radioContainer label {
+        font-size: 1.2em;
+    }
+    .cart .radioContainer {
+        margin-left: 7%;
+    }
+    .cart .product{
+        width: 60% ;
+        height: 25vw;
+    }
+    .cart .payMethod {
+        width: 60%;
+        height: 25vw;
+        margin: 10% auto 3%;
+    }
+    .cart .buttonContainer {
+        text-align: center;
+    }
+    .cart .buy {
+        width: 66%;
+        margin: 5% auto;
 
+    }
 }
 
 /* escritorio */
 
 @media (min-width:1024px){
-   
-
+    .cart {
+        background-size:initial;
+    }
+    .cart .product {
+        margin: 5% auto 5%;
+    }
+    .cart .payMethod {
+        margin: 0% auto -3%;
+    }
+    .cart .product {
+        width: 55%;
+        height: 17vw;
+    }
+    .cart .imageContainer {
+        width: 26%;
+        height: 30vw;
+    }
+    .cart .infoContainer {
+        height: 7vw;
+        width: 70%;
+    }
+    .cart .commandsContainer {
+        width: 45%;
+        height: 3vw;
+    }
+    .cart .payMethod {
+        width: 55%;
+        height: 17vw;
+    }
+    .cart .payMethod .totalPrice {
+        margin: -2%;
+    }
+    .cart .buy {
+    width: 34%;
+}
 } 
+@media (min-width: 1200px) {
+
+    .cart .product {
+        width: 45%;
+        height: 15vw;
+    }
+    .cart .payMethod {
+        width: 45%;
+        height: 15vw;
+    }
+ }

@@ -1,497 +1,283 @@
-/* /* main                          */
 
 .cart {
-    /* background-image: url(/images/background/GamerZone.jpg); */
-
-    background-color: gray;
-    background-position: center;
+    background-image: url(/images/background/pcMasterRace.jpg);
+    background-position: left;
     background-size:cover;
     background-attachment: fixed;
 }
-
-.cart main section .contenedor-c{
+.cart main {
+    position: relative;
+}
+.cart .titleContainer{
     display: flex;
-    align-items: baseline;
     flex-direction: row;
-    flex-wrap: nowrap;
-    width: 90%;
-    justify-content: space-between;
+    margin-top: 6%;
 }
-
-.cart main section .carrito{
-    font-size: 22px;
-    margin: 10% 0% 0% 10%;
-    color: white;
-    font-weight: bold;
-    text-shadow: -2px 2px 2px black;
-}
-
-.cart main section  .back{
-    font-size: 200%;
-    text-shadow: 6px 2px 8px rgb(0, 0, 0);}
-
-.cart main section  .back i{
-    color: white;
-}
-
-.cart main section  .back:active{
-    text-shadow: none;
-}
-
-/* producto */
-
-.cart main section article{
-    background-color: #ffffffd6;
-    border-radius: 12px;
-    padding: 7%;
-    margin: 5% 10% 10% 10%;
-    position: relative;
+.cart h1 {
+    display: inline-block;
+    color: rgb(255, 254, 254);
     text-align: center;
+    margin-left: 3%;
 }
-
-.cart main section .c-envios{
-    padding: 4%;
-}
-
-.cart main section .eliminar {
-    top: 3%;
-    left: 87%;
-    font-size: 8vw;
+.cart .fa-arrow-left {
+    font-size: 1em;
+    color: rgb(255, 254, 254);
     position: absolute;
-    text-shadow: 0px 5px 4px rgb(100 100 100 / 57%);
+    right: 12%;
+    font-size: 1.4em;
+    margin: 2%;
 }
-
-.cart main section .eliminar:active{
-    text-shadow: none;
+.cart .fa-arrow-left:hover {
+    font-size: 1.6em;
+    color: rgba(42, 138, 175, 0.774)
 }
-
-.cart main section .eliminar i{
-    color: red;
-    text-shadow: 2px 2px 2px black;
-}
-
-.cart main section .descripcion {
-    margin: 10% 1% 10% 0%;
-    font-size: 5vw;
-}
-
-.cart main section  .cuotas{
-    display: none;
-}
-
-.cart main section  .b-cuotas{
-    display: none;
-}
-
-.cart main section  .b-cuotas:hover{
-    color: #6152e2;
-}
-
-.cart main section  .b-cuotas:active{
-    color: #897fe4;
-}
-
-.cart main section .d-cantidad{
-    text-align: left;
-}
-
-.cart main section .cantidad {
-    margin: 10% 19.3vw 10% 0%;
-    font-weight: 700;
-    font-size: 4.9vw;
-    display: inline-block;
-}
-
-.cart main section .b-suma {
-    color: #F2204D;
-    background-color: #fff0;
-    font-size: 8vw;
-}
-
-.cart main section .b-suma:hover{
-    color: #cc1a40;
-}
-
-.cart main section .b-suma:active{
-    color: #a81535;
-}
-
-.cart main section .n-cantidad {
-    font-weight: 700;
-    font-size: 8vw;
-    display: inline-block;
-    margin: 0% 1%;
-}
-
-.cart main section .c-precio{
+.cart .product {
     display: flex;
-    justify-content: space-between;
-    align-content: flex-end;
-    align-items: flex-end;
-}
-
-.cart main section .precio {
-    font-weight: 700;
-    display: inline-block;
-    font-size: 6vw;
-}
-
-.cart main section .p-cantidad {
-    font-weight: 700;
-    display: inline-block;
-    font-size: 6vw;
-}
-
-/* envios */
-
-.cart main section .fa-truck{
-    font-size: 12vw;
-    margin: 10% 9% 10% 0%;
-}
-
-.cart main section .envio{
-    display: inline-block;
-    font-weight: 700;
-}
-
-.cart main section .direccion{
-    color: #B2A7A7;
-    margin: 0% 0% 0% 0%;
-
-}
-
-.cart main section .cambiar{
-    color: #3D2ED0;
-    margin: 15% 0% 0% 0%;
-    font-size: 5vw;
-    font-weight: 600;
-    /* text-shadow: 0px 5px 4px rgb(100 100 100 / 57%); */
-    text-align: center;
-}
-
-.cart main section .cambiar:hover{
-    color: #6152e2;
-}
-
-.cart main section .cambiar:active{
-    color: #897fe4;
-}
-
-/* tarjetas */
-
-.cart main section article .contenedor-t{
+    background-color: rgb(255, 255, 255);
+    height: 30vw;
+    width: 80%;
+    margin: 10% auto 15%;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    flex-direction: column;
     position: relative;
 }
-
-.cart main section article .tarjetas-logo{
-    width: 50% ;
+.cart .imageContainer {
+    background-color: rgb(255, 255, 255);
+    width: 36%;
+    border-radius: 10px;
+    height: 30vw;
+    order: -3;
 }
+.cart .imageContainer img {
+    width: 100%;
+    border-radius: 10px;
+    margin: 4% auto;
+}
+.cart .infoContainer {
+    background-color: rgb(255, 255, 255);
+    height: 10vw;
+    width: 60%;
+    border-radius: 10px;
+    order: -2;
+    display: flex;
+    align-items: first baseline;
+    justify-content: center;
 
-.cart main section article .tarjetas{
+}
+.cart .name {
+    text-align: center;
+    margin: 6% 7%;
+    font-size: 1.1em;
+    line-height: 19px;
+    display: inline-block;
+}
+.cart .commandsContainer {
+    width: 55%;
+    height: 10vw;
+    order: -1;
+    margin: 4% auto;
+    text-align: center;
+}
+.cart .fa-trash-alt{
+    display: inline-block;
+
+}
+.cart .trash{
+    margin: 2% 5%;
+}
+.cart .trash:hover{
+    animation: trash 1s infinite;
+}
+.cart .price {
+    display: block;
+    margin: 5% auto;
+    font-weight: bold;
+}
+.cart .quantity {
+    margin: 2% 7%;
+    font-size: 17px;
+    font-weight: bold;
+}
+.cart .fa-plus:hover{
+    color: rgb(35, 184, 5);
+    font-size: 1.3em;
+}
+.cart .fa-minus:hover{
+    color: #FF051C;
+    font-size: 1.3em;
+}
+.cart .payMethod {
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    height: 44vw;
+    width: 80%;
+    margin: 10% auto 15%;
+    border-radius: 10px;
+}
+.cart form{
     width: 100%;
 }
-
-.cart main section article .ahora12{
-    width: 25%;
-    position: absolute;
-    top: 57.2%;
-    left: 4.3%;
-}
-
-.cart main section article .p-total{
-    font-weight: 700;
-    font-size: 8vw;
-    margin: 33% 0% 30% 0%;
-}
-
-.cart main section article .finalizar {
-    color: white;
-    background-color: #3D2ED0;
-    border-radius: 22px;
-    font-size: 4.9vw;
-    padding: 9% 22% 9% 22%;
-    font-weight: 600;
+.cart form h3{
+    font-size: 1.2em;
     text-align: center;
+    margin: 4% auto;
+    display: block;
+    padding: 0 2%;
+}
+.cart .radioContainer label{
+    font-size: 14px;
+}
+.cart .radioContainer label:hover{
+    font-size: 16px;
+}
+.cart .radioContainer{
+    display: block;
+    margin-bottom: 3%;
+    margin-left: 2%;
+}
+.cart .payMethod .totalPrice {
+    text-align: center;
+    display: block;
+    font-size: 1.33em;
+    color: #363694;
+    font-weight: normal;
+}
+.cart .buttonContainer{
+    width: 50%;
+    margin: 5% auto 10% ;
+}
+.cart .buy {
+    color: rgb(255, 255, 255);
+    width: 100%;
+    font-size: 1.4em;
+    background-color: #CA2938D6;
+    margin: 5% auto;
+    border-radius: 10px;
+    height: 40px;
+    font-weight: bold;
+}
+.cart .buy:hover {
+    background-color: #FF051C;
+
 }
 
-.cart main section article .finalizar:hover{
-    background-color: #3021b9;
-}
-
-.cart main section article .finalizar:active{
-    background-color: #241a81;
-}
-
+@keyframes trash{
+    0% { opacity: 50%;
+        color: #FF051C;}
+    25% { transform : rotate(360deg);
+        opacity: 100%;
+        font-size : 1.5em
+    }
+    
+    100%{
+        transform: rotate(360deg);
+    }
+    
+}   
 /* tablet */
 
 @media (min-width:768px){
-
-    .cart main section .contenedor-c {
-        margin-bottom: 4vw;
+    .cart .fa-arrow-left:hover {
+        font-size: 1.9em;
     }
-
-    .cart main section .div-productos{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
+    .cart .name {
+        font-size: 1.5em;
     }
-
-    .cart main section article{
-        text-align: left;
+    .cart .trash{
+    font-size: 1.7em;
     }
-
-    .cart main section .carrito{
-        font-size: 3.3vw;
-        margin: 10% 0% 0% 12%;
+    .cart .imageContainer img {
+    margin: 7% auto;
+}
+    .cart .commandsContainer i {
+        font-size: 1.4em;
     }
-
-    .cart main section .back{
-        font-size: 5vw;
+    .cart .commandsContainer i:hover {
+        font-size: 1.5em;
     }
-
-    .cart main section .eliminar{
-        font-size: 3.4vw;
-        top: 5%;
-        left: 83.6%;
+    .cart .quantity {
+        font-size: 23px;
     }
-
-    .cart main section .c-producto{
-        position: relative;
-        margin: 0 0 3.1vw 0;
-        width: 40%;
-        height: 61.4vw;
-        padding: 44.5px;
-        display: inline-block;
+    .cart .price {
+        font-size: 1.2em;
+        margin-top: 6%;
     }
-
-    .cart main section .descripcion{
-        font-size: 2.4vw;
+    .cart form h3 {
+        font-size: 1.4em;
     }
-
-    .cart main section  .d-cantidad{
-        text-align: initial;
+    .cart .radioContainer label {
+        font-size: 1.2em;
     }
-
-    .cart main section .cantidad {
-        margin: 0% 6.9vw 0% 0%;
-        font-size: 2.3vw;
+    .cart .radioContainer {
+        margin-left: 7%;
     }
-
-    .cart main section .b-suma {
-        font-size: 2.9vw;
+    .cart .product{
+        width: 60% ;
+        height: 25vw;
     }
-
-    .cart main section .n-cantidad {
-        font-size: 3.5vw;
-        position: relative;
+    .cart .payMethod {
+        width: 60%;
+        height: 25vw;
+        margin: 10% auto 3%;
     }
-
-    .cart main section .precio {
-        margin: 10% 0% 0% 0%;
-        font-size: 2.3vw;
-    }
-
-    .cart main section .p-cantidad {
-        font-size: 2.7vw;
-        margin: 0;
-    }
-
-    /* direccion tablet */
-
-    .cart main section .div-envios-trajetas{
-        display: flex;
-        justify-content: space-evenly;
-    }
-
-    .cart main section .c-envios{
-        height: 14.7vw;
-        width: 40%;
-        display: inline-block;
-        margin: 0;
-        padding: 0;
-    }
-
-    .cart main section .fa-truck{
-        position: absolute;
-        left: 6vw;
-        top: -2vw;
-        font-size: 5.3vw;
-        margin: 15.3% 0% 0% -6.3%;
-    }
-
-    .cart main section .envio{
-        font-size: 2.2vw;
-        display: inline-block;
-        margin: 0% 0% 0% -4.1%;
-        position: absolute;
-        top: 15%;
-        left: 37.1%;
-    }
-    
-    .cart main section .direccion{
-        font-size: 2.2vw;
-        position: absolute;
-        top: 35.1%;
-        left: 33.2%;
-    }
-
-    .cart main section .cambiar{
-        font-size: 1.9vw;
-        margin: 15.1% 0% 0% -6.8%;
-        position: absolute;
-        top: 38%;
-        left: 39.8%;
-        cursor: pointer;
-    }
-
-    /* finalizar compra */
-
-    .cart main section .c-tarjetas {
-        width: 40%;
-        padding: 28px;
-        display: inline-block;
-        margin: 0;
+    .cart .buttonContainer {
         text-align: center;
     }
+    .cart .buy {
+        width: 66%;
+        margin: 5% auto;
 
-    .cart main section article .p-total{
-        font-size: 3vw;
-        margin: 3vw 0 3vw 0;
     }
-
-    .cart main section article .finalizar {
-        border-radius: 15.5px;
-        font-size: 130.6%;
-        padding: 4% 9% 5% 9%;
-    } 
-
 }
-
 
 /* escritorio */
 
 @media (min-width:1024px){
-
-    .cart main section .div-productos{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        width: 80%;
-        margin: 0 auto 4.5vw auto;
+    .cart {
+        background-size:initial;
     }
-
-    .cart main section .contenedor-c {
-        margin-bottom: 0.7vw;
+    .cart .product {
+        margin: 5% auto 5%;
     }
-
-    .cart main section .carrito{
-        font-size: 2.8vw;
-        margin: 10% 0% 0% 15.7%;
-    } 
-
-    .cart main section .back{
-        font-size: 3.3vw;
-        cursor: pointer;
-        margin-right: 5.2vw;
+    .cart .payMethod {
+        margin: 0% auto -3%;
     }
-
-    .cart main section .c-producto{
-        height: 15.3vw;
-        text-align: initial;
-        padding: 10px;
-        width: 46.1%;
-        margin: 2% 0 0 0;
+    .cart .product {
+        width: 55%;
+        height: 17vw;
     }
-   
-    .cart main section article .c-img{
-        width: 28.9%;
-        display: inline-block;
-        height: 100%;
+    .cart .imageContainer {
+        width: 26%;
+        height: 30vw;
     }
-    
-    .cart main section article img{
-        width: 90%;
-    }
-
-    .cart main section article .infoProducto{
+    .cart .infoContainer {
+        height: 7vw;
         width: 70%;
-        display:inline-block;
-        height: 100%;
     }
-
-    .cart main section .eliminar{
-        font-size: 1.9vw;
-        margin: 1.6% 0% 0% 1%;
-        cursor: pointer;
+    .cart .commandsContainer {
+        width: 45%;
+        height: 3vw;
     }
-
-    .cart main section .descripcion{
-        font-size: 1.4vw;
-        margin: 1.5% 0% 2% 0%;
+    .cart .payMethod {
+        width: 55%;
+        height: 17vw;
     }
-
-    .cart main section .cantidad{
-        font-size: 3vw;
+    .cart .payMethod .totalPrice {
+        margin: -2%;
     }
-
-    .cart main section .b-suma{
-        font-size: 2.3vw;
-        cursor: pointer;
-    }
-
-    .cart main section .n-cantidad{
-        font-size: 2.8vw;
-        margin: 0% 3%;
-    }
-
-    .cart main section .c-precio{
-        justify-content: flex-start;
-    }
-
-    .cart main section .precio{
-        font-size: 1.9vw;
-        margin: 3% 27.9% 0% 0%;
-    }
-
-    .cart main section .cantidad{
-        font-size: 1.8vw;
-        margin: 0% 19.5% 0% 0%;
-    }
-
-    .cart main section .p-cantidad{
-        font-size: 2vw;
-        margin-bottom: 0;
-    }
-
-    .cart main section .cuotas{
-        color: #33CC33;
-        font-size: 1.4vw;
-        margin: 0% 0% 1% 0%;
-        display: inline-block;
-    }
-    
-    .cart main section .b-cuotas{
-        color: #3D2ED0;
-        margin: 0% 0% 1% 0%;
-        font-size: 1.5vw;
-        display: block;
-        cursor: pointer;
-    }
-
-    .cart main section .div-envios-trajetas{
-        display: flex;
-        flex-direction: row;    
-        justify-content: space-evenly;
-        width: 80%;
-        margin: auto;
-    }
-
-    .cart main section .c-envios{
-        width: 46.1%;
-    }
-
-    .cart main section .c-tarjetas {
-        width: 46.1%;
-    }
-
+    .cart .buy {
+    width: 34%;
+}
 } 
+@media (min-width: 1200px) {
+
+    .cart .product {
+        width: 45%;
+        height: 15vw;
+    }
+    .cart .payMethod {
+        width: 45%;
+        height: 15vw;
+    }
+ }

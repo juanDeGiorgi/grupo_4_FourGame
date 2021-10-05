@@ -4,6 +4,16 @@ const fsMethods = require("../utils/fsMethods");
 const bcrypt = require('bcryptjs');
 const {validationResult, Result} = require('express-validator');
 
+const nodemailer = require("nodemailer");
+const sendGridTransport = require("nodemailer-sendgrid-transport");
+const YOUR_API_KEY = process.env.SENDGRID_KEY;
+const transporter = nodemailer.createTransport(sendGridTransport({
+    auth:{
+        api_key:YOUR_API_KEY
+    }
+})) 
+
+
 const db = require('../database/models');
 const { Op } = require('sequelize');
 
@@ -68,6 +78,17 @@ module.exports={
                 loginDate : new Date
             }).then(userCreated => {
 
+                transporter.sendMail({
+                    to: userCreated.email,
+                    from: process.env.SENDGRID_EMAIL,
+                    subject: "Bienvenido a Four Game!!!",
+                    html: `<h3>Bienvenido!!! gracias por registrarte</h3>`
+                }).then(result =>{
+                    console.log(result);
+                }).catch(err =>{
+                    console.log(err);
+                })
+
                 req.session.userLogged = {
                     id : userCreated.id,
                     name: userCreated.name,
@@ -80,6 +101,7 @@ module.exports={
                 } 
 
                 res.redirect(`/users/profile/${userCreated.id}`)
+
                })
 
         }else{

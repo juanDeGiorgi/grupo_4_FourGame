@@ -5,7 +5,7 @@
  ## Descripcion de la pagina 
 
 **Four Game** es una empresa dedicada a la comercialización de productos tecnológicos,
-fundada en Enero del 2021 por un grupo de amigos aficionados a la tecnología y a los
+fundada en Enero del 2021 por un par de amigos aficionados a la tecnología y a los
 videojuegos, que un día decidieron formar parte de éste mundo a partir de una perspectiva de
 negocios.
 Al principio, nuestra actividad online estaba limitada a las redes sociales y era un público
@@ -30,9 +30,7 @@ Me llamo Juan De Giorgi,vivo en La Plata, Buenos Aires. Actualmente realizo el c
 
 Me llamo Ezequiel Rango, tengo 21 años y vivo en Rosario. Actualmente curso una Tecnicatura en Desarrollo de Software, Programación web fullstack con FORMAR y Digital House, Inglés para desarrollo de software de Polotic Misiones y realizo un curso de electricidad en mi ciudad.En mis tiempos libres me gusta reunirme con amigos, familiares, jugar videojuegos, leer y pasear en moto o bicicleta. Me dedico a la comercialización de juegos para PS3, PS4 y PS5.
 
- ### Gonzalo Horacio Emanuel Gonzalez  
 
-Me llamo Gonzalo Horacio Emanuel Gonzalez, tengo 20 años y vivo en San Miguel, Buenos Aires. En éstos momentos estoy participando de la capacitacón "programación web full stack" llevada a cabo por parte de Digital House y FORMAR. Actualmente estudio Licenciatura en Sistemas y realizo el curso de Inglés para desarrollo de software de Polotic Misiones. Me encanta tocar la guitarra, escuchar música, cantar y la tecnología. Me dedico a la reparación y comercialización de celulares.
 
   ## Referentes usados 
 

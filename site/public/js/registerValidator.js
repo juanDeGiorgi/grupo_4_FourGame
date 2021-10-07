@@ -100,7 +100,7 @@ window.addEventListener("load",() =>{
     })
     
     console.log(errors);
-    form.addEventListener("submit",(e) =>{
-        e.preventDefault()
-    })
+    // form.addEventListener("submit",(e) =>{
+    //     e.preventDefault()
+    // })
 })

@@ -8,7 +8,7 @@
     <main>
           <h1 class="title"> Agregar dirección:</h1>
           
-          <form class="formCreacion" action="/users/address/<%=locals.userLogged.id %> " method="POST" >
+          <form id="formAddress" class="formCreacion" action="/users/address/<%=locals.userLogged.id %> " method="POST" >
 
             <!----------------------------------    BOOSTRAP   ------------------------------------------>
  
@@ -16,7 +16,8 @@
               <div class="container-inputs">
                   <div class="col-md-3 inputs-text">
                     <input type="text" class="form-control <%= locals.errors && errors.street ? "is-invalid" : null%>" id="street" name="street" placeholder="Calle" value="<%= typeof old != "undefined" ? old.street : "" %>">
-                    <div class="invalid-feedback" style="margin: 1vw 0;">
+                    <div class="invalid-feedback" style="margin: 1vw 0;min-height: 1vw; text-align: center;">
+                      <p id="errorStreet" class="error"></p>
                       <%if(locals.errors && errors.street){%>
                         <%=errors.street.msg%>
                       <%}%>
@@ -25,7 +26,8 @@
 
                   <div class="col-md-3 inputs-text">
                     <input type="text" class="form-control <%= locals.errors && errors.number ? "is-invalid" : null%>" id="number" name="number" placeholder="Altura" value="<%= typeof old != "undefined" ? old.number : "" %>">
-                    <div class="invalid-feedback" style="margin: 1vw 0;">
+                    <div class="invalid-feedback" style="margin: 1vw 0;min-height: 1vw; text-align: center;">
+                      <p id="errorNumber" class="error"></p>
                       <%if(locals.errors && errors.number){%>
                         <%=errors.number.msg%>
                       <%}%>
@@ -34,8 +36,9 @@
                   
                   <div class="col-md-3 inputs-text">
                     <input type="text" class="form-control <%= locals.errors && errors.postalCode ? "is-invalid" : null%>" id="postalCode" name="postalCode" placeholder="Código postal" value="<%= typeof old != "undefined" ? old.postalCode : "" %>">
-                    <div class="invalid-feedback" style="margin: 1vw 0;">
-                      <%if(locals.errors && errors.postalCode){%>
+                    <div class="invalid-feedback" style="margin: 1vw 0;min-height: 1vw; text-align: center;">  
+                      <p id="errorPostalCode" class="error"></p>             
+                             <%if(locals.errors && errors.postalCode){%>
                         <%=errors.postalCode.msg%>
                       <%}%>
                     </div>
@@ -49,8 +52,9 @@
                        <% }) %>
 
                     </select>
-                    <div class="invalid-feedback" style="margin: 1vw 0;">
-                      <%if(locals.errors && errors.countryId){%>
+                    <div class="invalid-feedback" style="margin: 1vw 0;min-height: 1vw; text-align: center;"> 
+                      <p id="errorCountry" class="error"></p>              
+                             <%if(locals.errors && errors.countryId){%>
                         <%=errors.countryId.msg%>
                       <%}%>
                     </div>
@@ -63,8 +67,9 @@
                         <option value="<%= state.id %>" <%= locals.old && old.stateId == state.id ? 'selected' : null%> ><%= state.name %></option>
                        <% }) %>
                     </select>
-                    <div class="invalid-feedback" style="margin: 1vw 0;">
-                      <%if(locals.errors && errors.state){%>
+                    <div class="invalid-feedback" style="margin: 1vw 0;min-height: 1vw; text-align: center;"> 
+                      <p id="errorState" class="error"></p>              
+                             <%if(locals.errors && errors.state){%>
                         <%=errors.state.msg%>
                       <%}%>
                     </div>
@@ -72,8 +77,9 @@
 
                   <div class="col-md-3 inputs-text">
                     <input type="text" class="form-control <%= locals.errors && errors.neighborhood  ? "is-invalid" : null%>" id="neighborhood" name="neighborhood"  placeholder="Localidad" value="<%= typeof old != "undefined" ? old.neighborhood : "" %>">
-                    <div class="invalid-feedback" style="margin: 1vw 0;">
-                      <%if(locals.errors && errors.neighborhood){%>
+                    <div class="invalid-feedback" style="margin: 1vw 0;min-height: 1vw; text-align: center;">   
+                      <p id="errorNeighborhood" class="error"></p>            
+                             <%if(locals.errors && errors.neighborhood){%>
                         <%=errors.neighborhood.msg%>
                       <%}%>
                     </div>
@@ -82,8 +88,9 @@
 
               <div class="mb-3 input-text-area inputs-text">
                 <textarea class="form-control input-text-area <%= locals.errors && errors.notes ? "is-invalid" : null%>" id="notes" name="notes" placeholder="Aclaraciones para el envío" rows="6"><%= typeof old != "undefined" ? old.notes : null %></textarea>
-                <div class="invalid-feedback" style="margin: 1vw 0;">
-                  <%if(locals.errors && errors.notes){%>
+                <div class="invalid-feedback" style="margin: 1vw 0;min-height: 1vw; text-align: center;">   
+                  <p id="notesError" class="error"></p>              
+                   <%if(locals.errors && errors.notes){%>
                     <%=errors.notes.msg%>
                   <%}%>
                 </div>
@@ -99,7 +106,7 @@
 
     </main>
 <%- include("./partials/footer") %> 
-    <script src="/js/productLoading.js"></script>
+    <script src="../js/addressValidator.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>

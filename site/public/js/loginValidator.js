@@ -56,11 +56,11 @@ window.addEventListener('load',()=>{
     }
  })
 
- form.addEventListener('submit',(e)=>{
-     e.preventDefault()
+//  form.addEventListener('submit',(e)=>{
+//      e.preventDefault()
 
 
- })
+//  })
 
 })
 

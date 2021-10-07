@@ -96,9 +96,18 @@
     border: 2px solid #3D2ED0;
 }
 
+.register .is-invalid{
+    background-image: url(../images/icon/is-invalid.svg);
+    background-repeat: no-repeat;
+    background-position: right calc(.375em + .1875rem) center;
+    background-size: calc(.75em + 0.775rem) calc(3.45em + 1.575rem);
+}
+
 .register .error{
     color: red; 
     font-size: 4.7vw;
+    margin: 0;
+    line-height: normal;
 }
 
 .register .captcha {

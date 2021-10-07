@@ -15,32 +15,44 @@
         </div>
 
 
-        <form class="contenedorlogin" action="/users/register" method="POST">
+        <form id="register-form" class="contenedorlogin" action="/users/register" method="POST">
 
             <i class="fas fa-user-circle item-user"></i>
             <h1>Registrate</h1>
            <div class="cajapadre">
             <div class="box-input">
-                <input name="name" class="sesioninit" type="text" placeholder="Nombre" value = <%= typeof old != 'undefined' && old.name ? old.name : null %>  >
-                <%if(locals.errors && errors.name){%>  
-                    <p class="error"><%=errors.name.msg%></p> 
-                <%}%>
+                <input id="name" name="name" class="sesioninit" type="text" placeholder="Nombre" value = <%= typeof old != 'undefined' && old.name ? old.name : null %>  >
+                <div style="min-height: 1vw;">
+                    <p id="error-name" class="error"></p>
+                    <%if(locals.errors && errors.name){%>  
+                        <p class="error"><%=errors.name.msg%></p> 
+                    <%}%>
+                </div>
 
-                <input name="email" class="sesioninit" type="text" placeholder="Email" value = <%= typeof old != 'undefined' && old.email ? old.email : null %> >
-                <%if(locals.errors && errors.email){%>  
-                    <p class="error"><%=errors.email.msg%></p> 
-                <%}%>
+                <input id="email" name="email" class="sesioninit" type="text" placeholder="Email" value = <%= typeof old != 'undefined' && old.email ? old.email : null %> >
+                <div style="min-height: 1vw;">
+                    <p id="error-email" class="error"></p>
+                    <%if(locals.errors && errors.email){%>  
+                        <p class="error"><%=errors.email.msg%></p> 
+                    <%}%>
+                </div>
             </div>
 
            <div class="box-input2">
-            <input name="password" class="sesioninit" type="password" placeholder="Contraseña" >
-            <%if (locals.errors && errors.password) {%>
-                <p class="error"><%=errors.password.msg%></p>
-            <% } %> 
-            <input name="password2" class="sesioninit" type="password" placeholder="Confirmar contraseña" >
-            <%if (locals.errors && errors.password2) {%>
-                <p class="error"><%=errors.password2.msg%></p>
-            <% } %> 
+            <input id="password" name="password" class="sesioninit" type="password" placeholder="Contraseña" >
+            <div style="min-height: 1vw;">
+                <p id="error-pass" class="error"></p>
+                <%if (locals.errors && errors.password) {%>
+                    <p class="error"><%=errors.password.msg%></p>
+                <% } %> 
+            </div>
+            <input id="password2" name="password2" class="sesioninit" type="password" placeholder="Confirmar contraseña" >
+            <div style="min-height: 1vw;">
+                <p id="error-pass2" class="error"></p>
+                <%if (locals.errors && errors.password2) {%>
+                    <p class="error"><%=errors.password2.msg%></p>
+                <% } %> 
+            </div>
         </div>
         </div>
 
@@ -60,8 +72,8 @@
             </div>
     </main>
     <%- include("./partials/footer") %> 
+    <script src="/js/registerValidator.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
 </body>
 
 </html>

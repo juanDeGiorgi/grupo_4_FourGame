@@ -22,6 +22,7 @@
 
 
 
+
                            /*   MOBILE   */
 
 
@@ -84,6 +85,18 @@
     font-weight: 500;
     border: none;
     box-shadow: 0px 5px 12px 3px black;
+}
+.login .is-invalid{
+    background-image: url(../images/icon/is-invalid.svg);
+    background-repeat: no-repeat;
+    background-position: right calc(.375em + .1875rem) center;
+    background-size: calc(.75em + 0.775rem) calc(3.45em + 1.575rem);
+}
+.login .error{
+    color: red; 
+    font-size: 4.7vw;
+    margin: 0;
+    line-height: normal;
 }
 
 .login .sesioninit::placeholder{
@@ -254,7 +267,9 @@
     width: 22vw;
     margin: 3% auto;
 }
-
+.login .error {
+    font-size: 1vw;
+}
 .login .c-rememberSession {
     height: 5vw;
 }

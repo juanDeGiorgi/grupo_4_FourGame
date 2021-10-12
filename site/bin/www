@@ -13,7 +13,7 @@ const {Sequelize} = require('sequelize');
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '3032');
+var port = normalizePort(process.env.PORT || '3030');
 app.set('port', port);
 
 /**

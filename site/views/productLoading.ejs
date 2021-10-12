@@ -8,14 +8,17 @@
     <main>
           <h1 class="title">Formulario de creacion :</h1>
           
-          <form class="formCreacion" action="/products/create/<%=locals.userLogged.id %> " method="POST" enctype="multipart/form-data">
+          <form id="formProduct" class="formCreacion" action="/products/create/<%=locals.userLogged.id %> " method="POST" enctype="multipart/form-data">
 
             <!----------------------------------    BOOSTRAP   ------------------------------------------>
               <div class="c-title-error">
                 <label class="form-label title-images">Selecciona las imagenes : </label>
-                <%if( locals.errors && locals.errors.image){%>
-                  <p style="color: red;margin: unset;"><%=errors.image.msg%></p>
-                <%}%>
+                <div>
+                  <p id="errorImages" style="color: red;margin: unset;"></p>                  
+                  <%if( locals.errors && locals.errors.image){%>
+                    <p style="color: red;margin: unset;"><%=errors.image.msg%></p>
+                  <%}%>
+                </div>
               </div>
               <div class="c-imagenes">
                 <div class="mb-3 input-file">
@@ -24,7 +27,7 @@
                   </div>
                   <input type="file" id="image" name="image" class="file">
                   <label for="image" class="file-agregar btn">Agregar</label>
-                  <button type="button" id="quitar" onclick="limpiar(`image`,`preview-image`)" class="file-quitar btn">Quitar</button>
+                  <button type="button" id="quitar" onclick="limpiar(`image`,`preview-image`);" class="file-quitar btn">Quitar</button>
                 </div>
 
                 <div class="mb-3 input-file">
@@ -69,6 +72,7 @@
                     <label for="name" class="form-label">Nombre :</label>
                     <input type="text" class="form-control <%= locals.errors && errors.name ? "is-invalid" : null%>" id="name" name="name" placeholder="Nombre" value="<%= typeof old != "undefined" ? old.name : "" %>">
                     <div class="invalid-feedback" style="margin: 1vw 0;">
+                      <p id="errorName" class="error"></p>
                       <%if(locals.errors && errors.name){%>
                         <%=errors.name.msg%>
                       <%}%>
@@ -84,6 +88,7 @@
                       <option value="3"       <%= locals.old && old.type === "3" ? 'selected' : null %>>Pc armadas</option>
                     </select>
                     <div class="invalid-feedback" style="margin: 1vw 0;">
+                      <p id="errorType" class="error"></p>
                       <%if(locals.errors && errors.type){%>
                         <%=errors.type.msg%>
                       <%}%>
@@ -99,6 +104,7 @@
                       <option value="3" <%= locals.old && old.category === "3" ? 'selected' : null %>>Nuevo lanzamiento</option>
                     </select>
                     <div class="invalid-feedback" style="margin: 1vw 0;">
+                      <p id="errorCategory" class="error"></p>
                       <%if(locals.errors && errors.category){%>
                         <%=errors.category.msg%>
                       <%}%>
@@ -109,6 +115,7 @@
                     <label for="price" class="form-label">Precio :</label>
                     <input type="text" class="form-control <%= locals.errors && errors.price ? "is-invalid" : null%>" id="price" name="price" placeholder="Precio" value="<%= typeof old != "undefined" ? old.price : "" %>">
                     <div class="invalid-feedback" style="margin: 1vw 0;">
+                      <p id="errorPrice" class="error"></p>
                       <%if(locals.errors && errors.price){%>
                         <%=errors.price.msg%>
                       <%}%>
@@ -119,6 +126,7 @@
                     <label for="discount" class="form-label">Descuento :</label>
                     <input type="text" class="form-control <%= locals.errors && errors.discount  ? "is-invalid" : null%>" id="discount" name="discount"  placeholder="Descuento" value="<%= typeof old != "undefined" ? old.discount : "" %>">
                     <div class="invalid-feedback" style="margin: 1vw 0;">
+                      <p id="errorDiscount" class="error"></p>
                       <%if(locals.errors && errors.discount){%>
                         <%=errors.discount.msg%>
                       <%}%>
@@ -130,6 +138,7 @@
                 <label for="description" class="form-label">Descripcion :</label>
                 <textarea class="form-control input-text-area <%= locals.errors && errors.description ? "is-invalid" : null%>" id="description" name="description" placeholder="Ingresa la descripcion del producto" rows="6"><%= typeof old != "undefined" ? old.description : null %></textarea>
                 <div class="invalid-feedback" style="margin: 1vw 0;">
+                  <p id="errorDescription" class="error"></p>
                   <%if(locals.errors && errors.description){%>
                     <%=errors.description.msg%>
                   <%}%>
@@ -146,6 +155,7 @@
 
     </main>
 <%- include("./partials/footer") %> 
+<script src="/js/productValidator.js"></script>
     <script src="/js/productLoading.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>

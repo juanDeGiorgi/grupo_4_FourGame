@@ -76,7 +76,6 @@
 
         let elementosForm = form.elements
             
-        // });
         for (let i = 0; i < elementosForm.length - 1; i++) {
             if (elementosForm[i].value.trim() == "" && i != 5) {
                 switch (i) {

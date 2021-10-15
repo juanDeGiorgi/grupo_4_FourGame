@@ -22,7 +22,7 @@
         <div class="c-forms">
           <!-- SECTION INFORMACION -->
           <div id="info" style="padding-top: 1vw;">
-            <form class="formProfile" action="/users/profile/<%=user.id%>" method="POST" enctype="multipart/form-data">
+            <form id="formProfile" class="formProfile" action="/users/profile/<%=user.id%>" method="POST" enctype="multipart/form-data">
               <h2 class="t-blocks"><i class="fas fa-user" style="margin-right: 1vw;"></i> Información</h2>
               
               <div class="c-img-inputs">
@@ -30,7 +30,6 @@
                   <div class="mb-3 input-file">
                     <div class="preview" id="preview">
                       <img id="preview-image" src="<%= user.image ? `/images/users/${user.image}` : `/images/icon/default-image1.png`%>">
-                      <!-- <input class="delete" type="text" name="deleteImage" value=noBorrar id="<%=user.image%>"> -->
                     </div>
                     <input type="file" id="image" name="image" class="file">
                     <label for="image" class="file-agregar btn"><i class="fas fa-pen"></i>  Cambiar imagen</label>
@@ -44,13 +43,14 @@
                       <input id="name" class="input <%= locals.errors && errors.name ? "is-invalid" : null%>" type="text" name="name" placeholder="Nombre" value="<%= typeof old != "undefined" ? old.name : user.name %>">
                     </div>
                     <div class="div-error">
+                      <p id="errorName" class="error"></p>
                       <%if(locals.errors && errors.name){%>
                         <p class="error"><%=errors.name.msg%></p>
                       <%}%>
                     </div>
                   </div>
                   
-                  <div style="height: 5vw;">
+                  <div style="height: 5vw; margin: 1.5vw 0vw;">
                     <div class="c-input">
                       <label for="email">Email : </label>
                       <input id="email" class="input <%= locals.errors && errors.email ? "is-invalid" : null%>" type="text" name="email" value="<%= user.email %>" disabled>

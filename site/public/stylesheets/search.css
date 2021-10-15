@@ -205,10 +205,16 @@
     }
 
     .search main .productos {
-        display: flex;
+        /* display: flex;
         justify-content: space-evenly;
         flex-wrap: wrap;
-        width: 75%;
+        width: 75%; */
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, 5fr) 1fr;
+        grid-column-gap: 7px;
+        grid-row-gap: 13px;
     }
 
     .search main .aside-c{
@@ -381,6 +387,15 @@
       .search main .decoracion {
           margin-bottom:4vw;
       }
+
+    .search main .productos {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(8, 4fr) 1fr;
+        grid-column-gap: 50px;
+        grid-row-gap: 30px;
+        width: 73%;
+    }
 
       .search main section article {
           width: 18vw;

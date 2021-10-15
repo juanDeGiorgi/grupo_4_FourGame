@@ -22,22 +22,20 @@ module.exports = [
     .notEmpty().withMessage("debes introducir un nombre")
     .isLength({min : 3}).withMessage("el nombre debe tener al menos 3 caracteres"),
 
-    body('email')
-    .isEmail().withMessage('Debes ingresar un email válido')
-    .custom((value, {req})=> {
-        return db.users.findOne({
-            where : {
-                email : value
-            }
-        }).then(user =>{
-            // let emailRepeat = value != req.body.originalEmail ? user.email : null
+    // body('email')
+    // .isEmail().withMessage('Debes ingresar un email válido')
+    // .custom((value, {req})=> {
+    //     return db.users.findOne({
+    //         where : {
+    //             email : value
+    //         }
+    //     }).then(user =>{
+    //         // let emailRepeat = value != req.body.originalEmail ? user.email : null
 
-            if(user && user.email != req.body.originalEmail){
-                return Promise.reject()
-            }
-        }).catch(() => Promise.reject("Este email ya esta registrado"))
-    }),
+    //         if(user && user.email != req.body.originalEmail){
+    //             return Promise.reject()
+    //         }
+    //     }).catch(() => Promise.reject("Este email ya esta registrado"))
+    // }),
 
-    body("access")
-    .notEmpty().withMessage("debes elegir un tipo de producto"),
 ]

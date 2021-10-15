@@ -3,6 +3,7 @@ const fs = require('fs');
 const fsMethods = require("../utils/fsMethods");
 const bcrypt = require('bcryptjs');
 const {validationResult, Result} = require('express-validator');
+const fetch = require("node-fetch")
 
 const nodemailer = require("nodemailer");
 const sendGridTransport = require("nodemailer-sendgrid-transport");
@@ -119,7 +120,11 @@ module.exports={
     },
 
     profile : (req,res) => {
-        db.users.findByPk(req.params.id)
+        db.users.findByPk(req.params.id,{
+            include : [
+                {association : "address"}
+            ]
+        })
         .then(user=> {
             res.render('userProfile',{user})
         })
@@ -138,9 +143,7 @@ module.exports={
 
                 db.users.update({
                     name: req.body.name,
-                    email : req.body.email,
-                    accessId : +req.body.access,
-                    image : image != req.body.deleteImage ? image : "default-user-image.png"
+                    image : image 
                 },{
                     where : {
                         id : req.params.id
@@ -159,8 +162,9 @@ module.exports={
                                 res.cookie('rememberSession', req.session.userLogged, {maxAge : 10000 * 60});
                             }   
                             
-                            req.body.deleteImage != "noBorrar" && oldImage != "default-user-image.png" ? fsMethods.deleteFile(`../public/images/users/${oldImage}`) : null; 
-                            res.redirect("/")
+                            req.file && oldImage != "default-user-image.png" ? fsMethods.deleteFile(`../public/images/users/${oldImage}`) : null; 
+                            // req.body.deleteImage != "noBorrar" && oldImage != "default-user-image.png" ? fsMethods.deleteFile(`../public/images/users/${oldImage}`) : null; 
+                            res.redirect(`/users/profile/${userUpdated.id}`)
                         })
                     })
                 })
@@ -181,14 +185,16 @@ module.exports={
 
         }
     },
-    address : (req,res) => {
-       const countrys = db.countrys.findAll()
-       const states = db.states.findAll()
 
-       Promise.all([countrys,states])
-       .then(([countrys,states])=> {
-           res.render('address',{countrys,states})
-       })
+    address : (req,res) => {
+        fetch("https://apis.datos.gob.ar/georef/api/provincias")
+        .then(result => result.json())
+        .then(arg => {
+            res.render('address',{
+                arg
+            })
+        })
+
     },
     
     createAddress : (req,res) => {
@@ -201,25 +207,69 @@ module.exports={
                 postalCode: req.body.postalCode,
                 neighborhood: req.body.neighborhood,
                 note: req.body.notes,
-                countryId: req.body.countryId,
-                stateId: req.body.stateId,
+                state: req.body.state,
                 userId: req.params.id
             }).then(addressCreated =>{
                 res.redirect(`/users/profile/${req.params.id}`)
             })
-        }else{
-            const countrys = db.countrys.findAll()
-            const states = db.states.findAll()
-     
-            Promise.all([countrys,states])
-            .then(([countrys,states])=> {
+        }else{   
+            fetch("https://apis.datos.gob.ar/georef/api/provincias")
+            .then(result => result.json())
+            .then(arg => {
                 res.render('address',{
-                    countrys,
-                    states,
+                    arg,
                     old : req.body,
                     errors : errors.mapped()
                 })
+            })    
+        }
+    },
+
+    editAddress : (req,res) =>{
+        fetch("https://apis.datos.gob.ar/georef/api/provincias")
+        .then(result => result.json())
+        .then(arg =>{
+            db.address.findOne({
+                where : {
+                    userId : req.params.id
+                }
+            }).then(address =>{
+                res.render("addressEdit",{
+                    address,
+                    arg
+                })
             })
+        })
+    },
+
+    updateAddress : (req,res) =>{
+        const errors = validationResult(req);
+
+        if(errors.isEmpty()){
+            db.address.update({
+                street: req.body.street,
+                number: req.body.number,
+                postalCode: req.body.postalCode,
+                neighborhood: req.body.neighborhood,
+                note: req.body.notes,
+                state: req.body.state
+            },{
+                where : {
+                    userId : req.params.id
+                }
+            }).then(addressUpdated =>{
+                res.redirect(`/users/profile/${req.params.id}`)
+            })
+        }else{
+            fetch("https://apis.datos.gob.ar/georef/api/provincias")
+            .then(result => result.json())
+            .then(arg => {
+                res.render('addressEdit',{
+                    arg,
+                    old : req.body,
+                    errors : errors.mapped()
+                })
+            })   
         }
     }
 }

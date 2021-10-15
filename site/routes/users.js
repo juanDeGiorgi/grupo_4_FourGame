@@ -39,6 +39,9 @@ router.post('/profile/:id',upload.single("image"),profileValidator,controller.up
 router.get('/address',usersCheck,controller.address)
 router.post('/address/:id',usersCheck,addressCheck,controller.createAddress)
 
+router.get('/address/edit/:id',usersCheck,controller.editAddress)
+router.put('/address/edit/:id',usersCheck,addressCheck,controller.updateAddress)
+
 router.get('/logout',controller.logout);
 
 module.exports = router;

@@ -17,95 +17,96 @@
 
 /* Formulario */
 
-
-.address main .formCreacion{
-    width: 95%;
-    margin: 3vw auto 10vw auto;
-    background-color: white;
+.address main .formAddress{
+    width: 85%;
+    margin: 1vw auto 10vw auto;
+    background-color: rgba(0, 0, 0, 0.57);
     padding: 15px;
     border-radius: 10px;
-}
-
-/* Inputs files */
-
-.address main form .title-images{
-    width: 71.1vw;
-    display: block;
-    margin: auto;
-}
-
-.address main form .c-imagenes{
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
-    margin-bottom: 20vw;
-}
-
-.address main form .c-imagenes .input-file{
-    text-align: center;
-    margin: 3.1vw;
-}
-
-.address main form .c-imagenes .file{
-    display: none;
-}
-
-.address main form .c-imagenes .preview{
-    padding: 1vw;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-
-.address main form .c-imagenes .preview img{
-    width: 70%;
-}
-
-.address main form .c-imagenes .preview .delete{
-    display: none;
-}
-
-
-.address main form .c-imagenes .file-agregar{
-    background-color: #3D2ED0;
     color: white;
-    margin: 1vw;
 }
 
-.address main form .c-imagenes .file-quitar{
-    background-color: #dc3545;
-    color: white;
-    margin: 1vw;
+/* resto de Inputs */
+
+.address .div-error{
+    min-height: 1.6vw;
+    text-align: end;
+    width: 97%;
 }
+
+.address .error {
+    color: red;
+    font-size: 1.3vw;
+    margin: 0;
+    line-height: normal;
+}
+
 .address .is-invalid{
     background-image: url(../images/icon/is-invalid.svg);
     background-repeat: no-repeat;
     background-position: right calc(.375em + .1875rem) center;
     background-size: calc(.75em + 0.775rem) calc(3.45em + 1.575rem);
 }
-/* resto de Inputs */
 
-.address main form .container-inputs{
+.address .c-inputs{
     display: flex;
     flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.address .c-input{
+    display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    margin: 1vw;
+    font-size: 2vw;
+    font-weight: 500;
 }
 
-.address main form .container-inputs .inputs-text{
-    margin-bottom: 7vw;
+.address .c-input .input{
+    background-color: #918C8D4D;
+    color: white;
+    width: 25vw;
+    height: 2.6vw;
+    text-indent: 4%;
+    font-size: 1.5vw;
+    border-radius: 4px;
+    font-weight: 500;
+    border: none;
+    box-shadow: 0px 5px 12px 3px black;
+    margin-top: 1vw;
 }
 
+.address .c-input .input:focus {
+    outline: none;
+    border: 2px solid #3D2ED0;
+}
 
 .address main form .input-text-area{
-    margin: auto;
+    background-color: #918C8D4D;
+    color: white;
+    width: 25vw;
+    height: 14vw;
+    padding: 1vw;
+    font-size: 1.5vw;
+    border-radius: 4px;
+    font-weight: 500;
+    border: none;
+    box-shadow: 0px 5px 12px 3px black;
+    margin-top: 1vw;
     resize: none;
+}
+
+.address main form .input-text-area:focus {
+    outline: none;
+    border: 2px solid #3D2ED0;
 }
 
 .address main form .container-buttons{
     text-align: end;
-    width: 93%;
+    width: 100%;
     margin: auto;
 }
 
@@ -162,57 +163,58 @@
         border-radius: 10px;
     }
 
-    .address main .formCreacion .c-title-error{
-        width: 90%;
-        margin: auto;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-    } 
-
-    .address main .formCreacion .c-title-error .title-images{
-        display: inline-block;
-        width: unset;
-        margin: unset;
-    }
-
-/* Input file */
-
-    .address main form .c-imagenes{
-        flex-direction: row;
-        margin-bottom: 0;
-    }
-
-    .address main form .c-imagenes .input-file{
-        width: 19.3vw;
-    }
-
-    .address main form .c-imagenes .preview{
-        height: 16vw;
-    }
-
-/* resto de Inputs */
-
-    .address main form .container-inputs{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;        
-        flex-direction: row;
-
-    }
-
-    .address main form .container-inputs .inputs-text {
-        margin-bottom: 1vw;
-    }
-
-    .address main form .container-inputs .input-selects{
-        width: 19.3vw;
-    }
+/* inputs */
 
     .address main form .input-text-area{
-        width: 71.1vw;
+        width: 100%;
+    }
+
+    .address .select {
+        position: relative;
+        border: none;
+        width: 25vw;
+        overflow: hidden;
+        background-color: #918C8D4D;
+        color: white;
+        margin-top: 1vw;
+        height: 2.6vw;
+        font-size: 1.5vw;
+        border-radius: 4px;
+        font-weight: 500;
+        box-shadow: 0px 5px 12px 3px black;
+      }
+        
+    .address  .select:before {
+        content: '';
+        position: absolute;
+        right: 1vw;
+        top: 1vw;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 7px 5px 0 5px;
+        border-color: #ffffff transparent transparent transparent;
+        z-index: 5;
+        pointer-events: none;
+    }
+        
+    .address .select select {
+        text-indent: 4%;
+        width: 25vw;
+        height: 2.6vw;
+        border: none;
+        box-shadow: none;
+        background-color: transparent;
+        background-image: none;
+        appearance: none;
+        color: white;
+    }
+
+    .address .select select:focus {
+        outline: none;
+        border: 2px solid #3D2ED0;
+        background-color: #403d3dcc;
+        color: white;
     }
 
 }

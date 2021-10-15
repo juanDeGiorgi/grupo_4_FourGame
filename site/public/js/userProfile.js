@@ -1,5 +1,4 @@
 
-
 showImage = (input,idImage) =>{
     document.getElementById(input).onchange = e =>{
         let reader = new FileReader();

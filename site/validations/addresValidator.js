@@ -3,9 +3,8 @@ module.exports = [
 
     body('street') 
       
-        .notEmpty().withMessage('Debes ingresar una calle')
-        .isLength({max: 255}).withMessage('No puedes superar los 255 caracteres'),
-
+    .notEmpty().withMessage('Debes ingresar una calle')
+    .isLength({max: 255}).withMessage('No puedes superar los 255 caracteres'),
 
     body('number')
        
@@ -16,15 +15,6 @@ module.exports = [
 
     .notEmpty().withMessage('Debes ingresar un código postal')
     .isInt().withMessage('Ingresar sólo números'),
-
-    
-    body('countryId')
-
-    .notEmpty().withMessage('Debes seleccionar un país'),
-
-    body('stateId')
-
-    .notEmpty().withMessage('Debes seleccionar una provincia'),
 
     body('neighborhood')
 

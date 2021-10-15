@@ -1,0 +1,29 @@
+/* /* main                          */
+.aIndex{
+    background-image: url('/images/background/tropaStar.jpg');
+}
+.aIndex {
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+}
+
+.aIndex .sideBar{
+    min-height: 100vh;
+    width: 17vw;
+    background-color: #383736;
+}
+
+.aIndex .line{
+    background-color: gray;
+    color: gray;
+    width: 85%;
+    height: 1px;
+    margin: 1vw auto;
+}
+
+.aIndex .main{
+    width: 83%;
+    
+}

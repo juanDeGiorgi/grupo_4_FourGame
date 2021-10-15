@@ -78,10 +78,11 @@ module.exports = (sequelize,dataTypes) => {
             foreignKey: "accessId"
         }),
 
-        User.hasMany(models.address,{
+        User.hasOne(models.address,{
             as: "address",
             foreignKey: "userId"
         }),
+
         User.belongsToMany(models.products,{
             as: "productFavorites",
             through: "favorites",

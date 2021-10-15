@@ -36,13 +36,8 @@ module.exports = (sequelize,dataTypes) => {
             allowNull: true
         },
 
-        countryId: {
-            type: dataTypes.INTEGER,
-            allowNull: false,
-        },
-
-        stateId: {
-            type: dataTypes.INTEGER,
+        state: {
+            type: dataTypes.STRING,
             allowNull: false,
         },
 
@@ -59,21 +54,11 @@ module.exports = (sequelize,dataTypes) => {
 
     const Address = sequelize.define(alias,cols,config);
 
-    Address.assoicate = (models) =>{
+    Address.associate = (models) =>{
 
         Address.belongsTo(models.users,{
             as: "user",
             foreignKey: "userId"
-        }),
-
-        Address.belongsTo(models.countrys,{
-            as: "country",
-            foreignKey: "countryId"
-        }),
-
-        Address.belongsTo(models.states,{
-            as: "state",
-            foreignKey: "stateId"
         }),
 
         Address.hasMany(models.orders,{

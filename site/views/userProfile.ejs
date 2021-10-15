@@ -6,82 +6,183 @@
 <body class="profile">
     <%- include("./partials/header")%> 
     <main>            
-          <form class="formProfile" action="/users/profile/<%=user.id%>" method="POST" enctype="multipart/form-data">
+        <aside class="nav-bar">
+          <nav class="nav-bar-nav">
+            <ul class="nav-bar-ul">
+              <li><a href="#info"><i class="fas fa-user" style="margin-right: 1vw;"></i> Información</a></li>
+              <li><a href="#pass"><i class="fas fa-lock" style="margin-right: 1vw;"></i> Cambiar contraseña</a></li>
+              <li><a href="#address"><i class="fas fa-map-marked-alt" style="margin-right: 1vw;"></i> Dirección</a></li>
+              <li><a href="#fav"><i class="fas fa-heart" style="margin-right: 1vw;"></i> Favoritos</a></li>
+              <li><a href="#shopping"><i class="fas fa-shopping-bag" style="margin-right: 1vw;"></i> Mis compras</a></li>
+              <li><a href="#delete"><i class="fas fa-trash-alt" style="margin-right: 1vw;"></i> Eliminar cuenta</a></li>
+            </ul>
+          </nav>
+        </aside>
 
-            <!----------------------------------    BOOSTRAP   ------------------------------------------>
-              <div class="c-title-error">
-                <label class="form-label title-images">Imagen de perfil : </label>
-                <%if( locals.errors && locals.errors.image){%>
-                  <p style="color: red;margin: unset;"><%=errors.image.msg%></p>
-                <%}%>
-              </div>
-              <div class="c-image-inputs">
+        <div class="c-forms">
+          <!-- SECTION INFORMACION -->
+          <div id="info" style="padding-top: 1vw;">
+            <form class="formProfile" action="/users/profile/<%=user.id%>" method="POST" enctype="multipart/form-data">
+              <h2 class="t-blocks"><i class="fas fa-user" style="margin-right: 1vw;"></i> Información</h2>
+              
+              <div class="c-img-inputs">
                 <div class="c-imagenes">
                   <div class="mb-3 input-file">
                     <div class="preview" id="preview">
                       <img id="preview-image" src="<%= user.image ? `/images/users/${user.image}` : `/images/icon/default-image1.png`%>">
-                      <input class="delete" type="text" name="deleteImage" value=noBorrar id="<%=user.image%>">
+                      <!-- <input class="delete" type="text" name="deleteImage" value=noBorrar id="<%=user.image%>"> -->
                     </div>
                     <input type="file" id="image" name="image" class="file">
-                    <label for="image" class="file-agregar btn" onclick="document.getElementById(`<%=user.image%>`).value = `<%=user.image%>`;">Agregar</label>
-                    <button type="button" id="quitar" onclick="limpiar(`image`,`preview-image`,`<%=user.image%>`)" class="file-quitar btn">Quitar</button>
+                    <label for="image" class="file-agregar btn"><i class="fas fa-pen"></i>  Cambiar imagen</label>
                   </div>
                 </div>
-                
-                <div class="container-inputs">
-                    <div class="col-md-3 inputs-text">
-                      <label for="name" class="form-label">Nombre :</label>
-                      <input type="text" class="form-control <%= locals.errors && errors.name ? "is-invalid" : null%>" id="name" name="name" placeholder="Nombre" value="<%= typeof old != "undefined" ? old.name : user.name %>">
-                      <div class="invalid-feedback" style="margin: 1vw 0;">
-                        <%if(locals.errors && errors.name){%>
-                          <%=errors.name.msg%>
-                        <%}%>
-                      </div>
+
+                <div class="c-inputs">
+                  <div style="height: 5vw;">
+                    <div class="c-input">
+                      <label for="name">Nombre : </label>
+                      <input id="name" class="input <%= locals.errors && errors.name ? "is-invalid" : null%>" type="text" name="name" placeholder="Nombre" value="<%= typeof old != "undefined" ? old.name : user.name %>">
                     </div>
-                    
-                    <div class="col-md-3 inputs-text">
-                      <label for="email" class="form-label">Email :</label>
-                      <input type="text" class="form-control <%= locals.errors && errors.email ? "is-invalid" : null%>" id="email" name="email" placeholder="Email" value="<%= typeof old != "undefined" ? old.email : user.email %>">
+                    <div class="div-error">
+                      <%if(locals.errors && errors.name){%>
+                        <p class="error"><%=errors.name.msg%></p>
+                      <%}%>
+                    </div>
+                  </div>
+                  
+                  <div style="height: 5vw;">
+                    <div class="c-input">
+                      <label for="email">Email : </label>
+                      <input id="email" class="input <%= locals.errors && errors.email ? "is-invalid" : null%>" type="text" name="email" value="<%= user.email %>" disabled>
                       <input type="text" style="display: none;" value="<%=user.email%>" name="originalEmail">
-                      <div class="invalid-feedback" style="margin: 1vw 0;">
-                        <%if(locals.errors && errors.email){%>
-                          <%=errors.email.msg%>
-                        <%}%>
-                      </div>
                     </div>
-  
-                    <div class="mb-4 input-selects">
-                      <label for="type" class="form-label">Tipo de acceso :</label>
-                      <select class="form-select  <%= locals.errors && errors.access ? "is-invalid" : null%>" id="access" name="access">                       
-                        <%if(locals.old && old.access){%>
-                          <option value="1"  <%= old.access == "1"  ? 'selected' : null %>>Usuario</option>
-                          <option value="2" <%= old.access == "2" ? 'selected' : null %>>Admin</option>  
-                        <%}else{%>
-                          <option value="1"  <%= user.accessId == "1"  ? 'selected' : null %>>Usuario</option>
-                          <option value="2"  <%= user.accessId == "2"  ? 'selected' : null %>>Admin</option>
-                        <%}%>
-                      </select>
-                      <div class="invalid-feedback" style="margin: 1vw 0;">
-                        <%if(locals.errors && errors.access){%>
-                          <%=errors.access.msg%>
-                        <%}%>
-                      </div>
+                    <div class="div-error">
+                      <%if(locals.errors && errors.email){%>
+                        <p class="error"><%=errors.email.msg%></p>
+                      <%}%>
                     </div>
+                  </div>
                 </div>
               </div>
-  
-            <!----------------------------------    BOOSTRAP   ------------------------------------------>
-                
-            <div class="container-buttons">
-                <a href="/users/address" class="btn btn-editar">Agregar dirección</a>
-                <button type="submit" class="btn btn-editar">Guardar perfil</button>
-                <a href="/" class="btn btn-borrar">Cancelar</a>
-            </div>
-          </form>
 
+              <div class="container-buttons">
+                <button type="submit" class="btn btn-editar">Actualizar perfil</button>
+              </div>
+            </form>
+          </div>
+          <!-- SECTION INFORMACION -->
+
+          <!-- SECTION CONTRASEÑA -->
+          <div id="pass" style="padding-top: 1vw;">
+            <form  class="form-pass">
+              <h2 class="t-blocks"><i class="fas fa-lock" style="margin-right: 1vw;"></i> Cambiar contraseña</h2>
+
+              <div class="c-input">
+                <label for="a-pass">Contraseña actual : </label>
+                <input id="a-pass" class="input" type="password">
+              </div>
+              
+              <div class="c-input">
+                <label for="new-pass">Contraseña nueva : </label>
+                <input id="new-pass" class="input" type="password">
+              </div>
+              
+              <div class="c-input">
+                <label for="c-new-pass">Confirmar nueva contraseña : </label>
+                <input id="c-new-pass" class="input" type="password">
+              </div>
+              
+              <button type="submit" class="btn-cambiar btn-editar btn">Cambiar</button>
+            </form>
+
+          </div>
+          <!-- SECTION CONTRASEÑA -->
+
+          <!-- SECTION DIRECCION -->
+          
+          <div id="address" style="padding-top: 1vw;">
+            <div class="formProfile">
+              <h2 class="t-blocks"><i class="fas fa-map-marked-alt" style="margin-right: 1vw;"></i> Dirección</h2>
+              
+              <%if(!user.address){%>
+                <div style="text-align: center; color: gray; margin: 1vw;">
+                  <i class="far fa-frown" style="font-size: 8vw;"></i>
+                  <p style="margin: 1vw;font-size:2vw">no tienes ninguna dirección</p>
+                  <a href="/users/address" class="btn btn-editar">Agregar dirección</a>
+                </div>
+              <%}else{%>
+                <div>
+                  <div class="c-input">
+                    <label for="street">Calle : </label>
+                    <input id="street" class="input" type="text" placeholder="Calle" value="<%=user.address.street%>" disabled>
+                  </div>
+
+                  <div class="c-input">
+                    <label for="number">Altura : </label>  
+                    <input id="number" class="input" type="text" placeholder="Altura" value="<%=user.address.number%>" disabled>
+                  </div>
+
+                  <div class="c-input">
+                    <label for="postaCode">Codigo postal : </label>
+                    <input id="postaCode" class="input" type="text" placeholder="Codigo postal" value="<%=user.address.postalCode%>" disabled>
+                  </div>
+
+                  <div class="c-input">
+                    <label for="state">Provincia : </label>
+                    <input id="state" class="input" type="text" placeholder="Provincia" value="<%=user.address.state%>" disabled>
+                  </div>
+                  
+                  <div class="c-input">
+                    <label for="neighborhood">Localidad : </label>
+                    <input id="neighborhood" class="input" type="text" placeholder="Localidad" value="<%=user.address.neighborhood%>" disabled>
+                  </div>
+
+                  <div class="c-input-text">
+                    <label for="notes">Aclaraciones : </label>
+                    <textarea class="input-text-area" id="notes" name="notes" placeholder="Aclaraciones para el envío" disabled><%= user.address.note ? user.address.note : null %></textarea>
+                  </div>
+                  
+                  <div class="container-buttons">
+                    <a href="/users/address/edit/<%=user.id%>" class="btn btn-editar">Editar dirección</a>
+                  </div>
+                </div>
+              <%}%>
+              
+            </div>
+          </div>
+          <!-- SECTION DIRECCION -->
+
+          <!-- SECTION FAVORITOS -->
+          <div id="fav" style="padding-top: 1vw;">
+            <div class="formProfile">
+              <h2 class="t-blocks"><i class="fas fa-heart" style="margin-right: 1vw;"></i> Favoritos</h2>
+
+            </div>
+          </div>
+          <!-- SECTION FAVORITOS -->
+
+          <!-- SECTION MIS COMPRAS -->
+          <div id="shopping" style="padding-top: 1vw;">
+            <div class="formProfile">
+              <h2 class="t-blocks"><i class="fas fa-shopping-bag" style="margin-right: 1vw;"></i> Mis compras</h2>
+
+            </div>
+          </div>
+          <!-- SECTION MIS COMPRAS -->
+
+          <!-- SECTION ELIMINAR -->
+          <div id="delete" style="padding-top: 1vw;">
+            <div class="formProfile">
+              <h2 class="t-blocks"><i class="fas fa-trash-alt" style="margin-right: 1vw;"> </i>Eliminar cuenta</h2>
+
+            </div>
+          </div>
+          <!-- SECTION ELIMINAR -->
+
+        </div>
     </main>
-<%- include("./partials/footer") %> 
+    <%- include("./partials/footer") %> 
     <script src="/js/userProfile.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-</body>
+  </body>
 </html>

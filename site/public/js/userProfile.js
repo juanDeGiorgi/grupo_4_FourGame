@@ -25,46 +25,196 @@ limpiar = (inputId,imageId,deleteId) =>{
 
 window.addEventListener("load",() =>{
 
-    // forms
+// forms
 
     const formProfile = $("formProfile");
+    const buttonPass = $("changePass");
 
-    // inputs
+// inputs
 
     const name = $("name");
 
+    const actPass = $("a-pass")
+    const newPass = $("new-pass")
+    const cNewPass = $("c-new-pass")
 
-    // comprobaciones
+// comprobaciones
 
-    name.addEventListener("keyup",() =>{
-        if(name.value.trim() == ''){
-            name.classList.add('is-invalid')
-            $('errorName').innerHTML = 'Ingresar nombre'
-        }else if(name.value.length < 3){
-            name.classList.add('is-invalid')
-            $('errorName').innerHTML = 'el nombre debe tener al menos 3 caracteres'
-        }else{
-            name.classList.remove('is-invalid')
-            $('errorName').innerHTML = null
-        }
-    })
+    // ACTUALIZACION DE PERFIL
 
-    // enviar form
+        name.addEventListener("keyup",() =>{
+            if(name.value.trim() == ''){
+                name.classList.add('is-invalid')
+                $('errorName').innerHTML = 'Ingresar nombre'
+            }else if(name.value.trim().length < 3){
+                name.classList.add('is-invalid')
+                $('errorName').innerHTML = 'el nombre debe tener al menos 3 caracteres'
+            }else{
+                name.classList.remove('is-invalid')
+                $('errorName').innerHTML = null
+            }
+        })
 
-    formProfile.addEventListener("submit",e =>{
-        let error = false;
-        e.preventDefault();
-            
-        if (name.value.trim() == "") {
-            $('errorName').innerHTML = 'Ingresar nombre'
-            name.classList.add('is-invalid');
+    // CAMBIO DE CONTRASEÑA
+
+        actPass.addEventListener('keyup',(e)=> {
+
+            if(actPass.value.trim() == ''){
+                $('errorActPass').innerHTML = 'La contraseña es obligatoria'
+                actPass.classList.add('is-invalid')
+            }else{
+                $('errorActPass').innerHTML = null
+                actPass.classList.remove('is-invalid')
+            }
+        })
+
+        newPass.addEventListener('keyup',(e)=> {
+
+            if(newPass.value.trim() == ''){
+                $('errorNewPass').innerHTML = 'La contraseña es obligatoria'
+                newPass.classList.add('is-invalid')
+
+            }else if (newPass.value.trim().length < 6){
+                $("errorNewPass").innerHTML = "la contraseña tiene que tener al menos 6 caracteres"
+                newPass.classList.add("is-invalid")
                 
-            error = true
-        }
+            }else{
+                $('errorNewPass').innerHTML = null
+                newPass.classList.remove('is-invalid')
+                
+            }
+        })
 
-        if (!error) {
-            formProfile.submit()
-        }
-    })
+        cNewPass.addEventListener('keyup',(e)=> {
+
+            if (cNewPass.value != newPass.value) {
+                cNewPass.classList.add("is-invalid")
+                $("errorCNewPass").innerHTML = "las contraseñas no coinciden"
+
+            }else {
+                cNewPass.classList.remove("is-invalid")
+                $("errorCNewPass").innerHTML = null
+
+            }
+        })
+
+
+
+// enviar forms
+
+    // actualizar perfil
+
+        formProfile.addEventListener("submit",e =>{
+            let error = false;
+            e.preventDefault();
+                
+            if (name.value.trim() == "") {
+                $('errorName').innerHTML = 'Ingresar nombre'
+                name.classList.add('is-invalid');
+                    
+                error = true;
+            }else if(name.value.trim().length < 3){
+                $('errorName').innerHTML = 'el nombre debe tener al menos 3 caracteres'
+                name.classList.add('is-invalid')
+
+                error = true;
+            }
+
+            if (!error) {
+                formProfile.submit()
+            }
+        })
+
+    // cambiar contraseña
+
+        cambiar = async id =>{
+            let error = false;
+
+            if(actPass.value.trim() == ''){
+                $('errorActPass').innerHTML = 'La contraseña es obligatoria'
+                actPass.classList.add('is-invalid')
+
+                error = true;
+            }
+
+            if(newPass.value.trim() == ''){
+                $('errorNewPass').innerHTML = 'La contraseña es obligatoria'
+                newPass.classList.add('is-invalid')
+               
+                error = true;
+            }else if (newPass.value.trim().length < 6){
+                $("errorNewPass").innerHTML = "la contraseña tiene que tener al menos 6 caracteres"
+                newPass.classList.add("is-invalid")
+                
+                error = true;
+            }
+
+            if (cNewPass.value != newPass.value) {
+                cNewPass.classList.add("is-invalid")
+                $("errorCNewPass").innerHTML = "las contraseñas no coinciden"
+
+                error = true;
+            }
+
+            if(!error){
+                let data = {
+                    actPass : actPass.value,
+                    newPass : newPass.value,
+                    cNewPass : cNewPass.value
+                }
+                const options = {
+                    method : "PUT",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(data)
+                }
+                try {
+                    fetch(`/api/users/pass/${id}`,options)
+                    .then(response => {
+                        if(response.ok){
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'contraseña actualizada',
+                                text: 'deberas volver a iniciar sesión',
+                                confirmButtonText: "Entendido"
+                            }).then(result =>{
+                                if(result.isConfirmed){
+                                    fetch("/api/users/logout")
+                                    .then(response =>{
+                                        window.location.replace("/users/login");
+                                    })
+                                }
+                            })
+                        }else{
+                            console.log(response.status);
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'contraseña incorrecta',
+                                text: 'intentalo de nuevo!',
+                                confirmButtonText: "Entendido"
+                            })
+                        }
+                    }).catch(err =>{
+                        console.log(err);
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'algo salio mal',
+                            text: 'intenta mas tarde!',
+                            confirmButtonText: "Entendido"
+                        })
+                    })
+
+                } catch (err) {
+                    console.log(err)
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'algo salio mal',
+                        text: 'intenta mas tarde!',
+                        confirmButtonText: "Entendido"
+                    })
+                }
+            }
+        } 
 
 })

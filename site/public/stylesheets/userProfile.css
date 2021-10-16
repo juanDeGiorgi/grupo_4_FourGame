@@ -95,6 +95,7 @@
     margin: 1vw 0;
     text-align: end;
     width: 97%;
+    position: relative;
 }
 
 .profile .error {
@@ -103,8 +104,8 @@
     margin: 0;
     line-height: normal;
     position: absolute;
-    right: 5.7vw;
-    top: 25.5vw;
+    right: 0.5vw;
+    top: -3.3vw;
 }
 
 .profile .is-invalid {
@@ -226,6 +227,7 @@
         .profile .c-img-inputs{
             display: flex;
             justify-content: space-around;
+            align-items: center;
         }
 
         .profile .c-img-profile{
@@ -240,7 +242,6 @@
 
         .profile .c-inputs{
             width: 79%;
-            margin-top: 2.7vw;
         }
 
     /* Input file */

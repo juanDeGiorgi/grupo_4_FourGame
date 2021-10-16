@@ -33,11 +33,11 @@ window.addEventListener('load',()=>{
          email.classList.add('is-invalid')
 
      }else if(!regExEmail.test(email.value)){
-        $('errorEmail').innerHTML = "Debes ingresar un email vàlido"
+        $('errorEmail').innerHTML = "Debes ingresar un email valido"
            email.classList.add('is-invalid')
 
     }else if(!listEmails.includes(email.value)){
-        $('errorEmail').innerHTML = "Èste email no està registrado"
+        $('errorEmail').innerHTML = "Este email no esta registrado"
         email.classList.add('is-invalid')
     }else{
         $('errorEmail').innerHTML = null;
@@ -47,7 +47,7 @@ window.addEventListener('load',()=>{
 
  pass.addEventListener('keyup',(e)=> {
 
-    if(pass.value== ''){
+    if(pass.value.trim() == ''){
         $('errorPass').innerHTML = 'La contraseña es obligatoria'
         pass.classList.add('is-invalid')
     }else{

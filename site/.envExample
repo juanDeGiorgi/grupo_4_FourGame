@@ -4,3 +4,4 @@
 DB_PASSWORD= 1234
 DB_USER= root 
 DB_HOST= localhost
+TYPE_BD= test

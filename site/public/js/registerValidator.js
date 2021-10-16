@@ -38,9 +38,9 @@ window.addEventListener("load",() =>{
             inputName.classList.add("is-invalid")
             $("error-name").innerHTML = "el nombre es obligatorio"
             errors = true;
-        }else if(inputName.value.trim().length < 2){
+        }else if(inputName.value.trim().length < 3){
             inputName.classList.add("is-invalid")
-            $("error-name").innerHTML = "el nombre debe tener al menos 2 caracteres"
+            $("error-name").innerHTML = "el nombre debe tener al menos 3 caracteres"
             errors = true;
         }else{
             inputName.classList.remove("is-invalid")

@@ -3,15 +3,15 @@ module.exports = {
   "development": {
     "username": process.env.DB_USER,
     "password": process.env.DB_PASSWORD,
-    "database": "fourgametest",
+    "database": "fourgame_dev",
     "host": process.env.HOST,
     "dialect": "mysql"
   },
   "test": {
-    "username": "root",
-    "password": null,
-    "database": "fourgame_test",
-    "host": "127.0.0.1",
+    "username": process.env.DB_USER,
+    "password": process.env.DB_PASSWORD,
+    "database": "fourgametest",
+    "host": process.env.HOST,
     "dialect": "mysql"
   },
   "production": {

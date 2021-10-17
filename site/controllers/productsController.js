@@ -2,6 +2,7 @@ const fs = require('fs');
 const path= require('path');
 const fsMethods = require("../utils/fsMethods");
 const {validationResult} = require('express-validator')
+const fetch = require("node-fetch")
 
 const db = require('../database/models')
 const {Op} = require("sequelize");
@@ -36,10 +37,15 @@ module.exports={
                     }
                 ]
             }).then(relatedProducts => {
-                res.render('detailProduct', {
-                    product,
-                    relatedProducts : relatedProducts.products,
-                    toThousand
+                fetch("https://apis.datos.gob.ar/georef/api/provincias")
+                .then(result => result.json())
+                .then(arg => {
+                    res.render('detailProduct', {
+                        product,
+                        relatedProducts : relatedProducts.products,
+                        toThousand,
+                        arg
+                    })
                 })
             })
         })

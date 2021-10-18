@@ -74,33 +74,57 @@
         let error = false;
         e.preventDefault()
 
-        let elementosForm = form.elements
-            
-        for (let i = 0; i < elementosForm.length - 1; i++) {
-            if (elementosForm[i].value.trim() == "" && i != 5) {
-                switch (i) {
-                    case 0:
-                        $('errorStreet').innerHTML = 'Ingresar calle'
-                        elementosForm[i].classList.add('is-invalid');
-                        break;
-                    case 1:
-                        $('errorNumber').innerHTML = 'Ingresar altura'
-                        elementosForm[i].classList.add('is-invalid');
-                        break;
-                    case 2:
-                        $('errorPostalCode').innerHTML = 'Ingresar codigo'
-                        elementosForm[i].classList.add('is-invalid');
-                        break;
-                    case 4:
-                        $('errorNeighborhood').innerHTML = 'Ingresar localidad'
-                        elementosForm[i].classList.add('is-invalid');
-                        break;
-                    default:
-                        break;
-                }
-                error = true
+        // input street
+            if(street.value.trim() == ''){
+                street.classList.add('is-invalid')
+                $('errorStreet').innerHTML = 'Ingresar calle'
+
+                error = true;
+            }else if(Number.isInteger(parseInt(street.value))){
+                street.classList.add('is-invalid')
+                $('errorStreet').innerHTML = 'Ingresar solo letras'
+
+                error = true;
             }
-        }
+
+        //  input number
+            if(number.value.trim()==''){
+                number.classList.add('is-invalid')
+                $('errorNumber').innerHTML = 'Ingresar altura'
+
+                error = true;
+            }else if(!Number.isInteger(parseInt(number.value))){
+                number.classList.add('is-invalid')
+                $('errorNumber').innerHTML = 'Ingresar solo numeros'
+
+                error = true;
+            }
+
+        // input postalCode
+            if(postalCode.value.trim()==''){
+                postalCode.classList.add('is-invalid')
+                $('errorPostalCode').innerHTML = 'Ingresar codigo'
+
+                error = true;
+            }else if(!Number.isInteger(parseInt(postalCode.value))){
+                postalCode.classList.add('is-invalid')
+                $('errorPostalCode').innerHTML = 'Ingresar solo numeros'
+
+                error = true;
+            }
+
+        // input neighborhood 
+            if(neighborhood.value.trim() == ''){
+                neighborhood.classList.add('is-invalid')
+                $('errorNeighborhood').innerHTML = 'Ingresar localidad'
+
+                error = true;
+            }else if(Number.isInteger(parseInt(neighborhood.value))){
+                neighborhood.classList.add('is-invalid')
+                $('errorNeighborhood').innerHTML = 'Ingresar solo letras'
+
+                error = true;
+            }
 
         if (!error) {
             form.submit()

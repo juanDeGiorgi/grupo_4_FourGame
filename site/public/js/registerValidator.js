@@ -3,7 +3,6 @@ const $ = id => document.getElementById(id);
 
 let regExEmail =  /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]:+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/;
 
-let errors = false;
 let listEmails;
 const emailVerify = async() =>{
     try {
@@ -37,15 +36,12 @@ window.addEventListener("load",() =>{
         if(inputName.value.trim() == ""){
             inputName.classList.add("is-invalid")
             $("error-name").innerHTML = "el nombre es obligatorio"
-            errors = true;
         }else if(inputName.value.trim().length < 3){
             inputName.classList.add("is-invalid")
             $("error-name").innerHTML = "el nombre debe tener al menos 3 caracteres"
-            errors = true;
         }else{
             inputName.classList.remove("is-invalid")
             $("error-name").innerHTML = null
-            errors = false;
         }
 
     })
@@ -55,15 +51,12 @@ window.addEventListener("load",() =>{
         if (!regExEmail.test(inputEmail.value)) {
             inputEmail.classList.add("is-invalid")
             $("error-email").innerHTML = "Debes ingresar un email válido"
-            errors = true;
         }else if(listEmails.includes(inputEmail.value.trim())){
             inputEmail.classList.add("is-invalid")
             $("error-email").innerHTML = "El email ya esta registrado"
-            errors = true;
         } else {
             inputEmail.classList.remove("is-invalid")
             $("error-email").innerHTML = null
-            errors = false;
         }
     })
 
@@ -72,17 +65,14 @@ window.addEventListener("load",() =>{
         if (inputPass.value.trim() == "") {
             inputPass.classList.add("is-invalid")
             $("error-pass").innerHTML = "Debes ingresar una contraseña"
-            errors = true;
 
         } else if (inputPass.value.trim().length < 6){
             inputPass.classList.add("is-invalid")
             $("error-pass").innerHTML = "la contraseña tiene que tener al menos 6 caracteres"
-            errors = true;
 
         }else {
             inputPass.classList.remove("is-invalid")
             $("error-pass").innerHTML = null
-            errors = false;
         }
     })
 
@@ -91,16 +81,68 @@ window.addEventListener("load",() =>{
         if (inputPass2.value != inputPass.value) {
             inputPass2.classList.add("is-invalid")
             $("error-pass2").innerHTML = "las contraseñas no coinciden"
-            errors = true;
         }else {
             inputPass2.classList.remove("is-invalid")
             $("error-pass2").innerHTML = null
-            errors = false;
         }
     })
     
-    console.log(errors);
-    // form.addEventListener("submit",(e) =>{
-    //     e.preventDefault()
-    // })
+    // detengo el envio el formulario
+
+    form.addEventListener('submit', e => {
+        let error = false;
+        e.preventDefault()
+
+        // input name
+            if(inputName.value.trim() == ""){
+                inputName.classList.add("is-invalid")
+                $("error-name").innerHTML = "el nombre es obligatorio"
+
+                error = true
+            }else if(inputName.value.trim().length < 3){
+                inputName.classList.add("is-invalid")
+                $("error-name").innerHTML = "el nombre debe tener al menos 3 caracteres"
+                
+                error = true
+            }
+
+        // input email
+            if (!regExEmail.test(inputEmail.value)) {
+                inputEmail.classList.add("is-invalid")
+                $("error-email").innerHTML = "Debes ingresar un email válido"
+                
+                error = true
+            }else if(listEmails.includes(inputEmail.value.trim())){
+                inputEmail.classList.add("is-invalid")
+                $("error-email").innerHTML = "El email ya esta registrado"
+                
+                error = true
+            }
+        
+        // input password
+            if (inputPass.value.trim() == "") {
+                inputPass.classList.add("is-invalid")
+                $("error-pass").innerHTML = "Debes ingresar una contraseña"
+                
+                error = true
+            } else if (inputPass.value.trim().length < 6){
+                inputPass.classList.add("is-invalid")
+                $("error-pass").innerHTML = "la contraseña tiene que tener al menos 6 caracteres"
+                
+                error = true
+            }
+
+        // input confirm password
+            if (inputPass2.value != inputPass.value) {
+                inputPass2.classList.add("is-invalid")
+                $("error-pass2").innerHTML = "las contraseñas no coinciden"
+                
+                error = true
+            }
+
+
+        if (!error) {
+            form.submit()
+        }
+    }) 
 })

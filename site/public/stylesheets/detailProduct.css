@@ -68,9 +68,26 @@
     right: -0.1%;
 }
 
-.detail main .vista .vista-img .fav:active{
-    color: red;
+.detail .off-fav::after {
+    display: block;
+    left: 0px;
+    width: 50px;
+    height: 55.1px;
+    content: "";
+    background-image: url(../images/icon/heart.png);
+    background-size: 45.7px 44.5px;
+    background-repeat: no-repeat;
+}
 
+.detail .on-fav::after{
+    display: block;
+    left: 0px;
+    width: 51px;
+    height: 48.5px;
+    content: "";
+    background-image: url(../images/icon/heart-solid-edited.png);
+    background-size: 46.7px 47px;
+    background-repeat: no-repeat;
 }
 
 .detail main .vista .vista-img img{

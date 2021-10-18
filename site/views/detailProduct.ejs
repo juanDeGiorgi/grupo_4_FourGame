@@ -22,7 +22,8 @@
                 </div>
                 <div class="contenedor-img vista-img">
                     <img id="imagePrincipal" src="/images/products/<%=product.images[0].name%> " alt="<%=product.name %> ">
-                    <button class="fav"><i class="far fa-heart"></i></button>
+                    <button id="buttonFavorite" onclick="favorite();" class="fav off-fav"></button>
+                    <input id="isFavorite" type="number" style="display: none;" value="0">
                 </div>
             </div>
             <div class="vista-info">
@@ -48,7 +49,7 @@
                 <p class="price">$ <%= toThousand(Math.round(product.price - ((product.discount / 100) * product.price))) %> </p>
                 <div class="payMethod">
                     <p class="t-cuotas"> Hasta en 12 x $ <%=toThousand((product.price / 12).toFixed(0))%> sin interés</p>
-                    <button class="b-cuotas" data-bs-toggle="modal" data-bs-target="#cuotasModal">calcular cuotas</button>
+                    <button class="b-cuotas" data-bs-toggle="modal" data-bs-target="#cuotasModal">Ver cuotas</button>
                     <!-- Modal cuotas -->
                     <div class="modal fade" id="cuotasModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-scrollable">
@@ -58,7 +59,7 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <table class="table">
+                                    <table class="table" style="text-align: center;">
                                         <thead>
                                         <tr>
                                             <th scope="col">Cantidad</th>

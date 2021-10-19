@@ -34,7 +34,7 @@ module.exports={
                  },
 
                 include : [
-                    {association: "productFavorites"}
+                    {association: "productFavorites",attributes : ["id"]}
                 ]
             }).then(user => {
 
@@ -53,8 +53,6 @@ module.exports={
                     access: user.accessId,
                     favorites: user.productFavorites
                 }
-
-                console.log(user.productFavorites);
 
                 if (req.body.rememberSession) {
                     res.cookie('rememberSession', req.session.userLogged, {maxAge : 10000 * 60});

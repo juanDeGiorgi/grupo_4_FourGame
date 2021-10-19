@@ -12,4 +12,6 @@ router
 
     .get("/logout",controller.logout)
 
+    .post("/createfav",usersCheck,controller.createFav)
+
 module.exports = router;

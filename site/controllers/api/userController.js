@@ -71,4 +71,20 @@ module.exports = {
         res.cookie("rememberSession",null, {maxAge: -1})
         res.status(200).json("ok")
     },
+
+    createFav : (req,res) => {
+        db.favorites.create({
+            userId : req.body.userId,
+            productId : req.body.productId,
+        }).then(result => {
+            const response = {
+                status : 201,
+                msg: 'favoriteCreate'
+            }
+            res.status(201).json(response)
+        }).catch(err=> {
+            console.log(err);
+            res.status(500).json('Internal server error')
+        })
+    }
 }

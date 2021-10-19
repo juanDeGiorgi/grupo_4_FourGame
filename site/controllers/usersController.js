@@ -31,7 +31,11 @@ module.exports={
             db.users.findOne({
                 where : {
                     email : req.body.email
-                 }
+                 },
+
+                include : [
+                    {association: "productFavorites"}
+                ]
             }).then(user => {
 
                 db.users.update({
@@ -47,7 +51,10 @@ module.exports={
                     name: user.name,
                     image: user.image,
                     access: user.accessId,
+                    favorites: user.productFavorites
                 }
+
+                console.log(user.productFavorites);
 
                 if (req.body.rememberSession) {
                     res.cookie('rememberSession', req.session.userLogged, {maxAge : 10000 * 60});

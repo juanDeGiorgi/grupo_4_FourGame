@@ -21,8 +21,8 @@
                     <%})%>
                 </div>
                 <div class="contenedor-img vista-img">
-                    <img id="imagePrincipal" src="/images/products/<%=product.images[0].name%> " alt="<%=product.name %> ">
-                    <button id="buttonFavorite" onclick="favorite();" class="fav off-fav"></button>
+                    <img id="imagePrincipal" src="/images/products/<%=product.images[0].name%> " alt="<%=product.name %> "> 
+                    <button id="buttonFavorite" onclick="favorite(`<%=locals.userLogged ? userLogged.id : null%>`,`<%=product.id%>`);" class="fav off-fav"></button>
                     <input id="isFavorite" type="number" style="display: none;" value="0">
                 </div>
             </div>

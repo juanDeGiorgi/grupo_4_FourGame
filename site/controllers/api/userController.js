@@ -70,5 +70,5 @@ module.exports = {
         req.session.destroy()
         res.cookie("rememberSession",null, {maxAge: -1})
         res.status(200).json("ok")
-    }
+    },
 }

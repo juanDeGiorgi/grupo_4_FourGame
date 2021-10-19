@@ -7,9 +7,11 @@ window.addEventListener("load",() =>{
         const buttonFavorite = $("buttonFavorite");
         const isFavorite = $("isFavorite");
 
-        favorite = () =>{
+        favorite = (userId,productId) =>{
             switch (+isFavorite.value) {
                 case 0:
+                    userId ? console.log(userId) : console.log("no esta logeado");
+                    console.log(productId);
                     isFavorite.value = 1
                     buttonFavorite.classList.remove("off-fav")
                     buttonFavorite.classList.add("on-fav")

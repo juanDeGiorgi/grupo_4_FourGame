@@ -9,7 +9,7 @@ window.addEventListener("load",() =>{
 
         favorite = (userId,productId) =>{
             if(userId){
-                console.log(productId);
+                console.log(isFavorite.value);
                 switch (+isFavorite.value) {
                     case 0:
                         let data ={userId:+userId,productId:+productId}
@@ -50,9 +50,48 @@ window.addEventListener("load",() =>{
                         break;
     
                     case 1:
-                        isFavorite.value = 0
-                        buttonFavorite.classList.remove("on-fav")
-                        buttonFavorite.classList.add("off-fav")
+                        let data2  = {
+                            userId : +userId,
+                            productId : +productId 
+                        }
+                        let options2 = {
+                            method : 'DELETE',
+                            headers : {
+                                'Content-Type' : 'application/json'
+                            },
+                            body : JSON.stringify(data2)
+                        }
+                        fetch('/api/users/deleteFav',options2)
+                        .then(response => {
+                            if(response.ok){
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'Eliminado con éxito',
+                                    confirmButtonText : 'Entendido'
+                                  })
+        
+                                isFavorite.value = 0
+                                buttonFavorite.classList.remove("on-fav")
+                                buttonFavorite.classList.add("off-fav")
+
+                            }else{
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'algo salio mal',
+                                    text: 'intenta mas tarde!',
+                                    confirmButtonText: "Entendido"
+                                })
+                            }
+                        }).catch(err=>{
+                            console.log(err);
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'algo salio mal',
+                                text: 'intenta mas tarde!',
+                                confirmButtonText: "Entendido"
+                            })
+                        })
+
                         break;
                     default:
                         break;

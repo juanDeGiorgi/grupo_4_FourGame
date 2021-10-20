@@ -14,4 +14,6 @@ router
 
     .post("/createfav",usersCheck,controller.createFav)
 
+    .delete("/deletefav",usersCheck,controller.deleteFav)
+
 module.exports = router;

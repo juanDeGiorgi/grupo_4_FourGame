@@ -112,5 +112,47 @@ module.exports = {
             console.log(err);
             res.status(500).json('Internal server error')
         })
+    },
+    deleteFav : (req,res) => {
+        db.favorites.delete({
+            where : {
+                userId : req.body.userId,
+                productId : req.body.productId
+            }
+        }).then(favDeleted => {
+            db.users.findByPk(req.body.userId,{
+                include : [{association : 'productFavorites', attributes : ['id']}]
+            }).then(user => {
+                let favoritesModify = user.productFavorites.map(favorite => favorite.id)
+                req.session.save(err=>{
+                    req.session.userLogged = {
+                        id : user.id,
+                        name : user.name,
+                        image : user.image,
+                        access : user.accessId,
+                        favorites : favoritesModify
+                    }
+                    if (req.cookies.rememberSession) {
+                        res.cookie('rememberSession', req.session.userLogged, {maxAge : 10000 * 60});
+                    }
+
+                    const response = {
+                        status : 200,
+                        msg: 'favoritedeleted'
+                    }
+        
+                    res.status(200).json(response)
+                    
+                })
+            }).catch(err=>{
+                console.log(err)
+                res.status(500).json('internal server error')
+            })
+            
+        }).catch(err=> {
+            console.log(err)
+            res.status(500).json('internal server error')
+        })
+        
     }
 }

@@ -99,12 +99,6 @@
   .home main article:hover{
       box-shadow: 0px 0px 20px rgb(250 0 59);
   }
-
-  
-  .home main section article i:active{
-      color: red;
-  
-  }
   
   .home main section .contenedor-img {
       height: 65.65vw;
@@ -130,12 +124,31 @@
       height: 26vw;
   }
   
-  .home main section article div button{
+  .home main section article .fav{
       position: absolute;
-      font-size: 180%;
-      top: 5%;
-      right: 5%;
-      color: black;
+      left: 58.3vw
+  }
+
+  .home .off-fav::after {
+    display: block;
+    left: 0px;
+    width: 30.7px;
+    height: 26.9px;
+    content: "";
+    background-image: url(../images/icon/heart.png);
+    background-size: 30.1px 26.9px;
+    background-repeat: no-repeat;
+  }
+
+  .home .on-fav::after{
+    display: block;
+    left: 0px;
+    width: 34.2px;
+    height: 28.9px;
+    content: "";
+    background-image: url(../images/icon/heart-solid-edited.png);
+    background-size: 33.9px 30.5px;
+    background-repeat: no-repeat;
   }
   
   .home main section article div h3{
@@ -211,6 +224,10 @@
           width: 40vw;
           height: 70vw;
       }
+
+      .home main section article .fav{
+        left: 31.9vw
+      }
   
       .home main section .contenedor-img {
           height: 50%;
@@ -265,6 +282,10 @@
       .home main section article {
           width: 18vw;
           height: 32.5vw;
+      }
+
+      .home main section article .fav{
+        left: 14.2vw
       }
   
       .home main section article div h3 {

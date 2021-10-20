@@ -55,13 +55,14 @@
             <% products.forEach(product => { %> 
                 <% if (product.category.name == "new-release"){ %> 
                     <article>
+                        <button id="buttonFavorite" onclick="favorite(`<%=locals.userLogged ? userLogged.id : null%>`,`<%=product.id%>`);" class="fav <%=locals.userLogged && userLogged.favorites.includes(product.id) ? "on-fav" : "off-fav"%>"></button>
+                        <input id="isFavorite" type="number" style="display: none;" value="<%= locals.userLogged && userLogged.favorites.includes(product.id) ? 1 : 0 %>">
                         <a href="/products/detail/<%=product.id%> " class="a-article">
                             <div class="contenedor-img">
                                 <img src="/images/products/<%=product.images[0].name%>" alt="image">
                             </div>
 
                             <div class="product-info">
-                                <button><i class="far fa-heart"></i></button>
 
                                 <div class="title">
                                     <h3><%=product.name %> </h3>
@@ -92,13 +93,14 @@
             <% products.forEach(product => { %> 
                 <% if (product.category.name == "best-seller"){ %> 
                     <article>
+                        <button id="buttonFavorite" onclick="favorite(`<%=locals.userLogged ? userLogged.id : null%>`,`<%=product.id%>`);" class="fav <%=locals.userLogged && userLogged.favorites.includes(product.id) ? "on-fav" : "off-fav"%>"></button>
+                        <input id="isFavorite" type="number" style="display: none;" value="<%= locals.userLogged && userLogged.favorites.includes(product.id) ? 1 : 0 %>">
                         <a href="/products/detail/<%=product.id%> " class="a-article">
                             <div class="contenedor-img">
                                 <img src="/images/products/<%=product.images[0].name%>" alt="image">
                             </div>
 
                             <div class="product-info">
-                                <button><i class="far fa-heart"></i></button>
 
                                 <div class="title">
                                     <h3><%=product.name %> </h3>
@@ -128,13 +130,14 @@
             <% products.forEach(product => { %> 
                 <% if (product.category.name == "in-sale"){ %> 
                     <article>
+                        <button id="buttonFavorite" onclick="favorite(`<%=locals.userLogged ? userLogged.id : null%>`,`<%=product.id%>`);" class="fav <%=locals.userLogged && userLogged.favorites.includes(product.id) ? "on-fav" : "off-fav"%>"></button>
+                        <input id="isFavorite" type="number" style="display: none;" value="<%= locals.userLogged && userLogged.favorites.includes(product.id) ? 1 : 0 %>">
                         <a href="/products/detail/<%=product.id%> " class="a-article">
                             <div class="contenedor-img">
                                 <img src="/images/products/<%=product.images[0].name%>" alt="image">
                             </div>
 
                             <div class="product-info">
-                                <button><i class="far fa-heart"></i></button>
 
                                 <div class="title">
                                     <h3><%=product.name %> </h3>

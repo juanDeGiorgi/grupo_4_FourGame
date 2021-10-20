@@ -103,14 +103,13 @@ window.addEventListener("load",() =>{
                         })
                         break;
                 }
-
             }else{
                 Swal.fire({
                     icon: 'error',
                     title: 'Debes iniciar sesión',
                     html: ' debes iniciar sesión para aregar favoritos puedes hacerlo <a href="/users/login">Aquí</a>',
                     confirmButtonText: "Entendido"
-                  })
+                })
             }
         }
 

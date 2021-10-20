@@ -27,7 +27,8 @@ window.addEventListener("load",() =>{
                               
                                 Swal.fire({
                                     icon: 'success',
-                                    title: 'Agregado con éxito',
+                                    title: 'Favorito agregado',
+                                    text: "puedes verlo ingresando en tu perfil",
                                     confirmButtonText : 'Entendido'
                                   })
                             }else{
@@ -61,12 +62,12 @@ window.addEventListener("load",() =>{
                             },
                             body : JSON.stringify(data2)
                         }
-                        fetch('/api/users/deleteFav',options2)
+                        fetch('/api/users/deletefav',options2)
                         .then(response => {
                             if(response.ok){
                                 Swal.fire({
                                     icon: 'success',
-                                    title: 'Eliminado con éxito',
+                                    title: 'Favorito eliminado',
                                     confirmButtonText : 'Entendido'
                                   })
         
@@ -94,6 +95,12 @@ window.addEventListener("load",() =>{
 
                         break;
                     default:
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'algo salio mal',
+                            text: 'intenta mas tarde!',
+                            confirmButtonText: "Entendido"
+                        })
                         break;
                 }
 
@@ -101,8 +108,8 @@ window.addEventListener("load",() =>{
                 Swal.fire({
                     icon: 'error',
                     title: 'Debes iniciar sesión',
-                    html: ' Inicia sesión <a href="/users/login">Aquí</a>',
-                    footer: ' Si no tienes cuenta puedes crear una <a href="/users/register"> Aquí</a>'
+                    html: ' debes iniciar sesión para aregar favoritos puedes hacerlo <a href="/users/login">Aquí</a>',
+                    confirmButtonText: "Entendido"
                   })
             }
         }

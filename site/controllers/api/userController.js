@@ -104,7 +104,7 @@ module.exports = {
                     res.status(201).json(response)
                 })
 
-            }).catch(err=> {
+            }).catch(err => {
                 console.log(err);
                 res.status(500).json('Internal server error')
             })
@@ -113,8 +113,9 @@ module.exports = {
             res.status(500).json('Internal server error')
         })
     },
+    
     deleteFav : (req,res) => {
-        db.favorites.delete({
+        db.favorites.destroy({
             where : {
                 userId : req.body.userId,
                 productId : req.body.productId
@@ -123,7 +124,9 @@ module.exports = {
             db.users.findByPk(req.body.userId,{
                 include : [{association : 'productFavorites', attributes : ['id']}]
             }).then(user => {
+
                 let favoritesModify = user.productFavorites.map(favorite => favorite.id)
+
                 req.session.save(err=>{
                     req.session.userLogged = {
                         id : user.id,
@@ -132,6 +135,7 @@ module.exports = {
                         access : user.accessId,
                         favorites : favoritesModify
                     }
+                    
                     if (req.cookies.rememberSession) {
                         res.cookie('rememberSession', req.session.userLogged, {maxAge : 10000 * 60});
                     }
@@ -142,7 +146,6 @@ module.exports = {
                     }
         
                     res.status(200).json(response)
-                    
                 })
             }).catch(err=>{
                 console.log(err)

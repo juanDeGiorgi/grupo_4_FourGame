@@ -76,12 +76,38 @@ module.exports = {
         db.favorites.create({
             userId : req.body.userId,
             productId : req.body.productId,
-        }).then(result => {
-            const response = {
-                status : 201,
-                msg: 'favoriteCreate'
-            }
-            res.status(201).json(response)
+        }).then(favoriteCreated => {
+            db.users.findByPk(req.body.userId,{ include : [
+                {association: "productFavorites",attributes : ["id"]}
+            ]}).then(user =>{
+
+                let favoritesModify = user.productFavorites.map(favorite => favorite.id)
+
+                req.session.save(err => {
+                    req.session.userLogged = {
+                        id : user.id,
+                        name: user.name,
+                        image: user.image,
+                        access: user.accessId,
+                        favorites: favoritesModify
+                    }
+                    
+                    if (req.cookies.rememberSession) {
+                        res.cookie('rememberSession', req.session.userLogged, {maxAge : 10000 * 60});
+                    }
+
+                    const response = {
+                        status : 201,
+                        msg: 'favoriteCreate'
+                    }
+        
+                    res.status(201).json(response)
+                })
+
+            }).catch(err=> {
+                console.log(err);
+                res.status(500).json('Internal server error')
+            })
         }).catch(err=> {
             console.log(err);
             res.status(500).json('Internal server error')

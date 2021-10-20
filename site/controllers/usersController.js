@@ -46,12 +46,14 @@ module.exports={
                     }
                 })
 
+                let favoritesModify = user.productFavorites.map(favorite => favorite.id)
+
                 req.session.userLogged = {
                     id : user.id,
                     name: user.name,
                     image: user.image,
                     access: user.accessId,
-                    favorites: user.productFavorites
+                    favorites: favoritesModify
                 }
 
                 if (req.body.rememberSession) {
@@ -154,14 +156,19 @@ module.exports={
                         id : req.params.id
                     }
                 }).then(result => {
-                    db.users.findByPk(req.params.id)
+                    db.users.findByPk(req.params.id,{ include : [
+                        {association: "productFavorites",attributes : ["id"]}
+                    ]})
                     .then(userUpdated =>{
+                        let favoritesModify = userUpdated.productFavorites.map(favorite => favorite.id)
+
                         req.session.save(err => {
                             req.session.userLogged = {
                                 id : userUpdated.id,
                                 name: userUpdated.name,
                                 image: userUpdated.image,
                                 access: userUpdated.accessId,
+                                favorites: favoritesModify
                             }
                             if (req.cookies.rememberSession) {
                                 res.cookie('rememberSession', req.session.userLogged, {maxAge : 10000 * 60});

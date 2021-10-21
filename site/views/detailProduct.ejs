@@ -144,7 +144,7 @@
                     <% }else{ %>
 
                         <a href="#" class="b-editar"><i class="fas fa-shopping-bag"></i> Comprar</a> 
-                        <a href="#" class="b-comprar"><i class="fas fa-cart-plus"></i> Agregar</a>
+                        <a href="#" id="addCart" onclick="addProduct('<%=locals.userLogged ? userLogged.id : null %>','<%= product.id %>');" class="b-comprar"><i class="fas fa-cart-plus"></i> Agregar</a>
                     <% } %> 
                 </div>
             </div>

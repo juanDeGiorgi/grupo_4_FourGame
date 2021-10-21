@@ -5,7 +5,7 @@ module.exports = {
 
     createOrder : async (req,res) =>{
         try {
-            const productToAdd = await db.findByPk(req.body.productId)
+            const productToAdd = await db.products.findByPk(req.body.productId)
             
             const pendingOrder = await db.orders.findOne({
                 where : {

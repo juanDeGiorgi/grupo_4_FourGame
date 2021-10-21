@@ -1,3 +1,5 @@
+
+
 const $ = id => document.getElementById(id);
 
 window.addEventListener("load",() =>{
@@ -141,4 +143,62 @@ window.addEventListener("load",() =>{
                     break;
             }
         }
+
+
+    // Agregar al carrito 
+       
+        addProduct = (userId,productId) => {
+            if(userId){
+                const data = {
+                    userId: +userId,
+                    productId: +productId,
+                    productQuantity: inputAmount.value
+                }
+                const options = {
+                    method : 'POST',
+                    headers : {
+                        'Content-Type' : 'application/json'
+                    },
+                    body : JSON.stringify(data)
+                }
+                fetch('/api/cart/createOrder',options)
+                .then(response=> {
+                    if(response.ok){
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Producto agregado',
+                            text: "Puedes verlo en tu carrito",
+                            confirmButtonText : 'Entendido'
+                          })
+                    }else{
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'algo salio mal',
+                            text: 'intenta mas tarde!',
+                            confirmButtonText: "Entendido"
+                        })
+                        console.log(response.status);
+                    }
+
+                }).catch(err=> {
+                    console.log(err)
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'algo salio mal',
+                        text: 'intenta mas tarde!',
+                        confirmButtonText: "Entendido"
+                    })
+                }
+                )
+            }else{
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Debes iniciar sesión',
+                    html: ' inicia sesión para agregar un producto <a href="/users/login">Aquí</a>',
+                    confirmButtonText: "Entendido"
+                })
+            }
+        }
+
+        
 })

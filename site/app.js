@@ -20,6 +20,7 @@ const cartRouter = require('./routes/cart');
 
 // api routers
 const apiUsers = require("./routes/api/users"); 
+const apiCart = require("./routes/api/cart"); 
 
 const app = express();
 
@@ -52,6 +53,7 @@ app.use('/cart',cartRouter);
 
 // api routes
 app.use("/api/users",apiUsers)
+app.use("/api/cart",apiCart)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

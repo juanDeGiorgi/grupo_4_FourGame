@@ -56,7 +56,7 @@
                 <% if (product.category.name == "new-release"){ %> 
                     <article>
                         <button id="buttonFavorite" onclick="favorite(`<%=locals.userLogged ? userLogged.id : null%>`,`<%=product.id%>`);" class="fav <%=locals.userLogged && userLogged.favorites.includes(product.id) ? "on-fav" : "off-fav"%>"></button>
-                        <input id="isFavorite" type="number" style="display: none;" value="<%= locals.userLogged && userLogged.favorites.includes(product.id) ? 1 : 0 %>">
+                        <input id="isFavorite<%=product.id%>" type="number" style="display: none;" value="<%= locals.userLogged && userLogged.favorites.includes(product.id) ? 1 : 0 %>">
                         <a href="/products/detail/<%=product.id%> " class="a-article">
                             <div class="contenedor-img">
                                 <img src="/images/products/<%=product.images[0].name%>" alt="image">
@@ -162,8 +162,9 @@
     </main>
     
     <%- include("./partials/footer") %> 
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.9/dist/sweetalert2.all.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="./js/index.js"></script>
 </body>
 </html>
 

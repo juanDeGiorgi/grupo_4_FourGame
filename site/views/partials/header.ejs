@@ -140,7 +140,27 @@
                     <% } %> 
                 </div>
                 
-                <a href="/cart" class="i-cart"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#" class="i-cart position-relative" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill" style="background-color: #3e2ed0;">
+                        99
+                    </span>
+                </a>
+
+
+                <!-- BOOSTRAP CARRITO -->
+
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header">
+                      <h5 id="offcanvasRightLabel">Carrito (0)</h5>
+                      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                      ...
+                    </div>
+                </div>
+
+                <!-- BOOSTRAP CARRITO -->
             </div>
         </div>
         <div class="nav-2">

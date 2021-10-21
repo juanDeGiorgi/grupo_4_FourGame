@@ -35,6 +35,19 @@ module.exports = (sequelize,dataTypes) => {
 
     const DetailOrder = sequelize.define(alias,cols,config);
 
+    DetailOrder.associate = models =>{
+
+        DetailOrder.belongsTo(models.orders,{
+            as: "order",
+            foreignKey: "orderId"
+        })
+
+        DetailOrder.belongsTo(models.products,{
+            as: "product",
+            foreignKey: "productId"
+        })
+    }
+
     return DetailOrder ; 
 
 }

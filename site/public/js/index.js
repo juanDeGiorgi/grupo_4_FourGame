@@ -7,10 +7,10 @@ window.addEventListener("load",() =>{
         const buttonFavorite = $("buttonFavorite");
         const isFavorite = $("isFavorite");
 
-        favorite = (userId,productId) =>{
+        favorite = (userId,productId,action) =>{
             if(userId){
-                console.log(isFavorite.value);
-                switch (+isFavorite.value) {
+                console.log(action.value);
+                switch (+action.value) {
                     case 0:
                         let data ={userId:+userId,productId:+productId}
                         let options = {
@@ -21,7 +21,7 @@ window.addEventListener("load",() =>{
                         fetch('/api/users/createFav',options)
                         .then(result => {
                             if(result.ok){
-                                isFavorite.value = 1
+                                action.value = 1
                                 buttonFavorite.classList.remove("off-fav")
                                 buttonFavorite.classList.add("on-fav")
                               
@@ -71,7 +71,7 @@ window.addEventListener("load",() =>{
                                     confirmButtonText : 'Entendido'
                                   })
         
-                                isFavorite.value = 0
+                                action.value = 0
                                 buttonFavorite.classList.remove("on-fav")
                                 buttonFavorite.classList.add("off-fav")
 
@@ -110,35 +110,6 @@ window.addEventListener("load",() =>{
                     html: ' inicia sesión para poder aregar favoritos puedes hacerlo <a href="/users/login">Aquí</a>',
                     confirmButtonText: "Entendido"
                 })
-            }
-        }
-
-
-    // cantidad del producto
-    
-        const inputAmount = $("inputAmount")
-        const buttonLess = $("buttonLess")
-        const buttonAdd = $("buttonAdd")
-        const pAmount = $("pAmount")
-
-        changeAmount = (action) =>{
-            let valor = +inputAmount.value
-            switch (action) {
-                case 0:
-                    if (valor < 90) {
-                        inputAmount.value = valor + 1     
-                        pAmount.innerHTML = inputAmount.value
-                    }
-                    break;
-                case 1:
-                    if (valor > 1) {
-                        inputAmount.value = valor - 1
-                        pAmount.innerHTML = inputAmount.value
-                    }
-                    break;
-
-                default:
-                    break;
             }
         }
 })

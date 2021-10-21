@@ -31,17 +31,6 @@ module.exports = (sequelize,dataTypes) => {
         userId: {
             type: dataTypes.INTEGER,
             allowNull: false
-        },
-
-        addressId: {
-            type: dataTypes.INTEGER,
-            allowNull: false
-        },
-
-        payMethodId: {
-            type: dataTypes.INTEGER,
-            allowNull: false,
-            defaultValue: 1
         }
 
     }
@@ -57,23 +46,14 @@ module.exports = (sequelize,dataTypes) => {
 
     Order.associate = (models) => {
 
-        Order.belongsTo(models.payMethods,{
-            as : "payMethod",
-            foreignKey: "payMethodId"
-        }),
-        Order.belongsTo(models.address,{
-            as : "address",
-            foreignKey: "addressId"
-        })
         Order.belongsTo(models.users,{
             as: "user",
             foreignKey: "userId"
         })
-        Order.belongsToMany(models.detailOrder,{
+
+        Order.hasMany(models.detailOrder,{
             as: "details",
-            through: "detailOrder",
             foreignKey : "orderId",
-            otherKey : "productId"
         })
     }
 

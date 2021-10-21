@@ -19,7 +19,7 @@ module.exports = {
 
             if(pendingOrder){
                 const updatedOrder = await db.orders.update({
-                    finalPrice: pendingOrder.finalPrice + (productToAdd.price * +req.body.productQuantity)
+                    finalPrice: pendingOrder.finalPrice + (Math.round(productToAdd.price - ((productToAdd.discount / 100) * productToAdd.price)) * +req.body.productQuantity)
                 },{
                     where: {
                         id : pendingOrder.id
@@ -45,7 +45,7 @@ module.exports = {
                 });
             }else{
                 const newOrder = await db.orders.create({
-                    finalPrice: productToAdd.price * +req.body.productQuantity,
+                    finalPrice: Math.round(productToAdd.price - ((productToAdd.discount / 100) * productToAdd.price)) * +req.body.productQuantity,
                     status: 0,
                     cardQuantity: 1,
                     userId: req.body.userId

@@ -59,12 +59,8 @@ module.exports = (sequelize,dataTypes) => {
         Address.belongsTo(models.users,{
             as: "user",
             foreignKey: "userId"
-        }),
-
-        Address.hasMany(models.orders,{
-            as: "orders",
-            foreignKey: "addressId"
         })
+        
     }
 
     return Address ; 

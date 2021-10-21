@@ -148,11 +148,12 @@ window.addEventListener("load",() =>{
     // Agregar al carrito 
        
         addProduct = (userId,productId) => {
+            console.log(+inputAmount.value);
             if(userId){
                 const data = {
                     userId: +userId,
                     productId: +productId,
-                    productQuantity: inputAmount.value
+                    productQuantity: +inputAmount.value
                 }
                 const options = {
                     method : 'POST',

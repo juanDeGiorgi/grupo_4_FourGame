@@ -78,7 +78,7 @@ module.exports={
                                 name: detail.product.name,
                                 image: detail.product.images[0].name,
                                 quantity: detail.quantity,
-                                price: detail.product.price * detail.quantity,
+                                price: Math.round(detail.product.price - ((detail.product.discount / 100) * detail.product.price)) * detail.quantity,
                                 orderId: order.id
                             }
                             

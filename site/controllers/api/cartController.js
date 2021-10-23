@@ -19,14 +19,15 @@ module.exports = {
 
             if(pendingOrder){
                 const updatedOrder = await db.orders.update({
-                    finalPrice: pendingOrder.finalPrice + (Math.round(productToAdd.price - ((productToAdd.discount / 100) * productToAdd.price)) * +req.body.productQuantity)
+                    finalPrice: pendingOrder.finalPrice + (Math.round(productToAdd.price - ((productToAdd.discount / 100) * productToAdd.price)) * req.body.productQuantity)
                 },{
                     where: {
                         id : pendingOrder.id
                     }
                 })
 
-                pendingOrder.details.forEach(async detail => {
+                console.log("ENTRO ACA EN EL FOREACH DE DETAIL ORDER");
+                const updatedDetail = await pendingOrder.details.forEach(async detail => {
                     if(detail.productId == productToAdd.id){
                         const updatedDetail = await db.detailOrder.update({
                             quantity: detail.quantity + req.body.productQuantity

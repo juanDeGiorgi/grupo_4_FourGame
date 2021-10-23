@@ -130,7 +130,6 @@
     }
 
     header nav .nav-1 .logo-desktop{
-        /* width: 8vw; */
         width: 15vw;
     }
 
@@ -161,6 +160,83 @@
         justify-content: space-around;
         align-content: center;
     }    
+
+    header .title-p-cart{
+        font-size: 0.9vw;
+    }
+
+    header .container-p-cart{
+        display: flex;
+        justify-content: space-around;
+        border: 1px solid #c1b8b885;
+        border-radius: 14px;
+    }
+
+    header .img-c-cart{
+        width: 24.8%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    header .infoProduct-c-cart{
+        width: 65%;
+        padding: 1vw;
+    }
+
+    header .price-product-cart{
+        display: flex;
+        align-content: center;
+        align-items: center;
+    }
+
+    header .t-price{
+        font-weight: 700;
+        margin: 0.4vw 0;
+    }
+
+    header .n-price{
+        font-weight: 700;
+        margin-left: 3.3vw;
+        font-size: 1.6vw;
+    }
+
+    header .cantidad {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    
+    header .cantidad .t-cantidad{
+        display: inline-block;
+        font-weight: 700;
+        margin: 0vw;
+    }
+    
+    header .cantidad button{
+        color: #F2204D;
+        font-size: 1.5vw;
+        margin: 0 1.4vw;
+    }
+    
+    
+    header .cantidad button:hover{
+        color: #cc1a40;
+    }
+    
+    header .cantidad button:active{
+        color: #a81535;
+    }
+    
+    header .cantidad .n-cantidad{
+        font-weight: 700;
+        font-size: 2vw;
+        display: inline-block;
+        background: none;
+        border: none;
+        text-align: center;
+        margin: 0vw;
+    }
 
     header nav .nav-1 .search .search-bar{
         width: 100%;

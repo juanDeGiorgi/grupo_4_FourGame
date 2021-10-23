@@ -1,7 +1,4 @@
 
-
-const $ = id => document.getElementById(id);
-
 window.addEventListener("load",() =>{
 
     // favoritos
@@ -147,7 +144,7 @@ window.addEventListener("load",() =>{
 
     // Agregar al carrito 
        
-        addProduct = (userId,productId) => {
+        addProduct = (userId,productId,action) => {
             console.log(+inputAmount.value);
             if(userId){
                 const data = {
@@ -165,12 +162,23 @@ window.addEventListener("load",() =>{
                 fetch('/api/cart/createOrder',options)
                 .then(response=> {
                     if(response.ok){
-                        Swal.fire({
-                            icon: 'success',
-                            title: 'Producto agregado',
-                            text: "Puedes verlo en tu carrito",
-                            confirmButtonText : 'Entendido'
-                          })
+                        if(action == 1){
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Producto agregado',
+                                text: "seras redireccionado a la pasarela de pago",
+                                confirmButtonText : 'Entendido'
+                            }).then(result =>{
+                                result.isConfirmed ? window.location.replace("/cart") : null
+                            })
+                        }else{
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Producto agregado',
+                                text: "Puedes verlo en tu carrito",
+                                confirmButtonText : 'Entendido'
+                            })
+                        }
                     }else{
                         Swal.fire({
                             icon: 'error',
@@ -189,8 +197,7 @@ window.addEventListener("load",() =>{
                         text: 'intenta mas tarde!',
                         confirmButtonText: "Entendido"
                     })
-                }
-                )
+                })
             }else{
                 Swal.fire({
                     icon: 'warning',
@@ -200,6 +207,5 @@ window.addEventListener("load",() =>{
                 })
             }
         }
-
         
 })

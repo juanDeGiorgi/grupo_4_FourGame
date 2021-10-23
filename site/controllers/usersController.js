@@ -34,7 +34,7 @@ module.exports={
                  },
 
                 include : [
-                    {association: "productFavorites",attributes : ["id"]}
+                    {association: "productFavorites",attributes : ["id"]},
                 ]
             }).then(user => {
 
@@ -56,11 +56,51 @@ module.exports={
                     favorites: favoritesModify
                 }
 
-                if (req.body.rememberSession) {
-                    res.cookie('rememberSession', req.session.userLogged, {maxAge : 10000 * 60});
-                } 
+                req.session.order = [];
+                
+                db.orders.findOne({
+                    where:{
+                        userId: user.id,
+                        status: 0
+                    },
+                    include: [
+                        {association: "details",include:[
+                            {association: "product",include:[
+                                {association: "images"}
+                            ]}
+                        ]}
+                    ]
+                }).then(order =>{
+                    if(order){
+                        order.details.forEach(detail => {
+                            const product = {
+                                id: detail.productId,
+                                name: detail.product.name,
+                                image: detail.product.images[0].name,
+                                quantity: detail.quantity,
+                                price: detail.product.price * detail.quantity,
+                                orderId: order.id
+                            }
+                            
+                            req.session.order.push(product)
+                        });
+                    }else{
+                        db.orders.create({
+                            finalPrice: 0,
+                            status: 0,
+                            cardQuantity: 1,
+                            userId: user.id
+                        })
+                    }
 
-                res.redirect(`/users/profile/${user.id}`)
+                    if (req.body.rememberSession) {
+                        res.cookie('rememberSession', req.session.userLogged, {maxAge : 10000 * 60});
+                        res.cookie('rememberCartUser', req.session.order, {maxAge : 10000 * 60});
+                    } 
+
+                    res.redirect(`/users/profile/${user.id}`)
+                })
+
             })
         }else{
             res.render('login' ,{
@@ -123,6 +163,7 @@ module.exports={
     logout : (req,res) => {
         req.session.destroy()
         res.cookie("rememberSession",null, {maxAge: -1})
+        res.cookie("rememberCartUser",null, {maxAge: -1})
         res.redirect('/')
     },
 

@@ -61,42 +61,6 @@
     }
 
     /*----------------------------------    MENU TELEFONO    ------------------------------------------*/
-
-        /* .btn-primary{
-            padding: 0;
-            font-size: 40px;
-            width: 40px;
-            height: 40px;
-            text-shadow: 0px 5px 4px rgb(100 100 100 / 57%);
-            margin-bottom: 24px;
-            background:none;
-            border: none;
-        }
-
-        .btn-primary:hover{
-            box-shadow: none;
-            background:none;
-            border: none;
-        }
-
-        .btn-primary:active{
-            box-shadow: none;
-            background:none;
-            border: none;
-        }
-
-        .btn-primary:focus,.dropdown-toggle:focus{
-            box-shadow: none;
-            background:none;
-            border: none;
-        }
-
-        .btn-check:active+.btn-primary:focus, .btn-check:checked+.btn-primary:focus, .btn-primary.active:focus, .btn-primary:active:focus, .show>.btn-primary.dropdown-toggle:focus {
-            box-shadow: none;
-            background:none;
-            border: none;
-        } */
-
         .no-acordion::after{
             background-image: none;
         }
@@ -180,6 +144,23 @@
         align-items: center;
         flex-wrap: wrap;
     }
+
+    header .CartEmpty {
+        color: gray;
+        font-size: 1.7vw;
+        text-align: center;
+    }
+
+    header .c-products-cart{
+        min-height: 90%;
+    }
+
+    header .c-buttons-cart{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        align-content: center;
+    }    
 
     header nav .nav-1 .search .search-bar{
         width: 100%;

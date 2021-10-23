@@ -63,5 +63,13 @@ module.exports = {
             console.log(err);
             res.status(500).json("internal server error")
         }
+    },
+
+    show : (req,res) =>{
+        if(req.session.order){
+            res.status(200).json(req.session.order)
+        }else{
+            res.status(204).json("no content")
+        }
     }
 }

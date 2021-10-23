@@ -1,5 +1,3 @@
-const $= id => document.getElementById(id);
-
 showImage = (input,idImage) =>{
     document.getElementById(input).onchange = e =>{
         let reader = new FileReader();

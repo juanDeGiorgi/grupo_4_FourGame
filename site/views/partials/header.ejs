@@ -142,23 +142,30 @@
                 
                 <a href="#" class="i-cart position-relative" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                     <i class="fas fa-shopping-cart"></i>
-                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill" style="background-color: #3e2ed0;">
-                        99
+                    <span id="cartBadge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill" style="background-color: #3e2ed0;">
+                        0
                     </span>
                 </a>
 
 
                 <!-- BOOSTRAP CARRITO -->
 
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-                    <div class="offcanvas-header">
-                      <h5 id="offcanvasRightLabel">Carrito (0)</h5>
-                      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                        <div class="offcanvas-header">
+                            <h5 id="offcanvasRightLabel">Carrito (0)</h5>
+                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+                        <div class="offcanvas-body">
+                            <div class="c-products-cart">
+                                <p class="CartEmpty">No tienes productos en el carrito</p>
+
+                            </div>
+                            <div class="c-buttons-cart">
+                                <button type="button" class="btn btn-primary" style="background-color: #F2204D; border: none;">Vaciar carrito</button>
+                                <button type="button" class="btn btn-primary" style="background-color: #3D2ED0; border: none;">Finalizar compra</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="offcanvas-body">
-                      ...
-                    </div>
-                </div>
 
                 <!-- BOOSTRAP CARRITO -->
             </div>

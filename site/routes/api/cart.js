@@ -7,6 +7,7 @@ const controller = require("../../controllers/api/cartController");
 
 router
 
+    .get("/show",controller.show)
     .post("/createOrder",controller.createOrder)
 
 module.exports = router;

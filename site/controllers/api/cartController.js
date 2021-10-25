@@ -18,7 +18,7 @@ module.exports = {
             })
 
             if(pendingOrder){
-                const updatedOrder = await db.orders.update({
+                await db.orders.update({
                     finalPrice: pendingOrder.finalPrice + (Math.round(productToAdd.price - ((productToAdd.discount / 100) * productToAdd.price)) * req.body.productQuantity)
                 },{
                     where: {
@@ -26,24 +26,29 @@ module.exports = {
                     }
                 })
 
-                console.log("ENTRO ACA EN EL FOREACH DE DETAIL ORDER");
-                const updatedDetail = await pendingOrder.details.forEach(async detail => {
+                let productPendingExist = false;
+
+                await pendingOrder.details.forEach(async detail => {
                     if(detail.productId == productToAdd.id){
-                        const updatedDetail = await db.detailOrder.update({
+                        productPendingExist = true
+                        await db.detailOrder.update({
                             quantity: detail.quantity + req.body.productQuantity
                         },{
                             where: {
                                 id: detail.id
                             }
                         })
-                    }else{
-                        const newDetail = await db.detailOrder.create({
-                            orderId: updatedOrder.id,
-                            productId: productToAdd.id,
-                            quantity: +req.body.productQuantity
-                        })
                     }
                 });
+
+                if(!productPendingExist){
+                    await db.detailOrder.create({
+                        orderId: pendingOrder.id,
+                        productId: productToAdd.id,
+                        quantity: +req.body.productQuantity
+                    })
+                }
+        
             }else{
                 const newOrder = await db.orders.create({
                     finalPrice: Math.round(productToAdd.price - ((productToAdd.discount / 100) * productToAdd.price)) * +req.body.productQuantity,

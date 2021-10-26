@@ -6,13 +6,14 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     const title = $("offcanvasRightLabel")
     const body = $("offcanvas-body")
     const cProduct = $("c-products-cart");
+    const pTotal = $("finalPriceCart")
 
 const showCart = (order) =>{
-    let quantity = 0;
+    let Totalquantity = 0;
     let finalPrice = 0;
     console.log(order);
     order.forEach(product => {
-        quantity += product.quantity,
+        Totalquantity += product.quantity,
         finalPrice += product.price
         cProduct.innerHTML += `  <div class='container-p-cart'>
         <div class='img-c-cart'>
@@ -22,22 +23,25 @@ const showCart = (order) =>{
             <h4 class='title-p-cart'>${product.name}</h4>
             <div class='price-product-cart'>
                 <p class='t-price'>Precio :</p>
-                <span class='n-price'>$${toThousand(product.price)}</span>
+                <span class='n-price'>$ ${toThousand(product.price)}</span>
             </div>
             <div class='cantidad'>
                 <p class='t-cantidad'>Cantidad :</p>
-                <button id='buttonLess' onclick='changeAmount(1)'><i class='fas fa-minus-circle'></i></button>
-                <p  id='pAmount' class='n-cantidad'>${quantity}</p>
-                <input id='inputAmount' class="n-cantidad" disabled style='display: none;' value='${quantity}' type='number'>
-                <button id='buttonAdd' onclick="changeAmount(0)"><i class='fas fa-plus-circle'></i></button>
+                <div class=amount-div>
+                    <button id='buttonLess' onclick='changeAmount(1)'><i class='fas fa-minus-circle'></i></button>
+                    <p  id='pAmount' class='n-cantidad'>${product.quantity}</p>
+                    <input id='inputAmount' class="n-cantidad" disabled style='display: none;' value='${product.quantity}' type='number'>
+                    <button id='buttonAdd' onclick="changeAmount(0)"><i class='fas fa-plus-circle'></i></button>
+                </div>
             </div>
         </div>
     </div>`
     });
 
-  
-    badge.innerHTML = quantity
-    title.innerHTML = `Carrito(${quantity})`
+    Totalquantity > 0 ? $("CartEmpty").style.display = "none" : null
+    pTotal.innerHTML = `Total : ${toThousand(finalPrice)}`
+    badge.innerHTML = Totalquantity
+    title.innerHTML = `Carrito(${Totalquantity})`
 }
 
 const getOrderData = () =>{

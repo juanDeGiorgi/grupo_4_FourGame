@@ -56,50 +56,50 @@ module.exports={
                     favorites: favoritesModify
                 }
 
-                // req.session.order = [];
+                req.session.order = [];
                 
-                // db.orders.findOne({
-                //     where:{
-                //         userId: user.id,
-                //         status: 0
-                //     },
-                //     include: [
-                //         {association: "details",include:[
-                //             {association: "product",include:[
-                //                 {association: "images"}
-                //             ]}
-                //         ]}
-                //     ]
-                // }).then(order =>{
-                //     if(order){
-                //         order.details.forEach(detail => {
-                //             const product = {
-                //                 id: detail.productId,
-                //                 name: detail.product.name,
-                //                 image: detail.product.images[0].name,
-                //                 quantity: detail.quantity,
-                //                 price: Math.round(detail.product.price - ((detail.product.discount / 100) * detail.product.price)) * detail.quantity,
-                //                 orderId: order.id
-                //             }
+                db.orders.findOne({
+                    where:{
+                        userId: user.id,
+                        status: 0
+                    },
+                    include: [
+                        {association: "details",include:[
+                            {association: "product",include:[
+                                {association: "images"}
+                            ]}
+                        ]}
+                    ]
+                }).then(order =>{
+                    if(order){
+                        order.details.forEach(detail => {
+                            const product = {
+                                id: detail.productId,
+                                name: detail.product.name,
+                                image: detail.product.images[0].name,
+                                quantity: detail.quantity,
+                                price: Math.round(detail.product.price - ((detail.product.discount / 100) * detail.product.price)) * detail.quantity,
+                                orderId: order.id
+                            }
                             
-                //             req.session.order.push(product)
-                //         });
-                //     }else{
-                //         db.orders.create({
-                //             finalPrice: 0,
-                //             status: 0,
-                //             cardQuantity: 1,
-                //             userId: user.id
-                //         })
-                //     }
-                // })
+                            req.session.order.push(product)
+                        });
+                    }else{
+                        db.orders.create({
+                            finalPrice: 0,
+                            status: 0,
+                            cardQuantity: 1,
+                            userId: user.id
+                        })
+                    }
+                    if (req.body.rememberSession) {
+                        res.cookie('rememberSession', req.session.userLogged, {maxAge : 10000 * 60});
+                        res.cookie('rememberCartUser', req.session.order, {maxAge : 10000 * 60});
+                    } 
+    
+                    res.redirect(`/users/profile/${user.id}`)
+                })
                 
-                                    if (req.body.rememberSession) {
-                                        res.cookie('rememberSession', req.session.userLogged, {maxAge : 10000 * 60});
-                                        res.cookie('rememberCartUser', req.session.order, {maxAge : 10000 * 60});
-                                    } 
-                
-                                    res.redirect(`/users/profile/${user.id}`)
 
             })
         }else{

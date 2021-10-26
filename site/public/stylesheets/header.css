@@ -151,7 +151,11 @@
     }
 
     header .c-products-cart{
-        min-height: 90%;
+        min-height: 83%;
+        max-height: 35vw;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        width: 100%;
     }
 
     header .c-buttons-cart{
@@ -159,6 +163,7 @@
         align-items: center;
         justify-content: space-around;
         align-content: center;
+        height: 10%;
     }    
 
     header .title-p-cart{
@@ -170,6 +175,8 @@
         justify-content: space-around;
         border: 1px solid #c1b8b885;
         border-radius: 14px;
+        margin: 1vw 1vw;
+        padding: 0.7vw;
     }
 
     header .img-c-cart{
@@ -181,42 +188,53 @@
 
     header .infoProduct-c-cart{
         width: 65%;
-        padding: 1vw;
     }
 
     header .price-product-cart{
         display: flex;
         align-content: center;
         align-items: center;
+        justify-content: space-between;
     }
 
     header .t-price{
         font-weight: 700;
         margin: 0.4vw 0;
+        font-size: 1.1vw;
     }
 
     header .n-price{
         font-weight: 700;
-        margin-left: 3.3vw;
-        font-size: 1.6vw;
+        margin-right: 0.3vw;
+        font-size: 1.1vw;
     }
 
     header .cantidad {
         display: flex;
         align-items: center;
         flex-wrap: wrap;
+        justify-content: space-between;
     }
     
     header .cantidad .t-cantidad{
         display: inline-block;
         font-weight: 700;
         margin: 0vw;
+        font-size: 1.1vw;
+    }
+
+    header .finalPriceCart{
+        text-align: center;
+        font-size: 2.1vw;
+        font-weight: 700;
+        margin-bottom: 0vw;
+        min-height: 2.5vw;
     }
     
     header .cantidad button{
         color: #F2204D;
         font-size: 1.5vw;
-        margin: 0 1.4vw;
+        margin: 0 0.3vw;
     }
     
     
@@ -230,7 +248,7 @@
     
     header .cantidad .n-cantidad{
         font-weight: 700;
-        font-size: 2vw;
+        font-size: 1.4vw;
         display: inline-block;
         background: none;
         border: none;

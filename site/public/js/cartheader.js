@@ -5,6 +5,7 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     const badge = $("cartBadge")
     const title = $("offcanvasRightLabel")
     const body = $("offcanvas-body")
+    const footer = $("offcanvas-footer")
     const cProduct = $("c-products-cart");
     const pTotal = $("finalPriceCart")
 
@@ -38,10 +39,13 @@ const showCart = (order) =>{
     </div>`
     });
 
-    Totalquantity > 0 ? $("CartEmpty").style.display = "none" : null
-    pTotal.innerHTML = `Total : ${toThousand(finalPrice)}`
-    badge.innerHTML = Totalquantity
-    title.innerHTML = `Carrito(${Totalquantity})`
+    if(Totalquantity > 0){
+        $("CartEmpty").style.display = "none"
+        pTotal.innerHTML = `$ ${toThousand(finalPrice)}`
+        badge.innerHTML = Totalquantity
+        title.innerHTML = `Carrito(${Totalquantity})`
+        footer.style.display = "initial"
+    }
 }
 
 const getOrderData = () =>{

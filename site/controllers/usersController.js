@@ -97,7 +97,7 @@ module.exports={
                         res.cookie('rememberCartUser', req.session.order, {maxAge : 10000 * 60});
                     } 
     
-                    res.redirect(`/users/profile/${user.id}`)
+                    res.redirect(`/`)
                 })
                 
 

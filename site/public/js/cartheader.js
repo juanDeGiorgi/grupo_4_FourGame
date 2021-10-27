@@ -10,13 +10,13 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     const pTotal = $("finalPriceCart")
 
 const showCart = (order) =>{
+    if(order.length > 0) cProduct.innerHTML = null
     let Totalquantity = 0;
     let finalPrice = 0;
-    console.log(order);
     order.forEach(product => {
         Totalquantity += product.quantity,
         finalPrice += product.price
-        cProduct.innerHTML += `  <div class='container-p-cart'>
+        cProduct.innerHTML += `  <div id="container-p-cart" class='container-p-cart'>
         <div class='img-c-cart'>
             <img src='/images/products/${product.image}' width='100%'>
         </div>
@@ -40,7 +40,7 @@ const showCart = (order) =>{
     });
 
     if(Totalquantity > 0){
-        $("CartEmpty").style.display = "none"
+        // $("CartEmpty").style.display = "none"
         pTotal.innerHTML = `$ ${toThousand(finalPrice)}`
         badge.innerHTML = Totalquantity
         title.innerHTML = `Carrito(${Totalquantity})`
@@ -49,7 +49,7 @@ const showCart = (order) =>{
 }
 
 const getOrderData = () =>{
-    fetch("/api/cart/show")
+    fetch(`/api/cart/show`)
     .then(response => response.json())
     .then(result =>{
         showCart(result)

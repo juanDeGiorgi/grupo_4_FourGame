@@ -178,6 +178,7 @@ window.addEventListener("load",() =>{
                                 text: "Puedes verlo en tu carrito",
                                 confirmButtonText : 'Entendido'
                             })
+                            getOrderData()
                         }
                     }else{
                         Swal.fire({

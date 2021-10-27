@@ -72,10 +72,45 @@ module.exports = {
     },
 
     show : (req,res) =>{
-        if(req.session.order){
-            res.status(200).json(req.session.order)
+        const orderToShow = []
+
+        if(req.session.userLogged){
+            db.orders.findOne({
+                where:{
+                    userId: +req.session.userLogged.id,
+                    status: 0
+                },
+                include: [
+                    {association: "details",include:[
+                        {association: "product",include:[
+                            {association: "images"}
+                        ]}
+                    ]}
+                ]
+            }).then(order =>{
+                if(order){
+                    order.details.forEach(detail => {
+                        const product = {
+                            id: detail.productId,
+                            name: detail.product.name,
+                            image: detail.product.images[0].name,
+                            quantity: detail.quantity,
+                            price: Math.round(detail.product.price - ((detail.product.discount / 100) * detail.product.price)) * detail.quantity,
+                            orderId: order.id
+                        }
+                        
+                        orderToShow.push(product)
+                    });
+                }
+
+                res.status(200).json(orderToShow)
+            }).cath(err =>{
+                console.log(err);
+                res.status(200).json(orderToShow)
+            })
         }else{
-            res.status(204).json("no content")
+            res.status(200).json(orderToShow)
         }
     }
+
 }

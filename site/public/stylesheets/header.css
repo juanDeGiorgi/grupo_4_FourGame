@@ -153,6 +153,54 @@ header .CartEmpty {
   text-align: center;
 }
 
+header .lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+header .lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid rgb(156, 154, 154);
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: rgb(156, 154, 154) transparent transparent transparent;
+}
+
+header .lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+
+header .lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+
+header .lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+header .emptyCart{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
 header .c-products-cart {
   min-height: 80%;
   max-height: 30vw;

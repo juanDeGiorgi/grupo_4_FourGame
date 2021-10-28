@@ -104,12 +104,30 @@ module.exports = {
                 }
 
                 res.status(200).json(orderToShow)
-            }).cath(err =>{
+            }).catch(err =>{
                 console.log(err);
                 res.status(200).json(orderToShow)
             })
         }else{
-            res.status(200).json(orderToShow)
+            res.status(204).json(orderToShow)
+        }
+    },
+
+    deleteOrder : (req,res) =>{
+        if(req.session.userLogged){
+            db.orders.destroy({
+                where:{
+                    userId: +req.session.userLogged.id,
+                    status: 0
+                }
+            }).then(result =>{
+                res.status(200).json("order deleted")
+            }).catch(err =>{
+                console.log(err);
+                res.status(404).json("not found")
+            })
+        }else{
+            res.status(400).json("bad request")
         }
     }
 

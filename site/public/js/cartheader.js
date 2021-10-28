@@ -10,6 +10,7 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     const pTotal = $("finalPriceCart")
 
 const showCart = (order) =>{
+    cProduct.classList.remove("emptyCart")
     if(order.length > 0) cProduct.innerHTML = null
     let Totalquantity = 0;
     let finalPrice = 0;
@@ -53,6 +54,24 @@ const getOrderData = () =>{
     .then(response => response.json())
     .then(result =>{
         showCart(result)
+    })
+}
+
+emptyCart = () =>{
+    fetch("/api/cart/empty")
+    .then(response => {
+        if(response.ok){
+            cProduct.innerHTML = `<div class="lds-ring"><div></div><div></div><div></div><div></div></div>`
+            setTimeout(() => {
+                cProduct.innerHTML =  `<p id="CartEmpty" class="CartEmpty">No tienes productos en el carrito</p>`
+                cProduct.classList.remove("emptyCart")
+            },1000)
+            
+            cProduct.classList.add("emptyCart")
+            badge.innerHTML = 0
+            title.innerHTML = `Carrito(0)`
+            footer.style.display = "none"
+        }
     })
 }
 

@@ -9,6 +9,7 @@ router
 
     .get("/show",controller.show)
     .post("/createOrder",controller.createOrder)
+    .get("/empty",controller.deleteOrder)
 
 module.exports = router;
 

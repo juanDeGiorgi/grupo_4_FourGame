@@ -30,10 +30,10 @@ const showCart = (order) =>{
             <div class='cantidad'>
                 <p class='t-cantidad'>Cantidad :</p>
                 <div class=amount-div>
-                    <button id='buttonLess' onclick='changeAmount(1)'><i class='fas fa-minus-circle'></i></button>
-                    <p  id='pAmount' class='n-cantidad'>${product.quantity}</p>
-                    <input id='inputAmount' class="n-cantidad" disabled style='display: none;' value='${product.quantity}' type='number'>
-                    <button id='buttonAdd' onclick="changeAmount(0)"><i class='fas fa-plus-circle'></i></button>
+                    <button id='buttonLess' onclick='changeAmount(1,${product.id})'><i class='fas fa-minus-circle'></i></button>
+                    <p id='pAmount${product.id}' class='n-cantidad'>${product.quantity}</p>
+                    <input id='inputAmount${product.id}' class="n-cantidad" disabled style='display: none;' value='${product.quantity}' type='number'>
+                    <button id='buttonAdd' onclick="changeAmount(0,${product.id})"><i class='fas fa-plus-circle'></i></button>
                 </div>
             </div>
         </div>
@@ -66,7 +66,7 @@ emptyCart = () =>{
                 cProduct.innerHTML =  `<p id="CartEmpty" class="CartEmpty">No tienes productos en el carrito</p>`
                 cProduct.classList.remove("emptyCart")
             },1000)
-            
+
             cProduct.classList.add("emptyCart")
             badge.innerHTML = 0
             title.innerHTML = `Carrito(0)`
@@ -74,5 +74,33 @@ emptyCart = () =>{
         }
     })
 }
+
+  // cantidad del producto
+    
+//   const inputAmount = $("inputAmount")
+//   const buttonLess = $("buttonLess")
+//   const buttonAdd = $("buttonAdd")
+//   const pAmount = $("pAmount")
+
+  changeAmount = (action,productId) =>{
+      let valor = +$(`inputAmount${+productId}`).value
+      switch (action) {
+          case 0:
+              if (valor < 90) {
+                $(`inputAmount${+productId}`).value = valor + 1     
+                $(`pAmount${+productId}`).innerHTML = $(`inputAmount${+productId}`).value
+              }
+              break;
+          case 1:
+              if (valor > 1) {
+                $(`inputAmount${+productId}`).value = valor - 1
+                $(`pAmount${+productId}`).innerHTML = $(`inputAmount${+productId}`).value
+              }
+              break;
+
+          default:
+              break;
+      }
+  }
 
 getOrderData()

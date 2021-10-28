@@ -38,6 +38,10 @@
                 top: -15.2%;
                 left: 4%;
             }
+            footer .disabled {
+                cursor: not-allowed;
+                pointer-events: none;
+            }
             
             footer form input{
                 display: inline-block;

@@ -55,6 +55,16 @@
 
   /* SECTION ARTICLES */
 
+  .home .swiper {
+    width: 90%;
+    height: 500px;
+  }
+
+  /* .home .swiper-slide{
+    width: 18vw!important;
+    height: 32.5vw;
+  } */
+
   .home main h2{
       color: #ffffff;
       text-align: center;

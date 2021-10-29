@@ -56,7 +56,7 @@
   /* SECTION ARTICLES */
 
   .home .swiper {
-    width: 90%;
+    width: 80%;
     height: 500px;
   }
 
@@ -192,6 +192,10 @@
   
   @media (min-width:500px){
       
+    .home .swiper {
+        width: 90%;
+    }
+
       .home {
           overflow-x: hidden;
       }
@@ -263,7 +267,7 @@
       }
   
       .home main section article div .price {
-          font-size: 4.7vw;
+          font-size: 4.6vw;
       }
   
       .home main section article div .discount {

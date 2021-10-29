@@ -54,7 +54,7 @@
             <section class="swiper-wrapper">
                 <% products.forEach(product => { %> 
                     <% if (product.category.name == "new-release"){ %> 
-                        <article class="swiper-slide">
+                        <article class="productos swiper-slide">
                             <button id="buttonFavorite" onclick="favorite(`<%=locals.userLogged ? userLogged.id : null%>`,`<%=product.id%>`);" class="fav <%=locals.userLogged && userLogged.favorites.includes(product.id) ? "on-fav" : "off-fav"%>"></button>
                             <input id="isFavorite<%=product.id%>" type="number" style="display: none;" value="<%= locals.userLogged && userLogged.favorites.includes(product.id) ? 1 : 0 %>">
                             <a href="/products/detail/<%=product.id%> " class="a-article">

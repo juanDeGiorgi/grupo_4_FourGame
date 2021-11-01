@@ -14,6 +14,7 @@ const transporter = nodemailer.createTransport(sendGridTransport({
     }
 })) 
 
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const db = require('../database/models');
 const { Op } = require('sequelize');
@@ -130,11 +131,14 @@ module.exports={
     profile : (req,res) => {
         db.users.findByPk(req.params.id,{
             include : [
-                {association : "address"}
+                {association: "address"},
+                {association: "productFavorites",include: [
+                    {association: "images"}
+                ]}
             ]
         })
         .then(user=> {
-            res.render('userProfile',{user})
+            res.render('userProfile',{user,toThousand})
         })
     },
 

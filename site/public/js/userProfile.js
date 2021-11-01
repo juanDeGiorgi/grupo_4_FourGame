@@ -23,6 +23,38 @@ limpiar = (inputId,imageId,deleteId) =>{
 
 window.addEventListener("load",() =>{
 
+// carrusel
+
+    const swiper = new Swiper('.swiper', {
+        // Optional parameters
+        slidesPerView: 3,
+        spaceBetween: 40,
+        freeMode: true,
+        direction: 'horizontal',
+    
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
+        // Responsive breakpoints
+        breakpoints: {
+            320: {
+            slidesPerView: 1,
+            spaceBetween: 20
+            },
+            500: {
+            slidesPerView: 2,
+            spaceBetween: 20
+            },
+            960: {
+            slidesPerView: 3,
+            spaceBetween: 40
+            }
+        }
+    })
+
 // forms
 
     const formProfile = $("formProfile");

@@ -151,10 +151,124 @@
     border-color: #b02a37;
 }
 
+/* favoritos */
+
+    /* carrusel */
+    .profile .swiper {
+        width: 80%;
+    }
+
+    .profile .container-carrusel{
+        position: relative;
+    }
+
+    .profile .swiper-button-prev{
+        left: -2px!important;
+    }
+    
+    .profile .swiper-button-next{
+        right: -2px!important;
+    }
+
+    .profile .swiper-pagination-bullet-active{
+        background: #3d2ed0;
+    }
+
+.profile main .decoracion{
+  background-color: #F77490;
+  color: #F77490;
+  width: 95%;
+  height: 10px;
+  border-radius: 20px;
+  margin: 0% auto 7.8vw auto;
+}
+
+.profile main .productos{
+  margin-bottom: 15vw;
+}
+
+.profile main section article a{
+  color: black;
+}
+
+.profile main section article{
+  background-color: #ffffff;
+  width: 72.4vw; 
+  height: 131.3vw;
+  padding: 15px;
+  margin: 20px auto 20px auto;
+  box-shadow: 0px 0px 10px rgb(100,100,100);
+  position: relative;
+  cursor: pointer;
+}
+
+.profile main article:hover{
+  box-shadow: 0px 0px 20px rgb(250 0 59);
+}
+
+.profile main section .contenedor-img {
+  height: 65.65vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile main section article .contenedor-img img{
+  width: 70%;
+}
+
+.profile main section article .product-info{
+  height: 65.65vw;
+  border-top: 1px solid #B2B2B2;
+}
+
+.profile main section article .title{
+  height: 26vw;
+}
+
+.profile main section article .info{
+  height: 26vw;
+}
+
+.profile main section article .fav{
+  position: absolute;
+  left: 58.3vw
+}
+
+.profile main section article div h3{
+  font-size: 4.6vw;
+  font-weight: 500;
+  text-align: center;
+  color: #3E3E3E;
+  color: #3E3E3E;
+  margin: 9vw 0% 10vw 0%;
+}
+
+.profile main section article div .price{
+font-size: 8.9vw;
+margin: 0 1.5vw 3% 0;
+display: inline-block;
+}
+
+.profile main section article div .discount{
+  color: #33CC33;
+  font-size: 5vw;
+}
+
+.profile main section article div .payMethod{
+color: #3D2ED0;
+font-weight: 500;
+font-size: 5vw;
+}
+
                 /*              TABLET                       */
 
 @media (min-width:768px){
     
+    .profile .swiper {
+        width: 90%;
+    }
+
     /* nav-bar */
 
         .profile main .nav-bar{
@@ -335,6 +449,83 @@
             position: relative;
             left: 82.6%;
         }
+
+    /* favoritos */
+
+    .profile main section article {
+        width: 40vw;
+        height: 70vw;
+    }
+
+    .profile main section article .fav{
+        left: 31.9vw
+    }
+
+    .profile main section .contenedor-img {
+        height: 50%;
+        overflow: hidden;
+        padding: 5px;
+    }
+
+    .profile main section article .product-info {
+        height: 50%;
+    }
+
+    .profile main section article .title {
+        height: 50%;
+    }
+
+    .profile main section article div h3 {
+        font-size: 2.8vw;
+        margin: 3vw 0% 8vw 0%;
+    }
+
+    .profile main section article .info {
+        height: 50%;
+    }
+
+    .profile main section article div .price {
+        font-size: 4.6vw;
+    }
+
+    .profile main section article div .discount {
+        font-size: 2.7vw;
+    }
+
+    .profile main section article div .payMethod {
+    font-size: 3.1vw;
+    }
     
         
+}
+
+@media (min-width:960px){
+
+    .profile main section article {
+        width: 18vw;
+        height: 32.5vw;
+    }
+
+    .profile main section article .fav{
+      left: 14.2vw
+    }
+
+    .profile main section article div h3 {
+        font-size: 1.2vw;
+        margin: 1.4vw 0% 8vw 0%;
+    }
+
+    .profile main section article div .price {
+        font-size: 1.8vw;
+        margin: 0 0.5vw 3% 0;
+    }
+
+    .profile main section article div .discount {
+        font-size: 1.3vw;
+    }
+
+    .profile main section article div .payMethod {
+      font-size: 1.3vw;
+  }
+
 }

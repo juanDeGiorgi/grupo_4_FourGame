@@ -75,32 +75,25 @@ emptyCart = () =>{
     })
 }
 
-  // cantidad del producto
-    
-//   const inputAmount = $("inputAmount")
-//   const buttonLess = $("buttonLess")
-//   const buttonAdd = $("buttonAdd")
-//   const pAmount = $("pAmount")
+changeAmount = (action,productId) =>{
+    let valor = +$(`inputAmount${+productId}`).value
+    switch (action) {
+        case 0:
+            if (valor < 90) {
+            $(`inputAmount${+productId}`).value = valor + 1     
+            $(`pAmount${+productId}`).innerHTML = $(`inputAmount${+productId}`).value
+            }
+            break;
+        case 1:
+            if (valor > 1) {
+            $(`inputAmount${+productId}`).value = valor - 1
+            $(`pAmount${+productId}`).innerHTML = $(`inputAmount${+productId}`).value
+            }
+            break;
 
-  changeAmount = (action,productId) =>{
-      let valor = +$(`inputAmount${+productId}`).value
-      switch (action) {
-          case 0:
-              if (valor < 90) {
-                $(`inputAmount${+productId}`).value = valor + 1     
-                $(`pAmount${+productId}`).innerHTML = $(`inputAmount${+productId}`).value
-              }
-              break;
-          case 1:
-              if (valor > 1) {
-                $(`inputAmount${+productId}`).value = valor - 1
-                $(`pAmount${+productId}`).innerHTML = $(`inputAmount${+productId}`).value
-              }
-              break;
-
-          default:
-              break;
-      }
-  }
+        default:
+            break;
+    }
+}
 
 getOrderData()

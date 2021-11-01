@@ -27,9 +27,9 @@ window.addEventListener("load",() =>{
             },
             500: {
             slidesPerView: 2,
-            spaceBetween: 10
+            spaceBetween: 20
             },
-            768: {
+            960: {
             slidesPerView: 4,
             spaceBetween: 40
             }
@@ -38,15 +38,15 @@ window.addEventListener("load",() =>{
 
     // favoritos
 
-        const buttonFavorite = $("buttonFavorite");
-        const isFavorite = $("isFavorite");
 
-        favorite = (userId,productId,action) =>{
+        favorite = (userId,productId) =>{
+            const isFavorite = $(`isFavorite${productId}`)
+            const buttonFavorite = $(`buttonFavorite${productId}`)
+
             if(userId){
-                console.log(action.value);
-                switch (+action.value) {
+                switch (+isFavorite.value) {
                     case 0:
-                        let data ={userId:+userId,productId:+productId}
+                        let data ={ userId:+userId, productId:+productId }
                         let options = {
                             method : 'POST',
                             headers : {'Content-Type': 'application/json'},
@@ -55,16 +55,17 @@ window.addEventListener("load",() =>{
                         fetch('/api/users/createFav',options)
                         .then(result => {
                             if(result.ok){
-                                action.value = 1
+                                isFavorite.value = 1
                                 buttonFavorite.classList.remove("off-fav")
                                 buttonFavorite.classList.add("on-fav")
+                                console.log(buttonFavorite);
                               
                                 Swal.fire({
                                     icon: 'success',
                                     title: 'Favorito agregado',
                                     text: "puedes verlo ingresando en tu perfil",
                                     confirmButtonText : 'Entendido'
-                                  })
+                                })
                             }else{
                                 Swal.fire({
                                     icon: 'error',
@@ -99,16 +100,15 @@ window.addEventListener("load",() =>{
                         fetch('/api/users/deletefav',options2)
                         .then(response => {
                             if(response.ok){
+                                isFavorite.value = 0
+                                buttonFavorite.classList.remove("on-fav")
+                                buttonFavorite.classList.add("off-fav")
+
                                 Swal.fire({
                                     icon: 'success',
                                     title: 'Favorito eliminado',
                                     confirmButtonText : 'Entendido'
-                                  })
-        
-                                action.value = 0
-                                buttonFavorite.classList.remove("on-fav")
-                                buttonFavorite.classList.add("off-fav")
-
+                                })
                             }else{
                                 Swal.fire({
                                     icon: 'error',

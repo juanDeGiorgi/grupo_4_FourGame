@@ -23,6 +23,7 @@
       .home main .main{
           width: 90%;
           margin: auto;
+          margin-bottom: 10vw;
       }
 
       .home main section .redes{
@@ -55,15 +56,26 @@
 
   /* SECTION ARTICLES */
 
-  .home .swiper {
-    width: 80%;
-    height: 500px;
-  }
+      /* carrusel */
+        .home .swiper {
+            width: 80%;
+        }
 
-  /* .home .swiper-slide{
-    width: 18vw!important;
-    height: 32.5vw;
-  } */
+        .home .container-carrusel{
+            position: relative;
+        }
+
+        .home .swiper-button-prev{
+            left: -10px!important;
+        }
+        
+        .home .swiper-button-next{
+            right: -10px!important;
+        }
+
+        .home .swiper-pagination-bullet-active{
+            background: #3d2ed0;
+        }
 
   .home main h2{
       color: #ffffff;
@@ -196,89 +208,89 @@
         width: 90%;
     }
 
-      .home {
-          overflow-x: hidden;
-      }
+    .home {
+        overflow-x: hidden;
+    }
 
-      .home main .carousel{
-          display: block;
-      }
+    .home main .carousel{
+        display: block;
+    }
 
-      .home main h2 {
-          font-size: 5.8vw;
-          margin: 5vw 0% 1vw 0%;
-      }
+    .home main h2 {
+        font-size: 5.8vw;
+        margin: 5vw 0% 1vw 0%;
+    }
 
-      .home main section div a img {
-          width: 12%;
-      }
-  
-      .home main section div a .twitter {
-          width: 13%;
-      }
-  
-      .home main section .redes {
-          padding: 1%;
-          margin: 5% auto 0% auto;
-          width: 560px;
-          border-radius: 25px;
-      }
-  
-      .home main .decoracion {
-          margin-bottom:50px;
-      }
-  
-      .home main .productos {
-          display: flex;
-          justify-content: space-evenly;
-          flex-wrap: wrap;
-      }
+    .home main section div a img {
+        width: 12%;
+    }
 
-      .home main section article {
-          width: 40vw;
-          height: 70vw;
-      }
+    .home main section div a .twitter {
+        width: 13%;
+    }
 
-      .home main section article .fav{
+    .home main section .redes {
+        padding: 1%;
+        margin: 5% auto 0% auto;
+        width: 560px;
+        border-radius: 25px;
+    }
+
+    .home main .decoracion {
+        margin-bottom:50px;
+    }
+
+    .home main .productos {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+
+    .home main section article {
+        width: 40vw;
+        height: 70vw;
+    }
+
+    .home main section article .fav{
         left: 31.9vw
-      }
-  
-      .home main section .contenedor-img {
-          height: 50%;
-          overflow: hidden;
-          padding: 5px;
-      }
-  
-      .home main section article .product-info {
-          height: 50%;
-      }
-  
-      .home main section article .title {
-          height: 50%;
-      }
-  
-      .home main section article div h3 {
-          font-size: 2.8vw;
-          margin: 3vw 0% 8vw 0%;
-      }
-  
-      .home main section article .info {
-          height: 50%;
-      }
-  
-      .home main section article div .price {
-          font-size: 4.6vw;
-      }
-  
-      .home main section article div .discount {
-          font-size: 2.7vw;
-      }
+    }
 
-      .home main section article div .payMethod {
-        font-size: 3.1vw;
+    .home main section .contenedor-img {
+        height: 50%;
+        overflow: hidden;
+        padding: 5px;
+    }
+
+    .home main section article .product-info {
+        height: 50%;
+    }
+
+    .home main section article .title {
+        height: 50%;
+    }
+
+    .home main section article div h3 {
+        font-size: 2.8vw;
+        margin: 3vw 0% 8vw 0%;
+    }
+
+    .home main section article .info {
+        height: 50%;
+    }
+
+    .home main section article div .price {
+        font-size: 4.6vw;
+    }
+
+    .home main section article div .discount {
+        font-size: 2.7vw;
+    }
+
+    .home main section article div .payMethod {
+    font-size: 3.1vw;
     }
   
-  }
+}
   
              /*                          DESKTOP                            */
   

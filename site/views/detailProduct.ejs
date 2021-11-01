@@ -168,41 +168,47 @@
             <!-- LINEA DECORATIVA -->
         </div>
 
-        <section class="productos">
-            <%relatedProducts.forEach(relatedProduct => {%>
-                <%if(relatedProduct.type.name == product.type.name){%>
-                    <%if(relatedProduct.id !== product.id){%>
-                        <article>
-                            <a href="/products/detail/<%=relatedProduct.id%> " class="a-article">
-                                <div class="contenedor-img">
-                                    <img src="/images/products/<%=relatedProduct.images[0].name%>" alt="image">
-                                </div>
+        <div class="container-carrusel">
+            <div class="swiper-button-prev" style="color: gainsboro;"></div>
+            <div class="swiper-button-next" style="color: gainsboro;"></div>
+            <div class="swiper">
+                <section class="swiper-wrapper">
+                    <%relatedProducts.forEach(relatedProduct => {%>
+                        <%if(relatedProduct.type.name == product.type.name){%>
+                            <%if(relatedProduct.id !== product.id){%>
+                                <article class="swiper-slide">
+                                    <a href="/products/detail/<%=relatedProduct.id%> " class="a-article">
+                                        <div class="contenedor-img">
+                                            <img src="/images/products/<%=relatedProduct.images[0].name%>" alt="image">
+                                        </div>
+        
+                                        <div class="product-info">
+                                            <div class="title">
+                                                <h3><%=relatedProduct.name %> </h3>
+                                            </div>
+                                            <div class="info">
+                                                <p class="price">$ <%=toThousand(relatedProduct.price)%> </p>
+                                                <%if (relatedProduct.discount !== 0){%>
+                                                    <span class="discount"><%=relatedProduct.discount%>% OFF</span>
+                                                <%}%>
+                                         
+                                                    <p class="payMethod">12 x $ <%=toThousand((relatedProduct.price / 12).toFixed(0))%> sin interés</p>
+                                            
+                                            </div>
+                                        </div>
+                                    </a>
+                                </article>
+                            <%}%>
+                        <%}%>
+                    <%})%>
+                </section>
+            </div>
+        </div>
 
-                                <div class="product-info">
-                                    <button><i class="far fa-heart"></i></button>
-
-                                    <div class="title">
-                                        <h3><%=relatedProduct.name %> </h3>
-                                    </div>
-                                    <div class="info">
-                                        <p class="price">$ <%=toThousand(relatedProduct.price)%> </p>
-                                        <%if (relatedProduct.discount !== 0){%>
-                                            <span class="discount"><%=relatedProduct.discount%>% OFF</span>
-                                        <%}%>
-                                 
-                                            <p class="payMethod">12 x $ <%=toThousand((relatedProduct.price / 12).toFixed(0))%> sin interés</p>
-                                    
-                                    </div>
-                                </div>
-                            </a>
-                        </article>
-                    <%}%>
-                <%}%>
-            <%})%>
-        </section>
     </main>
     <%- include("./partials/footer") %> 
     <%- include("./partials/scripts.ejs")%> 
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script src="/js/detailProduct.js"></script>
     </body>
 </html>

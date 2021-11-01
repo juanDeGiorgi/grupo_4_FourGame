@@ -59,8 +59,6 @@
                     <% products.forEach(product => { %> 
                         <% if (product.category.name == "new-release"){ %> 
                             <article class="swiper-slide">
-                                <button id="buttonFavorite<%=product.id%>" onclick="favorite(`<%=locals.userLogged ? userLogged.id : null%>`,`<%=product.id%>`);" class="fav <%=locals.userLogged && userLogged.favorites.includes(product.id) ? "on-fav" : "off-fav"%>"></button>
-                                <input id="isFavorite<%=product.id%>" type="number" style="display: none;" value="<%= locals.userLogged && userLogged.favorites.includes(product.id) ? 1 : 0 %>">
                                 <a href="/products/detail/<%=product.id%> " class="a-article">
                                     <div class="contenedor-img">
                                         <img src="/images/products/<%=product.images[0].name%>" alt="image">
@@ -85,8 +83,6 @@
                          <% } %> 
                     <% }) %> 
                 </section>
-                <!-- If we need pagination -->
-                <div class="swiper-pagination"></div>
               </div>
         </div>
       
@@ -104,8 +100,6 @@
                   <% products.forEach(product => { %> 
                       <% if (product.category.name == "best-seller"){ %> 
                           <article  class="swiper-slide">
-                              <button id="buttonFavorite<%=product.id%>" onclick="favorite(`<%=locals.userLogged ? userLogged.id : null%>`,`<%=product.id%>`);" class="fav <%=locals.userLogged && userLogged.favorites.includes(product.id) ? "on-fav" : "off-fav"%>"></button>
-                              <input id="isFavorite<%=product.id%>" type="number" style="display: none;" value="<%= locals.userLogged && userLogged.favorites.includes(product.id) ? 1 : 0 %>">
                               <a href="/products/detail/<%=product.id%> " class="a-article">
                                   <div class="contenedor-img">
                                       <img src="/images/products/<%=product.images[0].name%>" alt="image">
@@ -130,8 +124,6 @@
                        <% } %> 
                   <% }) %> 
               </section>
-              <!-- If we need pagination -->
-              <div class="swiper-pagination"></div>
           </div>
         </div>
       
@@ -149,8 +141,6 @@
                   <% products.forEach(product => { %> 
                       <% if (product.category.name == "in-sale"){ %> 
                           <article class="swiper-slide">
-                              <button id="buttonFavorite<%=product.id%>" onclick="favorite(`<%=locals.userLogged ? userLogged.id : null%>`,`<%=product.id%>`);" class="fav <%=locals.userLogged && userLogged.favorites.includes(product.id) ? "on-fav" : "off-fav"%>"></button>
-                              <input id="isFavorite<%=product.id%>" type="number" style="display: none;" value="<%= locals.userLogged && userLogged.favorites.includes(product.id) ? 1 : 0 %>">
                               <a href="/products/detail/<%=product.id%> " class="a-article">
                                   <div class="contenedor-img">
                                       <img src="/images/products/<%=product.images[0].name%>" alt="image">
@@ -177,8 +167,6 @@
                        <% } %> 
                   <% }) %> 
               </section>
-              <!-- If we need pagination -->
-              <div class="swiper-pagination"></div>
           </div>
         </div>
 

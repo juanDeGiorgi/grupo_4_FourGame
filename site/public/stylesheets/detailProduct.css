@@ -373,6 +373,27 @@
 
 /* SECTION PRODUCTOS RELACIONADOS */
 
+    /* carrusel */
+    .detail .swiper {
+        width: 80%;
+    }
+
+    .detail .container-carrusel{
+        position: relative;
+    }
+
+    .detail .swiper-button-prev{
+        left: -10px!important;
+    }
+    
+    .detail .swiper-button-next{
+        right: -10px!important;
+    }
+
+    .detail .swiper-pagination-bullet-active{
+        background: #3d2ed0;
+    }
+
    .detail main h2{
     color: #fff;
     text-align: center;
@@ -703,6 +724,10 @@
     }
 
     /* SECTION PRODUCTOS RELACIONADOS */
+
+    .detail .swiper {
+        width: 90%;
+    }
 
     .detail main h2 {
         font-size: 4vw;

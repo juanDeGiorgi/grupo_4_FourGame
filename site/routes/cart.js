@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-const controller = require("../controllers/cartController")
+const userCheck = require("../middlewares/usersCheck");
 
-/* GET home page. */
-router.get('/',controller.cart)
+const controller = require("../controllers/cartController");
+
+router.get('/:id',userCheck,controller.cart)
 
 module.exports = router;

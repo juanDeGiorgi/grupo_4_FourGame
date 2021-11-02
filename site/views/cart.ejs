@@ -8,124 +8,40 @@
     <%- include("./partials/header") %> 
 
     <main>
- 
-            <div class="titleContainer">
-                <h1 class="title">Carrito de compras</h1>
-               <a href="/"><i class="fas fa-arrow-left"></i></a>
-        
-            </div>
-        <article class="product">
-            <div class="imageContainer">
-                <img class="image" src="../images/products/ps4.jpg" alt="ps4">
-            </div>
-      
-            <div class="infoContainer">
-                <h3 class="name"> Playstation 4  </h3>
-            <div class="trash">
-                <i class="far fa-trash-alt"></i>
-            </div>
-            </div>
-            <div class="commandsContainer">
-                <i class="fas fa-minus"></i>
-                <span class="quantity">1</span>
-                <i class="fas fa-plus"></i>
-                <span class="price">$18.840</span>
-            </div>
-
-        </article>
-
-        <article class="product">
-            <div class="imageContainer">
-                <img class="image" src="../images/products/ps4.jpg" alt="ps4">
-            </div>
-      
-            <div class="infoContainer">
-                <h3 class="name"> Playstation 4  </h3>
-            <div class="trash">
-                <i class="far fa-trash-alt"></i>
-            </div>
-            </div>
-            <div class="commandsContainer">
-                <i class="fas fa-minus"></i>
-                <span class="quantity">1</span>
-                <i class="fas fa-plus"></i>
-                <span class="price">$18.840</span>
-            </div>
-
-        </article>
-
-
-        <article class="payMethod">
-
-                <form action="">
-
-                    <h3>Seleccione un método de pago</h3>
-
-                    <div class="radioContainer">
-                        <input type="radio" id="cash">
-                        <label for="cash">Pago contado</label>
+       <div class="container-detail-products">
+           <div class="container-products">
+               <%order.details.forEach(detail => {%>
+                    <div id="container-p-cart" class='container-p-cart'>
+                        <div class='img-c-cart'>
+                            <img src='/images/products/<%=detail.product.images[0].name%>' width='100%'>
+                        </div>
+                        <div class='infoProduct-c-cart'>
+                            <h4 class='title-p-cart'><%=detail.product.name%></h4>
+                            <div class='price-product-cart'>
+                                <p class='t-price'>Precio :</p>
+                                <span class='n-price'>$ <%=toThousand(detail.product.price)%></span>
+                            </div>
+                            <div class='cantidad'>
+                                <p class='t-cantidad'>Cantidad :</p>
+                                <div class=amount-div>
+                                    <button id='buttonLess' onclick='changeAmount(1,`<%=detail.product.id%>`)'><i class='fas fa-minus-circle'></i></button>
+                                    <p id="pAmount<%=detail.product.id%>" class='n-cantidad'><%=detail.quantity%></p>
+                                    <input id='inputAmount<%=detail.product.id%>' class="n-cantidad" disabled style='display: none;' value='<%=detail.quantity%>' type='number'>
+                                    <button id='buttonAdd' onclick="changeAmount(0,`<%=detail.product.id%>`)"><i class='fas fa-plus-circle'></i></button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="radioContainer">
-                         <input type="radio" id="card">
-                         <label for="card">Pago en cuotas</label>
-                    </div>
-                    <span class="totalPrice">Total : $183.453</span>
-                              
-                
-                </form>
+               <%})%>
+           </div>
 
-                
-
-        </article>
-        
-        <div class="buttonContainer">
-            <button class="buy" type="submit">Comprar</button>      
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-            <!-- <div class="div-envios-trajetas">
-                <article class="c-envios">
-                    <div>
-                        <i class="fas fa-truck"></i>
-                        <p class="envio">
-                            Envio a :
-                        </p>
-                        <p class="direccion">
-                            Calle falsa, N°123,Buenos Aires
-                        </p>
-                        <button class="cambiar">
-                            Cambiar
-                        </button>
-                    </div>
-                </article>
-    
-                <article class="c-tarjetas">
-                    <img class="tarjetas-logo" src="/images/icon/logo2.png" alt="logo">
-                    <div class="contenedor-t">
-                        <img class="tarjetas" src="/images/icon/tarjetas.png" alt="tarjetas">
-                        <img class="ahora12" src="/images/icon/ahora12.svg" alt="ahora12">
-                    </div>
-                    <h3 class="p-total">
-                        Total: $26.364
-                    </h3>
-                    <button class="finalizar">
-                        Finalizar compra
-                    </button>
-                </article>
-            </div> -->
-     
+           <div class="container-detail">
+               
+           </div>
+       </div>
     </main>
 <%- include("./partials/footer") %> 
 <%- include("./partials/scripts.ejs")%> 
+<script src="/js/cart.js"></script>
 </body>
 </html>

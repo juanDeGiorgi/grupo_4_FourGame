@@ -2,14 +2,50 @@
     <nav>
         <!----------------------------------    BOOSTRAP MENU TELEFONO  ------------------------------------------>
 
-        <div class="nav-0">
-            <a href="/" class="logo-mobile">
-                <img src="/images/icon/Logo 3.png" alt="logo" width="100%">
-            </a>
-
-            <div class="c-button-menu-search">
+        <div class="nav-0"> 
+            <div class="c-nav-sup">
                 <a class="button-menu" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample"><i class="fas fa-bars menu"></i></a>
-                    
+               
+                <a href="/" class="logo-mobile">
+                    <img src="/images/icon/Logo 3.png" alt="logo" width="100%">
+                </a>
+               
+                <a href="#" class="button-menu position-relative" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRightMobile" aria-controls="offcanvasRightMobile">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cartBadgeMobile" class="position-absolute top-15 start-95 translate-middle badge rounded-pill pill-size">
+                        0
+                    </span>
+                </a>
+
+                <!-- BOOSTRAP CARRITO -->
+
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRightMobile" aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header">
+                        <h5 id="offcanvasRightLabelMobile">Carrito (0)</h5>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                    <div class="offcanvas-body" style="padding: 0%;overflow: hidden;">
+                        <div id="c-products-cart-mobile" class="c-products-cart">
+
+                            <p id="CartEmpty" class="CartEmpty">No tienes productos en el carrito</p>
+                        </div>
+                        <div id="offcanvas-footer-mobile" class="offcanvas-footer" style="display: none;">
+                            <div class="div-finalPriceCart">
+                                <p id="tFinalPriceCart" class="finalPriceCart">Total :</p>
+                                <p id="finalPriceCartMobile" class="finalPriceCart"></p>
+                            </div>
+                            <div class="c-buttons-cart">
+                                <button type="button" class="btn btn-primary" style="background-color: #F2204D; border: none;" onclick="emptyCart()">Vaciar carrito</button>
+                                <a href="/cart" type="button" class="btn btn-primary" style="background-color: #3D2ED0; border: none;">Finalizar compra</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BOOSTRAP CARRITO -->
+            </div>
+
+            <div class="c-button-menu-search">        
                     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
                         <div class="offcanvas-header">
                             <h5 class="offcanvas-title" id="offcanvasExampleLabel"></h5>
@@ -18,7 +54,6 @@
                         <div class="offcanvas-body" style="text-align: left;">
                             <div>
                                 <div class="accordion" id="accordionExample">
-
                                     <% if (!locals.userLogged){%> 
                                         <div class="accordion-item">
                                             <h2 class="accordion-header" id="headingTwo">
@@ -58,14 +93,6 @@
                                         </div>
                                     <%}%>
                                     <div class="accordion-item">
-                                        <h2 class="accordion-header" id="headingTwo">
-                                            <a href="/cart" class="accordion-button collapsed no-acordion" type="button">
-                                                Carrito
-                                                <i class="fas fa-shopping-cart icon-b-acordion-cart" style="margin-left: 37.3vw;"></i>
-                                            </a>
-                                        </h2>
-                                    </div>
-                                    <div class="accordion-item">
                                         <h2 class="accordion-header" id="headingThree">
                                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                                 Productos
@@ -75,7 +102,7 @@
                                             <div class="accordion-body">
                                                 
                                                 <a class="dropdown-item" href="/search?name=&categoryId=&typeId=1&price=">Consolas</a>
-                                                <a class="dropdown-item" href="/search?name=&categoryId=&typeId=3&price=">Pc armadas</a>
+                                                <a class="dropdown-item" href="/search?name=&categoryId=&typeId=3&price=">Computadoras</a>
                                                 <a class="dropdown-item" href="/search?name=&categoryId=&typeId=2&price=">Juegos</a>
                                             </div>
                                         </div>
@@ -83,14 +110,7 @@
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="headingFour">
                                             <a href="/about" class="accordion-button collapsed no-acordion" type="button">
-                                                Nosotros
-                                            </a>
-                                        </h2>
-                                    </div>
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="headingFive">
-                                            <a href="#" class="accordion-button collapsed no-acordion" type="button">
-                                                Contacto
+                                                Sobre nosotros
                                             </a>
                                         </h2>
                                     </div>

@@ -12,10 +12,18 @@ header nav {
 
 /*----------------------------------    BOOSTRAP   MENU TELEFONO ------------------------------------------*/
 
+header nav .nav-0 .c-nav-sup{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 1.5vw;
+}
+
 header nav .nav-0 .logo-mobile {
-  width: 40%;
+  width: 23%;
   display: block;
-  margin: auto;
+  margin: 0 17.7vw;
 }
 
 header nav .nav-0 .c-button-menu-search {
@@ -28,13 +36,13 @@ header nav .nav-0 .c-button-menu-search {
   padding: 5vw 0;
 }
 
-header nav .nav-0 .c-button-menu-search .button-menu {
+header nav .nav-0 .button-menu {
   display: inline-block;
   padding: 1.5vw 3vw;
-  background-color: #3d2ed0;
+  /* background-color: #3d2ed0; */
   font-size: 8vw;
   border-radius: 5px;
-  box-shadow: 0px 9px 6px rgb(0 0 0 / 21%);
+  text-shadow: 0px 9px 6px rgb(0 0 0 / 21%);
 }
 
 header nav .nav-0 .c-button-menu-search .search-mobile {
@@ -42,7 +50,7 @@ header nav .nav-0 .c-button-menu-search .search-mobile {
   align-items: center;
   position: relative;
   height: 11.5vw;
-  width: 70vw;
+  width: 90%;
 }
 
 header nav .nav-0 .c-button-menu-search .search-mobile .search-bar-mobile {
@@ -50,7 +58,7 @@ header nav .nav-0 .c-button-menu-search .search-mobile .search-bar-mobile {
   text-indent: 3vw;
   width: 100%;
   height: 100%;
-  border-radius: 20px;
+  border-radius: 2vw;
 }
 
 header nav .nav-0 .c-button-menu-search .search-mobile .search-icon-mobile {
@@ -147,155 +155,162 @@ header nav .nav-1 .search {
   flex-wrap: wrap;
 }
 
-header .CartEmpty {
-  color: gray;
-  font-size: 1.7vw;
-  text-align: center;
-}
+/* carrito */
 
-header .lds-ring {
-  display: inline-block;
-  position: relative;
-  width: 80px;
-  height: 80px;
-}
-
-header .lds-ring div {
-  box-sizing: border-box;
-  display: block;
-  position: absolute;
-  width: 64px;
-  height: 64px;
-  margin: 8px;
-  border: 8px solid rgb(156, 154, 154);
-  border-radius: 50%;
-  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: rgb(156, 154, 154) transparent transparent transparent;
-}
-
-header .lds-ring div:nth-child(1) {
-  animation-delay: -0.45s;
-}
-
-header .lds-ring div:nth-child(2) {
-  animation-delay: -0.3s;
-}
-
-header .lds-ring div:nth-child(3) {
-  animation-delay: -0.15s;
-}
-
-@keyframes lds-ring {
-  0% {
-    transform: rotate(0deg);
+  header .CartEmpty {
+    color: gray;
+    font-size: 7vw;
+    text-align: center;
   }
-  100% {
-    transform: rotate(360deg);
+
+  header .lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
   }
-}
 
-header .emptyCart{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  header .lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid rgb(156, 154, 154);
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: rgb(156, 154, 154) transparent transparent transparent;
+  }
+
+  header .lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+
+  header .lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+
+  header .lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+
+  @keyframes lds-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  header .emptyCart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
 
-header .c-products-cart {
-  min-height: 80%;
-  max-height: 30vw;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  width: 100%;
-}
+  header .c-products-cart {
+    min-height: 80%;
+    max-height: 30vw;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 100%;
+  }
 
-header .c-buttons-cart {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  align-content: center;
-  margin: 0vw 2vw;
-}
+  header .c-buttons-cart {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-content: center;
+    margin: 0vw 2vw;
+  }
 
-header .title-p-cart {
-  font-size: 0.9vw;
-}
+  header .title-p-cart {
+    font-size: 3.2vw;
+  }
 
-header .container-p-cart {
-  display: flex;
-  justify-content: space-around;
-  border: 1px solid #c1b8b885;
-  border-radius: 14px;
-  margin: 1vw 1vw;
-  padding: 0.7vw;
-}
+  header .container-p-cart {
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid #c1b8b885;
+    border-radius: 14px;
+    margin: 4.9vw 1.2vw;
+    padding: 2.1vw;
+  }
 
-header .img-c-cart {
-  width: 24.8%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+  header .img-c-cart {
+    width: 24.8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-header .infoProduct-c-cart {
-  width: 65%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
+  header .infoProduct-c-cart {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 
-header .price-product-cart {
-  display: flex;
-  align-content: center;
-  align-items: center;
-  justify-content: space-between;
-}
+  header .price-product-cart {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+  }
 
-header .t-price {
-  font-weight: 700;
-  margin: 0.4vw 0;
-  font-size: 1.1vw;
-}
+  header .pill-size{
+    background-color: #3e2ed0;
+    font-size: 4vw;
+  }
 
-header .n-price {
-  font-weight: 700;
-  margin-right: 0.5vw;
-  font-size: 1.1vw;
-}
+  header .t-price {
+    font-weight: 700;
+    margin: 0.4vw 0;
+    font-size: 4.7vw;
+  }
 
-header .cantidad {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
+  header .n-price {
+    font-weight: 700;
+    margin-right: 2.5vw;
+    font-size: 5.5vw;
+  }
 
-header .cantidad .t-cantidad {
-  display: inline-block;
-  font-weight: 700;
-  margin: 0vw;
-  font-size: 1.1vw;
-}
+  header .cantidad {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 
-header .div-finalPriceCart {
-  display: flex;
-  justify-content: space-between;
-  margin: 1vw 2vw 0.9vw 2vw;
-  padding-bottom: 1vw;
-  border-bottom: 1px solid gainsboro;
-}
+  header .cantidad .t-cantidad {
+    display: inline-block;
+    font-weight: 700;
+    margin: 0vw;
+    font-size: 4.7vw;
+  }
 
-header .finalPriceCart {
-  text-align: center;
-  font-size: 1.5vw;
-  font-weight: 700;
-  margin-bottom: 0vw;
-}
+  header .div-finalPriceCart {
+    display: flex;
+    justify-content: space-between;
+    margin: 1vw 2vw 4vw 2vw;
+    padding-bottom: 1vw;
+    border-bottom: 1px solid gainsboro;
+  }
+
+  header .finalPriceCart {
+    text-align: center;
+    font-size: 7.8vw;
+    font-weight: 700;
+    margin-bottom: 0vw;
+  }
 
 header .cantidad button {
   color: #f2204d;
-  font-size: 1.5vw;
-  margin: 0 0.3vw;
+  font-size: 6.5vw;
+  margin: 0 1.9vw;
 }
 
 header .cantidad button:hover {
@@ -308,7 +323,7 @@ header .cantidad button:active {
 
 header .cantidad .n-cantidad {
   font-weight: 700;
-  font-size: 1.4vw;
+  font-size: 7.3vw;
   display: inline-block;
   background: none;
   border: none;
@@ -524,32 +539,180 @@ header nav .nav-1,
   /*----------------------------------    MENU DESPLEGABLE    ------------------------------------------*/
 
   header nav .nav-0 .logo-mobile {
-    width: 17.9%;
+    width: 13.7%;
   }
 
   header nav .nav-0 .c-button-menu-search {
-    padding: 2vw 0;
+    padding: 2.6vw 0;
   }
 
-  header nav .nav-0 .c-button-menu-search .button-menu {
-    padding: 0.9vw 2.3vw;
-    font-size: 2.9vw;
+  header nav .nav-0 .button-menu {
+    font-size: 6.3vw;
   }
 
   header nav .nav-0 .c-button-menu-search .search-mobile {
-    height: 5vw;
-    width: 54vw;
+    height: 6.8vw;
   }
 
   header nav .nav-0 .c-button-menu-search .search-mobile .search-icon-mobile {
-    right: 2.1vw;
-    font-size: 3.3vw;
+    right: 2.3vw;
+    font-size: 4.5vw;
   }
+
+  /* cart */
+
+  header .pill-size{
+    font-size: 3vw;
+  }
+
+  header .CartEmpty {
+    font-size: 3.9vw;
+  }
+
+  header .lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+
+  header .lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid rgb(156, 154, 154);
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: rgb(156, 154, 154) transparent transparent transparent;
+  }
+
+  header .lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+
+  header .lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+
+  header .lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+
+  @keyframes lds-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  header .emptyCart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  header .c-products-cart {
+    min-height: 80%;
+    max-height: 30vw;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  header .c-buttons-cart {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-content: center;
+    margin: 0vw 2vw;
+  }
+
+  header .title-p-cart {
+    font-size: 2.4vw;
+  }
+
+  header .container-p-cart {
+    margin: 2.9vw;
+  }
+
+  header .img-c-cart {
+    width: 24.8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  header .infoProduct-c-cart {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  header .price-product-cart {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  header .t-price {
+    font-weight: 700;
+    margin: 0.4vw 0;
+    font-size: 3.2vw;
+  }
+
+  header .n-price {
+    font-weight: 700;
+    margin-right: 2.8vw;
+    font-size: 3.9vw;
+  }
+
+  header .cantidad {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  header .cantidad .t-cantidad {
+    display: inline-block;
+    font-weight: 700;
+    margin: 0vw;
+    font-size: 3.2vw;
+  }
+
+  header .div-finalPriceCart {
+    margin: 1vw 2vw 2.5vw 2vw;
+  }
+
+  header .finalPriceCart {
+    font-size: 4.1vw;
+  }
+
+  header .cantidad .t-cantidad {
+    font-size: 3.2vw;
+  }
+
+  header .cantidad button {
+    font-size: 4.1vw;
+  }
+
+  header .cantidad .n-cantidad {
+    font-size: 4.8vw;
+  }
+
 }
 
 /*----------------------------------   HEADER DESKTOP ------------------------------------------*/
 
-@media (min-width: 1024px) {
+@media (min-width: 900px) {
   header nav .nav-1,
   .nav-2 {
     display: flex;
@@ -557,5 +720,159 @@ header nav .nav-1,
 
   header nav .nav-0 {
     display: none;
+  }
+
+  /* carrito */
+
+  header .CartEmpty {
+    color: gray;
+    font-size: 1.7vw;
+    text-align: center;
+  }
+
+  header .lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+
+  header .lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid rgb(156, 154, 154);
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: rgb(156, 154, 154) transparent transparent transparent;
+  }
+
+  header .lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+
+  header .lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+
+  header .lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+
+  @keyframes lds-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  header .emptyCart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  header .c-products-cart {
+    min-height: 80%;
+    max-height: 30vw;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  header .c-buttons-cart {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-content: center;
+    margin: 0vw 2vw;
+  }
+
+  header .title-p-cart {
+    font-size: 0.9vw;
+  }
+
+  header .container-p-cart {
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid #c1b8b885;
+    border-radius: 14px;
+    margin: 1vw 1vw;
+    padding: 0.7vw;
+  }
+
+  header .img-c-cart {
+    width: 24.8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  header .infoProduct-c-cart {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  header .price-product-cart {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  header .t-price {
+    font-weight: 700;
+    margin: 0.4vw 0;
+    font-size: 1.1vw;
+  }
+
+  header .n-price {
+    font-weight: 700;
+    margin-right: 0.5vw;
+    font-size: 1.1vw;
+  }
+
+  header .cantidad {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  header .cantidad .t-cantidad {
+    margin: 0vw;
+    font-size: 1.1vw;
+  }
+
+  header .cantidad button {
+    font-size: 1.6vw;
+    margin: 0vw 0.3vw;
+  }
+
+  header .cantidad .n-cantidad {
+    font-size: 1.6vw;
+  }
+
+  header .div-finalPriceCart {
+    display: flex;
+    justify-content: space-between;
+    margin: 1vw 2vw 0.9vw 2vw;
+    padding-bottom: 1vw;
+    border-bottom: 1px solid gainsboro;
+  }
+
+  header .finalPriceCart {
+    text-align: center;
+    font-size: 1.5vw;
+    font-weight: 700;
+    margin-bottom: 0vw;
   }
 }

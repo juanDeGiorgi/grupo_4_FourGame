@@ -55,6 +55,10 @@
     display: none;
 }
 
+.detail main .vista .div-img-miniaturas{
+    margin-bottom: 5vw;
+}
+
 .detail main .vista .vista-img{
     height: 40%;
     width: 100%;
@@ -567,7 +571,7 @@
     /*     SECTION DEL DETALLE DEL PRODUCTO */
 
     .detail main .vista .vista-info {
-        width: 70.1%;
+        width: 76%;
         margin: auto;
     }
 
@@ -633,7 +637,7 @@
 
     .detail main .vista .vista-info .cantidad button {
         font-size: 7.6vw;
-        margin: 0 2.5vw;
+        margin: 0 1.3vw;
     }
 
     .detail main .vista .vista-info .cantidad .n-cantidad {
@@ -653,7 +657,7 @@
 
     .detail main .vista .vista-info .b-comprar {
         font-size: 5vw;
-        width: 30.9vw;
+        width: 30vw;
         margin: 0;
         padding: 14.6px 0px;
     
@@ -661,7 +665,7 @@
 
     .detail main .vista .vista-info .b-editar {
         font-size: 5vw;
-        width: 26.8vw;
+        width: 30vw;
         padding: 14.6px 0px;
         margin: 0;
     

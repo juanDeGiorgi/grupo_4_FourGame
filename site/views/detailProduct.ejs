@@ -137,9 +137,9 @@
                 </div>
                 <div class="div-comprar">
                     <% if (locals.userLogged && userLogged.access == '2') { %>
-                        <a href="/products/edit/<%=product.id%>" class="b-editar">Editar</a>
-                        <form action="/products/delete/<%=product.id%>?_method=DELETE" method="POST">
-                            <button type="submit" class="b-borrar">Borrar</button>
+                        <a href="/products/edit/<%=product.id%>" class="b-editar"><i class="fas fa-edit"></i> Editar</a>
+                        <form id="formDelete" action="/products/delete/<%=product.id%>?_method=DELETE" method="POST">
+                            <button type="submit" class="b-borrar"><i class="fas fa-trash-alt"></i> Borrar</button>
                         </form>
                     <% }else{ %>
 

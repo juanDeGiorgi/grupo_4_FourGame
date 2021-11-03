@@ -153,4 +153,18 @@ changeAmount = (action,productId) =>{
     }
 }
 
+const searchForm = $('searchForm');
+const searchBar = $('searchBar');
+
+searchForm.addEventListener('submit',e =>{
+    e.preventDefault()
+    let error = false
+
+    if (searchBar.value === "") {
+        error = true;
+    }
+
+    !error ? searchForm.submit() : null
+})
+
 getOrderData()

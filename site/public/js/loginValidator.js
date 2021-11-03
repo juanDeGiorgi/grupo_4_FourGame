@@ -25,6 +25,23 @@ window.addEventListener('load',()=>{
 
     const pass=$('password');
 
+    const eyePass =  $('eye-pass');
+
+    // mostrar contraseña
+    eyePass.addEventListener('click', e =>{
+        if (+eyePass.value === 0) {
+            pass.type = 'text'  
+            eyePass.value = 1
+            eyePass.classList.remove('pass-off')
+            eyePass.classList.add('pass-on')
+        }else{
+            pass.type = 'password'  
+            eyePass.value = 0
+            eyePass.classList.remove('pass-on')
+            eyePass.classList.add('pass-off')
+        }
+    })
+
     email.addEventListener('keyup',(e)=>{
         
         if(email.value == ''){
@@ -49,9 +66,11 @@ window.addEventListener('load',()=>{
         if(pass.value.trim() == ''){
             $('errorPass').innerHTML = 'La contraseña es obligatoria'
             pass.classList.add('is-invalid')
+            eyePass.style.display = "none"
         }else{
             $('errorPass').innerHTML = null
             pass.classList.remove('is-invalid')
+            eyePass.style.display = "initial"
         }
     })
 
@@ -74,6 +93,12 @@ window.addEventListener('load',()=>{
                 $('errorEmail').innerHTML = "Este email no esta registrado"
                 email.classList.add('is-invalid')
                 
+                error = true;
+            }else if(pass.value.trim() == ''){
+                $('errorPass').innerHTML = 'La contraseña es obligatoria'
+                pass.classList.add('is-invalid')
+                eyePass.style.display = "none"
+
                 error = true;
             }
 

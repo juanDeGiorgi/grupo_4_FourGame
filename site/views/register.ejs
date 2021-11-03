@@ -39,14 +39,20 @@
             </div>
 
            <div class="box-input2">
-            <input id="password" name="password" class="sesioninit" type="password" placeholder="Contraseña" >
+            <div class="container-pass-eye">
+                <input id="password" name="password" class="sesioninit" type="password" placeholder="Contraseña" >
+                <button id="eye-pass" class="eye-pass pass-off" value="0"></button>
+            </div>
             <div style="min-height: 1vw;">
                 <p id="error-pass" class="error"></p>
                 <%if (locals.errors && errors.password) {%>
                     <p class="error"><%=errors.password.msg%></p>
                 <% } %> 
             </div>
-            <input id="password2" name="password2" class="sesioninit" type="password" placeholder="Confirmar contraseña" >
+            <div class="container-pass-eye">
+                <input id="password2" name="password2" class="sesioninit" type="password" placeholder="Confirmar contraseña" >
+                <button id="eye-pass2" class="eye-pass pass-off" value="0"></button>
+            </div>
             <div style="min-height: 1vw;">
                 <p id="error-pass2" class="error"></p>
                 <%if (locals.errors && errors.password2) {%>

@@ -1,3 +1,4 @@
+let allowedExtensions = /(.jpg|.jpeg|.png|.gif|.webp)$/i;
 
 
 showImage = (input,idImage) =>{

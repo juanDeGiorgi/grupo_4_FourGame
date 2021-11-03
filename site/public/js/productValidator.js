@@ -1,7 +1,6 @@
-const $ = id => document.getElementById(id);
+// const $ = id => document.getElementById(id);
 
 let extensions = [".jpg",".jpeg",".gif",".png",".webp"]
-let allowedExtensions = /(.jpg|.jpeg|.png|.gif|.webp)$/i;
 
 
 window.addEventListener("load",() =>{

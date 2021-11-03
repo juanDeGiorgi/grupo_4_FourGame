@@ -73,6 +73,12 @@
     color: white;
     text-shadow: 3px 1px 7px black;
 }
+
+.login .container-pass-eye{
+    text-align: center;
+    position: relative;
+}
+
 .login .sesioninit {
     background-color: #918C8D4D;
     color: white;
@@ -86,6 +92,32 @@
     border: none;
     box-shadow: 0px 5px 12px 3px black;
 }
+
+.login .eye-pass{
+    position: absolute;
+    background: none;
+    border: none;
+    color: rgba(0, 0, 0, 0);
+    top: 4.3vw;
+    right: 5.1vw;
+    width: 10vw;
+    height: 10vw;
+}
+
+.login .pass-on{
+    background-image: url(../images/icon/eye-solid-open.svg);
+    background-repeat: no-repeat;
+    background-position: right calc(0.075em + .1875rem) center;
+    background-size: calc(.75em + 0.775rem) calc(3.45em + 1.575rem);
+}
+
+.login .pass-off{
+    background-image: url(../images/icon/eye-solid-close.svg);
+    background-repeat: no-repeat;
+    background-position: right calc(0.075em + .1875rem) center;
+    background-size: calc(.75em + 0.775rem) calc(3.45em + 1.575rem);
+}
+
 .login .is-invalid{
     background-image: url(../images/icon/is-invalid.svg);
     background-repeat: no-repeat;
@@ -191,6 +223,13 @@
         margin: 7% auto;
     }
 
+    .login .eye-pass{
+        top: 2.8vw;
+        right: 8.3vw;
+        width: 4.3vw;
+        height: 4.6vw;
+    }
+
     .login .ruta{
         font-size: 2.4vw;
     }
@@ -267,6 +306,14 @@
     width: 22vw;
     margin: 3% auto;
 }
+
+.login .eye-pass{
+    top: 0.6vw;
+    right: 4.5vw;
+    width: 3.1vw;
+    height: 3vw;
+}
+
 .login .error {
     font-size: 1vw;
 }

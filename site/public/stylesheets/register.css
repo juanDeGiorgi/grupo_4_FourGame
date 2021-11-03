@@ -73,6 +73,12 @@
     width: 100%;
     text-align: center;
 }
+
+.register .container-pass-eye{
+    text-align: center;
+    position: relative;
+}
+
 .register .sesioninit {
     background-color: #918C8D4D;
     color: white;
@@ -94,6 +100,31 @@
 .register .sesioninit:focus{
     outline: none;
     border: 2px solid #3D2ED0;
+}
+
+.register .eye-pass{
+    position: absolute;
+    background: none;
+    border: none;
+    color: rgba(0, 0, 0, 0);
+    top: 4.3vw;
+    right: 5.1vw;
+    width: 10vw;
+    height: 10vw;
+}
+
+.register .pass-on{
+    background-image: url(../images/icon/eye-solid-open.svg);
+    background-repeat: no-repeat;
+    background-position: right calc(0.075em + .1875rem) center;
+    background-size: calc(.75em + 0.775rem) calc(3.45em + 1.575rem);
+}
+
+.register .pass-off{
+    background-image: url(../images/icon/eye-solid-close.svg);
+    background-repeat: no-repeat;
+    background-position: right calc(0.075em + .1875rem) center;
+    background-size: calc(.75em + 0.775rem) calc(3.45em + 1.575rem);
 }
 
 .register .is-invalid{
@@ -202,6 +233,13 @@
         /* height: 79vw;    */
         margin: 7% auto;
     }
+
+    .register .eye-pass{
+        top: 2.8vw;
+        right: 8.3vw;
+        width: 4.3vw;
+        height: 4.6vw;
+    }
     
     .register .ruta{
         font-size: 2.4vw;
@@ -286,6 +324,13 @@
         height: 40px;
         font-size: 16px;
         width: 90%;
+    }
+
+    .register .eye-pass{
+        top: 1vw;
+        right: 1.9vw;
+        width: 3.1vw;
+        height: 3vw;
     }
 
     .register .error {

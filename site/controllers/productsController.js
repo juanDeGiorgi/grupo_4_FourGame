@@ -90,21 +90,30 @@ module.exports={
                         name: 'default-image.png',
                     })
                 }
-                res.redirect('/');
+                res.redirect(`/products/detail/${newProduct.id}`);
             })
 
         }else{
-            fs.readdir(path.join(__dirname,"../public/images/products"),(errorFs,productsFolder) =>{
-                req.files.forEach(file => {
-                  productsFolder.includes(file.filename) ? fsMethods.deleteFile(`../public/images/products/${file.filename}`) : null;
+            try {
+                fs.readdir(path.join(__dirname,"../public/images/products"),(errorFs,productsFolder) =>{
+                    req.files.forEach(file => {
+                      productsFolder.includes(file.filename) ? fsMethods.deleteFile(`../public/images/products/${file.filename}`) : null;
+                    })
+                    
+                    res.render("productLoading",{
+                        errors : errors.mapped(),
+                        old : req.body,
+                        oldImages : req.files
+                    })
                 })
-                
+            } catch (err) {
+                console.log(err);
                 res.render("productLoading",{
                     errors : errors.mapped(),
                     old : req.body,
                     oldImages : req.files
                 })
-            })
+            }
         }
     },
 

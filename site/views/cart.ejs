@@ -36,7 +36,26 @@
            </div>
 
            <div class="container-detail">
-               
+               <div class="container-detail-body">
+                    <div class="div-cuotes-body">
+                        <p>Cuotas :</p>
+                        <p></p>   
+                    </div>
+                    <div class="div-shipping-body">
+                        <p>Envio a :</p>
+                        <p></p>   
+                    </div>
+               </div>
+               <div class="container-detail-footer">
+                   <div class="div-total-detail">
+                        <p class="detail-p-total">Total :</p>
+                        <p class="detail-n-total"><%=toThousand(order.finalPrice)%></p> 
+                   </div>
+                   <div class="c-buttons-detail">
+                        <button type="button" class="btn btn-primary" style="background-color: #F2204D; border: none;" onclick="emptyCart()">Cancelar compra</button>
+                        <a href="/cart/<%= locals.userLogged ? userLogged.id : null%>" type="button" class="btn btn-primary" style="background-color: #3D2ED0; border: none;">Finalizar compra</a>
+                    </div>
+               </div>
            </div>
        </div>
     </main>

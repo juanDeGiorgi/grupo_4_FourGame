@@ -19,12 +19,15 @@
     color: white;
     width: 50%;
     padding: 1.5vw;
+    overflow-y: scroll;
+    overflow-x: hidden;
   }
   
   .cart .container-detail-products .container-detail{
     background-color: rgba(0, 0, 0, 0.57);
     border-radius: 10px;
     width: 35%;
+    padding: 2vw;
 }
 
 /* articulo */
@@ -189,6 +192,27 @@
 
 @media (min-width: 900px) {
 
+  /* detail order */
+
+  .cart .container-detail .container-detail-body{
+    min-height: 38vw;
+  }
+
+  .cart .container-detail .container-detail-footer .div-total-detail{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 2.4vw;
+    color: white;
+    border-bottom: 1px solid gainsboro;
+    margin-bottom: 1vw;
+  }
+
+  .cart .container-detail .container-detail-footer .c-buttons-detail{
+    display: flex;
+    justify-content: space-between;
+  }
+
   /* articulo */
 
   .cart .title-p-cart {
@@ -202,10 +226,11 @@
     border-radius: 14px;
     margin: 1vw 1vw;
     padding: 0.7vw;
+    min-height: 9.2vw;
   }
 
   .cart .img-c-cart {
-    width: 24.8%;
+    width: 20.8%;
     display: flex;
     align-items: center;
     justify-content: center;

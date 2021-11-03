@@ -27,6 +27,37 @@ window.addEventListener("load",() =>{
     const inputEmail = $("email");
     const inputPass = $("password");
     const inputPass2 = $("password2");
+    const eyePass =  $('eye-pass');
+    const eyePass2 =  $('eye-pass2');
+    
+    // mostrar contraseña
+    eyePass.addEventListener('click', e =>{
+        if (+eyePass.value === 0) {
+            inputPass.type = 'text'  
+            eyePass.value = 1
+            eyePass.classList.remove('pass-off')
+            eyePass.classList.add('pass-on')
+        }else{
+            inputPass.type = 'password'  
+            eyePass.value = 0
+            eyePass.classList.remove('pass-on')
+            eyePass.classList.add('pass-off')
+        }
+    })
+
+    eyePass2.addEventListener('click', e =>{
+        if (+eyePass2.value === 0) {
+            inputPass2.type = 'text'  
+            eyePass2.value = 1
+            eyePass2.classList.remove('pass-off')
+            eyePass2.classList.add('pass-on')
+        }else{
+            inputPass2.type = 'password'  
+            eyePass2.value = 0
+            eyePass2.classList.remove('pass-on')
+            eyePass2.classList.add('pass-off')
+        }
+    })
 
     // VALIDACIONES
     inputName.addEventListener("keyup",() =>{
@@ -63,14 +94,17 @@ window.addEventListener("load",() =>{
         if (inputPass.value.trim() == "") {
             inputPass.classList.add("is-invalid")
             $("error-pass").innerHTML = "Debes ingresar una contraseña"
+            eyePass.style.display = "none"
 
         } else if (inputPass.value.trim().length < 6){
             inputPass.classList.add("is-invalid")
             $("error-pass").innerHTML = "la contraseña tiene que tener al menos 6 caracteres"
+            eyePass.style.display = "none"
 
         }else {
             inputPass.classList.remove("is-invalid")
             $("error-pass").innerHTML = null
+            eyePass.style.display = "initial"
         }
     })
 
@@ -79,9 +113,13 @@ window.addEventListener("load",() =>{
         if (inputPass2.value != inputPass.value) {
             inputPass2.classList.add("is-invalid")
             $("error-pass2").innerHTML = "las contraseñas no coinciden"
+            eyePass2.style.display = "none"
+
         }else {
             inputPass2.classList.remove("is-invalid")
             $("error-pass2").innerHTML = null
+            eyePass2.style.display = "initial"
+
         }
     })
     
@@ -121,11 +159,13 @@ window.addEventListener("load",() =>{
             if (inputPass.value.trim() == "") {
                 inputPass.classList.add("is-invalid")
                 $("error-pass").innerHTML = "Debes ingresar una contraseña"
+                eyePass.style.display = "none"
                 
                 error = true
             } else if (inputPass.value.trim().length < 6){
                 inputPass.classList.add("is-invalid")
                 $("error-pass").innerHTML = "la contraseña tiene que tener al menos 6 caracteres"
+                eyePass.style.display = "none"
                 
                 error = true
             }
@@ -134,6 +174,7 @@ window.addEventListener("load",() =>{
             if (inputPass2.value != inputPass.value) {
                 inputPass2.classList.add("is-invalid")
                 $("error-pass2").innerHTML = "las contraseñas no coinciden"
+                eyePass2.style.display = "none"
                 
                 error = true
             }

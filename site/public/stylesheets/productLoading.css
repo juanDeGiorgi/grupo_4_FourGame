@@ -43,7 +43,7 @@
 
 .loading main form .c-imagenes .input-file{
     text-align: center;
-    margin: 3.1vw;
+    margin: 13.1vw;
 }
 
 .loading main form .c-imagenes .file{
@@ -92,10 +92,22 @@
     margin-bottom: 7vw;
 }
 
+.loading .contador{
+    color :#3D2ED0;
+    font-size: 4.2vw;
+    font-weight: bold;
+    position: absolute;
+    z-index: 5;
+    top: 3px;
+    right: 0px;
+}
+
+
 
 .loading main form .input-text-area{
     margin: auto;
     resize: none;
+    position: relative;
 }
 
 .loading main form .container-buttons{
@@ -182,6 +194,7 @@
 
     .loading main form .c-imagenes .input-file{
         width: 19.3vw;
+        margin: 3vw;
     }
 
     .loading main form .c-imagenes .preview{
@@ -195,6 +208,7 @@
         flex-wrap: wrap;
         justify-content: space-around;        
         flex-direction: row;
+        margin-bottom: 2vw;
 
     }
 
@@ -210,6 +224,12 @@
         width: 71.1vw;
     }
 
+    .loading .contador{
+        font-size: 1.6vw;
+        top: 5.2px;
+        right: 0px;
+    }
+
 }
 
 @media (min-width:1024px){
@@ -222,6 +242,11 @@
     
 /* Formulario */
 
+    .loading .contador{
+        font-size: 1.2vw;
+        top: -6px;
+        right: 0px;
+    }
 
 /* Input file */
 

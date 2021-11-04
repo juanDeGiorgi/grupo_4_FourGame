@@ -29,6 +29,7 @@ window.addEventListener('load',()=>{
 
     // mostrar contraseña
     eyePass.addEventListener('click', e =>{
+        e.preventDefault()
         if (+eyePass.value === 0) {
             pass.type = 'text'  
             eyePass.value = 1

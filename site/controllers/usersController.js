@@ -103,6 +103,7 @@ module.exports={
                     name: userCreated.name,
                     image: userCreated.image,
                     access: userCreated.accessId,
+                    favorites: []
                 }
 
                 if (req.body.rememberSession) {

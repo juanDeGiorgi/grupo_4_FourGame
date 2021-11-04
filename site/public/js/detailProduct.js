@@ -37,31 +37,29 @@ window.addEventListener("load",() =>{
 
         const formDelete = $('formDelete');
 
-        formDelete.addEventListener('submit',e =>{
-            e.preventDefault();
-
-            Swal.fire({
-                title: 'estas seguro que quieres eliminar este producto ?',
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#372aad',
-                cancelButtonColor: '#f70303',
-                confirmButtonText: 'Confirmar',
-                cancelButtonText: 'Cancelar'
-              }).then((result) => {
-                if (result.isConfirmed) {
-                    formDelete.submit()
-                    Swal.fire({
-                        title: 'Producto eliminado',
-                        icon : 'success',
-                        confirmButtonText: 'Entendido'
-                    })
-                }
+        if (formDelete) {
+            formDelete.addEventListener('submit',e =>{
+                e.preventDefault();
+    
+                Swal.fire({
+                    title: 'estas seguro que quieres eliminar este producto ?',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#372aad',
+                    cancelButtonColor: '#f70303',
+                    confirmButtonText: 'Confirmar',
+                    cancelButtonText: 'Cancelar'
+                  }).then((result) => {
+                    if (result.isConfirmed) {
+                        formDelete.submit()
+                        Swal.fire({
+                            title: 'Producto eliminado',
+                            icon : 'success',
+                            confirmButtonText: 'Entendido'
+                        })
+                    }
+                })
             })
-        })
-
-        deleteAlert = () =>{
-
         }
 
     // favoritos
@@ -69,7 +67,7 @@ window.addEventListener("load",() =>{
         const buttonFavorite = $("buttonFavorite");
         const isFavorite = $("isFavorite");
 
-        favorite = (userId,productId) =>{
+        addFavorite = (userId,productId) => {
             if(userId){
                 console.log(isFavorite.value);
                 switch (+isFavorite.value) {

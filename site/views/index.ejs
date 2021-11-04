@@ -52,9 +52,9 @@
 
 
         <div class="container-carrusel">
-            <div class="swiper-button-prev" style="color: gainsboro;"></div>
-            <div class="swiper-button-next" style="color: gainsboro;"></div>
-            <div class="swiper">
+            <div id="swiper-button-prev" class="swiper-button-prev" style="color: gainsboro;"></div>
+            <div id="swiper-button-next" class="swiper-button-next" style="color: gainsboro;"></div>
+            <div class="swiper swiper0">
                 <section class="swiper-wrapper">
                     <% products.forEach(product => { %> 
                         <% if (product.category.name == "new-release"){ %> 
@@ -93,9 +93,9 @@
         </div>
 
         <div class="container-carrusel">
-          <div class="swiper-button-prev" style="color: gainsboro;"></div>
-          <div class="swiper-button-next" style="color: gainsboro;"></div>
-          <div class="swiper">
+          <div id="swiper-button-prev-1" class="swiper-button-prev" style="color: gainsboro;"></div>
+          <div id="swiper-button-next-1" class="swiper-button-next" style="color: gainsboro;"></div>
+          <div class="swiper swiper1">
               <section class="swiper-wrapper">
                   <% products.forEach(product => { %> 
                       <% if (product.category.name == "best-seller"){ %> 
@@ -134,9 +134,9 @@
         </div>
 
         <div class="container-carrusel">
-          <div class="swiper-button-prev" style="color: gainsboro;"></div>
-          <div class="swiper-button-next" style="color: gainsboro;"></div>
-          <div class="swiper">
+          <div id="swiper-button-prev-2" class="swiper-button-prev" style="color: gainsboro;"></div>
+          <div id="swiper-button-next-2" class="swiper-button-next" style="color: gainsboro;"></div>
+          <div class="swiper swiper2">
               <section class="swiper-wrapper">
                   <% products.forEach(product => { %> 
                       <% if (product.category.name == "in-sale"){ %> 

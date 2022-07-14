@@ -2,6 +2,9 @@
   "name": "sprint3",
   "version": "0.0.0",
   "private": true,
+  "engines": {
+    "node": "14.18.0"
+  },
   "scripts": {
     "test": "nodemon ./bin/www",
     "start": "node ./bin/www"

@@ -1,0 +1,335 @@
+
+  /* IMAGEN DE FONDO*/
+
+.home{
+    background-image: url('/images/background/arcade\ con\ zoom.jpg');
+    background-position: center;
+    background-size:cover;
+    background-attachment: fixed;
+}
+
+             /*                          MOBILE                            */
+
+  /* SECTION REDES*/
+
+      .home .a-article{
+          color: black;
+      }
+
+      .home main .carousel{
+          display: none;
+      }
+
+      .home main .main{
+          width: 90%;
+          margin: auto;
+          margin-bottom: 10vw;
+      }
+
+      .home main section .redes{
+          /* background-color: #F2204D; */
+          border-radius: 40px;
+          color: #ffffff;
+          padding: 5%;
+          /* margin: 10% auto 5% auto; */
+          max-width: 414px;
+          text-align: center;
+          text-shadow: 0px 3px 6px rgb(250, 0, 59);
+      }
+
+      .home main section .redes h3{
+          font-size: 160%;
+      }
+
+      .home main section div a img{
+          width: 20%;
+          margin: 5% 5% 0% 5%;
+          /* max-width: 72px; */
+      }
+
+      .home main section div a .twitter{
+          margin: 4% 4% 0% 4%;
+          width: 22.3%;
+          max-width: 74px;
+      }
+
+
+  /* SECTION ARTICLES */
+
+      /* carrusel */
+        .home .swiper {
+            width: 80%;
+        }
+
+        .home .container-carrusel{
+            position: relative;
+        }
+
+        .home .swiper-button-prev{
+            left: -10px!important;
+        }
+        
+        .home .swiper-button-next{
+            right: -10px!important;
+        }
+
+        .home .swiper-pagination-bullet-active{
+            background: #3d2ed0;
+        }
+
+  .home main h2{
+      color: #ffffff;
+      text-align: center;
+      margin: 10% 0% 2% 0%;
+      font-size: 22px;
+      font-weight: bold;
+      text-shadow: -2px 2px 2px black;
+  }
+
+
+  
+  .home main .decoracion{
+      background-color: #F77490;
+      color: #F77490;
+      width: 95%;
+      height: 10px;
+      border-radius: 20px;
+      margin: 0% auto 7.8vw auto;
+  }
+
+  .home main .productos{
+      margin-bottom: 15vw;
+  }
+  
+  .home main section article a{
+      color: black;
+  }
+  
+  .home main section article{
+      background-color: #ffffff;
+      width: 72.4vw; 
+      height: 131.3vw;
+      padding: 15px;
+      margin: 0 auto 50px auto;
+      box-shadow: 0px 0px 10px rgb(100,100,100);
+      position: relative;
+      cursor: pointer;
+  }
+ 
+  .home main article:hover{
+      box-shadow: 0px 0px 20px rgb(250 0 59);
+  }
+  
+  .home main section .contenedor-img {
+      height: 65.65vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  .home main section article .contenedor-img img{
+      width: 70%;
+  }
+  
+  .home main section article .product-info{
+      height: 65.65vw;
+      border-top: 1px solid #B2B2B2;
+  }
+  
+  .home main section article .title{
+      height: 26vw;
+  }
+  
+  .home main section article .info{
+      height: 26vw;
+  }
+  
+  .home main section article .fav{
+      position: absolute;
+      left: 58.3vw
+  }
+
+  .home .off-fav::after {
+    display: block;
+    left: 0px;
+    width: 30.7px;
+    height: 26.9px;
+    content: "";
+    background-image: url(../images/icon/heart.png);
+    background-size: 30.1px 26.9px;
+    background-repeat: no-repeat;
+  }
+
+  .home .on-fav::after{
+    display: block;
+    left: 0px;
+    width: 34.2px;
+    height: 28.9px;
+    content: "";
+    background-image: url(../images/icon/heart-solid-edited.png);
+    background-size: 33.9px 30.5px;
+    background-repeat: no-repeat;
+  }
+  
+  .home main section article div h3{
+      font-size: 4.6vw;
+      font-weight: 500;
+      text-align: center;
+      color: #3E3E3E;
+      color: #3E3E3E;
+      margin: 9vw 0% 10vw 0%;
+  }
+  
+  .home main section article div .price{
+    font-size: 8.9vw;
+    margin: 0 1.5vw 3% 0;
+    display: inline-block;
+  }
+  
+  .home main section article div .discount{
+      color: #33CC33;
+      font-size: 5vw;
+  }
+
+  .home main section article div .payMethod{
+    color: #3D2ED0;
+    font-weight: 500;
+    font-size: 5vw;
+}
+  
+  
+                 /*                          TABLET                            */
+  
+  @media (min-width:500px){
+      
+    .home .swiper {
+        width: 90%;
+    }
+
+    .home {
+        overflow-x: hidden;
+    }
+
+    .home main .carousel{
+        display: block;
+    }
+
+    .home main h2 {
+        font-size: 5.8vw;
+        margin: 5vw 0% 1vw 0%;
+    }
+
+    .home main section div a img {
+        width: 12%;
+    }
+
+    .home main section div a .twitter {
+        width: 13%;
+    }
+
+    .home main section .redes {
+        padding: 1%;
+        margin: 5% auto 0% auto;
+        width: 560px;
+        border-radius: 25px;
+    }
+
+    .home main .decoracion {
+        margin-bottom:50px;
+    }
+
+    .home main .productos {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+
+    .home main section article {
+        width: 40vw;
+        height: 70vw;
+    }
+
+    .home main section article .fav{
+        left: 31.9vw
+    }
+
+    .home main section .contenedor-img {
+        height: 50%;
+        overflow: hidden;
+        padding: 5px;
+    }
+
+    .home main section article .product-info {
+        height: 50%;
+    }
+
+    .home main section article .title {
+        height: 50%;
+    }
+
+    .home main section article div h3 {
+        font-size: 2.8vw;
+        margin: 3vw 0% 8vw 0%;
+    }
+
+    .home main section article .info {
+        height: 50%;
+    }
+
+    .home main section article div .price {
+        font-size: 4.6vw;
+    }
+
+    .home main section article div .discount {
+        font-size: 2.7vw;
+    }
+
+    .home main section article div .payMethod {
+    font-size: 3.1vw;
+    }
+  
+}
+  
+             /*                          DESKTOP                            */
+  
+  @media (min-width:960px){
+  
+  
+      .home main h2 {
+          font-size: 3.9vw;
+      }
+  
+      .home main .decoracion {
+          margin-bottom:4vw;
+      }
+
+      .home main section article {
+          width: 18vw;
+          height: 32.5vw;
+      }
+
+      .home main section article .fav{
+        left: 14.2vw
+      }
+  
+      .home main section article div h3 {
+          font-size: 1.2vw;
+          margin: 1.4vw 0% 8vw 0%;
+      }
+  
+      .home main section article div .price {
+          font-size: 1.8vw;
+          margin: 0 0.5vw 3% 0;
+      }
+  
+      .home main section article div .discount {
+          font-size: 1.3vw;
+      }
+
+      .home main section article div .payMethod {
+        font-size: 1.3vw;
+    }
+  
+  }
+
+

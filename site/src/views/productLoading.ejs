@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <%- include("./partials/head",{title : "Cargar Producto"}) %> 
+
+<body class="loading">
+    <%- include("./partials/header")%> 
+    <main>
+          <h1 class="title">Formulario de creacion :</h1>
+          
+          <form id="formProduct" class="formCreacion" action="/products/create/<%=locals.userLogged.id %> " method="POST" enctype="multipart/form-data">
+
+            <!----------------------------------    BOOSTRAP   ------------------------------------------>
+              <div class="c-title-error">
+                <label class="form-label title-images">Selecciona las imagenes : </label>
+                <div>
+                  <p id="errorImages" style="color: red;margin: unset;"></p>                  
+                  <%if( locals.errors && locals.errors.image){%>
+                    <p style="color: red;margin: unset;"><%=errors.image.msg%></p>
+                  <%}%>
+                </div>
+              </div>
+              <div class="c-imagenes">
+                <div class="mb-3 input-file">
+                  <div class="preview" id="preview">
+                    <img id="preview-image" src="/images/icon/default-image1.png">
+                  </div>
+                  <input type="file" id="image" name="image" class="file">
+                  <label for="image" class="file-agregar btn">Agregar</label>
+                  <button type="button" id="quitar" onclick="limpiar(`image`,`preview-image`);" class="file-quitar btn">Quitar</button>
+                </div>
+
+                <div class="mb-3 input-file">
+                  <div class="preview" id="preview1">
+                    <img id="preview-image1" src="/images/icon/default-image1.png">
+                  </div>
+                  <input type="file" id="image1" name="image1" class="file">
+                  <label for="image1" class="file-agregar btn">Agregar</label>
+                  <button type="button" id="quitar" onclick="limpiar(`image1`,`preview-image1`)" class="file-quitar btn">Quitar</button>
+                </div>
+
+                <div class="mb-3 input-file">
+                  <div class="preview" id="preview2">
+                    <img id="preview-image2" src="/images/icon/default-image1.png">
+                  </div>
+                  <input type="file" id="image2" name="image2" class="file" >
+                  <label for="image2" class="file-agregar btn">Agregar</label>
+                  <button type="button" id="quitar" onclick="limpiar(`image2`,`preview-image2`)" class="file-quitar btn">Quitar</button>
+                </div>
+
+                <div class="mb-3 input-file">
+                  <div class="preview" id="preview3">
+                    <img id="preview-image3" src="/images/icon/default-image1.png">
+                  </div>
+                  <input type="file" id="image3" name="image3" class="file" >
+                  <label for="image3" class="file-agregar btn">Agregar</label>
+                  <button type="button" id="quitar" onclick="limpiar(`image3`,`preview-image3`)" class="file-quitar btn">Quitar</button>
+                </div>
+
+                <div class="mb-3 input-file">
+                  <div class="preview" id="preview4">
+                    <img id="preview-image4" src="/images/icon/default-image1.png">
+                  </div>
+                  <input type="file" id="image4" name="image4" class="file">
+                  <label for="image4" class="file-agregar btn">Agregar</label>
+                  <button type="button" id="quitar" onclick="limpiar(`image4`,`preview-image4`)" class="file-quitar btn">Quitar</button>
+                </div>
+              </div>
+              
+              <div class="container-inputs">
+                  <div class="col-md-3 inputs-text">
+                    <label for="name" class="form-label">Nombre :</label>
+                    <input type="text" class="form-control <%= locals.errors && errors.name ? "is-invalid" : null%>" id="name" name="name" placeholder="Nombre" value="<%= typeof old != "undefined" ? old.name : "" %>">
+                    <div class="invalid-feedback" style="margin: 1vw 0;">
+                      <p id="errorName" class="error"></p>
+                      <%if(locals.errors && errors.name){%>
+                        <%=errors.name.msg%>
+                      <%}%>
+                    </div>
+                  </div>
+
+                  <div class="mb-4 input-selects">
+                    <label for="type" class="form-label">Tipo de producto :</label>
+                    <select id="typeProduct" class="form-select  <%= locals.errors && errors.type ? "is-invalid" : null%>" id="type" name="type">
+                      <option selected hidden value="">Producto</option>
+                      <option value="1" <%= locals.old && old.type === "1" ? 'selected' : null %>>Consolas</option>
+                      <option value="2"   <%= locals.old && old.type === "2" ? 'selected' : null %>>Juegos</option>
+                      <option value="3"       <%= locals.old && old.type === "3" ? 'selected' : null %>>Pc armadas</option>
+                    </select>
+                    <div class="invalid-feedback" style="margin: 1vw 0;">
+                      <p id="errorType" class="error"></p>
+                      <%if(locals.errors && errors.type){%>
+                        <%=errors.type.msg%>
+                      <%}%>
+                    </div>
+                  </div>
+
+                  <div class="mb-4 input-selects">
+                    <label for="category" class="form-label">Categoria :</label>
+                    <select id="categoryProduct" class="form-select <%= locals.errors && errors.category ? "is-invalid" : null%>" id="category" name="category">
+                      <option selected hidden value="">Categoria</option>
+                      <option value="2" <%= locals.old && old.category === "2" ? 'selected' : null %>>En oferta</option>
+                      <option value="1" <%= locals.old && old.category === "1" ? 'selected' : null %>>Mas vendido</option>
+                      <option value="3" <%= locals.old && old.category === "3" ? 'selected' : null %>>Nuevo lanzamiento</option>
+                    </select>
+                    <div class="invalid-feedback" style="margin: 1vw 0;">
+                      <p id="errorCategory" class="error"></p>
+                      <%if(locals.errors && errors.category){%>
+                        <%=errors.category.msg%>
+                      <%}%>
+                    </div>
+                  </div>
+
+                  <div class="col-md-3 inputs-text">
+                    <label for="price" class="form-label">Precio :</label>
+                    <input type="text" class="form-control <%= locals.errors && errors.price ? "is-invalid" : null%>" id="price" name="price" placeholder="Precio" value="<%= typeof old != "undefined" ? old.price : "" %>">
+                    <div class="invalid-feedback" style="margin: 1vw 0;">
+                      <p id="errorPrice" class="error"></p>
+                      <%if(locals.errors && errors.price){%>
+                        <%=errors.price.msg%>
+                      <%}%>
+                    </div>
+                  </div>
+
+                  <div class="col-md-3 inputs-text">
+                    <label for="discount" class="form-label">Descuento :</label>
+                    <input type="text" class="form-control <%= locals.errors && errors.discount  ? "is-invalid" : null%>" id="discount" name="discount"  placeholder="Descuento" value="<%= typeof old != "undefined" ? old.discount : "" %>">
+                    <div class="invalid-feedback" style="margin: 1vw 0;">
+                      <p id="errorDiscount" class="error"></p>
+                      <%if(locals.errors && errors.discount){%>
+                        <%=errors.discount.msg%>
+                      <%}%>
+                    </div>
+                  </div>                 
+              </div>
+
+              <div class="mb-3 input-text-area inputs-text">
+                <label for="description" class="form-label">Descripcion :</label>
+                <p id="contador" class="contador"></p>
+                <textarea class="form-control input-text-area <%= locals.errors && errors.description ? "is-invalid" : null%>" id="description" name="description" placeholder="Ingresa la descripcion del producto" rows="6" maxLength="500"><%= typeof old != "undefined" ? old.description : null %></textarea>
+                <div class="invalid-feedback" style="margin: 1vw 0;">
+                  <p id="errorDescription" class="error"></p>
+                  <%if(locals.errors && errors.description){%>
+                    <%=errors.description.msg%>
+                  <%}%>
+                </div>
+              </div>
+  
+            <!----------------------------------    BOOSTRAP   ------------------------------------------>
+                
+            <div class="container-buttons">
+                <button type="submit" class="btn btn-editar">Cargar producto</button>
+                <a href="/" class="btn btn-borrar">Cancelar</a>
+            </div>
+          </form>
+
+    </main>
+    <%- include("./partials/footer") %> 
+    <%- include("./partials/scripts.ejs")%> 
+    <script src="/js/productLoading.js"></script>
+  </body>
+</html>

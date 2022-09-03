@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+    <%- include("./partials/head",{title : `Iniciar sesion`}) %> 
+
+<body class="login">
+    <%- include("./partials/header") %> 
+    <main>
+        <div class="ruta">
+            <a href="/">Inicio</a>
+            <span>></span>
+            <a class="a-posicion" href="/users/login">Iniciar sesión</a>
+        </div>
+
+
+        <form id="formLogin" class="contenedorlogin" method="POST" action = '/users/login'>
+
+            <i class="fas fa-user-circle item-user"></i>
+            <h1>Iniciar sesión</h1>
+            <input id="email"  name="email" class="sesioninit" type="email" placeholder="Email">
+            <div style='min-height: 1vw; text-align: center;'>
+                <p id="errorEmail" class="error" ></p>
+            </div>
+            <div class="container-pass-eye">
+                <input id="password" name="password" class="sesioninit" type="password" placeholder="Contraseña">
+                <button id="eye-pass" class="eye-pass pass-off" value="0"></button>
+            </div>
+            <div style='min-height: 1vw; text-align: center;'>
+                <p id="errorPass" class="error" ></p>
+            </div>
+            <div class="c-error">
+                <%if( locals.errors && locals.errors.email){%>
+                    <p class="error"><%=errors.email.msg%></p>
+                <%}%>
+            </div>
+
+            <div class="c-rememberSession">
+                <input type="checkbox" class="rememberSession" name="rememberSession" id="rememberSession">
+                <label for="rememberSession" class="labelremember" >Recordarme</label>
+            </div>
+
+            <button class="enter" type="submit">Ingresar</button>
+
+            <div class="notenescuenta">
+                <h4>¿no tenés una cuenta?</h4>
+                <a href="/users/register">Registrate</a>
+            </div>
+        </form>
+
+    </main>
+    <%- include("./partials/footer") %> 
+    <%- include("./partials/scripts.ejs")%> 
+    <script src="/js/loginValidator.js"></script>
+</body>

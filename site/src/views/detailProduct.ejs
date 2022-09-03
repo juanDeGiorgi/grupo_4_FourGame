@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+    <%- include("./partials/head",{title : product.name}) %> 
+
+<body class="detail">
+    
+    <%- include("./partials/header") %> 
+    <main>
+        <div class="ruta">
+            <a href="/">Inicio</a>
+            <span>></span>
+            <a href="/search">Productos</a>
+            <span>></span>
+            <a class="a-posicion"href="/products/detail/<%=product.id%>"> <%=product.name%></a>
+        </div>
+        <section class="vista">
+            <div class="div-img-miniaturas">
+                <div class="vista-miniaturas">
+                    <%product.images.forEach((image,index)=>{%>
+                        <button onmouseover="document.getElementById(`imagePrincipal`).setAttribute(`src`,`/images/products/<%=image.name%>`)" id="tinyImage" class="b-miniatura"><img src="/images/products/<%=image.name%>" alt="image"></button>
+                    <%})%>
+                </div>
+                <div class="contenedor-img vista-img">
+                    <img id="imagePrincipal" src="/images/products/<%=product.images[0].name%> " alt="<%=product.name %> "> 
+                    <button id="buttonFavorite" onclick="addFavorite(`<%=locals.userLogged ? userLogged.id : null%>`,`<%=product.id%>`);" class="fav <%=locals.userLogged && userLogged.favorites.includes(product.id) ? "on-fav" : "off-fav"%>"></button>
+                    <input id="isFavorite" type="number" style="display: none;" value="<%= locals.userLogged && userLogged.favorites.includes(product.id) ? 1 : 0 %>">
+                </div>
+            </div>
+            <div class="vista-info">
+
+                <div class="c-name-category">
+                    <h3> <%= product.name %> </h3>
+                
+                    <%if(product.category.name == "in-sale"){%>
+                        <p class="vendido">Oferta</p>
+                    <%}else if(product.category.name == "new-release"){%>
+                        <p class="vendido">Lanzamiento</p>
+                    <%}else{%>
+                        <p class="vendido">Mas vendido</p>
+                    <%}%>
+                </div>
+                <p class="product-detail-price small">
+                    <%if (product.discount !== 0){%>
+                        <span>$<%=toThousand(product.price)%></span>
+                        /
+                        <b><%=product.discount%>% OFF</b>
+                    <%}%>
+                </p>
+                <p class="price">$ <%= toThousand(Math.round(product.price - ((product.discount / 100) * product.price))) %> </p>
+                <div class="payMethod">
+                    <p class="t-cuotas"> Hasta en 12 x $ <%=toThousand((product.price / 12).toFixed(0))%> sin interés</p>
+                    <button class="b-cuotas" data-bs-toggle="modal" data-bs-target="#cuotasModal">Ver cuotas</button>
+                    <!-- Modal cuotas -->
+                    <div class="modal fade" id="cuotasModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-scrollable">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Cuotas</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <table class="table" style="text-align: center;">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">Cantidad</th>
+                                            <th scope="col">Precio</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                           <tr>
+                                               <td>3</td>
+                                               <td>$ <%=toThousand((product.price / 3).toFixed(0))%></td>
+                                           </tr>
+                                           <tr>
+                                                <td>6</td>
+                                                <td>$ <%=toThousand((product.price / 6).toFixed(0))%></td>
+                                           </tr>
+                                           <tr>
+                                                <td>12</td>
+                                                <td>$ <%=toThousand((product.price / 12).toFixed(0))%></td>
+                                           </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" style="background-color: #3D2ED0;">Entendido</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="envios">
+                    <i class="fas fa-truck"></i>
+                    <p class="t-envios">Envios a todo el pais</p>
+                    <button class="b-envios" data-bs-toggle="modal" data-bs-target="#shippingModal">Ver costos de envio</button>
+                    <!-- Modal shipping -->
+                    <div class="modal fade" id="shippingModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-scrollable">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Costos de envio</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <table class="table">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">Provincia</th>
+                                            <th scope="col">Precio</th>
+                                            <th scope="col">Tiempo</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                            <%arg.provincias.forEach(provincia =>{%>
+                                                <tr>
+                                                    <td><%=provincia.nombre == "Ciudad Autónoma de Buenos Aires" ? "Ciudad de Buenos Aires" : provincia.nombre == "Tierra del Fuego, Antártida e Islas del Atlántico Sur" ? "Tierra del Fuego" : provincia.nombre%></td>
+                                                    <td>$ <%=Math.floor(Math.random() * (5000 - 500)) + 500%></td>
+                                                    <td><%=Math.floor(Math.random() * (4 - 1)) + 1%> a <%=Math.floor(Math.random() * (10 - 3)) + 3%> dias</td>
+                                                </tr>
+                                            <%})%>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" style="background-color: #3D2ED0;">Entendido</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cantidad">
+                    <p class="t-cantidad">Cantidad :</p>
+                    <button id="buttonLess" onclick="changeAmount(1,0)"><i class="fas fa-minus-circle"></i></button>
+                    <p id="pAmount<%=0%>" class="n-cantidad">1</p>
+                    <input id="inputAmount<%=0%>" class="n-cantidad" disabled style="display: none;" value="1" type="number">
+                    <button id="buttonAdd" onclick="changeAmount(0,0)"><i class="fas fa-plus-circle"></i></button>
+                </div>
+                <div class="div-comprar">
+                    <% if (locals.userLogged && userLogged.access == '2') { %>
+                        <a href="/products/edit/<%=product.id%>" class="b-editar"><i class="fas fa-edit"></i> Editar</a>
+                        <form id="formDelete" action="/products/delete/<%=product.id%>?_method=DELETE" method="POST">
+                            <button type="submit" class="b-borrar"><i class="fas fa-trash-alt"></i> Borrar</button>
+                        </form>
+                    <% }else{ %>
+
+                        <a href="#" class="b-editar" onclick="addProduct('<%=locals.userLogged ? userLogged.id : null %>','<%= product.id %>',1);"><i class="fas fa-shopping-bag"></i> Comprar</a> 
+                        <a href="#" id="addCart" onclick="addProduct('<%=locals.userLogged ? userLogged.id : null %>','<%= product.id %>',0);" class="b-comprar"><i class="fas fa-cart-plus"></i> Agregar</a>
+                    <% } %> 
+                </div>
+            </div>
+        </section>
+
+        <section class="info-detail">
+            <div class="descripcion">
+                <h2 class="text">Descripcion</h2>
+            
+                <div class="decoracion">
+                    <!-- LINEA DECORATIVA -->
+                </div>
+
+                <p><%=product.description%> </p>
+            </div>
+        </section>
+
+        <h2>Productos Relacionados</h2>
+        
+        <div class="decoracion">
+            <!-- LINEA DECORATIVA -->
+        </div>
+
+        <div class="container-carrusel">
+            <div class="swiper-button-prev" style="color: gainsboro;"></div>
+            <div class="swiper-button-next" style="color: gainsboro;"></div>
+            <div class="swiper">
+                <section class="swiper-wrapper">
+                    <%relatedProducts.forEach(relatedProduct => {%>
+                        <%if(relatedProduct.type.name == product.type.name){%>
+                            <%if(relatedProduct.id !== product.id){%>
+                                <article class="swiper-slide">
+                                    <a href="/products/detail/<%=relatedProduct.id%> " class="a-article">
+                                        <div class="contenedor-img">
+                                            <img src="/images/products/<%=relatedProduct.images[0].name%>" alt="image">
+                                        </div>
+        
+                                        <div class="product-info">
+                                            <div class="title">
+                                                <h3><%=relatedProduct.name %> </h3>
+                                            </div>
+                                            <div class="info">
+                                                <p class="price">$ <%=toThousand(relatedProduct.price)%> </p>
+                                                <%if (relatedProduct.discount !== 0){%>
+                                                    <span class="discount"><%=relatedProduct.discount%>% OFF</span>
+                                                <%}%>
+                                         
+                                                    <p class="payMethod">12 x $ <%=toThousand((relatedProduct.price / 12).toFixed(0))%> sin interés</p>
+                                            
+                                            </div>
+                                        </div>
+                                    </a>
+                                </article>
+                            <%}%>
+                        <%}%>
+                    <%})%>
+                </section>
+            </div>
+        </div>
+
+    </main>
+    <%- include("./partials/footer") %> 
+    <%- include("./partials/scripts.ejs")%> 
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="/js/detailProduct.js"></script>
+    </body>
+</html>

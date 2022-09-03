@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <%- include("./partials/head",{title : "Agregar dirección"}) %> 
+
+<body class="address">
+    <%- include("./partials/header")%> 
+    <main>
+          <h1 class="title"> Agregar dirección:</h1>
+          
+          <form id="formAddress" class="formAddress" action="/users/address/<%=locals.userLogged.id %> " method="POST" >
+
+            <div class="c-inputs">
+              <div>
+                <div class="c-input">
+                  <label for="street">Calle : </label>
+                  <input class="input <%= locals.errors && errors.street ? "is-invalid" : null%>" type="text" id="street" name="street" placeholder="Calle" value="<%= typeof old != "undefined" ? old.street : "" %>">
+                </div>
+                <div class="div-error">
+                  <p id="errorStreet" class="error"></p>
+                  <%if(locals.errors && errors.street){%>
+                    <p class="error"><%=errors.street.msg%></p>
+                  <%}%>
+                </div>
+              </div>
+              
+              <div>
+                <div class="c-input">
+                  <label for="number">Altura : </label>
+                  <input class="input <%= locals.errors && errors.number ? "is-invalid" : null%>" type="text" id="number" name="number" placeholder="Altura" value="<%= typeof old != "undefined" ? old.number : "" %>">
+                </div>
+                <div class="div-error">
+                  <p id="errorNumber" class="error"></p>
+                  <%if(locals.errors && errors.street){%>
+                    <p class="error"><%=errors.street.msg%></p>
+                  <%}%>
+                </div>
+              </div>
+
+              <div>
+                <div class="c-input">
+                  <label for="postalCode">Código postal : </label>
+                  <input class="input <%= locals.errors && errors.postalCode ? "is-invalid" : null%>" id="postalCode" name="postalCode" placeholder="Código postal" value="<%= typeof old != "undefined" ? old.postalCode : "" %>">
+                </div>
+                <div class="div-error">
+                  <p id="errorPostalCode" class="error"></p>             
+                  <%if(locals.errors && errors.postalCode){%>
+                    <p class="error"><%=errors.postalCode.msg%></p>
+                  <%}%>
+                </div>
+              </div>
+
+              <div>
+                <div class="c-input">
+                  <label for="state">Provincia : </label>
+                  <div class="select">
+                    <select class=" <%= locals.errors && errors.state ? "is-invalid" : null%>" id="state" name="state">
+                      <% arg.provincias.forEach(provincia => { %>
+                        <option value="<%= provincia.nombre %>" <%= locals.old && old.state == provincia.nombre ? 'selected' : null%> ><%= provincia.nombre %></option>
+                      <% }) %>
+                    </select>
+                  </div>
+                </div>
+                <div class="div-error">
+                  <p id="errorState" class="error"></p>              
+                  <%if(locals.errors && errors.state){%>
+                    <p class="error"><%=errors.state.msg%></p>
+                  <%}%> 
+                </div>
+              </div>
+
+              <div>
+                <div class="c-input">
+                  <label for="neighborhood">Localidad : </label>
+                  <input class="input <%= locals.errors && errors.neighborhood  ? "is-invalid" : null%>" id="neighborhood" name="neighborhood"  placeholder="Localidad" value="<%= typeof old != "undefined" ? old.neighborhood : "" %>">
+                </div>
+                <div class="div-error">
+                  <p id="errorNeighborhood" class="error"></p>
+                  <%if(locals.errors && errors.neighborhood){%>
+                    <p class="error"><%=errors.neighborhood.msg%></p>
+                  <%}%>
+                </div>
+              </div>
+
+            </div>
+
+            <div>
+              <div class="c-input">
+                <label for="notes">Aclaraciones : </label>
+                <textarea class="input-text-area <%= locals.errors && errors.notes ? "is-invalid" : null%>" id="notes" name="notes" placeholder="Aclaraciones para el envío"><%= typeof old != "undefined" ? old.notes : null %></textarea>
+              </div>
+              <div class="div-error">
+                <p id="errorNotes" class="error"></p>
+                <%if(locals.errors && errors.notes){%>
+                  <p class="error"><%=errors.notes.msg%></p>
+                <%}%>
+              </div>
+            </div>
+                
+            <div class="container-buttons">
+                <button type="submit" class="btn btn-editar">Guardar</button>
+                <a href="/users/profile/<%=locals.userLogged.id%>" class="btn btn-borrar">Cancelar</a>
+            </div>
+          </form>
+
+    </main>
+<%- include("./partials/footer") %> 
+<%- include("./partials/scripts.ejs")%>
+<script src="../js/addressValidator.js"></script>
+</body>
+</html>

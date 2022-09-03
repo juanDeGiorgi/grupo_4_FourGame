@@ -1,0 +1,289 @@
+.cart {
+    background-image: url(/images/background/pcMasterRace.jpg);
+    background-position: left;
+    background-size:cover;
+    background-attachment: fixed;
+}
+
+.cart .container-detail-products {
+    display: flex;
+    justify-content: space-around;
+    margin: 5vw auto;
+    width: 95%;
+    height: 50vw;
+  }
+  
+  .cart .container-detail-products .container-products {
+    background-color: rgba(0, 0, 0, 0.57);
+    border-radius: 10px;
+    color: white;
+    width: 50%;
+    padding: 1.5vw;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+
+  .cart .container-detail-products .container-products::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .cart .container-detail-products .container-detail{
+    background-color: rgba(0, 0, 0, 0.57);
+    border-radius: 10px;
+    width: 35%;
+    padding: 2vw;
+}
+
+/* articulo */
+
+  .cart .title-p-cart {
+    font-size: 3.2vw;
+  }
+
+  .cart .container-p-cart {
+    background-color: white;
+    color: black;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 14px;
+    margin: 4.9vw 1.2vw;
+    padding: 2.1vw;
+  }
+
+  .cart .img-c-cart {
+    width: 24.8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cart .infoProduct-c-cart {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .cart .price-product-cart {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .cart .t-price {
+    font-weight: 700;
+    margin: 0.4vw 0;
+    font-size: 4.7vw;
+  }
+
+  .cart .n-price {
+    font-weight: 700;
+    margin-right: 2.5vw;
+    font-size: 5.5vw;
+  }
+
+  .cart .cantidad {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .cart .cantidad .t-cantidad {
+    display: inline-block;
+    font-weight: 700;
+    margin: 0vw;
+    font-size: 4.7vw;
+  }
+
+  .cart .cantidad button {
+    color: #f2204d;
+    font-size: 6.5vw;
+    margin: 0 1.9vw;
+  }
+  
+  .cart .cantidad button:hover {
+    color: #cc1a40;
+  }
+  
+  .cart .cantidad button:active {
+    color: #a81535;
+  }
+  
+  .cart .cantidad .n-cantidad {
+    font-weight: 700;
+    font-size: 7.3vw;
+    display: inline-block;
+    background: none;
+    border: none;
+    text-align: center;
+    margin: 0vw;
+  }
+
+@media (min-width: 550px) {
+
+  /* articulo */
+
+  .cart .title-p-cart {
+    font-size: 2.4vw;
+  }
+
+  .cart .container-p-cart {
+    margin: 2.9vw;
+  }
+
+  .cart .img-c-cart {
+    width: 24.8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cart .infoProduct-c-cart {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .cart .price-product-cart {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .cart .t-price {
+    font-weight: 700;
+    margin: 0.4vw 0;
+    font-size: 3.2vw;
+  }
+
+  .cart .n-price {
+    font-weight: 700;
+    margin-right: 2.8vw;
+    font-size: 3.9vw;
+  }
+
+  .cart .cantidad {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .cart .cantidad .t-cantidad {
+    display: inline-block;
+    font-weight: 700;
+    margin: 0vw;
+    font-size: 3.2vw;
+  }   
+
+  .cart .cantidad .t-cantidad {
+    font-size: 3.2vw;
+  }
+
+  header .cantidad button {
+    font-size: 4.1vw;
+  }
+
+  header .cantidad .n-cantidad {
+    font-size: 4.8vw;
+  }
+
+}
+
+@media (min-width: 900px) {
+
+  /* detail order */
+
+  .cart .container-detail .container-detail-body{
+    min-height: 38vw;
+  }
+
+  .cart .container-detail .container-detail-footer .div-total-detail{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 2.4vw;
+    color: white;
+    border-bottom: 1px solid gainsboro;
+    margin-bottom: 1vw;
+  }
+
+  .cart .container-detail .container-detail-footer .c-buttons-detail{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* articulo */
+
+  .cart .title-p-cart {
+    font-size: 1.2vw;
+  }
+
+  .cart .container-p-cart {
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid #c1b8b885;
+    border-radius: 14px;
+    margin: 1vw 1vw;
+    padding: 0.7vw;
+    min-height: 9.2vw;
+  }
+
+  .cart .img-c-cart {
+    width: 20.8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cart .infoProduct-c-cart {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .cart .price-product-cart {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .cart .t-price {
+    font-weight: 700;
+    margin: 0.4vw 0;
+    font-size: 1.6vw;
+  }
+
+  .cart .n-price {
+    font-weight: 700;
+    margin-right: 0.5vw;
+    font-size: 1.8vw;
+  }
+
+  .cart .cantidad {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .cart .cantidad .t-cantidad {
+    margin: 0vw;
+    font-size: 1.5vw;
+  }
+
+  .cart .cantidad button {
+    font-size: 2vw;
+    margin: 0vw 0.3vw;
+  }
+
+  .cart .cantidad .n-cantidad {
+    font-size: 2.2vw;
+  }
+}

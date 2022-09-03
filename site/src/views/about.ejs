@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <%- include("./partials/head",{title : `Nosotros`}) %> 
+
+<body class="about">
+
+    <%- include("./partials/header") %> 
+
+    <main>
+    
+
+        <div class="about-business">
+             <h1>Sobre nosotros</h1>
+                <p class="intro">
+                Four Game es una empresa dedicada a la comercialización de productos tecnológicos,
+                fundada en Enero del 2021 por un grupo de amigos aficionados a la tecnología y a los videojuegos, 
+                que un día decidieron formar parte de éste mundo a partir de una perspectiva de negocios.
+                Al principio, nuestra actividad online estaba limitada a las redes sociales y era un público joven.
+                Según las estadísticas sus edades estaban comprendidas entre los 16-33 años, por lo cual se tomó la decisión de solicitar a un equipo
+                de desarrolladores la creación de un sitio web, con el objetivo de abarcar un público más extenso.
+                Otro propósito de la implementación de un sitio web de calidad es ofrecer un servicio organizado, accesible,
+                eficiente, intuitivo y con información detallada tanto de productos como de nuestra empresa.
+                Nos enfocamos en una atención personalizada, basándonos en el perfil de cada uno de nuestros clientes,
+                priorizando generar con ellos un vínculo de gran calidad humana acompañado de las últimas novedades tecnológicas 
+                y los mejores precios del mercado.
+            </p>
+        </div>
+
+    
+        <div class="info-container">
+
+             <div class="direction">
+                 <h3 class="about-title"><i></i>Dirección</h3>
+                 <p>Abasto Shopping. L.145</p>
+                 <p>Av. Corrientes 3247</p>
+                 <p>CABA</p>
+                 <p>Teléfono</p>
+                 <p>3412524394</p>
+                 <p>Consultas sobre pedidos:</p>
+                 <p>1132338644</p>
+             </div>
+
+             <div class="contact">
+                 <h3 class="about-title">Atención al cliente</h3>
+                 <p>fourgame@gmail.com</p>
+                 <p>1139177142</p>
+             </div>
+
+             <div class="attention">
+                 <h3 class="about-title"><i></i> Horarios de atención</h3>
+                 <p>Lunes a domingos de 10:00 a 20:00hs.</p>
+             </div>
+
+        </div>
+ <div class="contenedor">
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19680.962807572203!2d-58.42240782438912!3d-34.60753120088097!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca8c854bd13f%3A0xfc0cf5c054da4aa1!2sAbasto%20Shopping!5e0!3m2!1ses-419!2sar!4v1629837152312!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+         </div>
+        
+        <form action="" class="consultas">
+            <h2>Realice sus consultas</h2>
+            <input type="text-area" name="text-user" placeholder="Su mensaje" class="textarea">
+            <input type="text" name="name" placeholder="Nombre" class="input-msg">
+            <input type="text" name="email" placeholder="Email" class="input-msg">
+            
+           
+            <button type="submit" class="send">Enviar</button>
+            
+        </form>
+</div>
+</main>
+
+<%- include("./partials/footer") %> 
+<%- include("./partials/scripts.ejs")%>
+</body>
+</html>

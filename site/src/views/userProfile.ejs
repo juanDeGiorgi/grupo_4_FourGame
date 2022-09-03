@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <%- include("./partials/head",{title : "Editar perfil"}) %> 
+
+<body class="profile">
+    <%- include("./partials/header")%> 
+    <main>            
+        <aside class="nav-bar">
+          <nav class="nav-bar-nav">
+            <ul class="nav-bar-ul">
+              <li><a href="#info"><i class="fas fa-user" style="margin-right: 1vw;"></i> Información</a></li>
+              <li><a href="#pass"><i class="fas fa-lock" style="margin-right: 1vw;"></i> Cambiar contraseña</a></li>
+              <li><a href="#address"><i class="fas fa-map-marked-alt" style="margin-right: 1vw;"></i> Dirección</a></li>
+              <li><a href="#fav"><i class="fas fa-heart" style="margin-right: 1vw;"></i> Favoritos</a></li>
+              <li><a href="#shopping"><i class="fas fa-shopping-bag" style="margin-right: 1vw;"></i> Mis compras</a></li>
+              <li><a href="#delete"><i class="fas fa-trash-alt" style="margin-right: 1vw;"></i> Eliminar cuenta</a></li>
+            </ul>
+          </nav>
+        </aside>
+
+        <div class="c-forms">
+          <!-- SECTION INFORMACION -->
+          <div id="info" style="padding-top: 1vw;">
+            <form id="formProfile" class="formProfile" action="/users/profile/<%=user.id%>" method="POST" enctype="multipart/form-data">
+              <h2 class="t-blocks"><i class="fas fa-user" style="margin-right: 1vw;"></i> Información</h2>
+              
+              <div class="c-img-inputs">
+                <div class="c-imagenes">
+                  <div class="mb-3 input-file">
+                    <div class="preview" id="preview">
+                      <img id="preview-image" src="<%= user.image ? `/images/users/${user.image}` : `/images/icon/default-image1.png`%>">
+                    </div>
+                    <input type="file" id="image" name="image" class="file">
+                    <label for="image" class="file-agregar btn"><i class="fas fa-pen"></i>  Cambiar imagen</label>
+                  </div>
+                </div>
+
+                <div class="c-inputs">
+                  <div style="height: 5vw;">
+                    <div class="c-input">
+                      <label for="name">Nombre : </label>
+                      <input id="name" class="input <%= locals.errors && errors.name ? "is-invalid" : null%>" type="text" name="name" placeholder="Nombre" value="<%= typeof old != "undefined" ? old.name : user.name %>">
+                    </div>
+                    <div class="div-error">
+                      <p id="errorName" class="error"></p>
+                      <%if(locals.errors && errors.name){%>
+                        <p class="error"><%=errors.name.msg%></p>
+                      <%}%>
+                    </div>
+                  </div>
+                  
+                  <div style="height: 5vw; margin: 1.5vw 0vw;">
+                    <div class="c-input">
+                      <label for="email">Email : </label>
+                      <input id="email" class="input <%= locals.errors && errors.email ? "is-invalid" : null%>" type="text" name="email" value="<%= user.email %>" disabled>
+                      <input type="text" style="display: none;" value="<%=user.email%>" name="originalEmail">
+                    </div>
+                    <div class="div-error">
+                      <%if(locals.errors && errors.email){%>
+                        <p class="error"><%=errors.email.msg%></p>
+                      <%}%>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="container-buttons">
+                <button type="submit" class="btn btn-editar">Actualizar perfil</button>
+              </div>
+            </form>
+          </div>
+          <!-- SECTION INFORMACION -->
+
+          <!-- SECTION CONTRASEÑA -->
+
+          <div id="pass" style="padding-top: 1vw;">
+            <div id="formPass" class="formProfile">
+              <h2 class="t-blocks"><i class="fas fa-lock" style="margin-right: 1vw;"></i> Cambiar contraseña</h2>
+              
+                <div class="c-inputs" style="width: 100%;">
+                  <div style="height: 5vw;">
+                    <div class="c-input">
+                      <label for="a-pass">Contraseña actual : </label>
+                      <input id="a-pass" class="input <%= locals.errors && errors.actPass ? "is-invalid" : null%>" type="password" name="actPass" placeholder="contraseña actual" value="<%= typeof old != "undefined" ? old.actPass : null %>">
+                    </div>
+                    <div class="div-error">
+                      <p id="errorActPass" class="error"></p>
+                      <%if(locals.errors && errors.actPass){%>
+                        <p class="error"><%=errors.actPass.msg%></p>
+                      <%}%>
+                    </div>
+                  </div>
+                  
+                  <div style="height: 5vw; margin: 1.5vw 0vw;">
+                    <div class="c-input">
+                      <label for="new-pass">Contraseña nueva : </label>
+                      <input id="new-pass" class="input <%= locals.errors && errors.newPass ? "is-invalid" : null%>" type="password" name="newPass" placeholder="contraseña nueva" value="<%= typeof old != "undefined" ? old.newPass : null %>">
+                    </div>
+                    <div class="div-error">
+                      <p id="errorNewPass" class="error"></p>
+                      <%if(locals.errors && errors.newPass){%>
+                        <p class="error"><%=errors.newPass.msg%></p>
+                      <%}%>
+                    </div>
+                  </div>
+
+                  <div style="height: 5vw; margin: 1.5vw 0vw;">
+                    <div class="c-input">
+                      <label for="c-new-pass">Confirmar nueva contraseña : </label>
+                      <input id="c-new-pass" class="input <%= locals.errors && errors.newPass ? "is-invalid" : null%>" type="password" name="cNewPass" placeholder="Confirmar contraseña nueva" value="<%= typeof old != "undefined" ? old.CNewPass : null %>">
+                    </div>
+                    <div class="div-error">
+                      <p id="errorCNewPass" class="error"></p>
+                      <%if(locals.errors && errors.CNewPass){%>
+                        <p class="error"><%=errors.CNewPass.msg%></p>
+                      <%}%>
+                    </div>
+                  </div>
+
+              <div class="container-buttons">
+                <button id="changePass" type="button" onclick="cambiar('<%=user.id%>');" class="btn btn-editar">Cambiar</button>
+              </div>
+            </div>
+          </div>
+          <!-- SECTION CONTRASEÑA -->
+
+          <!-- SECTION DIRECCION -->
+          
+          <div id="address" style="padding-top: 1vw;">
+            <div class="formProfile">
+              <h2 class="t-blocks"><i class="fas fa-map-marked-alt" style="margin-right: 1vw;"></i> Dirección</h2>
+              
+              <%if(!user.address){%>
+                <div style="text-align: center; color: gray; margin: 1vw;">
+                  <i class="far fa-frown" style="font-size: 8vw;"></i>
+                  <p style="margin: 1vw;font-size:2vw">no tienes ninguna dirección</p>
+                  <a href="/users/address" class="btn btn-editar">Agregar dirección</a>
+                </div>
+              <%}else{%>
+                <div>
+                  <div class="c-input">
+                    <label for="street">Calle : </label>
+                    <input id="street" class="input" type="text" placeholder="Calle" value="<%=user.address.street%>" disabled>
+                  </div>
+
+                  <div class="c-input">
+                    <label for="number">Altura : </label>  
+                    <input id="number" class="input" type="text" placeholder="Altura" value="<%=user.address.number%>" disabled>
+                  </div>
+
+                  <div class="c-input">
+                    <label for="postaCode">Codigo postal : </label>
+                    <input id="postaCode" class="input" type="text" placeholder="Codigo postal" value="<%=user.address.postalCode%>" disabled>
+                  </div>
+
+                  <div class="c-input">
+                    <label for="state">Provincia : </label>
+                    <input id="state" class="input" type="text" placeholder="Provincia" value="<%=user.address.state%>" disabled>
+                  </div>
+                  
+                  <div class="c-input">
+                    <label for="neighborhood">Localidad : </label>
+                    <input id="neighborhood" class="input" type="text" placeholder="Localidad" value="<%=user.address.neighborhood%>" disabled>
+                  </div>
+
+                  <div class="c-input-text">
+                    <label for="notes">Aclaraciones : </label>
+                    <textarea class="input-text-area" id="notes" name="notes" placeholder="Aclaraciones para el envío" disabled><%= user.address.note ? user.address.note : null %></textarea>
+                  </div>
+                  
+                  <div class="container-buttons">
+                    <a href="/users/address/edit/<%=user.id%>" class="btn btn-editar">Editar dirección</a>
+                  </div>
+                </div>
+              <%}%>
+              
+            </div>
+          </div>
+          <!-- SECTION DIRECCION -->
+
+          <!-- SECTION FAVORITOS -->
+          <div id="fav" style="padding-top: 1vw;">
+            <div class="formProfile">
+              <h2 class="t-blocks"><i class="fas fa-heart" style="margin-right: 1vw;"></i> Favoritos</h2>
+
+              <%if(user.productFavorites.length > 0){%>
+                <div class="container-carrusel">
+                  <div class="swiper-button-prev" style="color: gainsboro;"></div>
+                  <div class="swiper-button-next" style="color: gainsboro;"></div>
+                  <div class="swiper">
+                    <section class="swiper-wrapper">
+                        <% user.productFavorites.forEach(product => { %> 
+                            <article class="swiper-slide">
+                                <a href="/products/detail/<%=product.id%> " class="a-article">
+                                    <div class="contenedor-img">
+                                        <img src="/images/products/<%=product.images[0].name%>" alt="image">
+                                    </div>
+        
+                                    <div class="product-info">
+        
+                                        <div class="title">
+                                            <h3><%=product.name %> </h3>
+                                        </div>
+                                        <div class="info">
+                                            <p class="price">$ <%=toThousand(product.price)%> </p>
+                                            <%if (product.discount !== 0){%>
+                                                <span class="discount"><%=product.discount%>% OFF</span>
+                                            <%}%>
+                                        
+                                            <p class="payMethod">12 x $ <%=toThousand((product.price / 12).toFixed(0))%> sin interés</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </article>
+                        <% }) %> 
+                    </section>
+                  </div>
+                </div>
+              <%}else{%>
+                <div style="text-align: center; color: gray; margin: 1vw;">
+                  <i class="far fa-frown" style="font-size: 8vw;"></i>
+                  <p style="margin: 1vw;font-size:2vw">no tienes ningun producto favorito</p>
+                </div>
+              <%}%>
+            </div>
+          </div>
+          <!-- SECTION FAVORITOS -->
+
+          <!-- SECTION MIS COMPRAS -->
+          <div id="shopping" style="padding-top: 1vw;">
+            <div class="formProfile">
+              <h2 class="t-blocks"><i class="fas fa-shopping-bag" style="margin-right: 1vw;"></i> Mis compras</h2>
+
+            </div>
+          </div>
+          <!-- SECTION MIS COMPRAS -->
+
+          <!-- SECTION ELIMINAR -->
+          <div id="delete" style="padding-top: 1vw;">
+            <div class="formProfile">
+              <h2 class="t-blocks"><i class="fas fa-trash-alt" style="margin-right: 1vw;"> </i>Eliminar cuenta</h2>
+
+            </div>
+          </div>
+          <!-- SECTION ELIMINAR -->
+
+        </div>
+    </main>
+    <%- include("./partials/footer") %> 
+    <%- include("./partials/scripts.ejs")%>   
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="/js/userProfile.js"></script>
+  </body>
+</html>

@@ -1,0 +1,425 @@
+
+  /* IMAGEN DE FONDO*/
+
+.search{
+    background-image: url('/images/background/arcade\ con\ zoom.jpg');
+    background-position: center;
+    background-size:cover;
+    background-attachment: fixed;
+}
+
+             /*                          MOBILE                            */
+
+  /* SECTION REDES*/
+
+      .search .a-article{
+          color: black;
+      }
+
+      .search main .carousel{
+          display: none;
+      }
+
+      .search main .main{
+          width: 90%;
+          margin: 3vw auto;
+          display: flex;
+          flex-wrap: nowrap;
+          flex-direction: row;
+      }
+
+      .search main section .redes{
+          /* background-color: #F2204D; */
+          border-radius: 40px;
+          color: #ffffff;
+          padding: 5%;
+          /* margin: 10% auto 5% auto; */
+          max-width: 414px;
+          text-align: center;
+          text-shadow: 0px 3px 6px rgb(250, 0, 59);
+      }
+
+      .search main section .redes h3{
+          font-size: 160%;
+      }
+
+      .search main section div a img{
+          width: 20%;
+          margin: 5% 5% 0% 5%;
+          /* max-width: 72px; */
+      }
+
+      .search main section div a .twitter{
+          margin: 4% 4% 0% 4%;
+          width: 22.3%;
+          max-width: 74px;
+      }
+
+
+  /* SECTION ARTICLES */
+
+  .search main h2{
+      color: #ffffff;
+      text-align: center;
+      margin: 10% 0% 2% 0%;
+      font-size: 22px;
+      font-weight: bold;
+      text-shadow: -2px 2px 2px black;
+  }
+
+
+  
+  .search main .decoracion{
+      background-color: #F77490;
+      color: #F77490;
+      width: 95%;
+      height: 10px;
+      border-radius: 20px;
+      margin: 0% auto 7.8vw auto;
+  }
+
+  .search main .productos{
+      margin-bottom: 15vw;
+  }
+  
+  .search main section article a{
+      color: black;
+  }
+  
+  .search main section article{
+      background-color: #ffffff;
+      width: 72.4vw; 
+      height: 131.3vw;
+      padding: 15px;
+      margin: 0 auto 50px auto;
+      box-shadow: 0px 0px 10px rgb(100,100,100);
+      position: relative;
+      cursor: pointer;
+  }
+  .search main section article:last-child{
+      margin: 0 auto 0 auto;
+  }
+  .search main article:hover{
+      box-shadow: 0px 0px 20px rgb(250 0 59);
+  }
+
+  
+  .search main section article i:active{
+      color: red;
+  
+  }
+  
+  .search main section .contenedor-img {
+      height: 65.65vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  .search main section article .contenedor-img img{
+      width: 70%;
+  }
+  
+  .search main section article .product-info{
+      height: 65.65vw;
+      border-top: 1px solid #B2B2B2;
+  }
+  
+  .search main section article .title{
+      height: 26vw;
+  }
+  
+  .search main section article .info{
+      height: 26vw;
+  }
+  
+  .search main section article div button{
+      position: absolute;
+      font-size: 180%;
+      top: 5%;
+      right: 5%;
+      color: black;
+  }
+  
+  .search main section article div h3{
+      font-size: 4.6vw;
+      font-weight: 500;
+      text-align: center;
+      color: #3E3E3E;
+      color: #3E3E3E;
+      margin: 9vw 0% 10vw 0%;
+  }
+  
+  .search main section article div .price{
+    font-size: 8.9vw;
+    margin: 0 1.5vw 3% 0;
+    display: inline-block;
+  }
+  
+  .search main section article div .discount{
+      color: #33CC33;
+      font-size: 5vw;
+  }
+
+  .search main section article div .payMethod{
+    color: #3D2ED0;
+    font-weight: 500;
+    font-size: 5vw;
+}
+  
+  
+                 /*                          TABLET                            */
+  
+@media (min-width:500px){
+      
+    .search {
+        overflow-x: hidden;
+    }
+
+    .search main .carousel{
+        display: block;
+    }
+
+    .search main h2 {
+        font-size: 5.8vw;
+        margin: 5vw 0% 1vw 0%;
+    }
+
+    .search main section div a img {
+        width: 12%;
+    }
+
+    .search main section div a .twitter {
+        width: 13%;
+    }
+
+    .search main section .redes {
+        padding: 1%;
+        margin: 5% auto 0% auto;
+        width: 560px;
+        border-radius: 25px;
+    }
+
+    .search main .decoracion {
+        margin-bottom:50px;
+    }
+
+    .search main .productos {
+        /* display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        width: 75%; */
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, 5fr) 1fr;
+        grid-column-gap: 7px;
+        grid-row-gap: 13px;
+    }
+
+    .search main .aside-c{
+        width: 26%;
+        height: 50vw;
+        margin-right: 5vw;
+        background-color: white;
+        padding: 1.6vw;
+    }
+
+    .search main .aside-c .aside .aside-t{
+        text-align: left;
+        font-size: 3vw;
+    }
+
+    .search main .aside-c .aside .number-results{
+        color: gray;
+    }
+
+    .search main .aside-c .aside .line{
+        background-color: gray;
+        color: gray;
+        width: 97%;
+        height: 1px;
+        margin: 1.5vw 0px;
+    }
+
+    .search main .aside-c .aside .ul-title{
+        margin: 1.5vw 0vw;
+    }
+
+    .search main .aside-c .aside .li-filter{
+        margin-bottom: 0.6vw;
+    }
+
+    .search main .aside-c .aside .li-filter .c-filter{
+        display: flex;
+        align-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .check-on {
+        margin: 0px;
+        padding: 0px;
+        width: 18px;
+        height: 18px;
+        appearance: none;
+    }
+
+    .check-on::after {
+        background-position: 0px -18px;
+    }
+
+    .check-on::after {
+        display: block;
+        left: 0px;
+        width: 18px;
+        height: 18px;
+        content: "";
+        background-image: url(../images/icon/icon-checkbox.svg);
+        background-size: 18px 37px;
+    }
+
+    .check-off {
+        margin: 0px;
+        padding: 0px;
+        width: 18px;
+        height: 18px;
+        appearance: none;
+    }
+
+    .check-off::after {
+        background-position: 18px 37px;
+    }
+
+    .check-off::after {
+        display: block;
+        left: 0px;
+        width: 18px;
+        height: 18px;
+        content: "";
+        background-image: url(../images/icon/icon-checkbox.svg);
+        background-size: 18px 37px;
+    }
+
+    .search main .aside-c .aside .check-title{
+        color: black;
+        font-size: 1.3vw;
+        margin-left: 0.5vw;
+    }
+
+    .search main .not-results{
+        background-color: white;
+        margin: 10vw auto;
+        width: 62%;
+        height: 10vw;
+        text-align: center;
+        padding: 1.5vw;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        box-shadow: 0px 2px 10px 0px rgb(0 0 0);
+    }
+
+    .search main .not-results .c-icon{
+        font-size: 6vw;
+    }
+
+    .search main .not-results .not-result-text{
+        font-weight: 400;
+    }
+
+    .search main .not-results .not-result-text .search-name{
+        font-weight: 500;
+        font-size: 2.2vw;
+    }
+
+    .search main section article {
+        width: 40vw;
+        height: 70vw;
+    }
+
+    .search main section .contenedor-img {
+        height: 50%;
+        overflow: hidden;
+        padding: 5px;
+    }
+
+    .search main section article .product-info {
+        height: 50%;
+    }
+
+    .search main section article .title {
+        height: 50%;
+    }
+
+    .search main section article div h3 {
+        font-size: 2.8vw;
+        margin: 3vw 0% 8vw 0%;
+    }
+
+    .search main section article .info {
+        height: 50%;
+    }
+
+    .search main section article div .price {
+        font-size: 4.7vw;
+    }
+
+    .search main section article div .discount {
+        font-size: 2.7vw;
+    }
+
+    .search main section article div .payMethod {
+        font-size: 3.1vw;
+    }
+  
+}
+  
+             /*                          DESKTOP                            */
+  
+  @media (min-width:960px){
+  
+  
+      .search main h2 {
+          font-size: 3.9vw;
+      }
+  
+      .search main .decoracion {
+          margin-bottom:4vw;
+      }
+
+    .search main .productos {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(8, 4fr) 1fr;
+        grid-column-gap: 50px;
+        grid-row-gap: 30px;
+        width: 73%;
+    }
+
+      .search main section article {
+          width: 18vw;
+          height: 32.5vw;
+      }
+  
+      .search main section article div h3 {
+          font-size: 1.2vw;
+          margin: 1.4vw 0% 8vw 0%;
+      }
+  
+      .search main section article div .price {
+          font-size: 1.8vw;
+          margin: 0 0.5vw 3% 0;
+      }
+  
+      .search main section article div .discount {
+          font-size: 1.3vw;
+      }
+
+      .search main section article div .payMethod {
+        font-size: 1.3vw;
+    }
+  
+  }
+
+

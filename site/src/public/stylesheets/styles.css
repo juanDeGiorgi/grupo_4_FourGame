@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+@import url("./general.css");
+@import url("./about.css");
+@import url("./index.css");
+@import url("./adminIndex.css");
+@import url("./search.css");
+@import url("./productLoading.css");
+@import url("./detailProduct.css");
+@import url("./cart.css");
+@import url("./register.css");
+@import url("./userProfile.css");
+@import url("./login.css");
+@import url("./address.css");
+@import url("./header.css");
+@import url("./footer.css");
+

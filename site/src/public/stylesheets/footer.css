@@ -1,0 +1,218 @@
+            /*                          MOBILE                            */
+
+
+            footer{
+                background-color: #505050;
+                color: #ffffff;
+                text-align: center;
+                padding: 13px 10px 10px 10px;
+            }
+            
+            footer .contain-footer{
+                width: 100%;
+                max-width: 500px;
+                margin: auto;
+            }
+            
+            footer .t-ofertas{
+                font-size: 150%;
+                margin-bottom: 10%;
+                padding: 0%;
+                font-weight: 700;
+                line-height: initial;
+            }
+            
+            footer form{
+                width: 90%;
+                margin: auto;
+                border-bottom: 1px solid black;
+            }
+            
+            footer form .email{
+                position: relative;
+                display: inline;
+            }
+            
+            footer form i{
+                position: absolute;
+                top: -15.2%;
+                left: 4%;
+            }
+            /* footer .disabled {
+                cursor: not-allowed;
+                pointer-events: none;
+            } */
+            
+            footer form input{
+                display: inline-block;
+                border: none;
+                width: 100%;
+                height: 40px;
+                border-radius: 30px;
+                text-indent: 14.6%;
+                font-weight: 400;
+                font-size: 120%;
+            }
+            
+            footer form input:focus{
+                border-radius: 30px;
+                outline: none;
+            }
+            
+            footer form button{
+                background-color: #F2204D;
+                color: #ffffff;
+                display: block;
+                border-radius: 30px;
+                margin: 13% auto 15% auto;
+                width: 50%;
+                max-width: 230px;
+                height: 40px;
+                font-size: 100%;
+                font-weight: 700;
+                cursor: pointer;
+            }
+            
+            footer form button:hover{
+                background-color: #df2950;
+            }
+            
+            footer form button:active{
+                background-color: #c52649;
+            }
+            
+            footer nav .t-ul{
+                margin: 10% 0% 10% 0%;
+                font-size: 200%;
+                color: #ffffff;
+                font-weight: 700;
+                line-height: initial;
+            }
+            
+            footer nav ul li{
+                margin: 10% 0% 10% 0%;
+            }
+            
+            footer nav ul li a{
+                color: #ffffff;
+            }
+            
+            footer nav ul li a:hover{
+                color: #F2204D;
+            }
+            
+            footer nav ul li a:active{
+                color: #e2e0e0;
+            }
+            
+            
+                           /*                          TABLET                            */
+            
+            @media (min-width:600px){
+            
+                /* footer {
+                    margin-top: 12%;
+                } */
+            
+                footer .contain-footer{
+                    max-width: none;
+                }
+               
+                footer .t-ofertas {
+                    margin-bottom: 4%;
+                }
+            
+                footer form i {
+                    top: -13.8%;
+                }
+            
+                footer form input {
+                    width: 64%;
+                    height: 40px;
+                    margin-right: 5%;
+                    text-indent: 11.3%;
+                }
+                
+                footer form button {
+                    display: inline-block;
+                    margin: 0% 0% 1.3% 0%;
+                    width: 20.5%;
+                }
+            
+                footer nav{
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-around;
+                }
+            
+                footer nav .ul-contacto{
+                    margin-top: 0.9%;
+                }
+            
+                footer nav .div-redes{
+                    margin-top: 1.2%;
+                }
+            
+                footer nav div .ul-redes{
+                    margin-top: 37.4%;
+                }
+            
+                footer nav div .ul-redes li .t-ul{
+                    margin-bottom: 13.5%;
+                }
+            }
+            
+                           /*                          DESKTOP                            */
+            
+            @media (min-width:1024px){
+                
+                footer form{
+                    display: inline-block;
+                    width: 100%;
+                    text-align: center;
+                }
+            
+                footer form .t-ofertas{
+                    display: inline-block;
+                    font-size: 126%;
+                    margin: 0;
+                }
+            
+                footer form i{
+                    left: 6%;
+                    top: -19%;
+                } 
+            
+                footer form input{
+                    width: 40%;
+                    margin: 0% 2% 0% 2%;
+                    text-indent: 8%;
+                }
+            
+                footer form button{
+                    width: 11%;
+                    display: inline-block;
+                }
+            
+                footer nav div{
+                    display: flex;
+                    width: 50%;
+                    justify-content: space-around;
+                }
+            
+                footer nav div ul{
+                    margin: 0% 5% 0% 5%;
+                }
+                
+                footer nav .div-redes {
+                    margin-top: 0%;
+                }
+                
+                footer nav div .ul-redes {
+                    margin-top: 1.9%;
+                }
+                
+                footer nav div .ul-medios{
+                    margin-top: -1.3%;
+                }
+            }

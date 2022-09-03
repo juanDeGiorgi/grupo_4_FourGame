@@ -1,0 +1,1089 @@
+.detail  {
+    background-image: url('/images/background/consolasRetro.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+
+}
+.detail main{
+    width: 90%;
+    margin: auto;
+}
+
+
+/*  MAPA DEL SITIO  */
+
+.detail main .ruta {
+    width: 100%;
+    height: 5vw;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    font-size: 4.8vw;
+    font-weight: 500;
+    padding-left: 5%;
+    color: #3D2ED0;
+    margin-bottom: 10%;
+    flex-wrap: wrap;
+    margin: 5% 0% 31.4% 0%;
+}
+.detail main .ruta a {
+    color: #FCFCFC;
+    text-shadow: 3px 1px 7px black;
+}
+
+.detail .ruta .a-posicion{
+    font-weight: 700;
+    font-size: 4.9vw;
+}
+.detail .ruta span {
+    margin: 0% 0.5%;
+    color: #ff00fb;
+}
+
+/*                   */
+
+.detail main .vista{
+    background-color: #ffffff;
+    margin: 3% 0% 10% 0%;
+    padding: 0px 20px 0px 20px;
+    border-radius: 15px;
+    position: relative;
+}
+
+.detail main .vista .vista-miniaturas{
+    display: none;
+}
+
+.detail main .vista .div-img-miniaturas{
+    margin-bottom: 5vw;
+}
+
+.detail main .vista .vista-img{
+    height: 40%;
+    width: 100%;
+    position: relative;
+}
+
+.detail main .vista .vista-img .fav {
+    position: absolute;
+    font-size: 10.8vw;
+    top: 5.3%;
+    right: -0.1%;
+}
+
+.detail .off-fav::after {
+    display: block;
+    left: 0px;
+    width: 50px;
+    height: 55.1px;
+    content: "";
+    background-image: url(../images/icon/heart.png);
+    background-size: 45.7px 44.5px;
+    background-repeat: no-repeat;
+}
+
+.detail .on-fav::after{
+    display: block;
+    left: 0px;
+    width: 51px;
+    height: 48.5px;
+    content: "";
+    background-image: url(../images/icon/heart-solid-edited.png);
+    background-size: 46.7px 47px;
+    background-repeat: no-repeat;
+}
+
+.detail main .vista .vista-img img{
+    /* width: 87%; */
+    width: 82.3%;
+    margin-top: 10vw;
+}
+
+.detail main .vista .vista-info{
+    height: 60%;
+    
+}
+
+.detail .small {
+    color: #33CC33;
+    font-size: 5vw;
+    margin: 2vw 0 1vw 0;
+}
+
+.detail main .vista .vista-info h3{
+    font-size: 6.5vw;
+}
+
+.detail main .vista .vista-info .vendido{
+    color: #ffffff;
+    background-color: #3D2ED0;
+    border: 2px solid black;
+    width: 35vw;
+    font-size: 5vw;
+    text-align: center;
+}
+
+/*        PRECIO      */
+
+.detail main .vista .vista-info .price{
+    font-size: 10vw;
+    font-weight: 500;
+    display: inline-block;
+}
+
+/*                   */
+
+/*      CUOTAS      */
+
+
+.detail main .vista .vista-info .payMethod{
+    margin: 2vw 0vw;
+}
+
+.detail main .vista .vista-info .t-cuotas{
+    color: #33CC33;
+    font-size: 5.1vw;
+    margin-bottom: 1vw;
+}   
+
+.detail main .vista .vista-info .b-cuotas{
+    display: block;
+    font-size: 6vw;
+    color: #3D2ED0;
+    font-weight: 500;
+}
+
+.detail main .vista .vista-info .b-cuotas:hover{
+    color: #6152e2;
+}
+
+.detail main .vista .vista-info .b-cuotas:active{
+    color: #897fe4;
+}
+
+/*                   */
+
+
+/*      ENVIOS       */
+
+.detail main .vista .vista-info .envios{
+    position: relative;
+    margin: 3.3vw 0;
+}
+
+.detail main .vista .vista-info .envios .fa-truck{
+    font-size: 12vw;
+    margin: 5vw 4.5vw 4vw 0;
+}
+
+.detail main .vista .vista-info .envios .t-envios{
+    display: inline-block;
+    font-weight: 700;
+    font-size: 6vw;
+    position: absolute;
+    top: 4vw;
+}
+
+.detail main .vista .vista-info .envios .b-envios{
+    font-size: 5.3vw;
+    color: #3D2ED0;
+    font-weight: 500;
+    position: absolute;
+    bottom: 4vw;
+}
+
+.detail main .vista .vista-info .envios .b-envios:hover{
+    color: #6152e2;
+}
+
+.detail main .vista .vista-info .envios .b-envios:active{
+    color: #897fe4;
+}
+
+/*                   */
+
+/*     CANTIDAD      */
+
+.detail main .vista .vista-info .cantidad {
+    margin: 5vw 0 10vw;
+}
+
+.detail main .vista .vista-info .cantidad .t-cantidad{
+    display: inline-block;
+    font-weight: 700;
+    font-size: 5.4vw;
+}
+
+.detail main .vista .vista-info .cantidad button{
+    color: #F2204D;
+    font-size: 9vw;
+    margin: 0 3.6vw;
+}
+
+
+.detail main .vista .vista-info .cantidad button:hover{
+    color: #cc1a40;
+}
+
+.detail main .vista .vista-info .cantidad button:active{
+    color: #a81535;
+}
+
+.detail main .vista .vista-info .cantidad .n-cantidad{
+    font-weight: 700;
+    font-size: 10vw;
+    display: inline-block;
+    background: none;
+    border: none;
+    width: 11.7vw;
+    text-align: center;
+}
+
+/*                   */
+
+/*      COMPRAR,EDITAR Y BORRAR      */
+
+.detail main .vista .vista-info .div-comprar {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 0 10vw 0;
+}
+
+.detail main .vista .vista-info .b-editar{
+    background-color: #3D2ED0;
+    color: #ffffff;
+    padding: 6px 0px;
+    font-size: 24.9px;
+    border-radius: 20px;
+    width: 51.2vw;
+    margin: 3% auto 3% auto;
+    display: block;
+    
+}
+
+.detail main .vista .vista-info .b-editar:hover{
+    color: #fff;
+    background-color: #372aad;
+}
+
+.detail main .vista .vista-info .b-borrar{
+    background-color:#f70303;
+    color: #ffffff;
+    padding: 6px 0px;
+    font-size: 28.5px;
+    border-radius: 26px;
+    width: 51.2vw;
+    margin: 3% auto 3% auto;
+    display: block;
+    
+}
+
+.detail main .vista .vista-info .b-borrar:hover{
+    color: #fff;
+    background-color: #bb2d3b;
+    border-color: #b02a37;
+}
+
+.detail main .vista .vista-info .b-comprar {
+    background-color: #F2204D;
+    color: #ffffff;
+    padding: 6px 0px;
+    font-size: 24.9px;
+    border-radius: 20px;
+    width: 51.2vw;
+    margin: 3% auto 3% auto;
+    display: block;
+}
+
+.detail main .vista .vista-info .b-comprar:hover{
+    background-color: #cc1a40;
+}
+
+
+/*                   */
+
+/* SECTION COMENTARIOS */
+
+.detail main .comentarios{
+    background-color: #ffffff;
+    height: 40vw;
+    border-radius: 12px;
+    text-align: center;
+    margin: 7.2vw 0
+}
+
+.detail main .comentarios .div-stars .star{
+    font-size: 13vw;
+    padding: 5vw 0;
+}
+
+.detail main .comentarios .b-comentarios{
+    font-size: 7vw;
+    font-weight: 500;
+    color: #3D2ED0;
+}
+
+.detail main .comentarios .b-comentarios:hover{
+    color: #6152e2;
+}
+
+.detail main .comentarios .b-comentarios:active{
+    color: #897fe4;
+}
+
+/*                      */
+
+/* SECTION DESCRIPCION Y ESPECIFICACIONES   */
+
+.detail main .info-detail{
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 16px;
+    margin: 0 auto 30vw auto;
+}
+
+.detail main .info-detail .descripcion {
+    text-align: center;
+    margin: 0 auto 5vw auto;
+}
+.detail main .descripcion .text{
+    text-shadow: 3px 1px 2px #ffffff82;
+    color: #919090;
+}
+
+.detail main .info-detail .descripcion p{
+    font-size: 5.9vw;
+    margin: 5vw 5vw;
+}
+
+.detail main .info-detail .especificaciones .espec img{
+    width: 25%;
+    width: 25%;
+    margin-bottom: 5vw;
+}
+
+.detail main .info-detail .especificaciones .espec{
+    text-align: center;
+    margin: 11.5vw 0;
+}
+
+.detail main .info-detail .especificaciones .espec p{
+    font-size: 7vw;
+    margin-bottom: 0;
+}
+
+/* SECTION PRODUCTOS RELACIONADOS */
+
+    /* carrusel */
+    .detail .swiper {
+        width: 80%;
+    }
+
+    .detail .container-carrusel{
+        position: relative;
+    }
+
+    .detail .swiper-button-prev{
+        left: -10px!important;
+    }
+    
+    .detail .swiper-button-next{
+        right: -10px!important;
+    }
+
+    .detail .swiper-pagination-bullet-active{
+        background: #3d2ed0;
+    }
+
+   .detail main h2{
+    color: #fff;
+    text-align: center;
+    margin: 10% 0% 2% 0%;
+    font-size: 22px;
+    font-weight: bold;
+    text-shadow: 6px 2px 6px #343434;
+}
+
+.detail main .decoracion{
+    background-color: #F77490;
+    color: #F77490;
+    width: 100%;
+    height: 10px;
+    border-radius: 20px;
+    margin: 0% 0% 6.4vw 0%;
+}
+
+.detail main section article a{
+    color: black;
+}
+
+.detail main section article{
+    background-color: #ffffff;
+    width: 80vw;
+    height: 131.3vw;
+    padding: 15px;
+    margin: 0 auto 50px auto;
+    box-shadow: 0px 0px 10px rgb(100,100,100);
+    position: relative;
+    cursor: pointer;
+}
+
+.detail main article:hover{
+    box-shadow: 0px 0px 20px rgb(250 0 59);
+}
+
+.detail main section article i:active{
+    color: red;
+
+}
+
+.detail main section .contenedor-img {
+    height: 65.65vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.detail main section article .contenedor-img img{
+    width: 70%;
+}
+
+.detail main section article .product-info{
+    height: 65.65vw;
+    border-top: 1px solid #B2B2B2;
+}
+
+.detail main section article .title{
+    height: 26vw;
+}
+
+.detail main section article .info{
+    height: 26vw;
+}
+
+.detail main section article div button{
+    position: absolute;
+    font-size: 180%;
+    top: 5%;
+    right: 5%;
+    color: black;
+}
+
+.detail main section article div h3{
+    font-size: 6vw;
+    font-weight: 500;
+    text-align: center;
+    color: #3E3E3E;
+    color: #3E3E3E;
+    margin: 9vw 0% 10vw 0%;
+}
+
+.detail main section article div .price{
+    font-size: 10vw;
+    margin-bottom: 3%;
+    display: inline-block;
+}
+
+.detail main section article div .discount{
+    color: #33CC33;
+    font-size: 5vw;
+    margin: 0 0 0 10px;
+}
+
+.detail main section article div .payMethod{
+    color: #3D2ED0;
+    font-weight: 500;
+}
+
+    /*                          TABLET                            */
+
+@media (min-width:600px){
+
+    /*  MAPA DEL SITIO   */
+    .detail main .ruta {
+        font-size: 1.8vw;
+        align-items: center;
+        margin: 5% 0% 5% 0%;
+    }
+    .detail .ruta .a-posicion {
+        font-weight: 700;
+        font-size: 2vw;
+    }
+    .detail .ruta{
+        font-size: 2.4vw;
+    }
+
+    /*  SECTION DEL ARTICULO ENTERO  */
+
+    /*         IMG EN MINIATURA      */
+
+    .detail main .vista .div-img-miniaturas{
+        display: flex;
+        padding: 4vw 1vw;
+        justify-content: space-evenly;
+        height: 53.2vw;
+    }
+
+    .detail main .vista .div-img-miniaturas .vista-miniaturas {
+        display: flex;
+        width: 12.3%;
+        text-align: center;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .detail main .vista .div-img-miniaturas .vista-miniaturas .b-miniatura{
+        margin-bottom: 15px;    
+        border: 2px solid rgba(199, 196, 196, 0.25);
+        border-radius: 5px;
+        height: 15.6%;
+        width: 75%;
+        overflow: hidden;
+        padding: 2px;
+    }
+
+    .detail main .vista .div-img-miniaturas .vista-miniaturas .b-miniatura img{
+        width: 100%;
+    }
+
+    /*      IMG PRINCIPAL Y CORAZON           */
+
+    .detail main .vista .vista-img {
+        height: 100%;
+        width: 76.8%;
+    }
+
+    .detail main .vista .vista-img img {
+        width: 69%;
+        margin-top: 0;
+    }
+
+    .detail main .vista .vista-img .fav {
+        top: -2%;
+        right: -0.1%;
+        font-size: 6.6vw;
+    }
+
+    /*     SECTION DEL DETALLE DEL PRODUCTO */
+
+    .detail main .vista .vista-info {
+        width: 76%;
+        margin: auto;
+    }
+
+
+    /*      TITULO Y MAS VENDIDO */
+        
+    .detail main .vista .vista-info h3 {
+        font-size: 4.8vw;
+    }
+
+    .detail main .vista .vista-info .vendido {
+        width: 22.7vw;
+        font-size: 3.4vw;
+    }
+
+    .detail .small {
+        font-size: 2.7vw;
+        margin: 5vw 0 1vw 0;
+    }
+
+    /*    PPRECIO Y CARRITO    */
+
+    .detail main .vista .vista-info .price {
+        font-size: 7.6vw;
+        margin: 0vw 0px 5vw;
+    }
+
+    /*      CUOTAS           */
+
+    .detail main .vista .vista-info .t-cuotas {
+        font-size: 4.1vw;
+    }
+
+    .detail main .vista .vista-info .b-cuotas {
+        font-size: 4.5vw;
+    }
+
+
+    /*      ENVIOS          */
+
+    .detail main .vista .vista-info .envios {
+        margin: 0vw 0;
+    }
+
+    .detail main .vista .vista-info .envios .fa-truck {
+        font-size: 8.8vw;
+    }
+
+    .detail main .vista .vista-info .envios .t-envios {
+        font-size: 4vw;
+    }
+
+    .detail main .vista .vista-info .envios .b-envios {
+        font-size: 3.4vw;
+    }
+
+
+    /*      CANTIDAD     */
+
+    .detail main .vista .vista-info .cantidad .t-cantidad {
+        font-size: 4.6vw;
+    }
+
+    .detail main .vista .vista-info .cantidad button {
+        font-size: 7.6vw;
+        margin: 0 1.3vw;
+    }
+
+    .detail main .vista .vista-info .cantidad .n-cantidad {
+        font-size: 8.4vw;
+    }
+
+
+    /*      COMPRAR         */
+
+    .detail main .vista .vista-info .div-comprar {
+        text-align: center;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .detail main .vista .vista-info .b-comprar {
+        font-size: 5vw;
+        width: 30vw;
+        margin: 0;
+        padding: 14.6px 0px;
+    
+    }
+
+    .detail main .vista .vista-info .b-editar {
+        font-size: 5vw;
+        width: 30vw;
+        padding: 14.6px 0px;
+        margin: 0;
+    
+    }
+
+    .detail main .vista .vista-info .b-borrar {
+        font-size: 6vw;
+        width: 26.3vw;
+    
+    }
+
+
+    /* SECTION COMENTARIOS */
+
+    .detail main .comentarios {
+        height: 21.3vw;
+    }
+
+    .detail main .comentarios .div-stars .star {
+        font-size: 8.5vw;
+        padding: 2.6vw 2vw;
+    }
+
+    .detail main .comentarios .b-comentarios {
+        font-size: 4.3vw;
+    }
+
+
+    /* SECTION DESCRIPCION Y ESPECIFICACIONES   */
+
+    .detail main .info-detail {
+        padding: 16px 34.1px;
+        margin: 0 auto 15vw auto;
+    }
+
+    .detail main .info-detail .descripcion p {
+        font-size: 2.7vw;
+        margin: 0 50px 0 50px;
+
+    }
+
+    .detail main .info-detail .especificaciones .espec {
+        text-align: initial;
+        margin: 3.9vw 0 0 6.3vw;
+        display: flex;
+        align-content: center;
+        align-items: center;
+        border-bottom: 1px solid;
+        padding-bottom: 2.2vw;
+    }
+
+    .detail main .info-detail .especificaciones .espec img {
+        width: 9.8%;
+        margin: 0vw 5.4vw 0vw 0.4vw;
+    }
+
+    .detail main .info-detail .especificaciones .espec p {
+        font-size: 2.1vw;
+        display: inline-block;
+    }
+
+    /* SECTION PRODUCTOS RELACIONADOS */
+
+    .detail .swiper {
+        width: 90%;
+    }
+
+    .detail main h2 {
+        font-size: 4vw;
+        margin: 2% 0% 1vw 0%;
+    }
+
+    .detail main .productos {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+
+    .detail main .producto-tablet{
+        display: initial;
+    }
+
+    .detail main section article {
+        width: 40vw;
+        height: 70vw;
+    }
+
+    .detail main section .contenedor-img {
+        height: 50%;
+        padding: 5px;
+    }
+
+    .detail main section article .product-info {
+        /* height: 32.65vw; */
+        height: 50%;
+    }
+
+    .detail main section article .title {
+        /* height: 16.3vw; */
+        height: 50%;
+    }
+
+    .detail main section article div h3 {
+        font-size: 2.8vw;
+        margin: 3vw 0% 8vw 0%;
+    }
+
+    .detail main section article .info {
+        /* height: 16.3vw; */
+        height: 50%;
+    }
+
+    .detail main section article div .price {
+        font-size: 5vw;
+    }
+
+    .detail main section article div .payMethod {
+        font-size: 2.9vw;
+    }
+
+    .detail main section article div .discount {
+        font-size: 2.7vw;
+    }
+
+}
+
+/*                                       DESKTOP                                 */
+
+@media (min-width:960px){
+
+    /*  MAPA DEL SITIO */
+
+    .register main .ruta{
+        margin-bottom: 3%;
+    }
+
+    /*      ARTICULO ENTERO */
+
+    .detail main .vista {
+        height: 34.7vw;
+        width: 90%;
+        display: flex;
+        margin: 1.7% auto 5% auto;
+    }
+
+    /*     IMG EN MINIATURA      */
+
+    .detail main .vista .div-img-miniaturas {
+        padding: 0vw;
+        width: 60%;
+        height: 90%;
+    }
+
+    .detail main .vista .div-img-miniaturas .vista-miniaturas {
+        padding-top: 2.1vw;
+    }
+
+    .detail main .vista .div-img-miniaturas .vista-miniaturas .b-miniatura{
+        margin-bottom: 18.7px;
+        cursor: pointer;
+        height: 12%;
+    }
+
+    .detail main .vista .div-img-miniaturas .vista-miniaturas .b-miniatura:hover{
+        border-color: #3D2ED0;
+    }
+
+    .detail main .vista .div-img-miniaturas .vista-miniaturas .b-miniatura img {
+        width: 70%;
+    }
+
+    /*      IMG PRINCIPAL Y CORZON     */
+
+    .detail main .vista .vista-img {
+        height: 100%;
+    }
+
+    .detail main .vista .vista-img img {
+        width: 70%;
+        overflow: hidden;
+    }
+
+    .detail main .vista .vista-img .fav {
+        top: 5%;
+        font-size: 3.2vw;
+        cursor: pointer;
+    }
+
+    /*     INFO DETALLADA DEL ART */
+
+    .detail main .vista .vista-info {
+        width: 40%;
+        height: 100%;
+        padding-top: 1vw;
+    }
+
+     /*      TITULO Y MAS VENDIDO */
+/* 
+    .detail main .vista .vista-info .c-name-category{
+        height: 9.5vw;
+    } */
+
+    .detail main .vista .vista-info h3 {
+        font-size: 1.6vw;
+    }
+
+    .detail main .vista .vista-info .vendido {
+        width: 10vw;
+        font-size: 1.3vw;
+    }
+
+    /*    PPRECIO Y CARRITO    */
+
+    .detail main .vista .vista-info .price {
+        font-size: 2.9vw;
+        margin: 0vw 0vw 0.6vw;
+    }
+
+    /*      DESCUENTO        */
+
+    .detail .product-detail-price {
+        font-size: 1.5vw;
+        margin: 0px 0;
+    }
+
+    .detail .small span {
+        text-decoration: line-through;
+    }
+
+    /*      CUOTAS           */
+
+    .detail main .vista .vista-info .payMethod {
+        height: 4.1vw; 
+        margin: 0vw 0vw;
+    }
+
+    .detail main .vista .vista-info .t-cuotas {
+        font-size: 1.5vw;
+        margin: 0vw;
+    }
+
+    .detail main .vista .vista-info .b-cuotas {
+        font-size: 1.3vw;
+        cursor: pointer;
+    }
+
+    /*      ENVIOS          */
+
+    .detail main .vista .vista-info .envios .fa-truck {
+        font-size: 3.1vw;
+        margin: 1.3vw 2.6vw 0.8vw 0;
+    }
+
+    .detail main .vista .vista-info .envios .t-envios {
+        font-size: 1.5vw;
+        top: 1vw;
+    }
+
+    .detail main .vista .vista-info .envios .b-envios {
+        font-size: 1.4vw;
+        bottom: 0.8vw;
+        cursor: pointer;
+    }
+
+    /*      CANTIDAD     */
+
+    .detail main .vista .vista-info .cantidad {
+        margin: 0.8vw 0vw;
+    }
+
+    .detail main .vista .vista-info .cantidad .t-cantidad {
+        font-size: 1.8vw;
+        margin-right: 2.3vw;
+    }
+
+    .detail main .vista .vista-info .cantidad button {
+        font-size: 2.4vw;
+        margin: 0 0.5vw;
+        cursor: pointer;
+    }
+
+    .detail main .vista .vista-info .cantidad .n-cantidad {
+        font-size: 2.5vw;
+        width: 3.9vw;
+    }
+
+    /*      COMPRAR,EDITAR Y BORRAR        */
+
+
+    .detail main .vista .vista-info .div-comprar{
+        flex-direction: row;
+        justify-content: space-evenly;
+        padding: 0;
+    }
+
+    .detail main .vista .vista-info .b-comprar {
+        font-size: 1.7vw;
+        width: 12.5vw;
+        padding: 6px 0px;
+        cursor: pointer;
+        display: inline-block;
+    }
+
+    .detail main .vista .vista-info .b-editar {
+        font-size: 1.7vw;
+        width: 11.5vw;
+        padding: 6px 0px;
+        cursor: pointer;
+        display: inline-block;
+    }
+
+    .detail main .vista .vista-info .b-borrar {
+        font-size: 1.7vw;
+        width: 12.9vw;
+        cursor: pointer;
+        display: inline-block;
+    }
+    /* SECTION COMENTARIOS */
+
+    .detail main .comentarios {
+        height: 6.1vw;
+        width: 84%;
+        text-align: left;
+        margin: 5vw auto;
+        display: flex;
+        align-items: center;
+    }
+
+    .detail main .comentarios .div-stars{
+        display: inline-block;
+        width: 40%;
+        margin: 0 13.6vw 0 6.2vw;
+    }
+
+    .detail main .comentarios .div-stars .star {
+        font-size: 3.9vw;
+        padding: 2.1vw 0.7vw;
+        cursor: pointer;
+    }
+
+    .detail main .comentarios .b-comentarios {
+        font-size: 2.5vw;
+        cursor: pointer;
+    }
+
+    /* SECTION DESCRIPCION Y ESPECIFICACIONES   */
+
+    .detail main .info-detail {
+        width: 90%;
+        margin: auto;
+        margin: 0 auto 10vw auto;
+    }
+
+    .detail main .info-detail h2 {
+        text-align: left;
+        font-size: 2.5vw;
+        margin: 1.2vw 0 1vw 2vw;
+    }
+
+    .detail main .info-detail .description-text {
+        text-align: initial;
+        margin: 0 auto 5vw auto;
+    }
+
+    .detail main .info-detail .descripcion p {        
+        font-size: 2vw;
+
+    }
+
+    .detail main .info-detail .especificaciones .espec {
+        text-align: initial;
+        margin: 2.2vw 0 0 4vw;
+        display: flex;
+        align-content: center;
+        align-items: center;
+    }
+
+    .detail main .info-detail .especificaciones .espec img {
+        width: 7.2%;
+        margin: 0vw 5.4vw 0vw 0.4vw;
+    }
+
+    .detail main .info-detail .especificaciones .espec p {
+        font-size: 1.7vw;
+        display: inline-block;
+    }
+
+    /* SECTION PRODUCTOS RELACIONADOS */
+
+    .detail main h2 {
+        font-size: 3.9vw;
+    }
+
+    .detail main .decoracion {
+        margin: 0% 0% 2.5vw 0%;
+    }
+
+    .detail main section article {
+        width: 18vw;
+        height: 32.5vw;
+    }
+
+    .detail main section article div h3 {
+        font-size: 1.2vw;
+        margin: 1.4vw 0% 8vw 0%;
+    }
+
+    .detail main section article div .price {
+        font-size: 2.1vw;
+    }
+
+    .detail main section article div .discount {
+        font-size: 1.3vw;
+    }
+
+    .detail main section article div .payMethod{
+        color: #3D2ED0;
+        font-size: 1.3vw;
+        font-weight: 500;
+    }
+}

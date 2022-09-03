@@ -6,8 +6,9 @@
     "node": "14.18.0"
   },
   "scripts": {
-    "test": "nodemon ./bin/www",
-    "start": "node ./bin/www"
+    "test": "nodemon ./src/bin/www",
+    "start": "node .//src/bin/www",
+    "db": "sequelize db:drop && sequelize db:create && sequelize db:migrate && sequelize db:seed:all"
   },
   "nodemonConfig": {
     "ignore": "data/*.json"
@@ -32,6 +33,7 @@
     "sequelize": "^6.6.5"
   },
   "devDependencies": {
-    "nodemon": "^2.0.12"
+    "nodemon": "^2.0.12",
+    "sequelize-cli": "^6.4.1"
   }
 }

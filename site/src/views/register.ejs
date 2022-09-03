@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <%- include("./partials/head",{title : `Registrate`}) %> 
+
+<body class="register">
+<%- include("./partials/header") %> 
+    <main>
+        <div class="ruta">
+            <a href="/">Inicio</a>
+            <span>></span>
+            <a href="/users/login">Iniciar sesión</a>
+            <span>></span>
+            <a class="a-posicion" href="/users/register">Crear cuenta</a>
+        </div>
+
+
+        <form id="register-form" class="contenedorlogin" action="/users/register" method="POST">
+
+            <i class="fas fa-user-circle item-user"></i>
+            <h1>Registrate</h1>
+           <div class="cajapadre">
+            <div class="box-input">
+                <input id="name" name="name" class="sesioninit" type="text" placeholder="Nombre" value = <%= typeof old != 'undefined' && old.name ? old.name : null %>  >
+                <div style="min-height: 1vw;">
+                    <p id="error-name" class="error"></p>
+                    <%if(locals.errors && errors.name){%>  
+                        <p class="error"><%=errors.name.msg%></p> 
+                    <%}%>
+                </div>
+
+                <input id="email" name="email" class="sesioninit" type="text" placeholder="Email" value = <%= typeof old != 'undefined' && old.email ? old.email : null %> >
+                <div style="min-height: 1vw;">
+                    <p id="error-email" class="error"></p>
+                    <%if(locals.errors && errors.email){%>  
+                        <p class="error"><%=errors.email.msg%></p> 
+                    <%}%>
+                </div>
+            </div>
+
+           <div class="box-input2">
+            <div class="container-pass-eye">
+                <input id="password" name="password" class="sesioninit" type="password" placeholder="Contraseña" >
+                <button id="eye-pass" class="eye-pass pass-off" value="0"></button>
+            </div>
+            <div style="min-height: 1vw;">
+                <p id="error-pass" class="error"></p>
+                <%if (locals.errors && errors.password) {%>
+                    <p class="error"><%=errors.password.msg%></p>
+                <% } %> 
+            </div>
+            <div class="container-pass-eye">
+                <input id="password2" name="password2" class="sesioninit" type="password" placeholder="Confirmar contraseña" >
+                <button id="eye-pass2" class="eye-pass pass-off" value="0"></button>
+            </div>
+            <div style="min-height: 1vw;">
+                <p id="error-pass2" class="error"></p>
+                <%if (locals.errors && errors.password2) {%>
+                    <p class="error"><%=errors.password2.msg%></p>
+                <% } %> 
+            </div>
+        </div>
+        </div>
+
+
+            <div class="captcha">
+           </div>
+            <button class="enter" type="submit">Registrarse</button>
+
+            <div class="notenescuenta">
+                <h4>¿Ya tenés una cuenta?</h4>
+                <a href="/users/login">Inicia sesion</a>
+            </div>
+
+        </form>
+            <div class="vacio">
+
+            </div>
+    </main>
+    <%- include("./partials/footer") %> 
+    <%- include("./partials/scripts.ejs")%> 
+    <script src="/js/registerValidator.js"></script>
+</body>
+</html>

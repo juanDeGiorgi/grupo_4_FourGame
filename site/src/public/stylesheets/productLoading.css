@@ -1,0 +1,254 @@
+.loading  {
+    background-image: url('/images/background/TecladoMecanicoAmarillo.jpg');
+    /* background-size: contain; */
+    background-attachment: fixed;
+    background-position:center;
+}
+/* titulo */
+
+.loading main .title {
+    font-size: 7.3vw;
+    color: #ffffff;
+    text-align: center;
+    margin: 10% 0% 2% 0%;
+    font-weight: bold;
+    text-shadow: -2px 2px 2px black;
+}
+
+/* Formulario */
+
+
+.loading main .formCreacion{
+    width: 95%;
+    margin: 3vw auto 10vw auto;
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/* Inputs files */
+
+.loading main form .title-images{
+    width: 71.1vw;
+    display: block;
+    margin: auto;
+}
+
+.loading main form .c-imagenes{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-bottom: 20vw;
+}
+
+.loading main form .c-imagenes .input-file{
+    text-align: center;
+    margin: 13.1vw;
+}
+
+.loading main form .c-imagenes .file{
+    display: none;
+}
+
+.loading main form .c-imagenes .preview{
+    padding: 1vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.loading main form .c-imagenes .preview img{
+    width: 70%;
+}
+
+.loading main form .c-imagenes .preview .delete{
+    display: none;
+}
+
+
+.loading main form .c-imagenes .file-agregar{
+    background-color: #3D2ED0;
+    color: white;
+    margin: 1vw;
+}
+
+.loading main form .c-imagenes .file-quitar{
+    background-color: #dc3545;
+    color: white;
+    margin: 1vw;
+}
+
+/* resto de Inputs */
+
+.loading main form .container-inputs{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.loading main form .container-inputs .inputs-text{
+    margin-bottom: 7vw;
+}
+
+.loading .contador{
+    color :#3D2ED0;
+    font-size: 4.2vw;
+    font-weight: bold;
+    position: absolute;
+    z-index: 5;
+    top: 3px;
+    right: 0px;
+}
+
+
+
+.loading main form .input-text-area{
+    margin: auto;
+    resize: none;
+    position: relative;
+}
+
+.loading main form .container-buttons{
+    text-align: end;
+    width: 93%;
+    margin: auto;
+}
+
+.loading main form .container-buttons .btn-editar{
+    background-color: #3D2ED0;
+    color: white;
+    margin: 0.6vw;
+
+}
+
+.loading main form .container-buttons .btn-editar:hover {
+    color: #fff;
+    background-color: #372aad;
+}
+
+.loading main form .container-buttons .btn-borrar{
+    background-color: #dc3545;
+    color: white;
+    margin: 1vw;
+
+}
+
+.loading main form .container-buttons .btn-borrar:hover {
+    color: #fff;
+    background-color: #bb2d3b;
+    border-color: #b02a37;
+}
+
+
+.loading form .form-control:focus,.form-select:focus{
+    border-color: #3D2ED0;
+    box-shadow: 0 0 0 0.25rem #3e2ed063;
+} 
+
+
+@media (min-width:768px){
+
+/* titulo */
+
+    .loading main .title{
+        width: 80%;
+        font-size: 4vw;
+        margin: 3.7vw auto 0% auto;
+        text-align: left;
+    }
+
+/* Formulario */
+
+    .loading main .formCreacion{
+        width: 80%;
+        margin: 3vw auto 10vw auto;
+        background-color: white;
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    .loading main .formCreacion .c-title-error{
+        width: 90%;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    } 
+
+    .loading main .formCreacion .c-title-error .title-images{
+        display: inline-block;
+        width: unset;
+        margin: unset;
+    }
+
+/* Input file */
+
+    .loading main form .c-imagenes{
+        flex-direction: row;
+        margin-bottom: 0;
+    }
+
+    .loading main form .c-imagenes .input-file{
+        width: 19.3vw;
+        margin: 3vw;
+    }
+
+    .loading main form .c-imagenes .preview{
+        height: 16vw;
+    }
+
+/* resto de Inputs */
+
+    .loading main form .container-inputs{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;        
+        flex-direction: row;
+        margin-bottom: 2vw;
+
+    }
+
+    .loading main form .container-inputs .inputs-text {
+        margin-bottom: 0vw;
+    }
+
+    .loading main form .container-inputs .input-selects{
+        width: 19.3vw;
+    }
+
+    .loading main form .input-text-area{
+        width: 71.1vw;
+    }
+
+    .loading .contador{
+        font-size: 1.6vw;
+        top: 5.2px;
+        right: 0px;
+    }
+
+}
+
+@media (min-width:1024px){
+
+/* titulo */
+
+    .loading main .title{
+        font-size: 2.5vw;
+    }
+    
+/* Formulario */
+
+    .loading .contador{
+        font-size: 1.2vw;
+        top: -6px;
+        right: 0px;
+    }
+
+/* Input file */
+
+
+}

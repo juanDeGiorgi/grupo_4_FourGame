@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <%- include("./partials/head",{title : `carrito`}) %> 
+
+<body class="cart">
+
+    <%- include("./partials/header") %> 
+
+    <main>
+       <div class="container-detail-products">
+           <div class="container-products">
+               <%order.details.forEach(detail => {%>
+                    <div id="container-p-cart" class='container-p-cart'>
+                        <div class='img-c-cart'>
+                            <img src='/images/products/<%=detail.product.images[0].name%>' width='100%'>
+                        </div>
+                        <div class='infoProduct-c-cart'>
+                            <h4 class='title-p-cart'><%=detail.product.name%></h4>
+                            <div class='price-product-cart'>
+                                <p class='t-price'>Precio :</p>
+                                <span class='n-price'>$ <%=toThousand(detail.product.price)%></span>
+                            </div>
+                            <div class='cantidad'>
+                                <p class='t-cantidad'>Cantidad :</p>
+                                <div class=amount-div>
+                                    <button id='buttonLess' onclick='changeAmount(1,`<%=detail.product.id%>`)'><i class='fas fa-minus-circle'></i></button>
+                                    <p id="pAmount<%=detail.product.id%>" class='n-cantidad'><%=detail.quantity%></p>
+                                    <input id='inputAmount<%=detail.product.id%>' class="n-cantidad" disabled style='display: none;' value='<%=detail.quantity%>' type='number'>
+                                    <button id='buttonAdd' onclick="changeAmount(0,`<%=detail.product.id%>`)"><i class='fas fa-plus-circle'></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+               <%})%>
+           </div>
+
+           <div class="container-detail">
+               <div class="container-detail-body">
+                    <div class="div-cuotes-body">
+                        <p>Cuotas :</p>
+                        <p></p>   
+                    </div>
+                    <div class="div-shipping-body">
+                        <p>Envio a :</p>
+                        <p></p>   
+                    </div>
+               </div>
+               <div class="container-detail-footer">
+                   <div class="div-total-detail">
+                        <p class="detail-p-total">Total :</p>
+                        <p class="detail-n-total"><%=toThousand(order.finalPrice)%></p> 
+                   </div>
+                   <div class="c-buttons-detail">
+                        <button type="button" class="btn btn-primary" style="background-color: #F2204D; border: none;" onclick="emptyCart()">Cancelar compra</button>
+                        <a href="/cart/<%= locals.userLogged ? userLogged.id : null%>" type="button" class="btn btn-primary" style="background-color: #3D2ED0; border: none;">Finalizar compra</a>
+                    </div>
+               </div>
+           </div>
+       </div>
+    </main>
+<%- include("./partials/footer") %> 
+<%- include("./partials/scripts.ejs")%> 
+<script src="/js/cart.js"></script>
+</body>
+</html>

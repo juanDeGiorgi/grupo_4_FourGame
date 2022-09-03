@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <%- include("./partials/head",{title : `Inicio`}) %> 
+<body class="home">
+
+    <%- include("./partials/header") %> 
+
+    <main>
+
+        <!----------------------------------    BOOSTRAP    ------------------------------------------>
+
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="/images/banners/banner4.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="/images/banners/banner2.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="/images/banners/banner3.jpg" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <!----------------------------------    BOOSTRAP    ------------------------------------------>
+
+        <div class="main">
+        <section >
+            <div class="redes">
+            <h3>Seguinos en nuestras Redes</h3>
+
+            <a href="https://www.facebook.com/profile.php?id=100074061231552" target="_blank"><img src="/images/icon/facebook.png" alt="facebook"></a>
+            <a href="https://instagram.com/four.game_?utm_medium=copy_link" target="_blank"><img src="/images/icon/instagram.png" alt="instagram"></a>
+            </div>
+        </section>
+
+        <h2>Nuevos Lanzamientos</h2>
+        
+        <div class="decoracion">
+            <!-- LINEA DECORATIVA -->
+        </div>
+
+
+        <div class="container-carrusel">
+            <div id="swiper-button-prev" class="swiper-button-prev" style="color: gainsboro;"></div>
+            <div id="swiper-button-next" class="swiper-button-next" style="color: gainsboro;"></div>
+            <div class="swiper swiper0">
+                <section class="swiper-wrapper">
+                    <% products.forEach(product => { %> 
+                        <% if (product.category.name == "new-release"){ %> 
+                            <article class="swiper-slide">
+                                <a href="/products/detail/<%=product.id%> " class="a-article">
+                                    <div class="contenedor-img">
+                                        <img src="/images/products/<%=product.images[0].name%>" alt="image">
+                                    </div>
+        
+                                    <div class="product-info">
+        
+                                        <div class="title">
+                                            <h3><%=product.name %> </h3>
+                                        </div>
+                                        <div class="info">
+                                            <p class="price">$ <%=toThousand(product.price)%> </p>
+                                            <%if (product.discount !== 0){%>
+                                                <span class="discount"><%=product.discount%>% OFF</span>
+                                            <%}%>
+                                        
+                                            <p class="payMethod">12 x $ <%=toThousand((product.price / 12).toFixed(0))%> sin interés</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </article>
+                         <% } %> 
+                    <% }) %> 
+                </section>
+              </div>
+        </div>
+      
+        <h2>Mas Vendidos</h2>
+
+        <div class="decoracion">
+            <!-- LINEA DECORATIVA -->
+        </div>
+
+        <div class="container-carrusel">
+          <div id="swiper-button-prev-1" class="swiper-button-prev" style="color: gainsboro;"></div>
+          <div id="swiper-button-next-1" class="swiper-button-next" style="color: gainsboro;"></div>
+          <div class="swiper swiper1">
+              <section class="swiper-wrapper">
+                  <% products.forEach(product => { %> 
+                      <% if (product.category.name == "best-seller"){ %> 
+                          <article  class="swiper-slide">
+                              <a href="/products/detail/<%=product.id%> " class="a-article">
+                                  <div class="contenedor-img">
+                                      <img src="/images/products/<%=product.images[0].name%>" alt="image">
+                                  </div>
+      
+                                  <div class="product-info">
+      
+                                      <div class="title">
+                                          <h3><%=product.name %> </h3>
+                                      </div>
+                                      <div class="info">
+                                          <p class="price">$ <%=toThousand(product.price)%> </p>
+                                          <%if (product.discount !== 0){%>
+                                              <span class="discount"><%=product.discount%>% OFF</span>
+                                          <%}%>
+      
+                                              <p class="payMethod">12 x $ <%=toThousand((product.price / 12).toFixed(0))%> sin interés</p>
+                                      </div>
+                                  </div>
+                              </a>
+                          </article>
+                       <% } %> 
+                  <% }) %> 
+              </section>
+          </div>
+        </div>
+      
+        <h2>Ofertas</h2>
+
+        <div class="decoracion">
+            <!-- LINEA DECORATIVA -->
+        </div>
+
+        <div class="container-carrusel">
+          <div id="swiper-button-prev-2" class="swiper-button-prev" style="color: gainsboro;"></div>
+          <div id="swiper-button-next-2" class="swiper-button-next" style="color: gainsboro;"></div>
+          <div class="swiper swiper2">
+              <section class="swiper-wrapper">
+                  <% products.forEach(product => { %> 
+                      <% if (product.category.name == "in-sale"){ %> 
+                          <article class="swiper-slide">
+                              <a href="/products/detail/<%=product.id%> " class="a-article">
+                                  <div class="contenedor-img">
+                                      <img src="/images/products/<%=product.images[0].name%>" alt="image">
+                                  </div>
+      
+                                  <div class="product-info">
+      
+                                      <div class="title">
+                                          <h3><%=product.name %> </h3>
+                                      </div>
+                                      <div class="info">
+                                          <p class="price">$ <%=toThousand(product.price)%> </p>
+                                          <%if (product.discount !== 0){%>
+                                              <span class="discount"><%=product.discount%>% OFF</span>
+                                          <%}%>
+                                          <!-- <%if(product.payMethod > 0){%>
+                                              <p class="payMethod"><%=product.payMethod%>x $ <%=toThousand((product.price / product.payMethod).toFixed(0))%> sin interés</p>
+                                              <%}%> -->
+                                              <p class="payMethod">12 x $ <%=toThousand((product.price / 12).toFixed(0))%> sin interés</p>
+                                      </div>
+                                  </div>
+                              </a>
+                          </article>
+                       <% } %> 
+                  <% }) %> 
+              </section>
+          </div>
+        </div>
+
+    </main>
+    
+    <%- include("./partials/footer") %> 
+    <%- include("./partials/scripts.ejs")%> 
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,352 @@
+.login header{
+    display:none;
+}
+.login footer{
+    display: none;
+}
+
+.login  {
+    background-image: url('/images/background/tecladoLogin.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+.login main .contenedorlogin {
+    background-color: rgba(0, 0, 0, 0.57);
+    width: 90vw;
+    margin: 19% auto 0% auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    position: relative;
+}
+
+
+
+
+                           /*   MOBILE   */
+
+
+
+
+.login main .ruta{
+    width: 100%;
+    height: 16vw;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    font-size: 4.8vw;
+    font-weight: 500;
+    padding-left: 5%;
+    color: #3D2ED0;
+
+}
+
+.login main .ruta a {
+    color: #FCFCFC;
+    text-shadow: 3px 1px 7px black;
+}
+
+.login .ruta .a-posicion{
+    font-weight: 700;
+    font-size: 4.9vw;
+}
+.login .ruta span {
+    margin: 0% 0.5%;
+    color: #ff00fb;
+}
+.login .item-user {
+    position: absolute;
+    top: -9.32%;
+    display: flex;
+    width: 30%;
+    align-self: center;
+    color: #1F1F1F;
+    justify-content: center;
+    font-size: 25vw;
+    text-shadow: 1px 4px 7px white;
+}
+.login h1 {
+    text-align: center;
+    margin: 15% 0% 8% 0%;
+    font-size: 11vw;
+    font-weight: 700;
+    color: white;
+    text-shadow: 3px 1px 7px black;
+}
+
+.login .container-pass-eye{
+    text-align: center;
+    position: relative;
+}
+
+.login .sesioninit {
+    background-color: #918C8D4D;
+    color: white;
+    width: 90%;
+    margin: 4% auto;
+    height: 11vw;
+    font-size: 6vw;
+    border-radius: 4px;
+    text-indent: 4%;
+    font-weight: 500;
+    border: none;
+    box-shadow: 0px 5px 12px 3px black;
+}
+
+.login .eye-pass{
+    position: absolute;
+    background: none;
+    border: none;
+    color: rgba(0, 0, 0, 0);
+    top: 4.3vw;
+    right: 5.1vw;
+    width: 10vw;
+    height: 10vw;
+}
+
+.login .pass-on{
+    background-image: url(../images/icon/eye-solid-open.svg);
+    background-repeat: no-repeat;
+    background-position: right calc(0.075em + .1875rem) center;
+    background-size: calc(.75em + 0.775rem) calc(3.45em + 1.575rem);
+}
+
+.login .pass-off{
+    background-image: url(../images/icon/eye-solid-close.svg);
+    background-repeat: no-repeat;
+    background-position: right calc(0.075em + .1875rem) center;
+    background-size: calc(.75em + 0.775rem) calc(3.45em + 1.575rem);
+}
+
+.login .is-invalid{
+    background-image: url(../images/icon/is-invalid.svg);
+    background-repeat: no-repeat;
+    background-position: right calc(.375em + .1875rem) center;
+    background-size: calc(.75em + 0.775rem) calc(3.45em + 1.575rem);
+}
+.login .error{
+    color: red; 
+    font-size: 4.7vw;
+    margin: 0;
+    line-height: normal;
+}
+
+.login .sesioninit::placeholder{
+    color: gainsboro;
+}
+
+.login .sesioninit:focus{
+    outline: none;
+    border: 2px solid #3D2ED0;
+}
+
+.login .c-rememberSession{
+    text-align:center;
+    height: 10.5vw;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+}
+
+.login .rememberSession {
+    margin-right: 4vw;
+}
+
+.login .labelremember{
+    color: white;
+    font-size: 5.4vw;
+}
+
+.login .c-error{
+    text-align: center;
+}
+
+.login .c-error .error{
+    color: red; 
+    font-size: 4.7vw;
+}
+
+.login .enter{
+    color: rgb(255, 255, 255);
+    width: 63vw;
+    font-size: 8vw;
+    background-color: #3D2ED0;
+    margin: 6% auto;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0px 5px 12px -4px black;
+    border: none;
+    height: 14vw;
+    border-radius: 40px;
+
+}
+.login .notenescuenta{
+    width: 100%;
+    text-align: center;
+}
+.login .notenescuenta h4{
+    font-size: 4.5vw;
+    display: inline-block;
+    color: #3D2ED0;
+}
+.login .notenescuenta a {
+    font-size: 5vw;
+    font-weight: 700;
+    color: #FFF;
+}
+
+
+                           /*  TABLET  */
+
+
+
+
+
+
+@media (min-width:768px){
+    
+    .login main .ruta{
+        font-size: 1.8vw;
+        align-items: center;
+    }
+    .login .ruta .a-posicion {
+        font-weight: 700;
+        font-size: 2.5vw;
+    }
+
+    .login main .contenedorlogin{
+        width: 55vw;
+        height: 79vw;
+        margin: 7% auto;
+    }
+
+    .login .eye-pass{
+        top: 2.8vw;
+        right: 8.3vw;
+        width: 4.3vw;
+        height: 4.6vw;
+    }
+
+    .login .ruta{
+        font-size: 2.4vw;
+    }
+    .login .item-user{
+        top: -9.32%;
+        font-size: 12vw;
+    }
+    .login h1{
+        font-size: 5vw;
+        font-weight: 500;
+        margin: 20% 0% 5% 0%;
+    }
+    .login .sesioninit{
+        height: 6vw;
+        font-size: 3vw;
+        width: 73%;
+    }
+
+    .login .c-error .error {
+        font-size: 19.5px;
+    }
+
+    .login .rememberSession {
+        margin-right: 2.8vw;
+    }
+
+    .login .labelremember{
+        font-size: 3.2vw;
+    }
+
+    .login .enter {
+        border-radius: 50px;
+        height: 7vw;
+        width: 47%;
+        font-size: 3.5vw;
+    }
+
+    .login .notenescuenta h4 {
+        font-size: 2vw;
+    }
+
+    .login .notenescuenta a {
+        font-size: 2.4vw;
+        margin-left: 1vw;
+    }
+
+}
+
+
+@media (min-width:1024px){
+    
+.login main .ruta{
+    height: 4vw;
+    font-size: 1.5vw;    
+}
+
+.login main .contenedorlogin {
+    width: 30vw;
+    margin: 3% auto;
+    height: 36vw;
+}
+
+.login .item-user{
+    font-size: 6vw;
+    top: -10%;
+}
+.login h1 {
+    font-size: 2em;
+    margin: 20% 0% 5% 0%;
+}
+.login .sesioninit {
+    height: 2.5vw;
+    font-size: 1em;
+    width: 22vw;
+    margin: 3% auto;
+}
+
+.login .eye-pass{
+    top: 0.6vw;
+    right: 4.5vw;
+    width: 3.1vw;
+    height: 3vw;
+}
+
+.login .error {
+    font-size: 1vw;
+}
+.login .c-rememberSession {
+    height: 5vw;
+}
+
+.login .rememberSession {
+    margin-right: 1.4vw;
+}
+
+.login .labelremember{
+    font-size: 1.4vw;
+}
+
+.login .enter {
+    width: 40%;
+    height: 3vw;
+    font-size: 1.5vw;
+    margin: 4% auto 4% auto;
+}
+.login .notenescuenta h4 {
+    font-size: 0.8em;
+}
+
+.login .notenescuenta a {
+    font-size: 1em;
+}
+.login .ruta {
+    font-size: 1.4vw;
+    height: 7vw;
+}
+.login .ruta .a-posicion {
+    font-size: 1.2em;
+}
+}

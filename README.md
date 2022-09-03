@@ -5,7 +5,7 @@
  ## Descripcion de la pagina 
 
 **Four Game** es una empresa dedicada a la comercialización de productos tecnológicos,
-fundada en Enero del 2021 por un grupo de amigos aficionados a la tecnología y a los
+fundada en Enero del 2021 por un par de amigos aficionados a la tecnología y a los
 videojuegos, que un día decidieron formar parte de éste mundo a partir de una perspectiva de
 negocios.
 Al principio, nuestra actividad online estaba limitada a las redes sociales y era un público

@@ -1,5 +1,58 @@
 version: '3'
 services:
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - ./certs:/etc/nginx/certs:ro
+      - ./vhost:/etc/nginx/vhost.d
+      - /usr/share/nginx/html
+    labels:
+      - com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy
+    # networks:
+    #   - internalnet
+
+  letsencrypt:
+    image: jrcs/letsencrypt-nginx-proxy-companion
+    restart: always
+    environment:
+      - NGINX_PROXY_CONTAINER=nginx-proxy
+    volumes:
+      - ./certs:/etc/nginx/certs:rw
+      - ./vhost:/etc/nginx/vhost.d
+      - /usr/share/nginx/html
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    # networks:
+    #   - internalnet
+
+  fourgame_app:
+    build: .
+    image: fourgameapp:v1
+    restart: always
+    container_name: ${DOCKER_SERVICE_NAME}
+    volumes:
+      - ./src:/app/src
+    expose:
+      - ${APP_PORT}
+    ports:
+      - ${DOCKER_APP_PORT}:${APP_PORT}
+    env_file:
+      - .env
+    environment:
+      - VIRTUAL_HOST=fourgame.ddns.net,www.fourgame.ddns.net
+      - LETSENCRYPT_HOST=fourgame.ddns.net,www.fourgame.ddns.net
+      - LETSENCRYPT_EMAIL=juanmadegiorgi@gmail.com
+    depends_on:
+      - nginx-proxy
+      - letsencrypt
+      - fourgame_db
+    # networks:
+    #   - internalnet
+
   fourgame_db:
     image: mysql:8.0
     container_name: fourgame_db
@@ -14,23 +67,8 @@ services:
       - 3306
     environment:
       - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
-    networks:
-      - internalnet
-  fourgame_app:
-    build: .
-    image: fourgameapp:v1
-    restart: always
-    container_name: ${DOCKER_SERVICE_NAME}
-    volumes:
-      - ./src:/app/src
-    ports:
-      - ${DOCKER_APP_PORT}:${DOCKER_APP_PORT}
-    env_file:
-      - .env
-    depends_on:
-      - fourgame_db
-    networks:
-      - internalnet
-networks:
-  internalnet:
-      driver: bridge
+    # networks:
+    #   - internalnet
+# networks:
+#   internalnet:
+#       driver: bridge
